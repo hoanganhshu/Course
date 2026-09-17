@@ -8,6 +8,9 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
+service-account*.json
+scratch_*
+drive_ivd_decoded.json
 
 # Node.js & Frontend
 node_modules/

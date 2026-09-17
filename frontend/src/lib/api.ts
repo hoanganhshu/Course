@@ -46,6 +46,14 @@ export const authApi = {
   login: (data: { email: string; password: string }) =>
     apiClient.post('/auth/login', data),
   getProfile: () => apiClient.get('/auth/me'),
+  updateDriveEmail: (driveEmail: string) =>
+    apiClient.put('/auth/drive-email', { driveEmail }),
+};
+
+// ==================== WALLET ====================
+export const walletApi = {
+  getBalance: () => apiClient.get('/wallet/balance'),
+  deposit: (amount: number) => apiClient.post('/wallet/deposit', { amount }),
 };
 
 // ==================== COURSES ====================
@@ -77,6 +85,8 @@ export const orderApi = {
     customerName: string;
     customerEmail: string;
     customerPhone?: string;
+    driveEmail?: string;
+    paymentMethod?: 'BANK_TRANSFER' | 'WALLET';
     couponCode?: string;
   }) => apiClient.post('/orders/checkout', data),
 

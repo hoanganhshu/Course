@@ -38,6 +38,14 @@ public class User {
     @Column(nullable = false, length = 20)
     private Role role;
 
+    // ---- Wallet & Google Drive ----
+    @Column(nullable = false, precision = 14, scale = 0)
+    @Builder.Default
+    private java.math.BigDecimal balance = java.math.BigDecimal.ZERO;
+
+    @Column(name = "drive_email", length = 255)
+    private String driveEmail;
+
     // ---- Membership ----
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "membership_plan_id")

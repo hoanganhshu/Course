@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FolderOpen, ExternalLink, Search, Copy, Check } from 'lucide-react';
+import { myCourseApi } from '@/lib/api';
 import toast from 'react-hot-toast';
 
 interface PurchasedCourse {
@@ -46,7 +48,26 @@ export default function MyCoursesPage() {
   const [search, setSearch] = useState('');
   const [copiedId, setCopiedId] = useState<number | null>(null);
 
-  const filtered = DEMO_MY_COURSES.filter((c) =>
+  // Fetch real courses if logged in
+  const { data: realCoursesData } = useQuery({
+    queryKey: ['my-courses-list'],
+    queryFn: () => myCourseApi.getAll(),
+    retry: false,
+  });
+
+  const apiCourses = (realCoursesData as any)?.data;
+  const courseList: PurchasedCourse[] = (apiCourses && apiCourses.length > 0)
+    ? apiCourses.map((c: any) => ({
+        id: c.id,
+        slug: c.slug || `khoa-hoc-${c.id}`,
+        title: c.title,
+        category: c.categoryName || 'Khóa học',
+        thumbnail: c.thumbnail || '/backgrounds/tech_03_abstract_3d_dark_wave.jpg',
+        driveLink: c.driveLink || `https://drive.google.com/drive/folders/${c.driveFolderId || ''}`,
+      }))
+    : DEMO_MY_COURSES;
+
+  const filtered = courseList.filter((c) =>
     c.title.toLowerCase().includes(search.toLowerCase()) ||
     c.category.toLowerCase().includes(search.toLowerCase())
   );

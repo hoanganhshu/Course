@@ -57,6 +57,20 @@ public class UserPurchasedCourse {
     @Column(name = "purchased_at", updatable = false)
     private LocalDateTime purchasedAt;
 
+    // ---- Google Drive Auto Permission Tracking ----
+    @Column(name = "drive_shared", nullable = false)
+    @Builder.Default
+    private Boolean driveShared = false;
+
+    @Column(name = "drive_permission_id", length = 100)
+    private String drivePermissionId;
+
+    @Column(name = "drive_shared_at")
+    private LocalDateTime driveSharedAt;
+
+    @Column(name = "drive_share_error", length = 1000)
+    private String driveShareError;
+
     public enum ClaimType {
         PURCHASE,
         MEMBERSHIP_CLAIM,

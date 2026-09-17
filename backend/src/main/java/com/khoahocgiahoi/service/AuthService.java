@@ -43,9 +43,14 @@ public class AuthService implements UserDetailsService {
             throw new BadRequestException("Email đã được sử dụng: " + request.getEmail());
         }
 
+        String email = request.getEmail().toLowerCase().trim();
+        String driveEmail = email.endsWith("@gmail.com") ? email : null;
+
         User user = User.builder()
                 .name(request.getName())
-                .email(request.getEmail().toLowerCase().trim())
+                .email(email)
+                .driveEmail(driveEmail)
+                .balance(java.math.BigDecimal.ZERO)
                 .password(passwordEncoder.encode(request.getPassword()))
                 .phone(request.getPhone())
                 .role(User.Role.ROLE_USER)
@@ -88,6 +93,9 @@ public class AuthService implements UserDetailsService {
                 .email(user.getEmail())
                 .phone(user.getPhone())
                 .role(user.getRole().name())
+                .balance(user.getBalance() != null ? user.getBalance() : java.math.BigDecimal.ZERO)
+                .driveEmail(user.getDriveEmail())
+                .hasDriveEmail(user.getDriveEmail() != null && !user.getDriveEmail().isBlank())
                 .hasMembership(user.hasMembership())
                 .membershipName(user.getMembershipPlan() != null ? user.getMembershipPlan().getName() : null)
                 .membershipExpiresAt(user.getMembershipExpiresAt())
@@ -95,6 +103,21 @@ public class AuthService implements UserDetailsService {
                 .dailyQuota(user.getMembershipPlan() != null ? user.getMembershipPlan().getDailyQuota() : 0)
                 .createdAt(user.getCreatedAt())
                 .build();
+    }
+
+    @Transactional
+    public UserProfileResponse updateDriveEmail(String userEmail, String newDriveEmail) {
+        if (newDriveEmail == null || !newDriveEmail.trim().toLowerCase().endsWith("@gmail.com")) {
+            throw new BadRequestException("Vui lòng nhập tài khoản Gmail hợp lệ (kết thúc bằng @gmail.com) để được cấp quyền Google Drive");
+        }
+
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "email", userEmail));
+
+        user.setDriveEmail(newDriveEmail.trim().toLowerCase());
+        userRepository.save(user);
+
+        return getProfile(userEmail);
     }
 
     private AuthResponse buildAuthResponse(User user) {

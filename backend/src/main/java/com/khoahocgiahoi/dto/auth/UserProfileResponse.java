@@ -14,6 +14,11 @@ public class UserProfileResponse {
     private String phone;
     private String role;
 
+    // ---- Wallet & Google Drive ----
+    private java.math.BigDecimal balance;
+    private String driveEmail;
+    private boolean hasDriveEmail;
+
     // ---- Membership ----
     /** true nếu membership còn hiệu lực */
     private boolean hasMembership;

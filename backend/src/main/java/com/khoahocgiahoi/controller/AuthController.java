@@ -38,4 +38,14 @@ public class AuthController {
         return ResponseEntity.ok(
                 ApiResponse.success(authService.getProfile(authentication.getName())));
     }
+
+    @PutMapping("/drive-email")
+    public ResponseEntity<ApiResponse<UserProfileResponse>> updateDriveEmail(
+            Authentication authentication,
+            @Valid @RequestBody com.khoahocgiahoi.dto.wallet.UpdateDriveEmailRequest request
+    ) {
+        return ResponseEntity.ok(
+                ApiResponse.success("Cập nhật Gmail nhận Google Drive thành công",
+                        authService.updateDriveEmail(authentication.getName(), request.getDriveEmail())));
+    }
 }

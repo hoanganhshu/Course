@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { orderApi } from '@/lib/api';
+import { orderApi, authApi } from '@/lib/api';
 import { useCartStore } from '@/store/cartStore';
 import toast from 'react-hot-toast';
-import { Check, Copy, RefreshCw, AlertCircle, ShoppingCart } from 'lucide-react';
+import { Check, Copy, RefreshCw, AlertCircle, ShoppingCart, Wallet, QrCode, Mail } from 'lucide-react';
 
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 
@@ -16,12 +16,41 @@ export default function ThanhToanPage() {
   const [step, setStep] = useState<'form' | 'qr' | 'success'>('form');
   const [loading, setLoading] = useState(false);
   const [orderData, setOrderData] = useState<any>(null);
-  const [form, setForm] = useState({ name: '', email: '', phone: '', coupon: '' });
+  const [paymentMethod, setPaymentMethod] = useState<'BANK_TRANSFER' | 'WALLET'>('BANK_TRANSFER');
+
+  const [profile, setProfile] = useState<any>(null);
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    driveEmail: '',
+    phone: '',
+    coupon: ''
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [copied, setCopied] = useState(false);
   const [pollingCount, setPollingCount] = useState(0);
 
-  // Polling kiểm tra thanh toán mỗi 4 giây
+  // Lấy profile nếu đã đăng nhập
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      authApi.getProfile()
+        .then((res: any) => {
+          const user = res.data;
+          setProfile(user);
+          setForm((prev) => ({
+            ...prev,
+            name: prev.name || user.name || '',
+            email: prev.email || user.email || '',
+            driveEmail: prev.driveEmail || user.driveEmail || (user.email?.endsWith('@gmail.com') ? user.email : ''),
+            phone: prev.phone || user.phone || ''
+          }));
+        })
+        .catch(() => {});
+    }
+  }, []);
+
+  // Polling kiểm tra thanh toán mỗi 4 giây khi quét mã QR
   useEffect(() => {
     if (step !== 'qr' || !orderData?.orderCode) return;
 
@@ -32,7 +61,7 @@ export default function ThanhToanPage() {
           clearInterval(interval);
           setStep('success');
           clearCart();
-          toast.success('Thanh toán thành công! 🎉');
+          toast.success('Thanh toán thành công! Khóa học đã được chia sẻ tới Gmail.');
         }
         setPollingCount((c) => c + 1);
       } catch {/* ignore */}
@@ -44,7 +73,16 @@ export default function ThanhToanPage() {
   const validate = () => {
     const e: Record<string, string> = {};
     if (!form.name.trim()) e.name = 'Vui lòng nhập họ tên';
-    if (!form.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) e.email = 'Email không hợp lệ';
+    if (!form.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) e.email = 'Email liên hệ không hợp lệ';
+
+    // Bắt buộc Gmail để phân quyền Google Drive
+    const cleanDriveEmail = form.driveEmail.trim().toLowerCase();
+    if (!cleanDriveEmail) {
+      e.driveEmail = 'Vui lòng nhập tài khoản Gmail để nhận quyền Google Drive';
+    } else if (!cleanDriveEmail.endsWith('@gmail.com')) {
+      e.driveEmail = 'Bắt buộc phải là tài khoản Gmail (@gmail.com) để Google Drive cấp quyền';
+    }
+
     if (form.phone && !form.phone.match(/^[0-9]{10,11}$/)) e.phone = 'Số điện thoại không hợp lệ';
     setErrors(e);
     return Object.keys(e).length === 0;
@@ -54,6 +92,21 @@ export default function ThanhToanPage() {
     if (!validate()) return;
     if (items.length === 0) { toast.error('Giỏ hàng trống!'); return; }
 
+    const orderTotal = total();
+    const currentBalance = profile?.balance ?? 0;
+
+    if (paymentMethod === 'WALLET') {
+      if (!profile) {
+        toast.error('Vui lòng đăng nhập để thanh toán bằng số dư Ví');
+        router.push('/dang-nhap-dang-ky');
+        return;
+      }
+      if (currentBalance < orderTotal) {
+        toast.error(`Số dư ví (${fmt(currentBalance)}) không đủ để thanh toán đơn hàng (${fmt(orderTotal)})`);
+        return;
+      }
+    }
+
     setLoading(true);
     try {
       const res: any = await orderApi.checkout({
@@ -61,10 +114,20 @@ export default function ThanhToanPage() {
         customerName: form.name,
         customerEmail: form.email,
         customerPhone: form.phone || undefined,
+        driveEmail: form.driveEmail.trim().toLowerCase(),
+        paymentMethod: paymentMethod,
         couponCode: form.coupon || undefined,
       });
+
       setOrderData(res.data);
-      setStep('qr');
+
+      if (paymentMethod === 'WALLET' || res.data?.status === 'PAID') {
+        clearCart();
+        setStep('success');
+        toast.success('Thanh toán ví thành công! Đã tự động phân quyền Google Drive.');
+      } else {
+        setStep('qr');
+      }
     } catch (err: any) {
       toast.error(err?.message || 'Có lỗi xảy ra, vui lòng thử lại');
     } finally {
@@ -95,34 +158,43 @@ export default function ThanhToanPage() {
   if (step === 'success') {
     return (
       <div className="max-w-lg mx-auto px-4 py-20 text-center">
-        <div className="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
           <Check size={40} />
         </div>
-        <h1 className="text-2xl font-black text-white mb-2">Thanh toán thành công! 🎉</h1>
-        <p className="text-slate-300 text-sm mb-2">
-          Link Google Drive đã được gửi vào email <strong className="text-amber-400">{orderData?.customerEmail || form.email}</strong>
-        </p>
-        <p className="text-slate-400 text-xs mb-8">
-          Bạn cũng có thể xem và tải tài liệu bất cứ lúc nào trong trang Khóa học của tôi.
-        </p>
+        <h1 className="text-2xl font-black text-white mb-2">Kích hoạt khóa học thành công! 🎉</h1>
+        <div className="bg-[#141828] border border-slate-800 rounded-2xl p-5 mb-6 text-left text-xs space-y-2">
+          <p className="text-slate-300">
+            Hệ thống đã tự động cấp quyền truy cập Google Drive tới:
+          </p>
+          <div className="font-bold text-amber-400 text-sm bg-amber-400/10 px-3 py-2 rounded-xl flex items-center gap-2">
+            <Mail size={16} />
+            <span>{form.driveEmail || orderData?.customerEmail}</span>
+          </div>
+          <p className="text-slate-400 text-[11px] pt-1">
+            ⚡ Vui lòng kiểm tra hộp thư Gmail (hoặc mục "Được chia sẻ với tôi" trên Google Drive) để vào học ngay lập tức.
+          </p>
+        </div>
         <div className="flex flex-col gap-3">
-          <a href="/khoa-hoc-cua-toi" className="btn-primary justify-center">
+          <a href="/khoa-hoc-cua-toi" className="btn-primary justify-center shadow-lg">
             📁 Vào Khóa học của tôi
           </a>
           <a href="/mua" className="px-6 py-3 rounded-xl bg-[#141828] hover:bg-[#1C2238] text-slate-300 text-xs font-bold transition-colors">
-            Tiếp tục xem khóa học
+            Tiếp tục khám phá khóa học
           </a>
         </div>
       </div>
     );
   }
 
+  const currentBalance = profile?.balance ?? 0;
+  const canPayWithWallet = profile && currentBalance >= total();
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl font-black text-white">Thanh toán đơn hàng</h1>
         <p className="text-slate-400 text-xs sm:text-sm mt-1">
-          Bàn giao tự động qua Google Drive ngay sau khi hệ thống nhận thanh toán
+          Hệ thống tự động kiểm tra tài khoản và chia sẻ video qua Google Drive ngay khi nhận được tiền
         </p>
       </div>
 
@@ -130,61 +202,168 @@ export default function ThanhToanPage() {
         {/* LEFT: Form / QR */}
         <div className="md:col-span-3">
           {step === 'form' ? (
-            <div className="bg-[#141828] rounded-2xl p-6 sm:p-7 shadow-sm">
-              <h2 className="font-bold text-white text-lg mb-5">Thông tin nhận hàng</h2>
+            <div className="bg-[#141828] rounded-2xl p-6 sm:p-7 shadow-sm border border-slate-800/60">
+              <h2 className="font-bold text-white text-lg mb-5">Thông tin nhận khóa học</h2>
 
-              {[
-                { key: 'name', label: 'Họ và tên *', type: 'text', placeholder: 'Nguyễn Văn A' },
-                { key: 'email', label: 'Email nhận link Google Drive *', type: 'email', placeholder: 'email@gmail.com' },
-                { key: 'phone', label: 'Số điện thoại / Zalo', type: 'tel', placeholder: '0xxx xxx xxx' },
-              ].map(({ key, label, type, placeholder }) => (
-                <div key={key} className="mb-4">
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">{label}</label>
-                  <input
-                    type={type}
-                    placeholder={placeholder}
-                    className={`w-full px-4 py-2.5 rounded-xl bg-[#1F253C] hover:bg-[#252D48] focus:bg-[#252D48] text-sm text-white placeholder-slate-400 focus:outline-none transition-colors ${
-                      errors[key] ? 'ring-1 ring-rose-500' : ''
-                    }`}
-                    value={(form as any)[key]}
-                    onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                  />
-                  {errors[key] && <p className="text-rose-400 text-xs mt-1">{errors[key]}</p>}
+              {/* BẮT BUỘC NHẬP GMAIL GOOGLE DRIVE */}
+              <div className="mb-5 bg-gradient-to-r from-blue-950/40 to-[#12162B] border border-blue-500/30 rounded-2xl p-4">
+                <div className="flex items-center gap-2 text-blue-400 font-bold text-xs mb-1.5">
+                  <Mail size={16} />
+                  <span>Tài khoản Gmail nhận quyền Google Drive *</span>
                 </div>
-              ))}
-
-              <div className="mb-6">
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5">Mã giảm giá (nếu có)</label>
                 <input
-                  type="text"
-                  placeholder="Nhập mã coupon..."
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#1F253C] hover:bg-[#252D48] focus:bg-[#252D48] text-sm text-white placeholder-slate-400 focus:outline-none transition-colors"
-                  value={form.coupon}
-                  onChange={(e) => setForm({ ...form, coupon: e.target.value.toUpperCase() })}
+                  type="email"
+                  placeholder="vidu@gmail.com"
+                  className={`w-full px-4 py-2.5 rounded-xl bg-[#0F1322] border ${
+                    errors.driveEmail ? 'border-rose-500' : 'border-blue-500/40'
+                  } text-sm text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 transition-colors`}
+                  value={form.driveEmail}
+                  onChange={(e) => setForm({ ...form, driveEmail: e.target.value })}
                 />
+                {errors.driveEmail && <p className="text-rose-400 text-xs mt-1">{errors.driveEmail}</p>}
+                <p className="text-[11px] text-slate-400 mt-1.5">
+                  🔒 Video bài học sẽ được backend cấp quyền trực tiếp cho tài khoản Gmail này để đảm bảo an toàn.
+                </p>
               </div>
 
-              <div className="text-xs text-amber-300 bg-amber-400/10 rounded-xl p-3.5 mb-6 flex gap-2">
-                <AlertCircle size={15} className="flex-shrink-0 mt-0.5 text-amber-400" />
-                <span>Link Google Drive sẽ được gửi vào email trên và mở tự động ngay sau khi thanh toán.</span>
+              {/* Thông tin cá nhân */}
+              <div className="space-y-4 mb-5">
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Họ và tên *</label>
+                  <input
+                    type="text"
+                    placeholder="Nguyễn Văn A"
+                    className={`w-full px-4 py-2.5 rounded-xl bg-[#1F253C] hover:bg-[#252D48] focus:bg-[#252D48] text-sm text-white placeholder-slate-400 focus:outline-none transition-colors ${
+                      errors.name ? 'ring-1 ring-rose-500' : ''
+                    }`}
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  />
+                  {errors.name && <p className="text-rose-400 text-xs mt-1">{errors.name}</p>}
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Email liên hệ / nhận hóa đơn *</label>
+                  <input
+                    type="email"
+                    placeholder="email@gmail.com"
+                    className={`w-full px-4 py-2.5 rounded-xl bg-[#1F253C] hover:bg-[#252D48] focus:bg-[#252D48] text-sm text-white placeholder-slate-400 focus:outline-none transition-colors ${
+                      errors.email ? 'ring-1 ring-rose-500' : ''
+                    }`}
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  />
+                  {errors.email && <p className="text-rose-400 text-xs mt-1">{errors.email}</p>}
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Số điện thoại / Zalo</label>
+                  <input
+                    type="tel"
+                    placeholder="0xxx xxx xxx"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#1F253C] hover:bg-[#252D48] focus:bg-[#252D48] text-sm text-white placeholder-slate-400 focus:outline-none transition-colors"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Mã giảm giá (nếu có)</label>
+                  <input
+                    type="text"
+                    placeholder="Nhập mã coupon..."
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#1F253C] hover:bg-[#252D48] focus:bg-[#252D48] text-sm text-white placeholder-slate-400 focus:outline-none transition-colors"
+                    value={form.coupon}
+                    onChange={(e) => setForm({ ...form, coupon: e.target.value.toUpperCase() })}
+                  />
+                </div>
+              </div>
+
+              {/* PHƯƠNG THỨC THANH TOÁN */}
+              <div className="mb-6">
+                <label className="block text-xs font-bold text-slate-300 mb-2">Chọn phương thức thanh toán:</label>
+                <div className="space-y-2.5">
+                  {/* Option 1: VietQR */}
+                  <label
+                    onClick={() => setPaymentMethod('BANK_TRANSFER')}
+                    className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                      paymentMethod === 'BANK_TRANSFER'
+                        ? 'border-amber-400 bg-amber-400/10'
+                        : 'border-slate-800 bg-[#0F1322] hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-400 flex items-center justify-center">
+                        <QrCode size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-white">Chuyển khoản QR ngân hàng (VietQR)</div>
+                        <div className="text-[11px] text-slate-400">Quét mã thanh toán qua mọi app ngân hàng</div>
+                      </div>
+                    </div>
+                    <input
+                      type="radio"
+                      checked={paymentMethod === 'BANK_TRANSFER'}
+                      onChange={() => setPaymentMethod('BANK_TRANSFER')}
+                      className="text-amber-400 focus:ring-0"
+                    />
+                  </label>
+
+                  {/* Option 2: Số dư ví */}
+                  {profile && (
+                    <label
+                      onClick={() => setPaymentMethod('WALLET')}
+                      className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                        paymentMethod === 'WALLET'
+                          ? 'border-amber-400 bg-amber-400/10'
+                          : 'border-slate-800 bg-[#0F1322] hover:border-slate-700'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-emerald-400/20 text-emerald-400 flex items-center justify-center">
+                          <Wallet size={18} />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-white flex items-center gap-2">
+                            <span>Thanh toán bằng Số dư Ví</span>
+                            <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">
+                              Hiện có: {fmt(currentBalance)}
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-slate-400">Trừ tiền ví và mở khóa học tức thì</div>
+                        </div>
+                      </div>
+                      <input
+                        type="radio"
+                        checked={paymentMethod === 'WALLET'}
+                        onChange={() => setPaymentMethod('WALLET')}
+                        className="text-amber-400 focus:ring-0"
+                      />
+                    </label>
+                  )}
+                </div>
               </div>
 
               <button
                 onClick={handleCheckout}
                 disabled={loading}
-                className="w-full btn-primary justify-center py-3 text-sm disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full btn-primary justify-center py-3 text-sm disabled:opacity-60 disabled:cursor-not-allowed shadow-md"
               >
                 {loading ? (
-                  <><RefreshCw size={16} className="animate-spin" /> Đang tạo đơn...</>
-                ) : '💳 Tiến hành thanh toán'}
+                  <><RefreshCw size={16} className="animate-spin" /> Đang xử lý...</>
+                ) : paymentMethod === 'WALLET' ? (
+                  `⚡ Thanh toán ngay bằng Ví (${fmt(total())})`
+                ) : (
+                  '💳 Tiến hành tạo mã QR thanh toán'
+                )}
               </button>
             </div>
           ) : (
             /* QR PAYMENT SCREEN */
-            <div className="bg-[#141828] rounded-2xl p-6 sm:p-7 text-center">
+            <div className="bg-[#141828] rounded-2xl p-6 sm:p-7 text-center border border-slate-800/60">
               <h2 className="font-bold text-white text-lg mb-1">Quét mã QR để thanh toán</h2>
               <p className="text-slate-400 text-xs sm:text-sm mb-5">
-                Mở app ngân hàng bất kỳ, quét mã VietQR hoặc chuyển khoản theo thông tin bên dưới
+                Mở app ngân hàng bất kỳ, quét mã VietQR hoặc chuyển khoản đúng nội dung bên dưới
               </p>
 
               {/* QR Code */}
@@ -233,11 +412,11 @@ export default function ThanhToanPage() {
               {/* Waiting indicator */}
               <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-amber-300 bg-amber-400/10 rounded-xl py-3 mb-3">
                 <div className="w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse"></div>
-                Đang chờ hệ thống xác nhận thanh toán... ({pollingCount > 0 ? `đã kiểm tra ${pollingCount} lần` : 'vừa bắt đầu'})
+                Đang chờ xác nhận từ ngân hàng... ({pollingCount > 0 ? `đã kiểm tra ${pollingCount} lần` : 'vừa bắt đầu'})
               </div>
 
               <p className="text-[11px] text-slate-400">
-                ⚡ Hệ thống tự động xác nhận và cấp quyền truy cập trong ~30 giây sau khi chuyển khoản.
+                ⚡ Ngay khi nhận được tiền, backend sẽ tự động phân quyền Google Drive cho Gmail: <strong className="text-amber-400">{form.driveEmail}</strong>
               </p>
             </div>
           )}
@@ -245,7 +424,7 @@ export default function ThanhToanPage() {
 
         {/* RIGHT: Order Summary */}
         <div className="md:col-span-2">
-          <div className="sticky top-20 bg-[#141828] rounded-2xl p-6">
+          <div className="sticky top-20 bg-[#141828] rounded-2xl p-6 border border-slate-800/60">
             <h3 className="font-bold text-white mb-4 text-base">Đơn hàng của bạn</h3>
             <div className="space-y-3 max-h-72 overflow-y-auto no-scrollbar mb-4">
               {items.map((item) => (
@@ -289,9 +468,12 @@ export default function ThanhToanPage() {
             </div>
 
             {/* Trust badges mini */}
-            <div className="mt-5 space-y-2 pt-3">
-              {['⚡ Nhận link Google Drive trong ~30 giây', '📁 Bàn giao tự động qua Gmail', '♾️ Quyền sở hữu trọn đời, không giới hạn'].map((t) => (
-                <p key={t} className="text-xs text-slate-400">{t}</p>
+            <div className="mt-5 space-y-2 pt-3 border-t border-slate-800/60">
+              {['⚡ Phân quyền Google Drive tự động trong ~30 giây', '📁 Bàn giao video bản quyền trực tiếp qua Gmail', '♾️ Quyền sở hữu trọn đời, truy cập mọi lúc'].map((t) => (
+                <p key={t} className="text-xs text-slate-400 flex items-center gap-1.5">
+                  <Check size={13} className="text-emerald-400 flex-shrink-0" />
+                  <span>{t}</span>
+                </p>
               ))}
             </div>
           </div>

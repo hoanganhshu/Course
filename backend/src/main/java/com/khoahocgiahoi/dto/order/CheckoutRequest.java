@@ -22,6 +22,12 @@ public class CheckoutRequest {
     @Pattern(regexp = "^[0-9]{10,11}$", message = "Số điện thoại phải có 10-11 chữ số")
     private String customerPhone;
 
+    /** Email nhận quyền truy cập Google Drive (bắt buộc @gmail.com) */
+    private String driveEmail;
+
+    /** Phương thức thanh toán: BANK_TRANSFER (mặc định) hoặc WALLET */
+    private String paymentMethod;
+
     /** Mã giảm giá (tuỳ chọn) */
     private String couponCode;
 }

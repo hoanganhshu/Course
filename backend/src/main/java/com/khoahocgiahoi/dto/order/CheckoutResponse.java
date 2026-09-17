@@ -28,6 +28,9 @@ public class CheckoutResponse {
 
     private String status;
 
+    private LocalDateTime paidAt;
+    private Boolean driveShared;
+
     /** Thời điểm đơn hàng hết hạn (mặc định +30 phút) */
     private LocalDateTime expiredAt;
 }

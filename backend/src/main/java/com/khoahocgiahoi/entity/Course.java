@@ -61,6 +61,26 @@ public class Course {
     @Column(name = "drive_link", length = 1000)
     private String driveLink;
 
+    /**
+     * ID thư mục hoặc file Google Drive để cấp quyền tự động qua API
+     */
+    @Column(name = "drive_folder_id", length = 100)
+    private String driveFolderId;
+
+    public String resolveDriveFolderId() {
+        if (driveFolderId != null && !driveFolderId.isBlank()) {
+            return driveFolderId.trim();
+        }
+        if (driveLink != null && !driveLink.isBlank()) {
+            // Check for /folders/{id} or /d/{id} or id={id}
+            java.util.regex.Matcher m = java.util.regex.Pattern.compile("(?:folders/|/d/|id=)([a-zA-Z0-9_-]{25,})").matcher(driveLink);
+            if (m.find()) {
+                return m.group(1);
+            }
+        }
+        return null;
+    }
+
     // ---- Flash Sale ----
     @Column(name = "is_flash_sale", nullable = false)
     @Builder.Default

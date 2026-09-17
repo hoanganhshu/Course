@@ -54,22 +54,25 @@ public class SecurityConfig {
             // Authorization rules
             .authorizeHttpRequests(auth -> auth
                 // ===== PUBLIC ENDPOINTS =====
-                .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/auth/login", "/auth/register").permitAll()
                 .requestMatchers(HttpMethod.GET,
                     "/categories/**",
                     "/courses/**",
                     "/memberships/**",
                     "/feedbacks/**"
                 ).permitAll()
+                // Thanh toán đơn hàng & kiểm tra trạng thái
+                .requestMatchers("/orders/checkout", "/orders/check-status/**").permitAll()
                 // Webhook endpoint phải public để ngân hàng gọi được
                 .requestMatchers("/payment/webhook/**").permitAll()
-                // Kiểm tra trạng thái đơn hàng có thể public
-                .requestMatchers("/orders/check-status/**").permitAll()
 
                 // ===== ADMIN ONLY =====
                 .requestMatchers("/admin/**").hasRole("ADMIN")
 
                 // ===== AUTHENTICATED USERS =====
+                .requestMatchers("/auth/me", "/auth/drive-email").authenticated()
+                .requestMatchers("/wallet/**").authenticated()
+                .requestMatchers("/my-courses/**").authenticated()
                 .anyRequest().authenticated()
             )
 
