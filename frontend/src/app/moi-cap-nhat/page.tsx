@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ShoppingCart, Check, Sparkles, Clock, Search, ArrowRight } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
 import toast from 'react-hot-toast';
+import { ALL_COURSES } from '@/data/coursesCatalog';
 
 interface Course {
   id: number;
@@ -19,142 +20,24 @@ interface Course {
   addedTime: string;
 }
 
-const LATEST_COURSES: Course[] = [
-  {
-    id: 303,
-    slug: 'san-xuat-video-ngan-ai-tu-dong',
-    title: 'Sản Xuất 100 Video Ngắn Mỗi Tháng Nhờ Ứng Dụng AI Tự Động',
-    category: 'AI & TikTok',
-    thumbnail: '/backgrounds/tech_01_workspace_code_design.jpg',
-    price: 149000,
-    originalPrice: 490000,
-    registeredCount: 940,
-    addedTime: 'Hôm nay',
-  },
-  {
-    id: 201,
-    slug: 'fullstack-nextjs-spring-boot-chuyen-nghiep',
-    title: 'Fullstack Next.js 14, React 18 & Spring Boot 3 Chuyên Nghiệp',
-    category: 'Lập trình',
-    thumbnail: '/backgrounds/tech_05_modern_developer_desk.jpg',
-    price: 199000,
-    originalPrice: 650000,
-    registeredCount: 890,
-    addedTime: 'Hôm qua',
-  },
-  {
-    id: 528,
-    slug: 'youtube-automation-kiem-tien-ai',
-    title: 'YouTube Automation: Kiếm Tiền Kênh Bán Content Không Lộ Mặt với AI',
-    category: 'YouTube',
-    thumbnail: '/backgrounds/hex_03_cyber_matrix_grid.jpg',
-    price: 179000,
-    originalPrice: 580000,
-    registeredCount: 830,
-    addedTime: '2 ngày trước',
-  },
-  {
-    id: 464,
-    slug: 'color-grading-davinci-resolve',
-    title: 'Color Grading & Chỉnh Màu Video Chuẩn Điện Ảnh DaVinci Resolve',
-    category: 'Media',
-    thumbnail: '/backgrounds/simple_10_abstract_flowing_mesh.jpg',
-    price: 159000,
-    originalPrice: 520000,
-    registeredCount: 620,
-    addedTime: '3 ngày trước',
-  },
-  {
-    id: 203,
-    slug: 'lap-trinh-golang-devops-kubernetes',
-    title: 'Lập Trình Golang & Triển Khai Microservices với Kubernetes',
-    category: 'Lập trình',
-    thumbnail: '/backgrounds/hex_01_deep_circuit_board.jpg',
-    price: 219000,
-    originalPrice: 700000,
-    registeredCount: 420,
-    addedTime: '4 ngày trước',
-  },
-  {
-    id: 213,
-    slug: 'thiet-ke-3d-blender-motion',
-    title: 'Thiết Kế 3D Blender & Motion Graphics Quảng Cáo Chuyên Nghiệp',
-    category: 'Thiết kế',
-    thumbnail: '/backgrounds/hex_02_dark_3d_cubes.jpg',
-    price: 189000,
-    originalPrice: 620000,
-    registeredCount: 460,
-    addedTime: '5 ngày trước',
-  },
-  {
-    id: 144,
-    slug: 'google-ads-performance-max',
-    title: 'Google Ads Search & Performance Max Chuyển Đổi Doanh Số Cao 2026',
-    category: 'Marketing',
-    thumbnail: '/backgrounds/tech_07_video_creator_studio.jpg',
-    price: 159000,
-    originalPrice: 520000,
-    registeredCount: 680,
-    addedTime: '6 ngày trước',
-  },
-  {
-    id: 242,
-    slug: 'power-bi-business-intelligence',
-    title: 'Trực Quan Hóa Dữ Liệu Chuyên Nghiệp Với Power BI & SQL Phân Tích',
-    category: 'Dữ liệu',
-    thumbnail: '/backgrounds/tech_09_business_data_strategy.jpg',
-    price: 169000,
-    originalPrice: 550000,
-    registeredCount: 750,
-    addedTime: '1 tuần trước',
-  },
-  {
-    id: 233,
-    slug: 'tieng-trung-thuong-mai-hsk5',
-    title: 'Tiếng Trung Thương Mại HSK 5 & Đàm Phán Mua Hàng 1688 Taobao',
-    category: 'Ngoại ngữ',
-    thumbnail: '/backgrounds/03_khuon_vien_truong.jpg',
-    price: 169000,
-    originalPrice: 550000,
-    registeredCount: 620,
-    addedTime: '1 tuần trước',
-  },
-  {
-    id: 264,
-    slug: 'drop-shipping-quoc-te-shopify',
-    title: 'Mô Hình Dropshipping Quốc Tế với Shopify & Quảng Cáo TikTok',
-    category: 'MMO',
-    thumbnail: '/backgrounds/tech_03_abstract_3d_dark_wave.jpg',
-    price: 189000,
-    originalPrice: 620000,
-    registeredCount: 710,
-    addedTime: '1 tuần trước',
-  },
-  {
-    id: 281,
-    slug: 'phan-tich-ky-thuat-chung-khoan',
-    title: 'Phân Tích Kỹ Thuật Chứng Khoán & Quản Trị Rủi Ro Chuyên Sâu',
-    category: 'Đầu tư',
-    thumbnail: '/backgrounds/hex_06_cyber_blue_lines.jpg',
-    price: 199000,
-    originalPrice: 650000,
-    registeredCount: 730,
-    addedTime: '2 tuần trước',
-  },
-  {
-    id: 204,
-    slug: 'an-ninh-mang-ethical-hacking-ceh',
-    title: 'An Ninh Mạng, Ethical Hacking & Thực Hành Pentest Toàn Diện',
-    category: 'Lập trình',
-    thumbnail: '/backgrounds/hex_03_cyber_matrix_grid.jpg',
-    price: 249000,
-    originalPrice: 850000,
-    registeredCount: 530,
-    addedTime: '2 tuần trước',
-  },
-];
+const TIME_LABELS = ['Vừa xong', 'Hôm nay', 'Hôm qua', '2 ngày trước', '3 ngày trước', '1 tuần trước'];
 
-const CATEGORIES = ['Tất cả', 'Lập trình', 'Thiết kế', 'Marketing', 'AI & TikTok', 'Dữ liệu', 'MMO', 'Ngoại ngữ'];
+const LATEST_COURSES: Course[] = [...ALL_COURSES]
+  .filter(c => c.categorySlug === 'khoa-hoc-update-2025' || c.categorySlug === 'khoa-hoc-moi' || c.id % 3 === 0)
+  .slice(0, 24)
+  .map((c, idx) => ({
+    id: c.id,
+    slug: c.slug,
+    title: c.title,
+    category: c.categoryName.replace(/^Khóa học\s*/i, '').slice(0, 20),
+    thumbnail: c.thumbnail,
+    price: c.effectivePrice,
+    originalPrice: c.originalPrice,
+    registeredCount: c.registeredCount,
+    addedTime: TIME_LABELS[idx % TIME_LABELS.length],
+  }));
+
+const CATEGORIES = ['Tất cả', 'Update 2025 - 2026', 'Công nghệ thông tin', 'Thiết kế đồ họa', 'Marketing', 'Kiếm tiền Online & MMO', 'Tin học văn phòng'];
 
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 

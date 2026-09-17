@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Search, ShoppingCart } from 'lucide-react';
 import { courseApi, categoryApi } from '@/lib/api';
 import { useCartStore } from '@/store/cartStore';
+import { ALL_COURSES, REAL_CATEGORIES, CourseItem } from '@/data/coursesCatalog';
 import toast from 'react-hot-toast';
 import { useSearchParams } from 'next/navigation';
 
@@ -31,10 +32,34 @@ function MuaContent() {
     staleTime: Infinity,
   });
 
-  const courses = (coursesData as any)?.data?.content || [];
-  const totalPages = (coursesData as any)?.data?.totalPages || 0;
-  const totalElements = (coursesData as any)?.data?.totalElements || 0;
-  const categories = (catsData as any)?.data || [];
+  const apiCourses = (coursesData as any)?.data?.content;
+  const apiCategories = (catsData as any)?.data;
+  const categories = (apiCategories && apiCategories.length > 0) ? apiCategories : REAL_CATEGORIES;
+
+  // Filter real Google Drive courses
+  let filteredCatalog = ALL_COURSES;
+  if (keyword.trim()) {
+    const q = keyword.toLowerCase().trim();
+    filteredCatalog = filteredCatalog.filter(c => c.title.toLowerCase().includes(q) || c.categoryName.toLowerCase().includes(q));
+  }
+  if (category) {
+    filteredCatalog = filteredCatalog.filter(c => c.categorySlug === category);
+  }
+  if (sortBy === 'priceAsc') {
+    filteredCatalog = [...filteredCatalog].sort((a, b) => a.effectivePrice - b.effectivePrice);
+  } else if (sortBy === 'priceDesc') {
+    filteredCatalog = [...filteredCatalog].sort((a, b) => b.effectivePrice - a.effectivePrice);
+  } else {
+    filteredCatalog = [...filteredCatalog].sort((a, b) => b.registeredCount - a.registeredCount);
+  }
+
+  const PAGE_SIZE = 12;
+  const fallbackTotalPages = Math.ceil(filteredCatalog.length / PAGE_SIZE);
+  const fallbackPagedCourses = filteredCatalog.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+
+  const courses = (apiCourses && apiCourses.length > 0) ? apiCourses : fallbackPagedCourses;
+  const totalPages = (apiCourses && apiCourses.length > 0) ? ((coursesData as any)?.data?.totalPages || 1) : fallbackTotalPages;
+  const totalElements = (apiCourses && apiCourses.length > 0) ? ((coursesData as any)?.data?.totalElements || 0) : filteredCatalog.length;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();

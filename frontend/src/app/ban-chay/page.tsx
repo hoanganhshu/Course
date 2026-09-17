@@ -7,6 +7,8 @@ import { ShoppingCart, Check, Star, Users, Flame, Search, ArrowRight } from 'luc
 import { useCartStore } from '@/store/cartStore';
 import toast from 'react-hot-toast';
 
+import { ALL_COURSES } from '@/data/coursesCatalog';
+
 interface Course {
   id: number;
   slug: string;
@@ -20,154 +22,23 @@ interface Course {
   rank: number;
 }
 
-const BEST_SELLING_COURSES: Course[] = [
-  {
-    id: 101,
-    slug: 'tron-bo-khoa-hoc-tren-website-voi-quyen-truy-cap-vinh-vien',
-    title: 'Trọn Bộ 2.000+ Khóa Học Google Drive Toàn Diện Trọn Đời',
-    category: 'Combo',
-    thumbnail: '/backgrounds/tech_03_abstract_3d_dark_wave.jpg',
-    price: 599000,
-    originalPrice: 2500000,
-    registeredCount: 1850,
-    rating: 5.0,
-    rank: 1,
-  },
-  {
-    id: 291,
-    slug: 'dung-phim-video-ngan-tiktok-capcut-pro',
-    title: 'Dựng Phim Video Ngắn TikTok, Reels & CapCut Pro Triệu View',
-    category: 'Media',
-    thumbnail: '/backgrounds/tech_07_video_creator_studio.jpg',
-    price: 129000,
-    originalPrice: 450000,
-    registeredCount: 1420,
-    rating: 4.9,
-    rank: 2,
-  },
-  {
-    id: 261,
-    slug: 'kiem-tien-mmo-affiliate-va-ecommerce',
-    title: 'Bí Quyết Kiếm Tiền MMO, Affiliate & Bán Hàng E-commerce',
-    category: 'MMO',
-    thumbnail: '/backgrounds/tech_04_digital_creator_desk.jpg',
-    price: 159000,
-    originalPrice: 500000,
-    registeredCount: 1320,
-    rating: 4.9,
-    rank: 3,
-  },
-  {
-    id: 301,
-    slug: 'thuat-toan-tiktok-2026-len-xu-huong',
-    title: 'Giải Mã Thuật Toán TikTok 2026: Cách Lên Xu Hướng Nhanh Nhất',
-    category: 'TikTok',
-    thumbnail: '/backgrounds/tech_07_video_creator_studio.jpg',
-    price: 139000,
-    originalPrice: 450000,
-    registeredCount: 1250,
-    rating: 4.8,
-    rank: 4,
-  },
-  {
-    id: 241,
-    slug: 'master-excel-vba-macro-dashboard',
-    title: 'Master Microsoft Excel: VBA, Macro & Tự Động Hóa Báo Cáo',
-    category: 'Văn phòng',
-    thumbnail: '/backgrounds/tech_01_workspace_code_design.jpg',
-    price: 129000,
-    originalPrice: 420000,
-    registeredCount: 1200,
-    rating: 4.9,
-    rank: 5,
-  },
-  {
-    id: 221,
-    slug: 'master-digital-marketing-facebook-ads',
-    title: 'Master Digital Marketing & Facebook Ads Thực Chiến 2026',
-    category: 'Marketing',
-    thumbnail: '/backgrounds/tech_09_business_data_strategy.jpg',
-    price: 149000,
-    originalPrice: 490000,
-    registeredCount: 1140,
-    rating: 4.9,
-    rank: 6,
-  },
-  {
-    id: 311,
-    slug: 'xay-kenh-youtube-adsense-quoc-te',
-    title: 'Xây Kênh YouTube Kiếm Tiền Ngoại Tệ AdSense Thị Trường Mỹ',
-    category: 'YouTube',
-    thumbnail: '/backgrounds/tech_04_digital_creator_desk.jpg',
-    price: 169000,
-    originalPrice: 550000,
-    registeredCount: 1100,
-    rating: 4.8,
-    rank: 7,
-  },
-  {
-    id: 232,
-    slug: 'tieng-anh-giao-tiep-nguoi-mat-goc',
-    title: 'Tiếng Anh Giao Tiếp Phản Xạ Đột Phá Trong 60 Ngày Cho Người Đi Làm',
-    category: 'Ngoại ngữ',
-    thumbnail: '/backgrounds/05_goc_tu_hoc_nang_som.jpg',
-    price: 139000,
-    originalPrice: 450000,
-    registeredCount: 970,
-    rating: 4.9,
-    rank: 8,
-  },
-  {
-    id: 211,
-    slug: 'thiet-ke-uiux-chuyen-nghiep-voi-figma',
-    title: 'Thiết Kế UI/UX Chuyên Nghiệp với Figma từ Zero đến Master',
-    category: 'Thiết kế',
-    thumbnail: '/backgrounds/tech_02_uiux_creative_studio.jpg',
-    price: 169000,
-    originalPrice: 550000,
-    registeredCount: 920,
-    rating: 4.9,
-    rank: 9,
-  },
-  {
-    id: 201,
-    slug: 'fullstack-nextjs-spring-boot-chuyen-nghiep',
-    title: 'Fullstack Next.js 14, React 18 & Spring Boot 3 Chuyên Nghiệp',
-    category: 'Lập trình',
-    thumbnail: '/backgrounds/tech_05_modern_developer_desk.jpg',
-    price: 199000,
-    originalPrice: 650000,
-    registeredCount: 890,
-    rating: 5.0,
-    rank: 10,
-  },
-  {
-    id: 231,
-    slug: 'luyen-thi-ielts-cap-toc-tieng-anh-di-lam',
-    title: 'Luyện Thi IELTS Cấp Tốc 7.5+ & Tiếng Anh Giao Tiếp Doanh Nghiệp',
-    category: 'Ngoại ngữ',
-    thumbnail: '/backgrounds/01_thu_vien_hien_dai.jpg',
-    price: 189000,
-    originalPrice: 600000,
-    registeredCount: 840,
-    rating: 4.8,
-    rank: 11,
-  },
-  {
-    id: 212,
-    slug: 'photoshop-illustrator-chuyen-sau',
-    title: 'Trọn Bộ Adobe Photoshop & Illustrator Thực Chiến Cho Designer',
-    category: 'Thiết kế',
-    thumbnail: '/backgrounds/tech_04_digital_creator_desk.jpg',
-    price: 149000,
-    originalPrice: 490000,
-    registeredCount: 780,
-    rating: 4.8,
-    rank: 12,
-  },
-];
+const BEST_SELLING_COURSES: Course[] = [...ALL_COURSES]
+  .sort((a, b) => b.registeredCount - a.registeredCount)
+  .slice(0, 24)
+  .map((c, idx) => ({
+    id: c.id,
+    slug: c.slug,
+    title: c.title,
+    category: c.categoryName.replace(/^Khóa học\s*/i, '').slice(0, 20),
+    thumbnail: c.thumbnail,
+    price: c.effectivePrice,
+    originalPrice: c.originalPrice,
+    registeredCount: c.registeredCount,
+    rating: Number((4.8 + ((c.id % 3) * 0.1)).toFixed(1)),
+    rank: idx + 1,
+  }));
 
-const CATEGORIES = ['Tất cả', 'Lập trình', 'Thiết kế', 'Marketing', 'Ngoại ngữ', 'MMO', 'Văn phòng', 'Media'];
+const CATEGORIES = ['Tất cả', 'Công nghệ thông tin', 'Thiết kế đồ họa', 'Marketing', 'Ngoại ngữ', 'Kiếm tiền Online & MMO', 'Tin học văn phòng', 'Dựng Phim & Nhiếp ảnh'];
 
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 

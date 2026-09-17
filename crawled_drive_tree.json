@@ -1,0 +1,1856 @@
+[
+  {
+    "name": "0. Đọc hướng dẫn trước khi học",
+    "id": "1SMu-F5aQTllvxxa16SH_443F7cLZd65U",
+    "children": [
+      {
+        "id": "17l4QcgHHVPkhnMoe8pacH0Te7xtAcFVG",
+        "name": "Sử dụng thanh tìm kiếm trên drive để tìm kiếm dúng các khóa học nhất.txt",
+        "mime": "text/plain",
+        "is_folder": false
+      }
+    ]
+  },
+  {
+    "name": "1. Công nghệ thông tin",
+    "id": "1_zvtConf6gh-g6Hgj2S_ZP83FSeKFG43",
+    "children": [
+      {
+        "id": "1FP2X7ic80XwafCEDZEL2VQnhurdQ46_A",
+        "name": "0. Vibe Coding",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xKuSs_Z7PVezCkHduVyaOcEOPgmSKtxj",
+        "name": "1. AI Automation",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xNlIZl7KTVExXlX-ETyThjOyMapg2IKL",
+        "name": "2. Backend",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1pQS7l2nEtlyR0qSYNooDAYTZmxHcGb4a",
+        "name": "3. Blockchain",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "19GB8VrW4-yzUsTuaxJBGESO5p_41M3u9",
+        "name": "4. Business Analyst",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1j_ety2rHFH1qu8i6DKhd3RBWn8I86Sil",
+        "name": "5. CCNA \\u0026 CCNP",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1LdT16nSTwIJvEef8ljWDGkMpqGfIkkpa",
+        "name": "6. ChatGPT",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1HUz9ptK7_twK1CyOXVW3VpgHEOgr6Wjw",
+        "name": "8. Cơ sở dữ liệu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "10OHQ8Fnb7oQ79UQSCJDynlfi6uBXZnjV",
+        "name": "9. Cấu trúc dữ liệu và giải thuật \\u0026 thi đấu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1o7jypFxxzbSViAe7XWfO1xt-BkygRHGA",
+        "name": "10. Data Analyst",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "10MNciXqBi5iUMpAhbcpR18ixB5unVn5I",
+        "name": "11. Data Engineer",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "17EE_jJD_CcN3FlOKfDSWGcpF7atgYhFd",
+        "name": "12. Data Science",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1AzdZLP5Dn_W0PROl_qBQqttfueI5F6SZ",
+        "name": "13. Deep Learning",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xky6BaB6kwwy3mmublg1gJkvJGczRShM",
+        "name": "14. Devops",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Vyql_TEX2gA5nUCaKL8dgec6lZqBmovo",
+        "name": "15. Frontend",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1HuloW3xh6xqYUmnxxpZEoQaDvyY3CAxh",
+        "name": "16. Linux",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1jF6pWPrXTBvNt06ZmL0syEAII0vGJJD7",
+        "name": "17. Lập trình Game",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1IFv2Vv9vnA2Uy-9CWyN63BfZOnuCeyAb",
+        "name": "18. Lập trình hướng đối tượng (OOP)",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1XXPsYu6stkoqRwB5SPbM5K-UuGHOISkm",
+        "name": "19. Lập trình Mobile",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1QfljTuivBXXTXZCbO-TxcatuY4Xq62ig",
+        "name": "20. Lập trình Nhúng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1NaTWcRb4uiM3I189Yl0JAS93OmYMm_NX",
+        "name": "21. Lập trình Web",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Waq6tbwxhC-i3qA1l3D-tdk-sCn_LdVi",
+        "name": "22. Machine Learning",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1MOBojHSftIkkjrOSogHm4z4LmI_MQu4a",
+        "name": "23. Ngôn ngữ lập trình",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1V2u7KU1ghrw64wTfzXmehvsIHvg3sIjE",
+        "name": "24. Power Bi",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1-5WXvT3ybn9iiuKoULm2fIdthUrqQE1p",
+        "name": "25. Tester",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1uVaqCWmFPFcE8UtlKloOI2EkeOBUrHch",
+        "name": "26. Trí tuệ nhân tạo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ffYl9rXnv1IQRmLo6NXE0D7xXOyysL_W",
+        "name": "27. Khóa Học CNTT Khác",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "2. Dựng Phim và Nhiếp ảnh",
+    "id": "12BKneKYbNZFjs4z4KJytVSaEQ0E_aP8k",
+    "children": [
+      {
+        "id": "1MIFgBeXvqfSDJzv6dii0Wil0FY4sFcwW",
+        "name": "1. Animation",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1QSzC8MaPAIPUatmvGQjGhwE1rMU9yfeI",
+        "name": "2. Blender",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1f2qSsrYduPonL5V-wtobFSa6PWnh1Jg_",
+        "name": "3. Chỉnh sửa ảnh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Ca7to-HP0Y6qM4rPCUPlC2gpbN2G5N68",
+        "name": "4. Chụp ảnh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ZHWdfVmkPZgPls8S_ymsgRgU9Ql1MTEU",
+        "name": "5. Dựng phim",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Fdk7HbY16SGX0nOiEWJjw5LoWr3TyLNX",
+        "name": "6. Dựng phim \\u0026 nhiếp ảnh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "3. Đầu tư",
+    "id": "1fysE4PrXld6tVGpnR3QGLztTiGlzq4Ir",
+    "children": [
+      {
+        "id": "18RJsfUi1Wm1jSmHtG5_4p6Nkv6nPtzbz",
+        "name": "1. Chứng khoán",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1-lpS5KcWE2Dh_e7aPRKjZBe28UMFvPuz",
+        "name": "2. Crypto",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xLnYcPOuzSHLf18K3RKN9lJs2bQjZd2i",
+        "name": "3. Forex",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "17cn_4MXDpo7a4qe56OxUaGdN--IiLsEW",
+        "name": "4. Khóa Học Cập Nhật",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "4. Kiếm tiền & MMO",
+    "id": "14dWz8nNw0MQLfP3tbx6PS06WB5af0i0O",
+    "children": [
+      {
+        "id": "1K9zZGNGoznrrpswZRP4MendQDHKMN0q9",
+        "name": "Cách Bán Hàng Trên Etsy Từ A-z Kiếm Tiền Online Với Vốn Nhỏ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "11J72GP82ml3scypPYbKgnV-jZjMibIXb",
+        "name": "Chương Trình Money Master Mind Cùng Nguyễn Tùng Sơn( Sơn Piaz )",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1IaCo0BdWN6axRC-8NiHcwJqXYPzQBV6k",
+        "name": "Combo 3 Khóa Học Làm Chủ Youtube \\u0026 Ai Từ A-z Cùng Bagi Academy",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1YK3IHaU-kP0exlllT9_C4P8eXRp2hrxt",
+        "name": "Full Combo Khóa Học Hoàng Mạnh Cường",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1gef7vsIjyP7EDKPrCiGDNNbs7J0EAbi8",
+        "name": "Khóa Học Affiliate Success Mới Nhất Cùng Khởi Nguyên Mmo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "158MtyhABrVeS_0wPe0u9Hqn-QdG0MMjG",
+        "name": "Khóa Học Bán Content Youtube View Ngoại Vi Đức Gấu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1mF-q9hOU4JidnddUirsx_-egSrgTnoOT",
+        "name": "Khóa Học Bí Quyết Kiếm Tiền Trên Youtube Cùng Vương Mạnh Hoàng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1BZGZxNjVFc6z40H-IexS7vGps5tZ8EZy",
+        "name": "Khóa Học Black MMO PRO – Tự Động Hóa Quy Trình Kiếm Tiền Online Cùng Hoàng PM",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xGLLmgeqF9wGJTNmv9lWhCjiptQmxT3C",
+        "name": "Khóa Học Cày Đơn Affiliate Với Sàn Shopee – Tạo Thu Nhập Với Tiếp Thị Liên Kết Trên Sàn Tmđt Có Traffic Cao Nhất Việt Nam Cùng Eric Trần",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "11TBZc6XP714m_cxF9sPpoaTu23Kjjaac",
+        "name": "Khóa Học Copywriting Trương Phương – $1000 Package Mới Nhất",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ZDwXta0mBDwf7c95EcWBsON_TR3efiE4",
+        "name": "Khóa Học Dropship Pod Brand Builder Mới Nhất Cùng Lâm Work",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1nlRu0CdeUNm4PjX2KT49qLB1a4vPOeje",
+        "name": "Khóa Học Editor Launchpad 2026 – Trở Thành Một Video Editor Chuyên Nghiệp Cùng Kevin Mach",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1pqTQ0ABp4I3qqaurHRn0mMPonYCpm-14",
+        "name": "Khóa Học Geolayers 3 _ Làm Video Hiệu Ứng Vẽ Bản Đồ Bất Động Sản",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1fZQckET-mswzHcRVRrP1AnTBfdCTBSQF",
+        "name": "Khóa Học Hướng Dẫn Bán Hàng Trên Sàn Shopee Từ A Đến Z Cho Người Mới Bắt Đầu – Linh Việt Vũ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Mp2qsDn6JyOvD6ZBHkvgJOloAf6e_abX",
+        "name": "Khóa Học Khai Phóng Sức Mạnh Chatgpt – Kiếm Tiền Bùng Nổ 2023 Cùng Nguyễn Phước Vĩnh Hưng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1KUcan4AGvVslhcQK8CuYJfg4MIjcDnVs",
+        "name": "Khóa Học Kiếm Ngàn Đô Với Dropshipping Trên Amazon Cùng Vương Mạnh Hoàng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xDZa18LYt0IpN7sCicDnw3I11aN_rH5h",
+        "name": "Khóa Học Kiếm Tiền Với Video Facebook Cùng Tô Hải Đoàn",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1jfXdDyLI-BtqiOrUx8fmwpSmv5KHzm6G",
+        "name": "Khóa Học Kiếm Tiền Với Youtube ( Youtube Adsense ) Cùng Tô Hải Đoàn",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1WJIkV5mSxb1UJD-uhVWa-T5XoAgN25XD",
+        "name": "Khóa Học Kiếm Tiền Với Youtube Ai Mới Nhất Cùng Văn Thế Mmo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "138l7icERzpEyhYtsrcS0oUNdjmQmKiSo",
+        "name": "Khóa Học Làm Video Ai – Tự Tin Xây Kênh Kiếm Tiền Cùng Khởi Nguyên Mmo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1PWtq2cwj3TzuW2fvvnXaA4MPXpELm8vD",
+        "name": "Khóa Học Làm Video AI Bán Hàng \\u0026 Affiliate Đa Nền Tảng Phan Đức Nho",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1rnbyCY8CKwLQsze-l9zjPTlQ0ywDwl-o",
+        "name": "Khóa Học Làm Video Giới Thiệu Bất Động Sản Cùng Thiên Minh Creator",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "16zAxyjYfnyDAn8SLMKQOXN1B24P6x9L9",
+        "name": "Khoá Học Làm Video Tin Tức Nước Ngoài Kiếm Tiền Trên Youtube Ngoại",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1H1v3D9_GIJoH4Tmpwd2IkA2yWt7DO4TP",
+        "name": "Khóa Học Lò Luyện Affiliate – Mr. Thương Chia Sẻ (Thương Bùi) – CHƯƠNG TRÌNH COACHING THỰC CHIẾN_ BIẾN TƯ DUY THÀNH TIỀN TỆ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1iW1ZnOp_aM5Y8LOF8S6mJlJhd8rHCoO3",
+        "name": "Khóa Học Master Youtube Infinity – Biến Youtube Thành Cỗ Máy Kiếm Tiền Của Bạn Cùng Đào Thanh Tú",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "11bzOLsE7R3kkkNS-9NtYGgwQI0W7ToO-",
+        "name": "Khóa Học Money Master Mind 2025 Sơn Piaz – Bắt Đầu Hành Trình Kiếm $1,000 Đầu Tiên Với Affiliate X Ai Với Lộ Trình Rõ Ràng, Ra Tiền Ngay",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1oDM4SZV5KZBVFSGXbGwhKkfgWuqkNU3H",
+        "name": "Khóa Học Nghề Content Premium – No Viral No Money Premium – Thực Hành Xây Kênh Toàn Diện Cùng Đức Dương",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1wz4Pv0scUnvUUymY2Iqvawnei9tjkNls",
+        "name": "Khóa Học Paid Traffic For Affiliate Hoàng Nam Mmo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1uSBNzyXIaMuhEiJ3xtHjPxIXIyJaf816",
+        "name": "Khoá Học Pod Từ A – Z Live Training Cùng Danny Nguyen \\u0026 Printbase",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "186JE8oas-U5cBid5KJ5j2GCRgiObmHRO",
+        "name": "Khóa Học Print On Demand (pod) Việt Nam Cùng Ngô Thành",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1EjSzin9zR3k9QYR4BCi1piOSpdULg7sb",
+        "name": "Khóa Học Quảng Cáo Youtube Ads Funnel + Mastery 2023 Cùng Nguyễn Tân Kiệt",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "11uxr3V973wTvEizdSB_TLIJedb3Gi8_c",
+        "name": "Khóa Học ROI Freelance Minh Xin Chào 2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1vNMxlWpekR1QoV7y1OTBFuYAbTqodnkU",
+        "name": "Khóa Học Shopee Super Affiliate Tạo Thu Nhập Đều Đặn Với Tiếp Thị Liên Kết Trên Nền Tảng Shopee",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1DJ9U4jtDGWJhLuFLs8Qas6a7gzg0FwcH",
+        "name": "Khóa Học Social Media Starter – Qcc Mastery Hub Mới Nhất",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1JwtxAIUu9gnXDD_M57PGFFaEvTz1PcKz",
+        "name": "Khóa Học Tạo Và Xây Dựng Kênh Youtube Từ A - Z Cho Người Mới",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "18idXOVLWpyvM0W0gWA8haiVozvWYvj33",
+        "name": "Khóa Học Video Editor [ Đạt Được Mức Thu Nhập $1000_ Tháng Trong 90 Ngày] Cùng Lợi Đỗ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1cnAja3F1k8_Puy3P156RPJc7Fo9dTO5u",
+        "name": "Khóa Học Viral Builder 2025 Cùng Nguyễn Đào Trung Hiếu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1galqAdwBq49BTv-AAKno8dCRslkuZvK_",
+        "name": "Khóa Học Your Internet Redbook – Kiếm 1000$ – 5000$_tháng Cùng Dươngk",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Yru3Eb369VXnoDEx62rGzQsTH-SpuqHz",
+        "name": "Khóa Học Youtube - Chiến Lược Ai Content \\u0026 Kiếm Tiền Youtube 2025 - Vũ Văn Thắng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1sW8ojaxUDOFXoiN9VIcxgmWKsoxsCib-",
+        "name": "Khóa Học Youtube Ai Domination Membership 2023 Cùng Ninh Đôn",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "17EECkvgM3f7LiYJtMv_6ZTFEyanUiloD",
+        "name": "Khóa Học Youtube Business Model Cùng Tô Hải Đoàn",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1YhIrRfXJMNXqXwozloyxowTIU99ZYvEC",
+        "name": "Khóa Học Youtube Hải Nghiêm K10 Mới Nhất 10_2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1oHxx3ao2jR2Nt2cd7VGx3nvB9YYVDpf1",
+        "name": "Khóa Học Youtube Total Success Huân Academy Mới Nhất – Kiếm Tiền Từ Youtube Content Và Bán Content View Ngoại",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1XsKxzzoIBEQeoVe63pPxHY4uLHwNxqrV",
+        "name": "Kiếm 100 Triệu Mỗi Tháng Với Affiliate Và Ai Cùng Lê Thanh Sơn",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1aZ5qz2jB0nIpG3p9UP2DlGMSqxUkbdeV",
+        "name": "Money Counts Live - Xây Dựng Hệ Thống Kiếm Tiền Trên Internet Cùng Phạm Thành Long",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "5. Kinh Doanh Và Khởi Nghiệp",
+    "id": "1saMGFwyW_xeDmULE5uMGr3m9RZ99HJJy",
+    "children": [
+      {
+        "id": "1Us6TZrpLVOqdoS1UOxWgdEGRT9J_Cr5X",
+        "name": "1. Bán hàng online",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "115SVfNFysC_Wb7K6WLUFxNcRXl5MrQF2",
+        "name": "2. Chiến lược kinh doanh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1j6EcTq6i_0HQN1ARdd1NpNMBN4q9y0QU",
+        "name": "3. Chốt sale",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1hMRtxv6EFnUIGEX-6bdwNpVd4yu3JRvx",
+        "name": "4. Kinh doanh \\u0026 khởi nghiệp",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1kOi4LnUgaeYkpbm4AC86J1AMYOYdrEGB",
+        "name": "5. Shopee",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "6. Khóa học Tiktok",
+    "id": "1yC2yMZ2i4OLuSNEk8GK-G1B7x43aG-M2",
+    "children": [
+      {
+        "id": "1mbTZiTPumStXssDvHfwIpaJCcE6aTNlz",
+        "name": "1. Khoá học Tiktok",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1wYfey_wbQO45knccunVueMmShDYSNSjZ",
+        "name": "2. Khoá học Tiktok",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1g9Dr0MhdAlRJjJLA31K0H2ml93l2jy0b",
+        "name": "3. Khoá học Tiktok",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1SWg91_FeGEMokMsbYEam_kSTteNA5mY-",
+        "name": "4. Khoá học Tiktok",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1tL5hCK-KAu_mTWzyuCVBvxaLKvpyjgsa",
+        "name": "5. Khoá học Tiktok",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "7. Kỹ Năng Mềm",
+    "id": "1phzKnaK2mEzv5MMtBfjshyWZ2fHp8-KA",
+    "children": [
+      {
+        "id": "1x7A_nPATYHmUtfHuEMOz3eRTnRxZMcdz",
+        "name": "1. Kỹ năng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1v3XFVbZ4vvA7oSWS0A9eOZFozx00cJYP",
+        "name": "2. Kỹ năng đàm phán",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1g_Joan9DZ1qNcqfMaEb2-bAqiLflCtiJ",
+        "name": "3. Kỹ năng giao tiếp",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1dpp1yKaxn4T0F_lTX7jSfyF_jqDy_dpq",
+        "name": "4. Kỹ năng lãnh đạo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "8. Marketing",
+    "id": "15FhakgWogaWohrNWK_NAMooWfTxQKYnB",
+    "children": [
+      {
+        "id": "12tLwQtjzRa81UhGmhjF1qvabaYTYmTa9",
+        "name": "1. Affiliate Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1zs94b407NfC7ArsILsGir0HEH-eppFfp",
+        "name": "2. Content Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1pDX8HrVUSSDs1fHR5SQ2UaOmhboWbdID",
+        "name": "3. Digital Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1aZnDdm9Hpck34G8okldEdh_WEDNLTUI8",
+        "name": "4. Email Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Awn1JGEr9zpv56zRCYi3fzWECMJCU-MU",
+        "name": "5. Facebook Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1pxfDhs_Zv_PTt8dRIMfZ1netyW3eAi65",
+        "name": "6. Google Ads",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1-6NXd858JqOo2dCVVoGWfUE-6nyBONau",
+        "name": "7. Quảng cáo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1U3J3d1JtFfFxiUANfe4FNrnwDOMvwY08",
+        "name": "8. SEO",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1iGiq99lqa9p_yocae_fQN17ZBtmA00rF",
+        "name": "9. Xây dựng thương hiệu cá nhân",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1G2U7UhgC6eVvmNzA3XLdRARu99pmADo6",
+        "name": "10. Xây dựng thương hiệu doanh nghiệp",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Wa0-nqTdZ-9jJDJWIcogihK-A1k3v0pt",
+        "name": "11. Zalo Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1FU3mlIZPQwWwZ_nCst2qVmlh7cIegvsp",
+        "name": "12. Khóa Học Update",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "9. Ngoại ngữ",
+    "id": "1zlXmz9K2KvQUL0pDJZyQiFfCrEZ3Z7Nq",
+    "children": [
+      {
+        "id": "1oAlejWJV19-UAIuakcwXl5GlF05Ramle",
+        "name": "1. Full Combo Khóa học Ielts",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1fjJ0U0SbL9xppaziSuMWGmTCcSv9AwMV",
+        "name": "2. Full Combo Khóa học Toeic",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1iBQLp31FmZ7ELOccvuYpUtHIG_0Ddgig",
+        "name": "3. Tiếng anh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "16d37tnSofKwdpsHq6Zlkrad6a3-2mK0j",
+        "name": "4. Tiếng Hàn",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "19GJqSJxxz7QcU4ADM1620kkwZcEVhQfW",
+        "name": "5. Tiếng nhật",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Nvz0B0eT8h4m6nv4dXQfKohDqfeJLf6E",
+        "name": "6. Tiếng trung",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "10. Thiết kế đồ họa",
+    "id": "1C0B2cJcepibpnI2pYe3rfgTflKHvzfP4",
+    "children": [
+      {
+        "id": "1TOQfq4DzVHQ2wDqRipnlTqG7P0KqVSRa",
+        "name": "1. 3DSMax",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1QrGXWyKO89MIOU3X9-fmbyKhupq4iljz",
+        "name": "2. Adobe Premiere",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1S8HMwFesG_Z_wwVNeKRlHqcQg9vvryAI",
+        "name": "3. After Effect",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "18QP0RO4Ux75_YPbzVf_am3Fxj29vbDgr",
+        "name": "4. Autocad",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1eEPcibu2CKLOBFQRMTTJVRnizLYM0Zut",
+        "name": "5. Canva",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1PpWL4--wPmh2kVavZgsbUl4XwpYAkwkA",
+        "name": "6. Capcut",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1OxkNhMOisx6xO2SSnKzmHOAG7WFCdq4T",
+        "name": "7. Digital Painting",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "12j2mCV6TwKwnE8PJ1GK7_P4Kw3mg6hxr",
+        "name": "8. Figma",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1zOx4r8R2V64pjybLzmoEdFGWOWDgt9J9",
+        "name": "9. Illustrator",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1U24T0YZdTKYwjGubj-xsstKIC2HH403-",
+        "name": "10. InDesign",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1P8vybHBXleMx8R5yhTL9WkV_lUuISYXo",
+        "name": "11. Khóa Học Cập Nhật",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1gx8tJrH1U67vnS-38ULeSOReMqRosJ_6",
+        "name": "12. Photoshop",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1DOpBaso_XQPsIkJ4gW4FBLerDLnZvAvu",
+        "name": "13. Revit",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1vgGocuOR82VBsO7e_SCreZp7Zd0eRHWX",
+        "name": "14. Sketchup",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1WZYc-DyvK0aVy-yq7RjL6EKQ0NSpsjw4",
+        "name": "15. Thiết kế Logo",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "16lia2dlHUnjJAj8OoSMxo0JlHgKItbam",
+        "name": "16. Thiết kế và xây dựng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1F8fn503mNrmPkiJH1MJNrEOK3BeDeup6",
+        "name": "17. Thiết kế đồ họa 2D",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1q0bStr27nUdXl0lx8CweSs9piYBg6EsP",
+        "name": "18. Thiết kế đồ họa 3D",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1YMJMB0hZA86QSohtEtjnlgu1zY-Fts_x",
+        "name": "19. UI_UX",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1MnozW9iQUr8sYREvmdobxb_9sevVq2kA",
+        "name": "NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png",
+        "mime": "image/jpeg",
+        "is_folder": false
+      }
+    ]
+  },
+  {
+    "name": "11. Tin học văn phòng",
+    "id": "1i5mKBzxLUa9Q6gJh6MQatvd6GBpINfd_",
+    "children": [
+      {
+        "id": "1VLKp6VOaeBij9Inl-E5Zl7awjvWQBoUD",
+        "name": "1. Excel",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1aGbecEbchxxtCfpIg7Ml5c-8CHQ0zgvH",
+        "name": "2. Kế toán",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1HbG8IuppdkHHaXxJiWV-bMsiTE2YB9iF",
+        "name": "3. Power Bi THVP",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1gWmgr4uYXlZ8JXEj9EeYf-fziaUpcwhX",
+        "name": "4. PowerPoint",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "17osNsmFXpR3mUFk5Ssb01K8HekFxEU4M",
+        "name": "5. Word",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1TWNDSYWSD65SHGN3SNxrQTa0jy6uy4Pz",
+        "name": "6. Khóa Học Update",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1KmIm4Yl80A_sUTu_wHs6z8vp1dqzCf3Y",
+        "name": "NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png",
+        "mime": "image/jpeg",
+        "is_folder": false
+      }
+    ]
+  },
+  {
+    "name": "12. Khóa học khác",
+    "id": "1iedB8mCgN_z0RcqPbSvy2c-rmISUwnBK",
+    "children": [
+      {
+        "id": "19tQAXgUiYgA01CeS_w667YJ_ovnhB9qr",
+        "name": "Google Data Studio Cho Người Mới Bắt Đầu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ojfV4ma-rhsakh9T-2F5VbMlIoRfxIGT",
+        "name": "Khoá 01. Right Man Người Đàn Ông Đích Thực",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1sQGdF1K1u7nkAgbiT4OBTViQ5K9VJ5Yv",
+        "name": "Khoá Học Chabot Messenger Facebook - Marketing Với Chi Phí 0 Đồng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1h0rD3_6MYCtTFzzG2T8lsV-5EKAsImC7",
+        "name": "Khóa Học Copywriting Viết Sao Để Thuyết Phục Người Khác Muốn Đọc Cùng Nguyễn Đình Minh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1e0yVXY2cJ4qsV-JG-b38EtUjGzpqBQ8F",
+        "name": "Khóa Học Đo Bóc Khối Lượng Và Áp Mã Đơn Giá Từ Cơ Bản Tới Nâng Cao",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1bmBlzM5KYdkTRCh7QvOfssuaQyFZWNFc",
+        "name": "Khóa Học Đo Bóc Khối Lượng, Lập Dự Toán Đường Bộ Từ A Đến Z",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1lwm9c9sU7pIuSyynq8E312fJd10yF_bz",
+        "name": "Khoá Học Fingerstyle guitar cho người mới bắt đầu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "15nkKeQKSWyhCvuS6wpAzkxx-BwNfF4TB",
+        "name": "Khóa Học Kích Hoạt Tài Lộc 2026 Cùng Phạm Minh Hoàng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1OsXIZjIWmE7-3a3cr0GXZJi38iFEAgSB",
+        "name": "Khóa Học Kiếm Tiền YouTube Bằng Tạo Bài Hát Với Suno AI",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Z8aoqCCA3lVltEd3nAohO4jYFVg-gqwY",
+        "name": "Khóa Học Nghệ Thuật Cắm Hoa Phong Thủy Và Hiện Đại",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1_X5HGecFnE8ewCWQQUniY9a4JLG1TZKn",
+        "name": "Khóa Học Nhân Sự Tổng Hợp – Trở Thành Chuyên Gia Nhân Sự Trong 16 Giờ Cùng Gitiho",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1M1lI1yxDl60Caa11NgKQDN2SmPYpWY9q",
+        "name": "Khóa Học Nhập Hàng Trung Quốc Thực Chiến Hường Maruco",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1RordYCmTFFxfrv42oAqgCkx0mWrqYJy3",
+        "name": "Khóa Học Phong Thủy Căn Bản",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1LLv0Dxwc_QU6ByWCmE7iYEYdH7F-WBdr",
+        "name": "Khóa Học Phong Thủy Cơ Bản",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1HL_zhPeaNIH9QRm72J9-eFhHe7pWaTKs",
+        "name": "Khóa Học Siêu Kiếm Tiền Youtube Mới Nhất Cùng Huân Kỷ Luật",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1mAjZmgHlYhpXuHPyOPkX2213VwyLxFRx",
+        "name": "Khóa Học Tuyển Dụng Thực Chiến Cho Người Mới Bắt Đầu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "14SGna26S_22fJ6ylnmocu6udGXyol__B",
+        "name": "Làm chủ Chatgpt từ cơ bản đến nâng cao Unica",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1q8x6Wny54EAKif2ODMWRYCFHxQ7yw9Ip",
+        "name": "Magic Box crypto - 8xtrading",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1zUGGf_7sXPvRguEPwXy-tVS6pDWAWNFk",
+        "name": "Tuyệt đỉnh ứng dụng ChatGPT",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1VJ8JuyFAbpLIh8IvBa-wldG2qZPAnHTC",
+        "name": "NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png",
+        "mime": "image/jpeg",
+        "is_folder": false
+      }
+    ]
+  },
+  {
+    "name": "13. Khóa Học Update 2025",
+    "id": "1cL3S9WrKnu8EJ9l-Ae0IbaCT0237TPLN",
+    "children": [
+      {
+        "id": "1jbYSu5ZInSpolvTXN9pF8G_xxCF6WmpS",
+        "name": "109. Lê Chí Linh - Xây dựng thương hiệu bạc tỉ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1bBLb2YSyFehO5OD3cBZ9WPvdQgtVhGcf",
+        "name": "Cấu Trúc Dữ Liệu Và Giải Thuật 28tech (2024)",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "11MgyZvu5slqre1LMg1w7HEBXoi0J4Xza",
+        "name": "CEHv12",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "17lYI7KwsgEvlalOtDfyliayFreB5YMdg",
+        "name": "Chụp Ảnh Và Chỉnh Ảnh Điện Thoại Online Cùng Sam Nguyễn",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1dNLhmIy-hLZy2j-B5qNaRz6s6bT9NSoZ",
+        "name": "Chương Trình DAS Coaching Cùng Digital Academy Secret",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ugD5FLUAnPMzDdR_JTlK7M35qIOfz1M5",
+        "name": "Combo 2 khóa Ccna \\u0026 Ccnp Cùng Nguyễn Phú Thịnh -",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1CrcWZ5M1JaxxjHXY1DlB9vUg9D7el52Z",
+        "name": "Combo 2 Khóa Deep Learning For Computer Cơ Bản Và Nâng Cao Vision Cùng Việt Nguyễn Ai",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1gH0ukWBjCT30zIaJXC_Oi1Ir3Y1RruHI",
+        "name": "Combo 2 khóa đầu tư Chứng khoán Quang Dũng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "12F0GqhYvI04GPSVjHTqKAsBrOccxP8f6",
+        "name": "Combo 2 Khóa Học Nguyễn Tuấn Hà - Vinalink",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1v_KBktj6QEXuRSFggzgztSN_7gRTmogX",
+        "name": "Combo 3 khóa Digifox",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1L-1JYqBPC4k3hgeReqtEDzdLphjWT3vK",
+        "name": "Combo 3 KHÓA EXCEL BlueSoft",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1n31ZUXx3tDDgSI90vDv3v03gwd0TCu4b",
+        "name": "Combo 3 Khóa Học Seankang Mvp Đầy Đủ Mới Nhất 2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1IuUYIx-8lD_O8rd5Yqlf83X3C-fMke2z",
+        "name": "Combo 3 Khóa Học Tiktok Master Kinh Doanh Thực Chiến Từ Số 0 Cùng Bạch Cảnh Kỳ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1GoktFAWMX6DVwuJqAfA9E-Ov40O6UQLZ",
+        "name": "Combo 6 Khóa Topclass",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1BC5Hj33SoPCBuhnI5NHweqqbweEVRCYh",
+        "name": "Combo 8 khóa ACCA",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "19_taJvwvNGeZlw6PEen-oZoYKVBLLsCM",
+        "name": "Combo 24 Khóa Học Vẽ Mỹ Thuật Bụi",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1kgkasvil0zp9XeyMgqYoh7JHrKgJcBDB",
+        "name": "Combo Khóa Học Azfin",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1TT0YsO91XRA_zN-zYLpDX_EatTDx-wFH",
+        "name": "Đột phá doanh số Studio - ảnh viện chụp ảnh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1B3UBZH3woywesw1QINzgSbH-wjsxyS8f",
+        "name": "excel-for-analysts",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1LRpJ2NDy6OhmCJEM8_COBikBS-N8izKr",
+        "name": "Figma Variable - Các kỹ năng nâng cao trong quản lý hệ thống",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "19mTnTSIQqo9t6PoGdkHzqVJZ9O_U_9lw",
+        "name": "Githo Tin Học Văn Phòng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ob_tWFBB_C7bqCKGvyeABTTPgMN-OhHf",
+        "name": "Khóa học - Bí Mật Dark Post trong Quảng Cáo - Lê Tiến Đạt",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "16SBHulbzKxy2KUROeMvkjuNzb2TDN8bl",
+        "name": "Khóa Học 10x Ai Automation Mới Nhất Cùng Hoàng Mạnh Cường Topmax",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1IqVBuncKv8l8PEtkKP6B_3piYNqLWSoR",
+        "name": "Khoá học AI làm video xây kênh Youtube, Tiktok, Facebook",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1GnDGsffXWj2yIKm_YOlBiy3c7ccNeP0B",
+        "name": "Khóa Học Basic 3d Game Vfx With Unity Cùng Vũ Đức",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1UIaq_UBbH0GKgc1zy1S5Ld0B8wXfNmcp",
+        "name": "Khóa Học Branding Strategy – 6 Bước Cất Cánh Thương Hiệu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1evj6Ov5y1zw66zDBngO1-3tzD45Cdtxw",
+        "name": "Khóa Học Cơ Sở Dữ Liệu Và Sql Cùng 28tech",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1PqQjxsBy4lWawQ_xk965VKAeLf_72-Wu",
+        "name": "Khóa Học Deep Learning For Computer Vision Cơ Bản Cùng Việt Nguyễn Ai",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1TlZObO9IqX4kvh8jcvAXpSdflkPhFxor",
+        "name": "Khóa Học Digital Foundation Mới Nhất Cùng Tomorrowmarketers",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xWQhEFQ6facPZ8JZsYD3e5P1I-LVPtbU",
+        "name": "Khóa Học Digital Marketing_ Từ Nền Tảng Đến Chiến Lược",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1_RR3Odn48C16oh1w6gYaPk9jX4QKg0nw",
+        "name": "Khóa Học Đào Tạo Sale B2b Chuyên Nghiệp Dành Cho Nhân Viên Kinh Doanh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1pii5RcKnfYTk8vVb8nTsOJ8b7SauahKT",
+        "name": "Khoá Học Đầu Tư Theo Chu Kỳ Cùng Davinci Academy",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1P78IGpPr1yA3bqnonFDjvetj8ldBtcUg",
+        "name": "Khóa Học EcomDesign Thiết Kế Gian Hàng Shopee 2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "19GHP4a2ASZITqBdWgku3eK13Yl9fkqgF",
+        "name": "Khóa Học Figma Prototype Từ A-Z Dành Cho UI_UX Designer – Telos Academy",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "18TiHORGVChPBMMdTEwc3HxQ_b3UY3bka",
+        "name": "Khóa Học Kế Toán Thực Hành Lập Sổ Sách Hộ Kinh Doanh 2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "18TEu5slJVrZSbHp5WgIPu47vfcsWd1sJ",
+        "name": "Khóa Học Lập Kế Hoạch \\u0026 Phân Tích Tài Chính (fp\\u0026a) – Finance Professional",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1i-JFX1hNvEaV7AdD1zpZ1J91PLdQmUPP",
+        "name": "Khóa Học Lập Trình Flutter Từ A – Z 2024 Cùng Trung Tâm Codefresher",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "14grIn_6WRMcudR-Fuw2oLnPir4VYVXTb",
+        "name": "Khóa Học Lập Trình Iot Chip Esp32-idf Cùng Deviot",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1iPUYarFvf3bzenkI5KxFH56e6DP8NO5v",
+        "name": "Khóa Hoc Luyện Thi Chứng Chỉ Tiếng Anh Vstep Tiếng Anh A2 B1 B2 C1",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1qBEZ46Dm1bnfwSEYUr5FPt2fvH4eEgQ-",
+        "name": "Khóa học Machine learning (Học máy) từ cơ bản đến nâng cao",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1OP8GvxZ3Go6GoJsOTdbvxiDbJ2t3gcvQ",
+        "name": "Khóa Học Macroeconomics I (cơ Bản) – Bước Đầu Chinh Phục Kinh Tế Vĩ Mô Cùng Hedge Academy",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1r4BgVqeeYLPDNSD5aRrbYg8q-FOSnG9E",
+        "name": "Khóa Học Nền Tảng Tiếng Anh Cho Người Mới Bắt Đầu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1zcWYIuvKu0BrBIqJQeHRq2V3iYvMn56i",
+        "name": "Khóa Học Nghiệp Vụ Sales Logistics Forwarder",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1qkp7Zk-4h04cVMS95NtVP81wbsoh3Eti",
+        "name": "Khóa Học Phân Tích \\u0026 Trực Quan Hóa Dữ Liệu Với Power BI Cơ Bản Và Nâng Cao Trên",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1nnqua7VCb0ifhIhLEQonj8yQsShSn6VK",
+        "name": "Khóa Học Phân Tích Bctc Và Financial Modeling Cùng Intrinsic Garden",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1n-5mRkMn-cY38u5s-MoXTQGCXJI0ir5O",
+        "name": "Khóa Học Phân Tích Vĩ Mô \\u0026 Trading Cùng Fxdreamtrading",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ZnwFZQBk96RjoPVldVSMlxCdBb6G7_xP",
+        "name": "Khóa Học Python \\u0026 Ai Cơ Bản Cùng Việt Nguyễn Ai 2024",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1UdcxGjFk6y5cCHL7ESIR8kcCsIX0cNMc",
+        "name": "Khóa Học Thực Chiến Microservice Với Spring Boot Và Event Sourcing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1WoEpaFrOMGnrizH8qs-sRzI1NGxE2Jie",
+        "name": "Khóa Học Treasury Analysis Cùng Hedge Academy",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1F1cLoe3HcWzqlnaj-3nyLBp7_giQifN9",
+        "name": "Khóa Học Vận Hành Hệ Thống Digital Marketing Với Ai 2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "14. Quà tặng_ Ebook - Audio Book",
+    "id": "1t9QyJAuN1AiU2p4pB8gHiraEZUiqqnml",
+    "children": [
+      {
+        "id": "1BB8KZNwmDy1v4TamK7NiiinbnfaVk6Is",
+        "name": "7000 cuốn sách MOBI đa chủ đề",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1cRoN9EvXM0SXzlupCT1OTRHIsk_u6acH",
+        "name": "Audiobook - sách hay",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "17mtE2HptwyGwDQz1gCmAjt9Pf-NNGeMI",
+        "name": "Ebook",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ioYmDTR4k9TAeX2txxfExuzb3zu5dehr",
+        "name": "Ebook - sách hay",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Hsr6RUXn-BHzdA8yLyztYzO5l7nk0UdB",
+        "name": "Tổng hợp Ebook giá trị cao",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1RYwV0JPR7LvIHA3pQ7o8_q4oXVkGIFzz",
+        "name": "Kho +3000 Ebook, Audiobook đọc online.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "is_folder": false
+      },
+      {
+        "id": "1_M6CcdUaKBxTQ52ZQX7egMAc0yNIGV9O",
+        "name": "Kho +3000 Ebook, Audiobook đọc online.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "is_folder": false
+      },
+      {
+        "id": "1YJ3NqF1w5rwdu9oj4RpmfJ0GVlqA9GyG",
+        "name": "Kho +3000 Ebook, Audiobook đọc online.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "is_folder": false
+      }
+    ]
+  },
+  {
+    "name": "15. Quà tặng_ tài nguyên",
+    "id": "1c4sVDUgEhApziPBPTx_s5vCVhcQUHh-G",
+    "children": [
+      {
+        "id": "1U8avayA7CgvvfoU4ohepdOE9vKOrwIqs",
+        "name": "All Video Memes Compilation",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1E3tXK2gRDS2XfyB3-4WbGyBrqWviLgCF",
+        "name": "Bản Cài Đặt Full Adobe Crack 2021 đến 2024",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1WBAkCHKnl4i6YTdtNp7ygEFpWpYq92mJ",
+        "name": "FONT COLLECTION",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1nCXlXAMpIR9X1-w27g4LkY1d5zEicPNX",
+        "name": "Full Meme",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Tl6ci8BA7kO9ZPuvsYJVCWF0wW3JwLwY",
+        "name": "Keyword tìm kiếm background",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1x8Hrc4mT3A0uLGuRFV4LO2HnfMBWQoah",
+        "name": "Meme - Sound Effect phổ biến",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Xt3RdLaDnAMw9eDBTA4bolkJVDOnCHXH",
+        "name": "Nâng cao hiệu suất làm việc với chat GPT",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1hgxMB2VE0VOM2uleZ-Se78ewqrXZPxM6",
+        "name": "Sound Schannel",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "16. Khóa học mới",
+    "id": "1YkyMmEbUqEFKovsVma4pdoHCKfx3a8tw",
+    "children": [
+      {
+        "id": "1zlG_EKy8mwrV8hHDgAMQnjlZ3PGwyGvr",
+        "name": "1. Khóa học mới",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "19BjShSy_cB7YdqCh9dt14Igt4Dnx5EMc",
+        "name": "2. Khóa học mới",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1J8RBvEXXHqmEoL_e51Zg-Kj2wqMtpA-h",
+        "name": "3. Khóa học mới",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1PZPxac5D0N0e6jeLktZmUgvmFUh_6PHg",
+        "name": "4. Khóa học mới",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Ahq1LXgjexITaax4Ri6rQ_96cuiGq3IB",
+        "name": "5. Khóa học mới",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "17. Khóa Học Facebook",
+    "id": "1_a1iIivXvqs2kboqaI42cqxQoGQM-Sjy",
+    "children": [
+      {
+        "id": "1QdJcgDIZ89Ba3qbhevWsdjM9efv62zFd",
+        "name": "Buổi Workshop Công Thức Ma Trận Facebook Ads Version 3 Cùng Uyên Luka",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1MmLMoEy7J-DNeVahBdsj4khlrA4CcgDA",
+        "name": "Combo 2 Khóa Học Facebook Ads Cơ Bản Đến Chuyên Sâu Cùng Brandsketer Việt Nam",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1_d-cov85_Ekk2McLStTJOLmR04VEnnIr",
+        "name": "Full Bộ Khóa Học Trên",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ONi3rHqYjV9tZFvaG9yImVYIcmIutz4R",
+        "name": "Khóa Học 15 Days Master Spa Vũ Mạnh Cầm",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1ITLWOO1gF9jI-lHooJqPRHeiEoh3Wjhf",
+        "name": "Khóa Học 90 Phút Thực Hành Quảng Cáo Facebook",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "19e8THExYARdKqvmk927aboJ8pz4vvQjH",
+        "name": "Khoá Học Bí Quyết Bán 100 Đơn Một Ngày Với Facebook Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "17tAyIFPRtYyuSw-a3saxzlnzNNB2z04P",
+        "name": "Khoá Học Bí Quyết Kiếm Tiền Tỷ Từ Facebook Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1M3YiExax7ICPzAgmdPzPaCPMAnsdQ7KX",
+        "name": "Khóa Học Black Facebook Cùng Nguyễn Duy Đông Win Media",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1r6P5Yx9lcemZMIA4nDkKBIZNvkiUtb6M",
+        "name": "Khoá Học Bùng Facebook Cùng Btani",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1_78geb19SBlPPqIkx-OljyhYVExottzV",
+        "name": "Khóa Học Chạy Quảng Cáo Facebook Từ A -_ Z – Bạch Thiếu Gia",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1hrRS1d1zTXrszB1ZwqtLyDe8cn5hgXjb",
+        "name": "Khóa Học Chân Kinh Facebook Ad Break – Kiếm Tiền Từ Lượt Xem Trên Facebook Cùng Cuongug",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1GpApbttv1rM9csAEgtBUb87L_cmR73g6",
+        "name": "Khóa Học Chinh Phục Reels Facebook Mới Nhất Doãn Kỷ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1_eGrQ8wAAmVt6m1TXKXS9dIvxjUqPn1h",
+        "name": "Khóa Học Facebook Ads Căn Bản Từ A-Z",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1XJQErVQQrKdO9FbOdgd89y6WwNz1gGro",
+        "name": "Khóa Học Facebook Ads Cầm Tay Chỉ Việc Chuyên Sâu Cùng Lê Bá Tùng",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1iq0ejogfcBRipOBduQ6R_U9K8D682l1H",
+        "name": "Khóa Học Facebook Ads Đỉnh Cao 2025 Cùng Vương Quốc Huy (mới Nhất)",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1R44YZRaI2OTKc0IxOI4Rgqy2fn4Oa2Jo",
+        "name": "Khóa Học Facebook Ads Pro 2025 – Làm Chủ Quảng Cáo Facebook, Tăng Gấp 3 Doanh Số Trong 30 Ngày",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1EYu8GI4FsGxsvLy31XrM6LJS4PCbGG7W",
+        "name": "Khóa Học Fpa Facebook Ads Pro Doãn Kỷ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "12vf0EBPJLkj-IIYV6KPLQA4a-Xsov3y0",
+        "name": "Khóa Học Free Traffic Cho Người Bán Hàng Mới Nhất 2023 Cùng Nghĩa Lê",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1RIXr5SMQFKF-mmMsRfz14uHrywbNRshb",
+        "name": "Khoá Học Làm Dịch Vụ Facebook Cùng Văn Bình Channel",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1p9iyPqQ1LmBaHGsUq0vyCZR6X6IFxxaQ",
+        "name": "Khóa Học Livestream Bán Hàng Online Trên Facebook Sàn Tmđt – Mira Kiều My",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1rOGnk8k_dxp-oHxuh7lq-wQw128Nu8Kb",
+        "name": "Khóa Học Practical Facebook Ads 101 Cùng Doãn Kỹ – Donnie Chu",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1hNHmFKFA_9WaggTY3ZwyESmEUzzDyuhg",
+        "name": "Khóa Học Quảng Cáo Chuyển Đổi Facebook Ads (chuyên Sâu) Cùng Chu Minh Hạnh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1xcEm4rHTwwfbJXaY_oMz-KZrr_YNi6HQ",
+        "name": "Khóa Học Quảng Cáo Chuyển Đổi Facebook Từ A-Z Cùng Btani",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "12x2Xu3gl6X625hPxEyDwNiP3teekRbNa",
+        "name": "Khóa Học Quảng Cáo Facebook Reels Từ Cơ Bản Đến Nâng Cao",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1tQ6TsylugmUOKSbRY2-fuGsnpCme6R3G",
+        "name": "Khóa Học Quảng Cáo Facebook Thực Chiến 2025 Cùng Chu Minh Hạnh",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1LfjC-_whI-KEPy5rMfaY90CckQsKKsQo",
+        "name": "Khóa Học Vít Ads, Scale Đơn, Tối Ưu Quảng Cáo Facebook Và Vận Hành Shop Trương Văn Chiến",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1iwDD4PserV7mhFfWWu07wdZ5S6yohqx-",
+        "name": "Khóa Học Xây Dựng Group Facebook 2023 Từ Con Số 0 Cùng Nghĩa Lê",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1vJMiX7Mc9-XpYljpHB517kxkTaDUFVXv",
+        "name": "Khóa Học Xây Dựng Và Quản Trị Group Facebook Triệu Thành Viên",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1_5U01WiYlEPVMxrkj7eTk1LF4R-nXYT8",
+        "name": "Khóa Học Xây Group Facebook 2025 – Làm Chủ Cộng Đồng \\u0026 Tăng Trưởng Bền Vững",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1R25CUb-Pznr54Xi7BcANeTRB3zUwPk1Q",
+        "name": "No Ads Profit Hùng Vũ",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "18. Khóa Học Youtube",
+    "id": "1L9JpY8_2BMkPSzGzju9zkJZkn2NgOG8p",
+    "children": [
+      {
+        "id": "1fm8-_hKdzfXf0XbAetDE_hEsHBxtviD7",
+        "name": "Khóa Đào Tạo Film AI Online Mới Nhất – Hải Nghiêm – Quy Trình Từ A–Z Với Master Prompt Trên Gemini \\u0026 Veo 3.1",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1yRd-C5mEt-7HL2E33gRlk-TeL6ayJZs5",
+        "name": "Khóa Học Hải Nghiêm Zoom K08 – Master Youtube Ai Video 2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1dlbXnobWqIFa7cnGbVpwvNv_52w8x6Nv",
+        "name": "Khóa Học SoloYouTube Chiến Lược Hút Ngoại Tệ Từ Youtube Mỹ – Gói Ultra",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1joEODgzWz7naN-QnZOodRco5mFjEpGti",
+        "name": "Khoá Học Tiếp Thị Liên Kết Youtube Với Sản Phẩm Số AI Cùng Văn Thế MMO",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1RJFO3t7i1CstR0grA39ktsEI1euELdwW",
+        "name": "Khóa Học Xây Kênh Ngách FUNNY Bán CONTENT – NDGroup",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1-43zvcJ3zRnvLl15CAgcvdxmrJ5Je1LJ",
+        "name": "Khóa Học Xây Kênh YouTube Chủ Đề Bóng Đá NDGroup – Lan Tỏa Đam Mê Thể Thao",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1mlyvarpK40ccjSi4Mv_4VsbDmWd6CRfK",
+        "name": "Khóa Học Youtube AI Cùng Văn Thế MMO – Zoom Chuyên Sâu AI 05.2025",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "16EmYaJPIQ5762byiIsVA7jV3O1hBl4E8",
+        "name": "Khóa Học Youtube Kênh Ngoại Bằng Ai Mới Nhất Cùng Sơn Zim",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Gav7LUPhtghDNBRQpdhA0UPh3x4F9XFQ",
+        "name": "Khóa Học Youtube Thực Chiến 1 Ngày Mới Nhất Cùng Thắng Bagi",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1UH-NLGDrcgTL7x6Fsa7jrpvWTRPTkaA1",
+        "name": "Khóa Học YouTube View Ngoại Cho Người Mới Bắt Đầu Cùng H2Dev",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1IB9xDn5ivBQOzeK1u7_mqtsGbKJcNNUN",
+        "name": "Khóa Học Youtube Vũ Văn Thắng K4 – Nắm Trọn Tư Duy \\u0026 Quy Trình Bán Content AI",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1PPN5Ck4XKW1FVUy8BgTwRZT9kjzaj0S8",
+        "name": "Lộ Trình Giúp Bạn Kiếm $1000-$5000 Online Với Làm Video Ai Kiếm Tiền Youtube \\u0026 Affileate Marketing",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  },
+  {
+    "name": "19. Combo Khóa học",
+    "id": "1nAQL0EsVKJGtwHHp_zEIHqKjKT9GnesR",
+    "children": [
+      {
+        "id": "1MJcmKd5Cj3ZkAlYRq6fbk8x3v3M3c5Gh",
+        "name": "1. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1UjcBcPZnmg8ZZwOB_lIlvfz3VXPzvJnM",
+        "name": "2. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1YXMFvVU6WqAxIoJwzO5Vx3-6x0g4Zaxr",
+        "name": "3. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1SCxJP8KnWdHPwx0j50wjgGyaffvjKN9m",
+        "name": "4. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "18kZWCPSphZwA0CRL2pOvRXv1Iha0amE_",
+        "name": "5. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1OpxFu4nSXxeHMtZHO7aAqbYCgzYybPq-",
+        "name": "6. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "13g5X8byEYbMPucCkCHcN39L0Mx43lrrr",
+        "name": "7. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1kJXVgdSdEhFQmfzbUg9XTSYiXw9VXTU_",
+        "name": "8. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1h6FMd2fhfNYZZ-G2nBpJiylBCGw1ZiXl",
+        "name": "9. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1Y8fCRtfC4IDNmUO6XygboObDgyai8y8R",
+        "name": "10. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1DDoGOK5de27PPzmDhLaN0wTBx5iSXEF3",
+        "name": "11. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1k_szJzYCrczlVfujqPQDy2HE5o9QT74c",
+        "name": "12. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "10l6xL-UQqgdZPiTOBhOQSp-RLYfMcPeV",
+        "name": "13. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      },
+      {
+        "id": "1VrVAuG1luNuoqwOun2vnwvspqgEfeRm6",
+        "name": "14. Combo Khóa Học",
+        "mime": "application/vnd.google-apps.folder",
+        "is_folder": true
+      }
+    ]
+  }
+]

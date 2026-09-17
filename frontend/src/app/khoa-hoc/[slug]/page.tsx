@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ShoppingCart, Users, Clock, Check, ChevronRight, Zap } from 'lucide-react';
 import { courseApi } from '@/lib/api';
 import { useCartStore } from '@/store/cartStore';
+import { ALL_COURSES } from '@/data/coursesCatalog';
 import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 
@@ -34,14 +35,17 @@ export default function CourseDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const { addItem, isInCart } = useCartStore();
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['course', slug],
     queryFn: () => courseApi.getDetail(slug),
+    retry: false,
   });
 
-  const course = (data as any)?.data;
+  const apiCourse = (data as any)?.data;
+  const fallbackCourse = ALL_COURSES.find((c) => c.slug === slug);
+  const course = apiCourse || fallbackCourse;
 
-  if (isLoading) return (
+  if (isLoading && !course) return (
     <div className="max-w-6xl mx-auto px-4 py-10 animate-pulse">
       <div className="h-8 bg-gray-200 rounded w-3/4 mb-4" />
       <div className="h-4 bg-gray-100 rounded w-1/2 mb-8" />
@@ -52,7 +56,7 @@ export default function CourseDetailPage() {
     </div>
   );
 
-  if (isError || !course) return notFound();
+  if (!course) return notFound();
 
   const inCart = isInCart(course.id);
   const pct = Math.round((1 - course.effectivePrice / course.originalPrice) * 100);
