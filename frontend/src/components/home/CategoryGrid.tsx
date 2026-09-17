@@ -49,9 +49,10 @@ export default function CategoryGrid() {
   const apiCategories = ((data as any)?.data || []).filter((c: any) => c.slug !== 'combo-khoa-hoc');
   const categories = apiCategories.length > 0 ? apiCategories : REAL_CATEGORIES;
 
-  const isDownRef = useRef<boolean>(false);
+  const isMouseDownRef = useRef<boolean>(false);
   const startXRef = useRef<number>(0);
   const scrollLeftRef = useRef<number>(0);
+  const hasDraggedRef = useRef<boolean>(false);
 
   // Cuộn bằng con lăn chuột (Mouse Wheel Scroll)
   useEffect(() => {
@@ -89,39 +90,31 @@ export default function CategoryGrid() {
     };
   }, []);
 
-  // Kéo thả chuột ngang (Pointer Events)
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+  // Kéo thả chuột ngang (Mouse Drag Scroll mượt mà không chặn click)
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.button !== 0) return;
-    const el = e.currentTarget;
-    try {
-      el.setPointerCapture(e.pointerId);
-    } catch {}
-    isDownRef.current = true;
-    startXRef.current = e.clientX;
-    scrollLeftRef.current = el.scrollLeft;
-    isDraggingRef.current = false;
+    isMouseDownRef.current = true;
+    startXRef.current = e.pageX;
+    scrollLeftRef.current = scrollRef.current?.scrollLeft || 0;
+    hasDraggedRef.current = false;
   };
 
-  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDownRef.current) return;
-    const el = e.currentTarget;
-    const dx = e.clientX - startXRef.current;
-    if (Math.abs(dx) > 3) {
-      isDraggingRef.current = true;
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isMouseDownRef.current || !scrollRef.current) return;
+    const dx = e.pageX - startXRef.current;
+    if (Math.abs(dx) > 8) {
+      hasDraggedRef.current = true;
+      scrollRef.current.scrollLeft = scrollLeftRef.current - dx;
     }
-    el.scrollLeft = scrollLeftRef.current - dx;
   };
 
-  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDownRef.current) return;
-    isDownRef.current = false;
-    const el = e.currentTarget;
-    try {
-      el.releasePointerCapture(e.pointerId);
-    } catch {}
-    setTimeout(() => {
-      isDraggingRef.current = false;
-    }, 100);
+  const handleMouseUp = () => {
+    isMouseDownRef.current = false;
+  };
+
+  const handleSelectCategory = (slug: string) => {
+    if (hasDraggedRef.current) return;
+    setActiveCategory(slug);
   };
 
   const handleAddCart = (e: React.MouseEvent, course: CourseItem) => {
@@ -138,8 +131,9 @@ export default function CategoryGrid() {
     toast.success('Đã thêm vào giỏ hàng!');
   };
 
-  const currentCategory = categories.find((c: any) => c.slug === activeCategory) || categories[0] || REAL_CATEGORIES[1];
-  const displayedCourses = (CATEGORY_COURSES_MAP[activeCategory] || CATEGORY_COURSES_MAP['cong-nghe-thong-tin'] || []).slice(0, 8);
+  const currentCategory = categories.find((c: any) => c.slug === activeCategory) || REAL_CATEGORIES.find((c) => c.slug === activeCategory) || REAL_CATEGORIES[1];
+  const categoryCourses = CATEGORY_COURSES_MAP[activeCategory] || [];
+  const displayedCourses = (categoryCourses.length > 0 ? categoryCourses : (CATEGORY_COURSES_MAP['cong-nghe-thong-tin'] || [])).slice(0, 8);
 
   return (
     <section className="py-10 bg-transparent relative">
@@ -153,10 +147,10 @@ export default function CategoryGrid() {
         <div className="mb-10 max-w-4xl mx-auto px-4 sm:px-8">
           <div
             ref={scrollRef}
-            onPointerDown={handlePointerDown}
-            onPointerMove={handlePointerMove}
-            onPointerUp={handlePointerUp}
-            onPointerCancel={handlePointerUp}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             className="overflow-x-auto no-scrollbar py-2.5 flex items-center gap-2 cursor-grab active:cursor-grabbing select-none px-2"
           >
@@ -166,20 +160,15 @@ export default function CategoryGrid() {
                 <button
                   key={cat.id}
                   type="button"
-                  draggable={false}
-                  onDragStart={(e) => e.preventDefault()}
-                  onClick={() => {
-                    if (isDraggingRef.current) return;
-                    setActiveCategory(cat.slug);
-                  }}
-                  className={`flex-shrink-0 px-3.5 py-2 rounded-full text-[11px] sm:text-xs font-medium transition-all flex items-center gap-1.5 select-none ${
+                  onClick={() => handleSelectCategory(cat.slug)}
+                  className={`flex-shrink-0 px-3.5 py-2 rounded-full text-[11px] sm:text-xs font-medium transition-all flex items-center gap-1.5 select-none cursor-pointer ${
                     isSelected
-                      ? 'bg-amber-400 text-slate-950 font-bold shadow-sm'
+                      ? 'bg-amber-400 text-slate-950 font-bold shadow-md'
                       : 'bg-[#141622] hover:bg-[#1C2032] text-slate-300 hover:text-white'
                   }`}
                 >
-                  <span className="text-sm pointer-events-none">{CATEGORY_ICONS[cat.slug] || '📚'}</span>
-                  <span className="whitespace-nowrap pointer-events-none">{cat.name}</span>
+                  <span className="text-sm">{CATEGORY_ICONS[cat.slug] || '📚'}</span>
+                  <span className="whitespace-nowrap">{cat.name}</span>
                 </button>
               );
             })}
