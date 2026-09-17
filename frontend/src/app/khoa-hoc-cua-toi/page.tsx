@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,34 +19,52 @@ interface PurchasedCourse {
 
 const DEMO_MY_COURSES: PurchasedCourse[] = [
   {
-    id: 101,
+    id: 999,
     slug: 'tron-bo-khoa-hoc-tren-website-voi-quyen-truy-cap-vinh-vien',
     title: 'Trọn Bộ Hơn 2.000+ Khóa Học Google Drive VIP Trọn Đời',
-    category: 'Gói VIP',
+    category: 'Gói VIP Toàn Diện',
     thumbnail: '/backgrounds/tech_03_abstract_3d_dark_wave.jpg',
-    driveLink: 'https://drive.google.com/drive/u/0/folders/example-vip-2000-khoa-hoc',
+    driveLink: 'https://drive.google.com/drive/folders/14aGCvx2k8y6fPL93A5CbWiGwoVTEI3s-?usp=sharing',
   },
   {
-    id: 201,
-    slug: 'fullstack-nextjs-spring-boot-chuyen-nghiep',
-    title: 'Fullstack Next.js 14, React 18 & Spring Boot 3 Chuyên Nghiệp',
-    category: 'Lập trình',
+    id: 2,
+    slug: 'khoa-hoc-vibe-coding',
+    title: 'Khóa Học Vibe Coding',
+    category: 'Công nghệ thông tin',
     thumbnail: '/backgrounds/tech_05_modern_developer_desk.jpg',
-    driveLink: 'https://drive.google.com/drive/u/0/folders/example-nextjs-spring-boot',
+    driveLink: 'https://drive.google.com/drive/folders/1FP2X7ic80XwafCEDZEL2VQnhurdQ46_A',
   },
   {
-    id: 291,
-    slug: 'dung-phim-video-ngan-tiktok-capcut-pro',
-    title: 'Dựng Phim Video Ngắn TikTok, Reels & CapCut Pro Triệu View',
-    category: 'Media & Video',
-    thumbnail: '/backgrounds/tech_07_video_creator_studio.jpg',
-    driveLink: 'https://drive.google.com/drive/u/0/folders/example-capcut-tiktok-pro',
+    id: 3,
+    slug: 'khoa-hoc-ai-automation',
+    title: 'Khóa Học AI Automation',
+    category: 'Công nghệ thông tin',
+    thumbnail: '/backgrounds/tech_03_abstract_3d_dark_wave.jpg',
+    driveLink: 'https://drive.google.com/drive/folders/1xKuSs_Z7PVezCkHduVyaOcEOPgmSKtxj',
+  },
+  {
+    id: 4,
+    slug: 'khoa-hoc-backend',
+    title: 'Khóa Học Backend Chuyên Sâu',
+    category: 'Công nghệ thông tin',
+    thumbnail: '/backgrounds/tech_04_digital_creator_desk.jpg',
+    driveLink: 'https://drive.google.com/drive/folders/1xNlIZl7KTVExXlX-ETyThjOyMapg2IKL',
   },
 ];
 
 export default function MyCoursesPage() {
   const [search, setSearch] = useState('');
   const [copiedId, setCopiedId] = useState<number | null>(null);
+  const [localCourses, setLocalCourses] = useState<PurchasedCourse[]>([]);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('khgh_purchased_courses');
+      if (stored) {
+        setLocalCourses(JSON.parse(stored));
+      }
+    } catch {}
+  }, []);
 
   // Fetch real courses if logged in
   const { data: realCoursesData } = useQuery({
@@ -56,7 +74,7 @@ export default function MyCoursesPage() {
   });
 
   const apiCourses = (realCoursesData as any)?.data;
-  const courseList: PurchasedCourse[] = (apiCourses && apiCourses.length > 0)
+  const baseCourses: PurchasedCourse[] = (apiCourses && apiCourses.length > 0)
     ? apiCourses.map((c: any) => ({
         id: c.id,
         slug: c.slug || `khoa-hoc-${c.id}`,
@@ -66,6 +84,8 @@ export default function MyCoursesPage() {
         driveLink: c.driveLink || `https://drive.google.com/drive/folders/${c.driveFolderId || ''}`,
       }))
     : DEMO_MY_COURSES;
+
+  const courseList = [...localCourses, ...baseCourses.filter(b => !localCourses.some(l => l.id === b.id))];
 
   const filtered = courseList.filter((c) =>
     c.title.toLowerCase().includes(search.toLowerCase()) ||

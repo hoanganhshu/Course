@@ -112,8 +112,8 @@ export default function MembershipSection({ memberships }: { memberships: Plan[]
         </div>
 
         <div className="text-center mt-6">
-          <Link href="/hoi-vien" className="btn-primary inline-flex">
-            Xem tất cả gói hội viên <ArrowRight size={16} />
+          <Link href="/combo" className="btn-primary inline-flex">
+            Xem tất cả gói hội viên VIP <ArrowRight size={16} />
           </Link>
         </div>
       </div>

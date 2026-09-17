@@ -229,13 +229,13 @@ export const REAL_CATEGORIES: CatalogCategory[] = [
 export const REAL_COURSES: CatalogCourse[] = [
   {
     "id": 1,
-    "title": "Khóa Học Sử dụng thanh tìm kiếm trên drive để tìm kiếm dúng các khóa học nhất.txt",
-    "slug": "khoa-hoc-su-dung-thanh-tim-kiem-tren-drive-de-tim-kiem-dung-cac-khoa-hoc-nhattxt",
+    "title": "Hướng Dẫn Tìm Kiếm Khóa Học Chuẩn Xác Trên Google Drive",
+    "slug": "huong-dan-tim-kiem-khoa-hoc-chuan-xac-tren-google-drive",
     "price": 0,
     "original_price": 100000,
     "thumbnail": "/backgrounds/01_thu_vien_hien_dai.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Sử dụng thanh tìm kiếm trên drive để tìm kiếm dúng các khóa học nhất.txt cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17l4QcgHHVPkhnMoe8pacH0Te7xtAcFVG",
+    "drive_link": "https://drive.google.com/file/d/17l4QcgHHVPkhnMoe8pacH0Te7xtAcFVG/view?usp=sharing",
     "drive_folder_id": "17l4QcgHHVPkhnMoe8pacH0Te7xtAcFVG",
     "category_id": 1,
     "category_name": "Hướng dẫn học tập",
@@ -243,7 +243,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 157
+    "registered_count": 157,
+    "driveLink": "https://drive.google.com/file/d/17l4QcgHHVPkhnMoe8pacH0Te7xtAcFVG/view?usp=sharing"
   },
   {
     "id": 2,
@@ -253,7 +254,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Vibe Coding cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1FP2X7ic80XwafCEDZEL2VQnhurdQ46_A",
+    "drive_link": "https://drive.google.com/drive/folders/1FP2X7ic80XwafCEDZEL2VQnhurdQ46_A?usp=sharing",
     "drive_folder_id": "1FP2X7ic80XwafCEDZEL2VQnhurdQ46_A",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -261,7 +262,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 194
+    "registered_count": 194,
+    "driveLink": "https://drive.google.com/drive/folders/1FP2X7ic80XwafCEDZEL2VQnhurdQ46_A?usp=sharing"
   },
   {
     "id": 3,
@@ -271,7 +273,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học AI Automation cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xKuSs_Z7PVezCkHduVyaOcEOPgmSKtxj",
+    "drive_link": "https://drive.google.com/drive/folders/1xKuSs_Z7PVezCkHduVyaOcEOPgmSKtxj?usp=sharing",
     "drive_folder_id": "1xKuSs_Z7PVezCkHduVyaOcEOPgmSKtxj",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -279,7 +281,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 231
+    "registered_count": 231,
+    "driveLink": "https://drive.google.com/drive/folders/1xKuSs_Z7PVezCkHduVyaOcEOPgmSKtxj?usp=sharing"
   },
   {
     "id": 4,
@@ -289,7 +292,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Backend cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xNlIZl7KTVExXlX-ETyThjOyMapg2IKL",
+    "drive_link": "https://drive.google.com/drive/folders/1xNlIZl7KTVExXlX-ETyThjOyMapg2IKL?usp=sharing",
     "drive_folder_id": "1xNlIZl7KTVExXlX-ETyThjOyMapg2IKL",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -297,7 +300,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 99000,
     "is_combo": false,
-    "registered_count": 268
+    "registered_count": 268,
+    "driveLink": "https://drive.google.com/drive/folders/1xNlIZl7KTVExXlX-ETyThjOyMapg2IKL?usp=sharing"
   },
   {
     "id": 5,
@@ -307,7 +311,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Blockchain cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1pQS7l2nEtlyR0qSYNooDAYTZmxHcGb4a",
+    "drive_link": "https://drive.google.com/drive/folders/1pQS7l2nEtlyR0qSYNooDAYTZmxHcGb4a?usp=sharing",
     "drive_folder_id": "1pQS7l2nEtlyR0qSYNooDAYTZmxHcGb4a",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -315,7 +319,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 305
+    "registered_count": 305,
+    "driveLink": "https://drive.google.com/drive/folders/1pQS7l2nEtlyR0qSYNooDAYTZmxHcGb4a?usp=sharing"
   },
   {
     "id": 6,
@@ -325,7 +330,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Business Analyst cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19GB8VrW4-yzUsTuaxJBGESO5p_41M3u9",
+    "drive_link": "https://drive.google.com/drive/folders/19GB8VrW4-yzUsTuaxJBGESO5p_41M3u9?usp=sharing",
     "drive_folder_id": "19GB8VrW4-yzUsTuaxJBGESO5p_41M3u9",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -333,7 +338,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 342
+    "registered_count": 342,
+    "driveLink": "https://drive.google.com/drive/folders/19GB8VrW4-yzUsTuaxJBGESO5p_41M3u9?usp=sharing"
   },
   {
     "id": 7,
@@ -343,7 +349,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học CCNA \\u0026 CCNP cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1j_ety2rHFH1qu8i6DKhd3RBWn8I86Sil",
+    "drive_link": "https://drive.google.com/drive/folders/1j_ety2rHFH1qu8i6DKhd3RBWn8I86Sil?usp=sharing",
     "drive_folder_id": "1j_ety2rHFH1qu8i6DKhd3RBWn8I86Sil",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -351,7 +357,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 379
+    "registered_count": 379,
+    "driveLink": "https://drive.google.com/drive/folders/1j_ety2rHFH1qu8i6DKhd3RBWn8I86Sil?usp=sharing"
   },
   {
     "id": 8,
@@ -361,7 +368,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học ChatGPT cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1LdT16nSTwIJvEef8ljWDGkMpqGfIkkpa",
+    "drive_link": "https://drive.google.com/drive/folders/1LdT16nSTwIJvEef8ljWDGkMpqGfIkkpa?usp=sharing",
     "drive_folder_id": "1LdT16nSTwIJvEef8ljWDGkMpqGfIkkpa",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -369,7 +376,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 99000,
     "is_combo": false,
-    "registered_count": 416
+    "registered_count": 416,
+    "driveLink": "https://drive.google.com/drive/folders/1LdT16nSTwIJvEef8ljWDGkMpqGfIkkpa?usp=sharing"
   },
   {
     "id": 9,
@@ -379,7 +387,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cơ sở dữ liệu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1HUz9ptK7_twK1CyOXVW3VpgHEOgr6Wjw",
+    "drive_link": "https://drive.google.com/drive/folders/1HUz9ptK7_twK1CyOXVW3VpgHEOgr6Wjw?usp=sharing",
     "drive_folder_id": "1HUz9ptK7_twK1CyOXVW3VpgHEOgr6Wjw",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -387,7 +395,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 453
+    "registered_count": 453,
+    "driveLink": "https://drive.google.com/drive/folders/1HUz9ptK7_twK1CyOXVW3VpgHEOgr6Wjw?usp=sharing"
   },
   {
     "id": 10,
@@ -397,7 +406,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cấu trúc dữ liệu và giải thuật \\u0026 thi đấu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/10OHQ8Fnb7oQ79UQSCJDynlfi6uBXZnjV",
+    "drive_link": "https://drive.google.com/drive/folders/10OHQ8Fnb7oQ79UQSCJDynlfi6uBXZnjV?usp=sharing",
     "drive_folder_id": "10OHQ8Fnb7oQ79UQSCJDynlfi6uBXZnjV",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -405,7 +414,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 490
+    "registered_count": 490,
+    "driveLink": "https://drive.google.com/drive/folders/10OHQ8Fnb7oQ79UQSCJDynlfi6uBXZnjV?usp=sharing"
   },
   {
     "id": 11,
@@ -415,7 +425,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Data Analyst cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1o7jypFxxzbSViAe7XWfO1xt-BkygRHGA",
+    "drive_link": "https://drive.google.com/drive/folders/1o7jypFxxzbSViAe7XWfO1xt-BkygRHGA?usp=sharing",
     "drive_folder_id": "1o7jypFxxzbSViAe7XWfO1xt-BkygRHGA",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -423,7 +433,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 527
+    "registered_count": 527,
+    "driveLink": "https://drive.google.com/drive/folders/1o7jypFxxzbSViAe7XWfO1xt-BkygRHGA?usp=sharing"
   },
   {
     "id": 12,
@@ -433,7 +444,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Data Engineer cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/10MNciXqBi5iUMpAhbcpR18ixB5unVn5I",
+    "drive_link": "https://drive.google.com/drive/folders/10MNciXqBi5iUMpAhbcpR18ixB5unVn5I?usp=sharing",
     "drive_folder_id": "10MNciXqBi5iUMpAhbcpR18ixB5unVn5I",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -441,7 +452,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 99000,
     "is_combo": false,
-    "registered_count": 564
+    "registered_count": 564,
+    "driveLink": "https://drive.google.com/drive/folders/10MNciXqBi5iUMpAhbcpR18ixB5unVn5I?usp=sharing"
   },
   {
     "id": 13,
@@ -451,7 +463,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Data Science cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17EE_jJD_CcN3FlOKfDSWGcpF7atgYhFd",
+    "drive_link": "https://drive.google.com/drive/folders/17EE_jJD_CcN3FlOKfDSWGcpF7atgYhFd?usp=sharing",
     "drive_folder_id": "17EE_jJD_CcN3FlOKfDSWGcpF7atgYhFd",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -459,7 +471,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 601
+    "registered_count": 601,
+    "driveLink": "https://drive.google.com/drive/folders/17EE_jJD_CcN3FlOKfDSWGcpF7atgYhFd?usp=sharing"
   },
   {
     "id": 14,
@@ -469,7 +482,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Deep Learning cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1AzdZLP5Dn_W0PROl_qBQqttfueI5F6SZ",
+    "drive_link": "https://drive.google.com/drive/folders/1AzdZLP5Dn_W0PROl_qBQqttfueI5F6SZ?usp=sharing",
     "drive_folder_id": "1AzdZLP5Dn_W0PROl_qBQqttfueI5F6SZ",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -477,7 +490,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 638
+    "registered_count": 638,
+    "driveLink": "https://drive.google.com/drive/folders/1AzdZLP5Dn_W0PROl_qBQqttfueI5F6SZ?usp=sharing"
   },
   {
     "id": 15,
@@ -487,7 +501,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Devops cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xky6BaB6kwwy3mmublg1gJkvJGczRShM",
+    "drive_link": "https://drive.google.com/drive/folders/1xky6BaB6kwwy3mmublg1gJkvJGczRShM?usp=sharing",
     "drive_folder_id": "1xky6BaB6kwwy3mmublg1gJkvJGczRShM",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -495,7 +509,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 675
+    "registered_count": 675,
+    "driveLink": "https://drive.google.com/drive/folders/1xky6BaB6kwwy3mmublg1gJkvJGczRShM?usp=sharing"
   },
   {
     "id": 16,
@@ -505,7 +520,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Frontend cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Vyql_TEX2gA5nUCaKL8dgec6lZqBmovo",
+    "drive_link": "https://drive.google.com/drive/folders/1Vyql_TEX2gA5nUCaKL8dgec6lZqBmovo?usp=sharing",
     "drive_folder_id": "1Vyql_TEX2gA5nUCaKL8dgec6lZqBmovo",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -513,7 +528,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 99000,
     "is_combo": false,
-    "registered_count": 712
+    "registered_count": 712,
+    "driveLink": "https://drive.google.com/drive/folders/1Vyql_TEX2gA5nUCaKL8dgec6lZqBmovo?usp=sharing"
   },
   {
     "id": 17,
@@ -523,7 +539,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Linux cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1HuloW3xh6xqYUmnxxpZEoQaDvyY3CAxh",
+    "drive_link": "https://drive.google.com/drive/folders/1HuloW3xh6xqYUmnxxpZEoQaDvyY3CAxh?usp=sharing",
     "drive_folder_id": "1HuloW3xh6xqYUmnxxpZEoQaDvyY3CAxh",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -531,7 +547,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 749
+    "registered_count": 749,
+    "driveLink": "https://drive.google.com/drive/folders/1HuloW3xh6xqYUmnxxpZEoQaDvyY3CAxh?usp=sharing"
   },
   {
     "id": 18,
@@ -541,7 +558,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập trình Game cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1jF6pWPrXTBvNt06ZmL0syEAII0vGJJD7",
+    "drive_link": "https://drive.google.com/drive/folders/1jF6pWPrXTBvNt06ZmL0syEAII0vGJJD7?usp=sharing",
     "drive_folder_id": "1jF6pWPrXTBvNt06ZmL0syEAII0vGJJD7",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -549,7 +566,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 786
+    "registered_count": 786,
+    "driveLink": "https://drive.google.com/drive/folders/1jF6pWPrXTBvNt06ZmL0syEAII0vGJJD7?usp=sharing"
   },
   {
     "id": 19,
@@ -559,7 +577,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập trình hướng đối tượng (OOP) cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1IFv2Vv9vnA2Uy-9CWyN63BfZOnuCeyAb",
+    "drive_link": "https://drive.google.com/drive/folders/1IFv2Vv9vnA2Uy-9CWyN63BfZOnuCeyAb?usp=sharing",
     "drive_folder_id": "1IFv2Vv9vnA2Uy-9CWyN63BfZOnuCeyAb",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -567,7 +585,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 823
+    "registered_count": 823,
+    "driveLink": "https://drive.google.com/drive/folders/1IFv2Vv9vnA2Uy-9CWyN63BfZOnuCeyAb?usp=sharing"
   },
   {
     "id": 20,
@@ -577,7 +596,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập trình Mobile cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1XXPsYu6stkoqRwB5SPbM5K-UuGHOISkm",
+    "drive_link": "https://drive.google.com/drive/folders/1XXPsYu6stkoqRwB5SPbM5K-UuGHOISkm?usp=sharing",
     "drive_folder_id": "1XXPsYu6stkoqRwB5SPbM5K-UuGHOISkm",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -585,7 +604,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 99000,
     "is_combo": false,
-    "registered_count": 860
+    "registered_count": 860,
+    "driveLink": "https://drive.google.com/drive/folders/1XXPsYu6stkoqRwB5SPbM5K-UuGHOISkm?usp=sharing"
   },
   {
     "id": 21,
@@ -595,7 +615,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập trình Nhúng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1QfljTuivBXXTXZCbO-TxcatuY4Xq62ig",
+    "drive_link": "https://drive.google.com/drive/folders/1QfljTuivBXXTXZCbO-TxcatuY4Xq62ig?usp=sharing",
     "drive_folder_id": "1QfljTuivBXXTXZCbO-TxcatuY4Xq62ig",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -603,7 +623,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 897
+    "registered_count": 897,
+    "driveLink": "https://drive.google.com/drive/folders/1QfljTuivBXXTXZCbO-TxcatuY4Xq62ig?usp=sharing"
   },
   {
     "id": 22,
@@ -613,7 +634,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập trình Web cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1NaTWcRb4uiM3I189Yl0JAS93OmYMm_NX",
+    "drive_link": "https://drive.google.com/drive/folders/1NaTWcRb4uiM3I189Yl0JAS93OmYMm_NX?usp=sharing",
     "drive_folder_id": "1NaTWcRb4uiM3I189Yl0JAS93OmYMm_NX",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -621,7 +642,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 934
+    "registered_count": 934,
+    "driveLink": "https://drive.google.com/drive/folders/1NaTWcRb4uiM3I189Yl0JAS93OmYMm_NX?usp=sharing"
   },
   {
     "id": 23,
@@ -631,7 +653,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Machine Learning cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Waq6tbwxhC-i3qA1l3D-tdk-sCn_LdVi",
+    "drive_link": "https://drive.google.com/drive/folders/1Waq6tbwxhC-i3qA1l3D-tdk-sCn_LdVi?usp=sharing",
     "drive_folder_id": "1Waq6tbwxhC-i3qA1l3D-tdk-sCn_LdVi",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -639,7 +661,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 121
+    "registered_count": 121,
+    "driveLink": "https://drive.google.com/drive/folders/1Waq6tbwxhC-i3qA1l3D-tdk-sCn_LdVi?usp=sharing"
   },
   {
     "id": 24,
@@ -649,7 +672,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Ngôn ngữ lập trình cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1MOBojHSftIkkjrOSogHm4z4LmI_MQu4a",
+    "drive_link": "https://drive.google.com/drive/folders/1MOBojHSftIkkjrOSogHm4z4LmI_MQu4a?usp=sharing",
     "drive_folder_id": "1MOBojHSftIkkjrOSogHm4z4LmI_MQu4a",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -657,7 +680,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 99000,
     "is_combo": false,
-    "registered_count": 158
+    "registered_count": 158,
+    "driveLink": "https://drive.google.com/drive/folders/1MOBojHSftIkkjrOSogHm4z4LmI_MQu4a?usp=sharing"
   },
   {
     "id": 25,
@@ -667,7 +691,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Power Bi cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1V2u7KU1ghrw64wTfzXmehvsIHvg3sIjE",
+    "drive_link": "https://drive.google.com/drive/folders/1V2u7KU1ghrw64wTfzXmehvsIHvg3sIjE?usp=sharing",
     "drive_folder_id": "1V2u7KU1ghrw64wTfzXmehvsIHvg3sIjE",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -675,7 +699,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 195
+    "registered_count": 195,
+    "driveLink": "https://drive.google.com/drive/folders/1V2u7KU1ghrw64wTfzXmehvsIHvg3sIjE?usp=sharing"
   },
   {
     "id": 26,
@@ -685,7 +710,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tester cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1-5WXvT3ybn9iiuKoULm2fIdthUrqQE1p",
+    "drive_link": "https://drive.google.com/drive/folders/1-5WXvT3ybn9iiuKoULm2fIdthUrqQE1p?usp=sharing",
     "drive_folder_id": "1-5WXvT3ybn9iiuKoULm2fIdthUrqQE1p",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -693,7 +718,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 232
+    "registered_count": 232,
+    "driveLink": "https://drive.google.com/drive/folders/1-5WXvT3ybn9iiuKoULm2fIdthUrqQE1p?usp=sharing"
   },
   {
     "id": 27,
@@ -703,7 +729,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Trí tuệ nhân tạo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1uVaqCWmFPFcE8UtlKloOI2EkeOBUrHch",
+    "drive_link": "https://drive.google.com/drive/folders/1uVaqCWmFPFcE8UtlKloOI2EkeOBUrHch?usp=sharing",
     "drive_folder_id": "1uVaqCWmFPFcE8UtlKloOI2EkeOBUrHch",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -711,7 +737,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 269
+    "registered_count": 269,
+    "driveLink": "https://drive.google.com/drive/folders/1uVaqCWmFPFcE8UtlKloOI2EkeOBUrHch?usp=sharing"
   },
   {
     "id": 28,
@@ -721,7 +748,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 890000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học CNTT Khác cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ffYl9rXnv1IQRmLo6NXE0D7xXOyysL_W",
+    "drive_link": "https://drive.google.com/drive/folders/1ffYl9rXnv1IQRmLo6NXE0D7xXOyysL_W?usp=sharing",
     "drive_folder_id": "1ffYl9rXnv1IQRmLo6NXE0D7xXOyysL_W",
     "category_id": 2,
     "category_name": "Công nghệ thông tin & Lập trình",
@@ -729,7 +756,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 99000,
     "is_combo": false,
-    "registered_count": 306
+    "registered_count": 306,
+    "driveLink": "https://drive.google.com/drive/folders/1ffYl9rXnv1IQRmLo6NXE0D7xXOyysL_W?usp=sharing"
   },
   {
     "id": 29,
@@ -739,7 +767,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 650000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Animation cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1MIFgBeXvqfSDJzv6dii0Wil0FY4sFcwW",
+    "drive_link": "https://drive.google.com/drive/folders/1MIFgBeXvqfSDJzv6dii0Wil0FY4sFcwW?usp=sharing",
     "drive_folder_id": "1MIFgBeXvqfSDJzv6dii0Wil0FY4sFcwW",
     "category_id": 3,
     "category_name": "Dựng Phim & Nhiếp ảnh",
@@ -747,7 +775,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 343
+    "registered_count": 343,
+    "driveLink": "https://drive.google.com/drive/folders/1MIFgBeXvqfSDJzv6dii0Wil0FY4sFcwW?usp=sharing"
   },
   {
     "id": 30,
@@ -757,7 +786,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 650000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Blender cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1QSzC8MaPAIPUatmvGQjGhwE1rMU9yfeI",
+    "drive_link": "https://drive.google.com/drive/folders/1QSzC8MaPAIPUatmvGQjGhwE1rMU9yfeI?usp=sharing",
     "drive_folder_id": "1QSzC8MaPAIPUatmvGQjGhwE1rMU9yfeI",
     "category_id": 3,
     "category_name": "Dựng Phim & Nhiếp ảnh",
@@ -765,7 +794,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 380
+    "registered_count": 380,
+    "driveLink": "https://drive.google.com/drive/folders/1QSzC8MaPAIPUatmvGQjGhwE1rMU9yfeI?usp=sharing"
   },
   {
     "id": 31,
@@ -775,7 +805,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 650000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chỉnh sửa ảnh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1f2qSsrYduPonL5V-wtobFSa6PWnh1Jg_",
+    "drive_link": "https://drive.google.com/drive/folders/1f2qSsrYduPonL5V-wtobFSa6PWnh1Jg_?usp=sharing",
     "drive_folder_id": "1f2qSsrYduPonL5V-wtobFSa6PWnh1Jg_",
     "category_id": 3,
     "category_name": "Dựng Phim & Nhiếp ảnh",
@@ -783,7 +813,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 417
+    "registered_count": 417,
+    "driveLink": "https://drive.google.com/drive/folders/1f2qSsrYduPonL5V-wtobFSa6PWnh1Jg_?usp=sharing"
   },
   {
     "id": 32,
@@ -793,7 +824,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 650000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chụp ảnh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Ca7to-HP0Y6qM4rPCUPlC2gpbN2G5N68",
+    "drive_link": "https://drive.google.com/drive/folders/1Ca7to-HP0Y6qM4rPCUPlC2gpbN2G5N68?usp=sharing",
     "drive_folder_id": "1Ca7to-HP0Y6qM4rPCUPlC2gpbN2G5N68",
     "category_id": 3,
     "category_name": "Dựng Phim & Nhiếp ảnh",
@@ -801,7 +832,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 454
+    "registered_count": 454,
+    "driveLink": "https://drive.google.com/drive/folders/1Ca7to-HP0Y6qM4rPCUPlC2gpbN2G5N68?usp=sharing"
   },
   {
     "id": 33,
@@ -811,7 +843,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 650000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Dựng phim cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ZHWdfVmkPZgPls8S_ymsgRgU9Ql1MTEU",
+    "drive_link": "https://drive.google.com/drive/folders/1ZHWdfVmkPZgPls8S_ymsgRgU9Ql1MTEU?usp=sharing",
     "drive_folder_id": "1ZHWdfVmkPZgPls8S_ymsgRgU9Ql1MTEU",
     "category_id": 3,
     "category_name": "Dựng Phim & Nhiếp ảnh",
@@ -819,7 +851,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 491
+    "registered_count": 491,
+    "driveLink": "https://drive.google.com/drive/folders/1ZHWdfVmkPZgPls8S_ymsgRgU9Ql1MTEU?usp=sharing"
   },
   {
     "id": 34,
@@ -829,7 +862,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 650000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Dựng phim \\u0026 nhiếp ảnh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Fdk7HbY16SGX0nOiEWJjw5LoWr3TyLNX",
+    "drive_link": "https://drive.google.com/drive/folders/1Fdk7HbY16SGX0nOiEWJjw5LoWr3TyLNX?usp=sharing",
     "drive_folder_id": "1Fdk7HbY16SGX0nOiEWJjw5LoWr3TyLNX",
     "category_id": 3,
     "category_name": "Dựng Phim & Nhiếp ảnh",
@@ -837,7 +870,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 528
+    "registered_count": 528,
+    "driveLink": "https://drive.google.com/drive/folders/1Fdk7HbY16SGX0nOiEWJjw5LoWr3TyLNX?usp=sharing"
   },
   {
     "id": 35,
@@ -847,7 +881,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 750000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chứng khoán cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/18RJsfUi1Wm1jSmHtG5_4p6Nkv6nPtzbz",
+    "drive_link": "https://drive.google.com/drive/folders/18RJsfUi1Wm1jSmHtG5_4p6Nkv6nPtzbz?usp=sharing",
     "drive_folder_id": "18RJsfUi1Wm1jSmHtG5_4p6Nkv6nPtzbz",
     "category_id": 4,
     "category_name": "Đầu tư tài chính & Chứng khoán",
@@ -855,7 +889,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 565
+    "registered_count": 565,
+    "driveLink": "https://drive.google.com/drive/folders/18RJsfUi1Wm1jSmHtG5_4p6Nkv6nPtzbz?usp=sharing"
   },
   {
     "id": 36,
@@ -865,7 +900,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 750000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Crypto cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1-lpS5KcWE2Dh_e7aPRKjZBe28UMFvPuz",
+    "drive_link": "https://drive.google.com/drive/folders/1-lpS5KcWE2Dh_e7aPRKjZBe28UMFvPuz?usp=sharing",
     "drive_folder_id": "1-lpS5KcWE2Dh_e7aPRKjZBe28UMFvPuz",
     "category_id": 4,
     "category_name": "Đầu tư tài chính & Chứng khoán",
@@ -873,7 +908,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 602
+    "registered_count": 602,
+    "driveLink": "https://drive.google.com/drive/folders/1-lpS5KcWE2Dh_e7aPRKjZBe28UMFvPuz?usp=sharing"
   },
   {
     "id": 37,
@@ -883,7 +919,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 750000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Forex cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xLnYcPOuzSHLf18K3RKN9lJs2bQjZd2i",
+    "drive_link": "https://drive.google.com/drive/folders/1xLnYcPOuzSHLf18K3RKN9lJs2bQjZd2i?usp=sharing",
     "drive_folder_id": "1xLnYcPOuzSHLf18K3RKN9lJs2bQjZd2i",
     "category_id": 4,
     "category_name": "Đầu tư tài chính & Chứng khoán",
@@ -891,7 +927,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 639
+    "registered_count": 639,
+    "driveLink": "https://drive.google.com/drive/folders/1xLnYcPOuzSHLf18K3RKN9lJs2bQjZd2i?usp=sharing"
   },
   {
     "id": 38,
@@ -901,7 +938,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 750000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cập Nhật cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17cn_4MXDpo7a4qe56OxUaGdN--IiLsEW",
+    "drive_link": "https://drive.google.com/drive/folders/17cn_4MXDpo7a4qe56OxUaGdN--IiLsEW?usp=sharing",
     "drive_folder_id": "17cn_4MXDpo7a4qe56OxUaGdN--IiLsEW",
     "category_id": 4,
     "category_name": "Đầu tư tài chính & Chứng khoán",
@@ -909,7 +946,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 676
+    "registered_count": 676,
+    "driveLink": "https://drive.google.com/drive/folders/17cn_4MXDpo7a4qe56OxUaGdN--IiLsEW?usp=sharing"
   },
   {
     "id": 39,
@@ -919,7 +957,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cách Bán Hàng Trên Etsy Từ A-z Kiếm Tiền Online Với Vốn Nhỏ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1K9zZGNGoznrrpswZRP4MendQDHKMN0q9",
+    "drive_link": "https://drive.google.com/drive/folders/1K9zZGNGoznrrpswZRP4MendQDHKMN0q9?usp=sharing",
     "drive_folder_id": "1K9zZGNGoznrrpswZRP4MendQDHKMN0q9",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -927,7 +965,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 713
+    "registered_count": 713,
+    "driveLink": "https://drive.google.com/drive/folders/1K9zZGNGoznrrpswZRP4MendQDHKMN0q9?usp=sharing"
   },
   {
     "id": 40,
@@ -937,7 +976,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chương Trình Money Master Mind Cùng Nguyễn Tùng Sơn( Sơn Piaz ) cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/11J72GP82ml3scypPYbKgnV-jZjMibIXb",
+    "drive_link": "https://drive.google.com/drive/folders/11J72GP82ml3scypPYbKgnV-jZjMibIXb?usp=sharing",
     "drive_folder_id": "11J72GP82ml3scypPYbKgnV-jZjMibIXb",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -945,7 +984,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 750
+    "registered_count": 750,
+    "driveLink": "https://drive.google.com/drive/folders/11J72GP82ml3scypPYbKgnV-jZjMibIXb?usp=sharing"
   },
   {
     "id": 41,
@@ -955,7 +995,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Combo 3 Khóa Học Làm Chủ Youtube \\u0026 Ai Từ A-z Cùng Bagi Academy cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1IaCo0BdWN6axRC-8NiHcwJqXYPzQBV6k",
+    "drive_link": "https://drive.google.com/drive/folders/1IaCo0BdWN6axRC-8NiHcwJqXYPzQBV6k?usp=sharing",
     "drive_folder_id": "1IaCo0BdWN6axRC-8NiHcwJqXYPzQBV6k",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -963,7 +1003,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 787
+    "registered_count": 787,
+    "driveLink": "https://drive.google.com/drive/folders/1IaCo0BdWN6axRC-8NiHcwJqXYPzQBV6k?usp=sharing"
   },
   {
     "id": 42,
@@ -973,7 +1014,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Full Combo Khóa Học Hoàng Mạnh Cường cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1YK3IHaU-kP0exlllT9_C4P8eXRp2hrxt",
+    "drive_link": "https://drive.google.com/drive/folders/1YK3IHaU-kP0exlllT9_C4P8eXRp2hrxt?usp=sharing",
     "drive_folder_id": "1YK3IHaU-kP0exlllT9_C4P8eXRp2hrxt",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -981,7 +1022,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 824
+    "registered_count": 824,
+    "driveLink": "https://drive.google.com/drive/folders/1YK3IHaU-kP0exlllT9_C4P8eXRp2hrxt?usp=sharing"
   },
   {
     "id": 43,
@@ -991,7 +1033,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Affiliate Success Mới Nhất Cùng Khởi Nguyên Mmo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1gef7vsIjyP7EDKPrCiGDNNbs7J0EAbi8",
+    "drive_link": "https://drive.google.com/drive/folders/1gef7vsIjyP7EDKPrCiGDNNbs7J0EAbi8?usp=sharing",
     "drive_folder_id": "1gef7vsIjyP7EDKPrCiGDNNbs7J0EAbi8",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -999,7 +1041,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 861
+    "registered_count": 861,
+    "driveLink": "https://drive.google.com/drive/folders/1gef7vsIjyP7EDKPrCiGDNNbs7J0EAbi8?usp=sharing"
   },
   {
     "id": 44,
@@ -1009,7 +1052,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Bán Content Youtube View Ngoại Vi Đức Gấu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/158MtyhABrVeS_0wPe0u9Hqn-QdG0MMjG",
+    "drive_link": "https://drive.google.com/drive/folders/158MtyhABrVeS_0wPe0u9Hqn-QdG0MMjG?usp=sharing",
     "drive_folder_id": "158MtyhABrVeS_0wPe0u9Hqn-QdG0MMjG",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1017,7 +1060,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 898
+    "registered_count": 898,
+    "driveLink": "https://drive.google.com/drive/folders/158MtyhABrVeS_0wPe0u9Hqn-QdG0MMjG?usp=sharing"
   },
   {
     "id": 45,
@@ -1027,7 +1071,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Bí Quyết Kiếm Tiền Trên Youtube Cùng Vương Mạnh Hoàng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1mF-q9hOU4JidnddUirsx_-egSrgTnoOT",
+    "drive_link": "https://drive.google.com/drive/folders/1mF-q9hOU4JidnddUirsx_-egSrgTnoOT?usp=sharing",
     "drive_folder_id": "1mF-q9hOU4JidnddUirsx_-egSrgTnoOT",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1035,7 +1079,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 935
+    "registered_count": 935,
+    "driveLink": "https://drive.google.com/drive/folders/1mF-q9hOU4JidnddUirsx_-egSrgTnoOT?usp=sharing"
   },
   {
     "id": 46,
@@ -1045,7 +1090,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Black MMO PRO – Tự Động Hóa Quy Trình Kiếm Tiền Online Cùng Hoàng PM cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1BZGZxNjVFc6z40H-IexS7vGps5tZ8EZy",
+    "drive_link": "https://drive.google.com/drive/folders/1BZGZxNjVFc6z40H-IexS7vGps5tZ8EZy?usp=sharing",
     "drive_folder_id": "1BZGZxNjVFc6z40H-IexS7vGps5tZ8EZy",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1053,7 +1098,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 122
+    "registered_count": 122,
+    "driveLink": "https://drive.google.com/drive/folders/1BZGZxNjVFc6z40H-IexS7vGps5tZ8EZy?usp=sharing"
   },
   {
     "id": 47,
@@ -1063,7 +1109,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cày Đơn Affiliate Với Sàn Shopee – Tạo Thu Nhập Với Tiếp Thị Liên Kết Trên Sàn Tmđt Có Traffic Cao Nhất Việt Nam Cùng Eric Trần cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xGLLmgeqF9wGJTNmv9lWhCjiptQmxT3C",
+    "drive_link": "https://drive.google.com/drive/folders/1xGLLmgeqF9wGJTNmv9lWhCjiptQmxT3C?usp=sharing",
     "drive_folder_id": "1xGLLmgeqF9wGJTNmv9lWhCjiptQmxT3C",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1071,7 +1117,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 159
+    "registered_count": 159,
+    "driveLink": "https://drive.google.com/drive/folders/1xGLLmgeqF9wGJTNmv9lWhCjiptQmxT3C?usp=sharing"
   },
   {
     "id": 48,
@@ -1081,7 +1128,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Copywriting Trương Phương – $1000 Package Mới Nhất cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/11TBZc6XP714m_cxF9sPpoaTu23Kjjaac",
+    "drive_link": "https://drive.google.com/drive/folders/11TBZc6XP714m_cxF9sPpoaTu23Kjjaac?usp=sharing",
     "drive_folder_id": "11TBZc6XP714m_cxF9sPpoaTu23Kjjaac",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1089,7 +1136,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 196
+    "registered_count": 196,
+    "driveLink": "https://drive.google.com/drive/folders/11TBZc6XP714m_cxF9sPpoaTu23Kjjaac?usp=sharing"
   },
   {
     "id": 49,
@@ -1099,7 +1147,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Dropship Pod Brand Builder Mới Nhất Cùng Lâm Work cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ZDwXta0mBDwf7c95EcWBsON_TR3efiE4",
+    "drive_link": "https://drive.google.com/drive/folders/1ZDwXta0mBDwf7c95EcWBsON_TR3efiE4?usp=sharing",
     "drive_folder_id": "1ZDwXta0mBDwf7c95EcWBsON_TR3efiE4",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1107,7 +1155,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 233
+    "registered_count": 233,
+    "driveLink": "https://drive.google.com/drive/folders/1ZDwXta0mBDwf7c95EcWBsON_TR3efiE4?usp=sharing"
   },
   {
     "id": 50,
@@ -1117,7 +1166,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Editor Launchpad 2026 – Trở Thành Một Video Editor Chuyên Nghiệp Cùng Kevin Mach cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1nlRu0CdeUNm4PjX2KT49qLB1a4vPOeje",
+    "drive_link": "https://drive.google.com/drive/folders/1nlRu0CdeUNm4PjX2KT49qLB1a4vPOeje?usp=sharing",
     "drive_folder_id": "1nlRu0CdeUNm4PjX2KT49qLB1a4vPOeje",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1125,7 +1174,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 270
+    "registered_count": 270,
+    "driveLink": "https://drive.google.com/drive/folders/1nlRu0CdeUNm4PjX2KT49qLB1a4vPOeje?usp=sharing"
   },
   {
     "id": 51,
@@ -1135,7 +1185,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Geolayers 3 _ Làm Video Hiệu Ứng Vẽ Bản Đồ Bất Động Sản cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1pqTQ0ABp4I3qqaurHRn0mMPonYCpm-14",
+    "drive_link": "https://drive.google.com/drive/folders/1pqTQ0ABp4I3qqaurHRn0mMPonYCpm-14?usp=sharing",
     "drive_folder_id": "1pqTQ0ABp4I3qqaurHRn0mMPonYCpm-14",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1143,7 +1193,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 307
+    "registered_count": 307,
+    "driveLink": "https://drive.google.com/drive/folders/1pqTQ0ABp4I3qqaurHRn0mMPonYCpm-14?usp=sharing"
   },
   {
     "id": 52,
@@ -1153,7 +1204,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Hướng Dẫn Bán Hàng Trên Sàn Shopee Từ A Đến Z Cho Người Mới Bắt Đầu – Linh Việt Vũ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1fZQckET-mswzHcRVRrP1AnTBfdCTBSQF",
+    "drive_link": "https://drive.google.com/drive/folders/1fZQckET-mswzHcRVRrP1AnTBfdCTBSQF?usp=sharing",
     "drive_folder_id": "1fZQckET-mswzHcRVRrP1AnTBfdCTBSQF",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1161,7 +1212,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 344
+    "registered_count": 344,
+    "driveLink": "https://drive.google.com/drive/folders/1fZQckET-mswzHcRVRrP1AnTBfdCTBSQF?usp=sharing"
   },
   {
     "id": 53,
@@ -1171,7 +1223,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khai Phóng Sức Mạnh Chatgpt – Kiếm Tiền Bùng Nổ 2023 Cùng Nguyễn Phước Vĩnh Hưng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Mp2qsDn6JyOvD6ZBHkvgJOloAf6e_abX",
+    "drive_link": "https://drive.google.com/drive/folders/1Mp2qsDn6JyOvD6ZBHkvgJOloAf6e_abX?usp=sharing",
     "drive_folder_id": "1Mp2qsDn6JyOvD6ZBHkvgJOloAf6e_abX",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1179,7 +1231,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 381
+    "registered_count": 381,
+    "driveLink": "https://drive.google.com/drive/folders/1Mp2qsDn6JyOvD6ZBHkvgJOloAf6e_abX?usp=sharing"
   },
   {
     "id": 54,
@@ -1189,7 +1242,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kiếm Ngàn Đô Với Dropshipping Trên Amazon Cùng Vương Mạnh Hoàng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1KUcan4AGvVslhcQK8CuYJfg4MIjcDnVs",
+    "drive_link": "https://drive.google.com/drive/folders/1KUcan4AGvVslhcQK8CuYJfg4MIjcDnVs?usp=sharing",
     "drive_folder_id": "1KUcan4AGvVslhcQK8CuYJfg4MIjcDnVs",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1197,7 +1250,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 418
+    "registered_count": 418,
+    "driveLink": "https://drive.google.com/drive/folders/1KUcan4AGvVslhcQK8CuYJfg4MIjcDnVs?usp=sharing"
   },
   {
     "id": 55,
@@ -1207,7 +1261,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kiếm Tiền Với Video Facebook Cùng Tô Hải Đoàn cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xDZa18LYt0IpN7sCicDnw3I11aN_rH5h",
+    "drive_link": "https://drive.google.com/drive/folders/1xDZa18LYt0IpN7sCicDnw3I11aN_rH5h?usp=sharing",
     "drive_folder_id": "1xDZa18LYt0IpN7sCicDnw3I11aN_rH5h",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1215,7 +1269,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 455
+    "registered_count": 455,
+    "driveLink": "https://drive.google.com/drive/folders/1xDZa18LYt0IpN7sCicDnw3I11aN_rH5h?usp=sharing"
   },
   {
     "id": 56,
@@ -1225,7 +1280,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kiếm Tiền Với Youtube ( Youtube Adsense ) Cùng Tô Hải Đoàn cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1jfXdDyLI-BtqiOrUx8fmwpSmv5KHzm6G",
+    "drive_link": "https://drive.google.com/drive/folders/1jfXdDyLI-BtqiOrUx8fmwpSmv5KHzm6G?usp=sharing",
     "drive_folder_id": "1jfXdDyLI-BtqiOrUx8fmwpSmv5KHzm6G",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1233,7 +1288,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 492
+    "registered_count": 492,
+    "driveLink": "https://drive.google.com/drive/folders/1jfXdDyLI-BtqiOrUx8fmwpSmv5KHzm6G?usp=sharing"
   },
   {
     "id": 57,
@@ -1243,7 +1299,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kiếm Tiền Với Youtube Ai Mới Nhất Cùng Văn Thế Mmo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1WJIkV5mSxb1UJD-uhVWa-T5XoAgN25XD",
+    "drive_link": "https://drive.google.com/drive/folders/1WJIkV5mSxb1UJD-uhVWa-T5XoAgN25XD?usp=sharing",
     "drive_folder_id": "1WJIkV5mSxb1UJD-uhVWa-T5XoAgN25XD",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1251,7 +1307,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 529
+    "registered_count": 529,
+    "driveLink": "https://drive.google.com/drive/folders/1WJIkV5mSxb1UJD-uhVWa-T5XoAgN25XD?usp=sharing"
   },
   {
     "id": 58,
@@ -1261,7 +1318,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Làm Video Ai – Tự Tin Xây Kênh Kiếm Tiền Cùng Khởi Nguyên Mmo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/138l7icERzpEyhYtsrcS0oUNdjmQmKiSo",
+    "drive_link": "https://drive.google.com/drive/folders/138l7icERzpEyhYtsrcS0oUNdjmQmKiSo?usp=sharing",
     "drive_folder_id": "138l7icERzpEyhYtsrcS0oUNdjmQmKiSo",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1269,7 +1326,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 566
+    "registered_count": 566,
+    "driveLink": "https://drive.google.com/drive/folders/138l7icERzpEyhYtsrcS0oUNdjmQmKiSo?usp=sharing"
   },
   {
     "id": 59,
@@ -1279,7 +1337,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Làm Video AI Bán Hàng \\u0026 Affiliate Đa Nền Tảng Phan Đức Nho cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1PWtq2cwj3TzuW2fvvnXaA4MPXpELm8vD",
+    "drive_link": "https://drive.google.com/drive/folders/1PWtq2cwj3TzuW2fvvnXaA4MPXpELm8vD?usp=sharing",
     "drive_folder_id": "1PWtq2cwj3TzuW2fvvnXaA4MPXpELm8vD",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1287,7 +1345,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 603
+    "registered_count": 603,
+    "driveLink": "https://drive.google.com/drive/folders/1PWtq2cwj3TzuW2fvvnXaA4MPXpELm8vD?usp=sharing"
   },
   {
     "id": 60,
@@ -1297,7 +1356,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Làm Video Giới Thiệu Bất Động Sản Cùng Thiên Minh Creator cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1rnbyCY8CKwLQsze-l9zjPTlQ0ywDwl-o",
+    "drive_link": "https://drive.google.com/drive/folders/1rnbyCY8CKwLQsze-l9zjPTlQ0ywDwl-o?usp=sharing",
     "drive_folder_id": "1rnbyCY8CKwLQsze-l9zjPTlQ0ywDwl-o",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1305,7 +1364,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 640
+    "registered_count": 640,
+    "driveLink": "https://drive.google.com/drive/folders/1rnbyCY8CKwLQsze-l9zjPTlQ0ywDwl-o?usp=sharing"
   },
   {
     "id": 61,
@@ -1315,7 +1375,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Làm Video Tin Tức Nước Ngoài Kiếm Tiền Trên Youtube Ngoại cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/16zAxyjYfnyDAn8SLMKQOXN1B24P6x9L9",
+    "drive_link": "https://drive.google.com/drive/folders/16zAxyjYfnyDAn8SLMKQOXN1B24P6x9L9?usp=sharing",
     "drive_folder_id": "16zAxyjYfnyDAn8SLMKQOXN1B24P6x9L9",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1323,7 +1383,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 677
+    "registered_count": 677,
+    "driveLink": "https://drive.google.com/drive/folders/16zAxyjYfnyDAn8SLMKQOXN1B24P6x9L9?usp=sharing"
   },
   {
     "id": 62,
@@ -1333,7 +1394,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lò Luyện Affiliate – Mr. Thương Chia Sẻ (Thương Bùi) – CHƯƠNG TRÌNH COACHING THỰC CHIẾN_ BIẾN TƯ DUY THÀNH TIỀN TỆ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1H1v3D9_GIJoH4Tmpwd2IkA2yWt7DO4TP",
+    "drive_link": "https://drive.google.com/drive/folders/1H1v3D9_GIJoH4Tmpwd2IkA2yWt7DO4TP?usp=sharing",
     "drive_folder_id": "1H1v3D9_GIJoH4Tmpwd2IkA2yWt7DO4TP",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1341,7 +1402,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 714
+    "registered_count": 714,
+    "driveLink": "https://drive.google.com/drive/folders/1H1v3D9_GIJoH4Tmpwd2IkA2yWt7DO4TP?usp=sharing"
   },
   {
     "id": 63,
@@ -1351,7 +1413,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Master Youtube Infinity – Biến Youtube Thành Cỗ Máy Kiếm Tiền Của Bạn Cùng Đào Thanh Tú cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1iW1ZnOp_aM5Y8LOF8S6mJlJhd8rHCoO3",
+    "drive_link": "https://drive.google.com/drive/folders/1iW1ZnOp_aM5Y8LOF8S6mJlJhd8rHCoO3?usp=sharing",
     "drive_folder_id": "1iW1ZnOp_aM5Y8LOF8S6mJlJhd8rHCoO3",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1359,7 +1421,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 751
+    "registered_count": 751,
+    "driveLink": "https://drive.google.com/drive/folders/1iW1ZnOp_aM5Y8LOF8S6mJlJhd8rHCoO3?usp=sharing"
   },
   {
     "id": 64,
@@ -1369,7 +1432,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Money Master Mind 2025 Sơn Piaz – Bắt Đầu Hành Trình Kiếm $1,000 Đầu Tiên Với Affiliate X Ai Với Lộ Trình Rõ Ràng, Ra Tiền Ngay cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/11bzOLsE7R3kkkNS-9NtYGgwQI0W7ToO-",
+    "drive_link": "https://drive.google.com/drive/folders/11bzOLsE7R3kkkNS-9NtYGgwQI0W7ToO-?usp=sharing",
     "drive_folder_id": "11bzOLsE7R3kkkNS-9NtYGgwQI0W7ToO-",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1377,7 +1440,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 788
+    "registered_count": 788,
+    "driveLink": "https://drive.google.com/drive/folders/11bzOLsE7R3kkkNS-9NtYGgwQI0W7ToO-?usp=sharing"
   },
   {
     "id": 65,
@@ -1387,7 +1451,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Nghề Content Premium – No Viral No Money Premium – Thực Hành Xây Kênh Toàn Diện Cùng Đức Dương cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1oDM4SZV5KZBVFSGXbGwhKkfgWuqkNU3H",
+    "drive_link": "https://drive.google.com/drive/folders/1oDM4SZV5KZBVFSGXbGwhKkfgWuqkNU3H?usp=sharing",
     "drive_folder_id": "1oDM4SZV5KZBVFSGXbGwhKkfgWuqkNU3H",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1395,7 +1459,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 825
+    "registered_count": 825,
+    "driveLink": "https://drive.google.com/drive/folders/1oDM4SZV5KZBVFSGXbGwhKkfgWuqkNU3H?usp=sharing"
   },
   {
     "id": 66,
@@ -1405,7 +1470,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Paid Traffic For Affiliate Hoàng Nam Mmo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1wz4Pv0scUnvUUymY2Iqvawnei9tjkNls",
+    "drive_link": "https://drive.google.com/drive/folders/1wz4Pv0scUnvUUymY2Iqvawnei9tjkNls?usp=sharing",
     "drive_folder_id": "1wz4Pv0scUnvUUymY2Iqvawnei9tjkNls",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1413,7 +1478,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 862
+    "registered_count": 862,
+    "driveLink": "https://drive.google.com/drive/folders/1wz4Pv0scUnvUUymY2Iqvawnei9tjkNls?usp=sharing"
   },
   {
     "id": 67,
@@ -1423,7 +1489,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Pod Từ A – Z Live Training Cùng Danny Nguyen \\u0026 Printbase cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1uSBNzyXIaMuhEiJ3xtHjPxIXIyJaf816",
+    "drive_link": "https://drive.google.com/drive/folders/1uSBNzyXIaMuhEiJ3xtHjPxIXIyJaf816?usp=sharing",
     "drive_folder_id": "1uSBNzyXIaMuhEiJ3xtHjPxIXIyJaf816",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1431,7 +1497,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 899
+    "registered_count": 899,
+    "driveLink": "https://drive.google.com/drive/folders/1uSBNzyXIaMuhEiJ3xtHjPxIXIyJaf816?usp=sharing"
   },
   {
     "id": 68,
@@ -1441,7 +1508,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Print On Demand (pod) Việt Nam Cùng Ngô Thành cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/186JE8oas-U5cBid5KJ5j2GCRgiObmHRO",
+    "drive_link": "https://drive.google.com/drive/folders/186JE8oas-U5cBid5KJ5j2GCRgiObmHRO?usp=sharing",
     "drive_folder_id": "186JE8oas-U5cBid5KJ5j2GCRgiObmHRO",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1449,7 +1516,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 936
+    "registered_count": 936,
+    "driveLink": "https://drive.google.com/drive/folders/186JE8oas-U5cBid5KJ5j2GCRgiObmHRO?usp=sharing"
   },
   {
     "id": 69,
@@ -1459,7 +1527,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Quảng Cáo Youtube Ads Funnel + Mastery 2023 Cùng Nguyễn Tân Kiệt cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1EjSzin9zR3k9QYR4BCi1piOSpdULg7sb",
+    "drive_link": "https://drive.google.com/drive/folders/1EjSzin9zR3k9QYR4BCi1piOSpdULg7sb?usp=sharing",
     "drive_folder_id": "1EjSzin9zR3k9QYR4BCi1piOSpdULg7sb",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1467,7 +1535,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 123
+    "registered_count": 123,
+    "driveLink": "https://drive.google.com/drive/folders/1EjSzin9zR3k9QYR4BCi1piOSpdULg7sb?usp=sharing"
   },
   {
     "id": 70,
@@ -1477,7 +1546,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học ROI Freelance Minh Xin Chào 2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/11uxr3V973wTvEizdSB_TLIJedb3Gi8_c",
+    "drive_link": "https://drive.google.com/drive/folders/11uxr3V973wTvEizdSB_TLIJedb3Gi8_c?usp=sharing",
     "drive_folder_id": "11uxr3V973wTvEizdSB_TLIJedb3Gi8_c",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1485,7 +1554,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 160
+    "registered_count": 160,
+    "driveLink": "https://drive.google.com/drive/folders/11uxr3V973wTvEizdSB_TLIJedb3Gi8_c?usp=sharing"
   },
   {
     "id": 71,
@@ -1495,7 +1565,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Shopee Super Affiliate Tạo Thu Nhập Đều Đặn Với Tiếp Thị Liên Kết Trên Nền Tảng Shopee cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1vNMxlWpekR1QoV7y1OTBFuYAbTqodnkU",
+    "drive_link": "https://drive.google.com/drive/folders/1vNMxlWpekR1QoV7y1OTBFuYAbTqodnkU?usp=sharing",
     "drive_folder_id": "1vNMxlWpekR1QoV7y1OTBFuYAbTqodnkU",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1503,7 +1573,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 197
+    "registered_count": 197,
+    "driveLink": "https://drive.google.com/drive/folders/1vNMxlWpekR1QoV7y1OTBFuYAbTqodnkU?usp=sharing"
   },
   {
     "id": 72,
@@ -1513,7 +1584,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Social Media Starter – Qcc Mastery Hub Mới Nhất cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1DJ9U4jtDGWJhLuFLs8Qas6a7gzg0FwcH",
+    "drive_link": "https://drive.google.com/drive/folders/1DJ9U4jtDGWJhLuFLs8Qas6a7gzg0FwcH?usp=sharing",
     "drive_folder_id": "1DJ9U4jtDGWJhLuFLs8Qas6a7gzg0FwcH",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1521,7 +1592,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 234
+    "registered_count": 234,
+    "driveLink": "https://drive.google.com/drive/folders/1DJ9U4jtDGWJhLuFLs8Qas6a7gzg0FwcH?usp=sharing"
   },
   {
     "id": 73,
@@ -1531,7 +1603,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tạo Và Xây Dựng Kênh Youtube Từ A - Z Cho Người Mới cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1JwtxAIUu9gnXDD_M57PGFFaEvTz1PcKz",
+    "drive_link": "https://drive.google.com/drive/folders/1JwtxAIUu9gnXDD_M57PGFFaEvTz1PcKz?usp=sharing",
     "drive_folder_id": "1JwtxAIUu9gnXDD_M57PGFFaEvTz1PcKz",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1539,7 +1611,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 271
+    "registered_count": 271,
+    "driveLink": "https://drive.google.com/drive/folders/1JwtxAIUu9gnXDD_M57PGFFaEvTz1PcKz?usp=sharing"
   },
   {
     "id": 74,
@@ -1549,7 +1622,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Video Editor [ Đạt Được Mức Thu Nhập $1000_ Tháng Trong 90 Ngày] Cùng Lợi Đỗ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/18idXOVLWpyvM0W0gWA8haiVozvWYvj33",
+    "drive_link": "https://drive.google.com/drive/folders/18idXOVLWpyvM0W0gWA8haiVozvWYvj33?usp=sharing",
     "drive_folder_id": "18idXOVLWpyvM0W0gWA8haiVozvWYvj33",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1557,7 +1630,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 308
+    "registered_count": 308,
+    "driveLink": "https://drive.google.com/drive/folders/18idXOVLWpyvM0W0gWA8haiVozvWYvj33?usp=sharing"
   },
   {
     "id": 75,
@@ -1567,7 +1641,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Viral Builder 2025 Cùng Nguyễn Đào Trung Hiếu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1cnAja3F1k8_Puy3P156RPJc7Fo9dTO5u",
+    "drive_link": "https://drive.google.com/drive/folders/1cnAja3F1k8_Puy3P156RPJc7Fo9dTO5u?usp=sharing",
     "drive_folder_id": "1cnAja3F1k8_Puy3P156RPJc7Fo9dTO5u",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1575,7 +1649,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 345
+    "registered_count": 345,
+    "driveLink": "https://drive.google.com/drive/folders/1cnAja3F1k8_Puy3P156RPJc7Fo9dTO5u?usp=sharing"
   },
   {
     "id": 76,
@@ -1585,7 +1660,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Your Internet Redbook – Kiếm 1000$ – 5000$_tháng Cùng Dươngk cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1galqAdwBq49BTv-AAKno8dCRslkuZvK_",
+    "drive_link": "https://drive.google.com/drive/folders/1galqAdwBq49BTv-AAKno8dCRslkuZvK_?usp=sharing",
     "drive_folder_id": "1galqAdwBq49BTv-AAKno8dCRslkuZvK_",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1593,7 +1668,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 382
+    "registered_count": 382,
+    "driveLink": "https://drive.google.com/drive/folders/1galqAdwBq49BTv-AAKno8dCRslkuZvK_?usp=sharing"
   },
   {
     "id": 77,
@@ -1603,7 +1679,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube - Chiến Lược Ai Content \\u0026 Kiếm Tiền Youtube 2025 - Vũ Văn Thắng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Yru3Eb369VXnoDEx62rGzQsTH-SpuqHz",
+    "drive_link": "https://drive.google.com/drive/folders/1Yru3Eb369VXnoDEx62rGzQsTH-SpuqHz?usp=sharing",
     "drive_folder_id": "1Yru3Eb369VXnoDEx62rGzQsTH-SpuqHz",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1611,7 +1687,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 419
+    "registered_count": 419,
+    "driveLink": "https://drive.google.com/drive/folders/1Yru3Eb369VXnoDEx62rGzQsTH-SpuqHz?usp=sharing"
   },
   {
     "id": 78,
@@ -1621,7 +1698,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube Ai Domination Membership 2023 Cùng Ninh Đôn cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1sW8ojaxUDOFXoiN9VIcxgmWKsoxsCib-",
+    "drive_link": "https://drive.google.com/drive/folders/1sW8ojaxUDOFXoiN9VIcxgmWKsoxsCib-?usp=sharing",
     "drive_folder_id": "1sW8ojaxUDOFXoiN9VIcxgmWKsoxsCib-",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1629,7 +1706,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 456
+    "registered_count": 456,
+    "driveLink": "https://drive.google.com/drive/folders/1sW8ojaxUDOFXoiN9VIcxgmWKsoxsCib-?usp=sharing"
   },
   {
     "id": 79,
@@ -1639,7 +1717,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube Business Model Cùng Tô Hải Đoàn cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17EECkvgM3f7LiYJtMv_6ZTFEyanUiloD",
+    "drive_link": "https://drive.google.com/drive/folders/17EECkvgM3f7LiYJtMv_6ZTFEyanUiloD?usp=sharing",
     "drive_folder_id": "17EECkvgM3f7LiYJtMv_6ZTFEyanUiloD",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1647,7 +1725,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 493
+    "registered_count": 493,
+    "driveLink": "https://drive.google.com/drive/folders/17EECkvgM3f7LiYJtMv_6ZTFEyanUiloD?usp=sharing"
   },
   {
     "id": 80,
@@ -1657,7 +1736,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube Hải Nghiêm K10 Mới Nhất 10_2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1YhIrRfXJMNXqXwozloyxowTIU99ZYvEC",
+    "drive_link": "https://drive.google.com/drive/folders/1YhIrRfXJMNXqXwozloyxowTIU99ZYvEC?usp=sharing",
     "drive_folder_id": "1YhIrRfXJMNXqXwozloyxowTIU99ZYvEC",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1665,7 +1744,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 530
+    "registered_count": 530,
+    "driveLink": "https://drive.google.com/drive/folders/1YhIrRfXJMNXqXwozloyxowTIU99ZYvEC?usp=sharing"
   },
   {
     "id": 81,
@@ -1675,7 +1755,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube Total Success Huân Academy Mới Nhất – Kiếm Tiền Từ Youtube Content Và Bán Content View Ngoại cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1oHxx3ao2jR2Nt2cd7VGx3nvB9YYVDpf1",
+    "drive_link": "https://drive.google.com/drive/folders/1oHxx3ao2jR2Nt2cd7VGx3nvB9YYVDpf1?usp=sharing",
     "drive_folder_id": "1oHxx3ao2jR2Nt2cd7VGx3nvB9YYVDpf1",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1683,7 +1763,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 567
+    "registered_count": 567,
+    "driveLink": "https://drive.google.com/drive/folders/1oHxx3ao2jR2Nt2cd7VGx3nvB9YYVDpf1?usp=sharing"
   },
   {
     "id": 82,
@@ -1693,7 +1774,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kiếm 100 Triệu Mỗi Tháng Với Affiliate Và Ai Cùng Lê Thanh Sơn cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1XsKxzzoIBEQeoVe63pPxHY4uLHwNxqrV",
+    "drive_link": "https://drive.google.com/drive/folders/1XsKxzzoIBEQeoVe63pPxHY4uLHwNxqrV?usp=sharing",
     "drive_folder_id": "1XsKxzzoIBEQeoVe63pPxHY4uLHwNxqrV",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1701,7 +1782,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 604
+    "registered_count": 604,
+    "driveLink": "https://drive.google.com/drive/folders/1XsKxzzoIBEQeoVe63pPxHY4uLHwNxqrV?usp=sharing"
   },
   {
     "id": 83,
@@ -1711,7 +1793,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 590000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Money Counts Live - Xây Dựng Hệ Thống Kiếm Tiền Trên Internet Cùng Phạm Thành Long cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1aZ5qz2jB0nIpG3p9UP2DlGMSqxUkbdeV",
+    "drive_link": "https://drive.google.com/drive/folders/1aZ5qz2jB0nIpG3p9UP2DlGMSqxUkbdeV?usp=sharing",
     "drive_folder_id": "1aZ5qz2jB0nIpG3p9UP2DlGMSqxUkbdeV",
     "category_id": 5,
     "category_name": "Kiếm tiền Online & MMO",
@@ -1719,7 +1801,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 641
+    "registered_count": 641,
+    "driveLink": "https://drive.google.com/drive/folders/1aZ5qz2jB0nIpG3p9UP2DlGMSqxUkbdeV?usp=sharing"
   },
   {
     "id": 84,
@@ -1729,7 +1812,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Bán hàng online cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Us6TZrpLVOqdoS1UOxWgdEGRT9J_Cr5X",
+    "drive_link": "https://drive.google.com/drive/folders/1Us6TZrpLVOqdoS1UOxWgdEGRT9J_Cr5X?usp=sharing",
     "drive_folder_id": "1Us6TZrpLVOqdoS1UOxWgdEGRT9J_Cr5X",
     "category_id": 6,
     "category_name": "Kinh doanh & Khởi nghiệp",
@@ -1737,7 +1820,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 678
+    "registered_count": 678,
+    "driveLink": "https://drive.google.com/drive/folders/1Us6TZrpLVOqdoS1UOxWgdEGRT9J_Cr5X?usp=sharing"
   },
   {
     "id": 85,
@@ -1747,7 +1831,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chiến lược kinh doanh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/115SVfNFysC_Wb7K6WLUFxNcRXl5MrQF2",
+    "drive_link": "https://drive.google.com/drive/folders/115SVfNFysC_Wb7K6WLUFxNcRXl5MrQF2?usp=sharing",
     "drive_folder_id": "115SVfNFysC_Wb7K6WLUFxNcRXl5MrQF2",
     "category_id": 6,
     "category_name": "Kinh doanh & Khởi nghiệp",
@@ -1755,7 +1839,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 715
+    "registered_count": 715,
+    "driveLink": "https://drive.google.com/drive/folders/115SVfNFysC_Wb7K6WLUFxNcRXl5MrQF2?usp=sharing"
   },
   {
     "id": 86,
@@ -1765,7 +1850,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chốt sale cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1j6EcTq6i_0HQN1ARdd1NpNMBN4q9y0QU",
+    "drive_link": "https://drive.google.com/drive/folders/1j6EcTq6i_0HQN1ARdd1NpNMBN4q9y0QU?usp=sharing",
     "drive_folder_id": "1j6EcTq6i_0HQN1ARdd1NpNMBN4q9y0QU",
     "category_id": 6,
     "category_name": "Kinh doanh & Khởi nghiệp",
@@ -1773,7 +1858,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 752
+    "registered_count": 752,
+    "driveLink": "https://drive.google.com/drive/folders/1j6EcTq6i_0HQN1ARdd1NpNMBN4q9y0QU?usp=sharing"
   },
   {
     "id": 87,
@@ -1783,7 +1869,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kinh doanh \\u0026 khởi nghiệp cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1hMRtxv6EFnUIGEX-6bdwNpVd4yu3JRvx",
+    "drive_link": "https://drive.google.com/drive/folders/1hMRtxv6EFnUIGEX-6bdwNpVd4yu3JRvx?usp=sharing",
     "drive_folder_id": "1hMRtxv6EFnUIGEX-6bdwNpVd4yu3JRvx",
     "category_id": 6,
     "category_name": "Kinh doanh & Khởi nghiệp",
@@ -1791,7 +1877,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 789
+    "registered_count": 789,
+    "driveLink": "https://drive.google.com/drive/folders/1hMRtxv6EFnUIGEX-6bdwNpVd4yu3JRvx?usp=sharing"
   },
   {
     "id": 88,
@@ -1801,7 +1888,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Shopee cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1kOi4LnUgaeYkpbm4AC86J1AMYOYdrEGB",
+    "drive_link": "https://drive.google.com/drive/folders/1kOi4LnUgaeYkpbm4AC86J1AMYOYdrEGB?usp=sharing",
     "drive_folder_id": "1kOi4LnUgaeYkpbm4AC86J1AMYOYdrEGB",
     "category_id": 6,
     "category_name": "Kinh doanh & Khởi nghiệp",
@@ -1809,7 +1896,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 826
+    "registered_count": 826,
+    "driveLink": "https://drive.google.com/drive/folders/1kOi4LnUgaeYkpbm4AC86J1AMYOYdrEGB?usp=sharing"
   },
   {
     "id": 89,
@@ -1819,7 +1907,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 550000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá học Tiktok cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1mbTZiTPumStXssDvHfwIpaJCcE6aTNlz",
+    "drive_link": "https://drive.google.com/drive/folders/1mbTZiTPumStXssDvHfwIpaJCcE6aTNlz?usp=sharing",
     "drive_folder_id": "1mbTZiTPumStXssDvHfwIpaJCcE6aTNlz",
     "category_id": 7,
     "category_name": "Khóa học TikTok & Video ngắn",
@@ -1827,7 +1915,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 863
+    "registered_count": 863,
+    "driveLink": "https://drive.google.com/drive/folders/1mbTZiTPumStXssDvHfwIpaJCcE6aTNlz?usp=sharing"
   },
   {
     "id": 90,
@@ -1837,7 +1926,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 550000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá học Tiktok cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1wYfey_wbQO45knccunVueMmShDYSNSjZ",
+    "drive_link": "https://drive.google.com/drive/folders/1wYfey_wbQO45knccunVueMmShDYSNSjZ?usp=sharing",
     "drive_folder_id": "1wYfey_wbQO45knccunVueMmShDYSNSjZ",
     "category_id": 7,
     "category_name": "Khóa học TikTok & Video ngắn",
@@ -1845,7 +1934,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 900
+    "registered_count": 900,
+    "driveLink": "https://drive.google.com/drive/folders/1wYfey_wbQO45knccunVueMmShDYSNSjZ?usp=sharing"
   },
   {
     "id": 91,
@@ -1855,7 +1945,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 550000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá học Tiktok cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1g9Dr0MhdAlRJjJLA31K0H2ml93l2jy0b",
+    "drive_link": "https://drive.google.com/drive/folders/1g9Dr0MhdAlRJjJLA31K0H2ml93l2jy0b?usp=sharing",
     "drive_folder_id": "1g9Dr0MhdAlRJjJLA31K0H2ml93l2jy0b",
     "category_id": 7,
     "category_name": "Khóa học TikTok & Video ngắn",
@@ -1863,7 +1953,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 937
+    "registered_count": 937,
+    "driveLink": "https://drive.google.com/drive/folders/1g9Dr0MhdAlRJjJLA31K0H2ml93l2jy0b?usp=sharing"
   },
   {
     "id": 92,
@@ -1873,7 +1964,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 550000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá học Tiktok cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1SWg91_FeGEMokMsbYEam_kSTteNA5mY-",
+    "drive_link": "https://drive.google.com/drive/folders/1SWg91_FeGEMokMsbYEam_kSTteNA5mY-?usp=sharing",
     "drive_folder_id": "1SWg91_FeGEMokMsbYEam_kSTteNA5mY-",
     "category_id": 7,
     "category_name": "Khóa học TikTok & Video ngắn",
@@ -1881,7 +1972,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 59000,
     "is_combo": false,
-    "registered_count": 124
+    "registered_count": 124,
+    "driveLink": "https://drive.google.com/drive/folders/1SWg91_FeGEMokMsbYEam_kSTteNA5mY-?usp=sharing"
   },
   {
     "id": 93,
@@ -1891,7 +1983,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 550000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá học Tiktok cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1tL5hCK-KAu_mTWzyuCVBvxaLKvpyjgsa",
+    "drive_link": "https://drive.google.com/drive/folders/1tL5hCK-KAu_mTWzyuCVBvxaLKvpyjgsa?usp=sharing",
     "drive_folder_id": "1tL5hCK-KAu_mTWzyuCVBvxaLKvpyjgsa",
     "category_id": 7,
     "category_name": "Khóa học TikTok & Video ngắn",
@@ -1899,7 +1991,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 161
+    "registered_count": 161,
+    "driveLink": "https://drive.google.com/drive/folders/1tL5hCK-KAu_mTWzyuCVBvxaLKvpyjgsa?usp=sharing"
   },
   {
     "id": 94,
@@ -1909,7 +2002,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/02_ban_hoc_toi_gian.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kỹ năng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1x7A_nPATYHmUtfHuEMOz3eRTnRxZMcdz",
+    "drive_link": "https://drive.google.com/drive/folders/1x7A_nPATYHmUtfHuEMOz3eRTnRxZMcdz?usp=sharing",
     "drive_folder_id": "1x7A_nPATYHmUtfHuEMOz3eRTnRxZMcdz",
     "category_id": 8,
     "category_name": "Kỹ năng mềm & Phát triển bản thân",
@@ -1917,7 +2010,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 198
+    "registered_count": 198,
+    "driveLink": "https://drive.google.com/drive/folders/1x7A_nPATYHmUtfHuEMOz3eRTnRxZMcdz?usp=sharing"
   },
   {
     "id": 95,
@@ -1927,7 +2021,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kỹ năng đàm phán cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1v3XFVbZ4vvA7oSWS0A9eOZFozx00cJYP",
+    "drive_link": "https://drive.google.com/drive/folders/1v3XFVbZ4vvA7oSWS0A9eOZFozx00cJYP?usp=sharing",
     "drive_folder_id": "1v3XFVbZ4vvA7oSWS0A9eOZFozx00cJYP",
     "category_id": 8,
     "category_name": "Kỹ năng mềm & Phát triển bản thân",
@@ -1935,7 +2029,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 235
+    "registered_count": 235,
+    "driveLink": "https://drive.google.com/drive/folders/1v3XFVbZ4vvA7oSWS0A9eOZFozx00cJYP?usp=sharing"
   },
   {
     "id": 96,
@@ -1945,7 +2040,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kỹ năng giao tiếp cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1g_Joan9DZ1qNcqfMaEb2-bAqiLflCtiJ",
+    "drive_link": "https://drive.google.com/drive/folders/1g_Joan9DZ1qNcqfMaEb2-bAqiLflCtiJ?usp=sharing",
     "drive_folder_id": "1g_Joan9DZ1qNcqfMaEb2-bAqiLflCtiJ",
     "category_id": 8,
     "category_name": "Kỹ năng mềm & Phát triển bản thân",
@@ -1953,7 +2048,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 272
+    "registered_count": 272,
+    "driveLink": "https://drive.google.com/drive/folders/1g_Joan9DZ1qNcqfMaEb2-bAqiLflCtiJ?usp=sharing"
   },
   {
     "id": 97,
@@ -1963,7 +2059,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kỹ năng lãnh đạo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1dpp1yKaxn4T0F_lTX7jSfyF_jqDy_dpq",
+    "drive_link": "https://drive.google.com/drive/folders/1dpp1yKaxn4T0F_lTX7jSfyF_jqDy_dpq?usp=sharing",
     "drive_folder_id": "1dpp1yKaxn4T0F_lTX7jSfyF_jqDy_dpq",
     "category_id": 8,
     "category_name": "Kỹ năng mềm & Phát triển bản thân",
@@ -1971,7 +2067,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 309
+    "registered_count": 309,
+    "driveLink": "https://drive.google.com/drive/folders/1dpp1yKaxn4T0F_lTX7jSfyF_jqDy_dpq?usp=sharing"
   },
   {
     "id": 98,
@@ -1981,7 +2078,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Affiliate Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/12tLwQtjzRa81UhGmhjF1qvabaYTYmTa9",
+    "drive_link": "https://drive.google.com/drive/folders/12tLwQtjzRa81UhGmhjF1qvabaYTYmTa9?usp=sharing",
     "drive_folder_id": "12tLwQtjzRa81UhGmhjF1qvabaYTYmTa9",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -1989,7 +2086,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 346
+    "registered_count": 346,
+    "driveLink": "https://drive.google.com/drive/folders/12tLwQtjzRa81UhGmhjF1qvabaYTYmTa9?usp=sharing"
   },
   {
     "id": 99,
@@ -1999,7 +2097,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Content Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1zs94b407NfC7ArsILsGir0HEH-eppFfp",
+    "drive_link": "https://drive.google.com/drive/folders/1zs94b407NfC7ArsILsGir0HEH-eppFfp?usp=sharing",
     "drive_folder_id": "1zs94b407NfC7ArsILsGir0HEH-eppFfp",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2007,7 +2105,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 383
+    "registered_count": 383,
+    "driveLink": "https://drive.google.com/drive/folders/1zs94b407NfC7ArsILsGir0HEH-eppFfp?usp=sharing"
   },
   {
     "id": 100,
@@ -2017,7 +2116,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Digital Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1pDX8HrVUSSDs1fHR5SQ2UaOmhboWbdID",
+    "drive_link": "https://drive.google.com/drive/folders/1pDX8HrVUSSDs1fHR5SQ2UaOmhboWbdID?usp=sharing",
     "drive_folder_id": "1pDX8HrVUSSDs1fHR5SQ2UaOmhboWbdID",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2025,7 +2124,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 420
+    "registered_count": 420,
+    "driveLink": "https://drive.google.com/drive/folders/1pDX8HrVUSSDs1fHR5SQ2UaOmhboWbdID?usp=sharing"
   },
   {
     "id": 101,
@@ -2035,7 +2135,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Email Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1aZnDdm9Hpck34G8okldEdh_WEDNLTUI8",
+    "drive_link": "https://drive.google.com/drive/folders/1aZnDdm9Hpck34G8okldEdh_WEDNLTUI8?usp=sharing",
     "drive_folder_id": "1aZnDdm9Hpck34G8okldEdh_WEDNLTUI8",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2043,7 +2143,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 457
+    "registered_count": 457,
+    "driveLink": "https://drive.google.com/drive/folders/1aZnDdm9Hpck34G8okldEdh_WEDNLTUI8?usp=sharing"
   },
   {
     "id": 102,
@@ -2053,7 +2154,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Facebook Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Awn1JGEr9zpv56zRCYi3fzWECMJCU-MU",
+    "drive_link": "https://drive.google.com/drive/folders/1Awn1JGEr9zpv56zRCYi3fzWECMJCU-MU?usp=sharing",
     "drive_folder_id": "1Awn1JGEr9zpv56zRCYi3fzWECMJCU-MU",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2061,7 +2162,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 494
+    "registered_count": 494,
+    "driveLink": "https://drive.google.com/drive/folders/1Awn1JGEr9zpv56zRCYi3fzWECMJCU-MU?usp=sharing"
   },
   {
     "id": 103,
@@ -2071,7 +2173,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Google Ads cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1pxfDhs_Zv_PTt8dRIMfZ1netyW3eAi65",
+    "drive_link": "https://drive.google.com/drive/folders/1pxfDhs_Zv_PTt8dRIMfZ1netyW3eAi65?usp=sharing",
     "drive_folder_id": "1pxfDhs_Zv_PTt8dRIMfZ1netyW3eAi65",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2079,7 +2181,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 531
+    "registered_count": 531,
+    "driveLink": "https://drive.google.com/drive/folders/1pxfDhs_Zv_PTt8dRIMfZ1netyW3eAi65?usp=sharing"
   },
   {
     "id": 104,
@@ -2089,7 +2192,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Quảng cáo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1-6NXd858JqOo2dCVVoGWfUE-6nyBONau",
+    "drive_link": "https://drive.google.com/drive/folders/1-6NXd858JqOo2dCVVoGWfUE-6nyBONau?usp=sharing",
     "drive_folder_id": "1-6NXd858JqOo2dCVVoGWfUE-6nyBONau",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2097,7 +2200,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 568
+    "registered_count": 568,
+    "driveLink": "https://drive.google.com/drive/folders/1-6NXd858JqOo2dCVVoGWfUE-6nyBONau?usp=sharing"
   },
   {
     "id": 105,
@@ -2107,7 +2211,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học SEO cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1U3J3d1JtFfFxiUANfe4FNrnwDOMvwY08",
+    "drive_link": "https://drive.google.com/drive/folders/1U3J3d1JtFfFxiUANfe4FNrnwDOMvwY08?usp=sharing",
     "drive_folder_id": "1U3J3d1JtFfFxiUANfe4FNrnwDOMvwY08",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2115,7 +2219,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 605
+    "registered_count": 605,
+    "driveLink": "https://drive.google.com/drive/folders/1U3J3d1JtFfFxiUANfe4FNrnwDOMvwY08?usp=sharing"
   },
   {
     "id": 106,
@@ -2125,7 +2230,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Xây dựng thương hiệu cá nhân cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1iGiq99lqa9p_yocae_fQN17ZBtmA00rF",
+    "drive_link": "https://drive.google.com/drive/folders/1iGiq99lqa9p_yocae_fQN17ZBtmA00rF?usp=sharing",
     "drive_folder_id": "1iGiq99lqa9p_yocae_fQN17ZBtmA00rF",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2133,7 +2238,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 642
+    "registered_count": 642,
+    "driveLink": "https://drive.google.com/drive/folders/1iGiq99lqa9p_yocae_fQN17ZBtmA00rF?usp=sharing"
   },
   {
     "id": 107,
@@ -2143,7 +2249,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Xây dựng thương hiệu doanh nghiệp cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1G2U7UhgC6eVvmNzA3XLdRARu99pmADo6",
+    "drive_link": "https://drive.google.com/drive/folders/1G2U7UhgC6eVvmNzA3XLdRARu99pmADo6?usp=sharing",
     "drive_folder_id": "1G2U7UhgC6eVvmNzA3XLdRARu99pmADo6",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2151,7 +2257,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 679
+    "registered_count": 679,
+    "driveLink": "https://drive.google.com/drive/folders/1G2U7UhgC6eVvmNzA3XLdRARu99pmADo6?usp=sharing"
   },
   {
     "id": 108,
@@ -2161,7 +2268,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Zalo Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Wa0-nqTdZ-9jJDJWIcogihK-A1k3v0pt",
+    "drive_link": "https://drive.google.com/drive/folders/1Wa0-nqTdZ-9jJDJWIcogihK-A1k3v0pt?usp=sharing",
     "drive_folder_id": "1Wa0-nqTdZ-9jJDJWIcogihK-A1k3v0pt",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2169,7 +2276,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 716
+    "registered_count": 716,
+    "driveLink": "https://drive.google.com/drive/folders/1Wa0-nqTdZ-9jJDJWIcogihK-A1k3v0pt?usp=sharing"
   },
   {
     "id": 109,
@@ -2179,7 +2287,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Update cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1FU3mlIZPQwWwZ_nCst2qVmlh7cIegvsp",
+    "drive_link": "https://drive.google.com/drive/folders/1FU3mlIZPQwWwZ_nCst2qVmlh7cIegvsp?usp=sharing",
     "drive_folder_id": "1FU3mlIZPQwWwZ_nCst2qVmlh7cIegvsp",
     "category_id": 9,
     "category_name": "Digital Marketing & Truyền thông",
@@ -2187,7 +2295,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 753
+    "registered_count": 753,
+    "driveLink": "https://drive.google.com/drive/folders/1FU3mlIZPQwWwZ_nCst2qVmlh7cIegvsp?usp=sharing"
   },
   {
     "id": 110,
@@ -2197,7 +2306,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/01_thu_vien_hien_dai.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Full Combo Khóa học Ielts cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1oAlejWJV19-UAIuakcwXl5GlF05Ramle",
+    "drive_link": "https://drive.google.com/drive/folders/1oAlejWJV19-UAIuakcwXl5GlF05Ramle?usp=sharing",
     "drive_folder_id": "1oAlejWJV19-UAIuakcwXl5GlF05Ramle",
     "category_id": 10,
     "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
@@ -2205,7 +2314,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 790
+    "registered_count": 790,
+    "driveLink": "https://drive.google.com/drive/folders/1oAlejWJV19-UAIuakcwXl5GlF05Ramle?usp=sharing"
   },
   {
     "id": 111,
@@ -2215,7 +2325,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Full Combo Khóa học Toeic cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1fjJ0U0SbL9xppaziSuMWGmTCcSv9AwMV",
+    "drive_link": "https://drive.google.com/drive/folders/1fjJ0U0SbL9xppaziSuMWGmTCcSv9AwMV?usp=sharing",
     "drive_folder_id": "1fjJ0U0SbL9xppaziSuMWGmTCcSv9AwMV",
     "category_id": 10,
     "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
@@ -2223,7 +2333,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 827
+    "registered_count": 827,
+    "driveLink": "https://drive.google.com/drive/folders/1fjJ0U0SbL9xppaziSuMWGmTCcSv9AwMV?usp=sharing"
   },
   {
     "id": 112,
@@ -2233,7 +2344,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tiếng anh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1iBQLp31FmZ7ELOccvuYpUtHIG_0Ddgig",
+    "drive_link": "https://drive.google.com/drive/folders/1iBQLp31FmZ7ELOccvuYpUtHIG_0Ddgig?usp=sharing",
     "drive_folder_id": "1iBQLp31FmZ7ELOccvuYpUtHIG_0Ddgig",
     "category_id": 10,
     "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
@@ -2241,7 +2352,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 864
+    "registered_count": 864,
+    "driveLink": "https://drive.google.com/drive/folders/1iBQLp31FmZ7ELOccvuYpUtHIG_0Ddgig?usp=sharing"
   },
   {
     "id": 113,
@@ -2251,7 +2363,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tiếng Hàn cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/16d37tnSofKwdpsHq6Zlkrad6a3-2mK0j",
+    "drive_link": "https://drive.google.com/drive/folders/16d37tnSofKwdpsHq6Zlkrad6a3-2mK0j?usp=sharing",
     "drive_folder_id": "16d37tnSofKwdpsHq6Zlkrad6a3-2mK0j",
     "category_id": 10,
     "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
@@ -2259,7 +2371,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 901
+    "registered_count": 901,
+    "driveLink": "https://drive.google.com/drive/folders/16d37tnSofKwdpsHq6Zlkrad6a3-2mK0j?usp=sharing"
   },
   {
     "id": 114,
@@ -2269,7 +2382,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tiếng nhật cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19GJqSJxxz7QcU4ADM1620kkwZcEVhQfW",
+    "drive_link": "https://drive.google.com/drive/folders/19GJqSJxxz7QcU4ADM1620kkwZcEVhQfW?usp=sharing",
     "drive_folder_id": "19GJqSJxxz7QcU4ADM1620kkwZcEVhQfW",
     "category_id": 10,
     "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
@@ -2277,7 +2390,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 938
+    "registered_count": 938,
+    "driveLink": "https://drive.google.com/drive/folders/19GJqSJxxz7QcU4ADM1620kkwZcEVhQfW?usp=sharing"
   },
   {
     "id": 115,
@@ -2287,7 +2401,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tiếng trung cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Nvz0B0eT8h4m6nv4dXQfKohDqfeJLf6E",
+    "drive_link": "https://drive.google.com/drive/folders/1Nvz0B0eT8h4m6nv4dXQfKohDqfeJLf6E?usp=sharing",
     "drive_folder_id": "1Nvz0B0eT8h4m6nv4dXQfKohDqfeJLf6E",
     "category_id": 10,
     "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
@@ -2295,7 +2409,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 125
+    "registered_count": 125,
+    "driveLink": "https://drive.google.com/drive/folders/1Nvz0B0eT8h4m6nv4dXQfKohDqfeJLf6E?usp=sharing"
   },
   {
     "id": 116,
@@ -2305,7 +2420,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học 3DSMax cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1TOQfq4DzVHQ2wDqRipnlTqG7P0KqVSRa",
+    "drive_link": "https://drive.google.com/drive/folders/1TOQfq4DzVHQ2wDqRipnlTqG7P0KqVSRa?usp=sharing",
     "drive_folder_id": "1TOQfq4DzVHQ2wDqRipnlTqG7P0KqVSRa",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2313,7 +2428,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 162
+    "registered_count": 162,
+    "driveLink": "https://drive.google.com/drive/folders/1TOQfq4DzVHQ2wDqRipnlTqG7P0KqVSRa?usp=sharing"
   },
   {
     "id": 117,
@@ -2323,7 +2439,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Adobe Premiere cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1QrGXWyKO89MIOU3X9-fmbyKhupq4iljz",
+    "drive_link": "https://drive.google.com/drive/folders/1QrGXWyKO89MIOU3X9-fmbyKhupq4iljz?usp=sharing",
     "drive_folder_id": "1QrGXWyKO89MIOU3X9-fmbyKhupq4iljz",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2331,7 +2447,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 199
+    "registered_count": 199,
+    "driveLink": "https://drive.google.com/drive/folders/1QrGXWyKO89MIOU3X9-fmbyKhupq4iljz?usp=sharing"
   },
   {
     "id": 118,
@@ -2341,7 +2458,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học After Effect cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1S8HMwFesG_Z_wwVNeKRlHqcQg9vvryAI",
+    "drive_link": "https://drive.google.com/drive/folders/1S8HMwFesG_Z_wwVNeKRlHqcQg9vvryAI?usp=sharing",
     "drive_folder_id": "1S8HMwFesG_Z_wwVNeKRlHqcQg9vvryAI",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2349,7 +2466,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 236
+    "registered_count": 236,
+    "driveLink": "https://drive.google.com/drive/folders/1S8HMwFesG_Z_wwVNeKRlHqcQg9vvryAI?usp=sharing"
   },
   {
     "id": 119,
@@ -2359,7 +2477,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Autocad cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/18QP0RO4Ux75_YPbzVf_am3Fxj29vbDgr",
+    "drive_link": "https://drive.google.com/drive/folders/18QP0RO4Ux75_YPbzVf_am3Fxj29vbDgr?usp=sharing",
     "drive_folder_id": "18QP0RO4Ux75_YPbzVf_am3Fxj29vbDgr",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2367,7 +2485,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 273
+    "registered_count": 273,
+    "driveLink": "https://drive.google.com/drive/folders/18QP0RO4Ux75_YPbzVf_am3Fxj29vbDgr?usp=sharing"
   },
   {
     "id": 120,
@@ -2377,7 +2496,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Canva cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1eEPcibu2CKLOBFQRMTTJVRnizLYM0Zut",
+    "drive_link": "https://drive.google.com/drive/folders/1eEPcibu2CKLOBFQRMTTJVRnizLYM0Zut?usp=sharing",
     "drive_folder_id": "1eEPcibu2CKLOBFQRMTTJVRnizLYM0Zut",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2385,7 +2504,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 310
+    "registered_count": 310,
+    "driveLink": "https://drive.google.com/drive/folders/1eEPcibu2CKLOBFQRMTTJVRnizLYM0Zut?usp=sharing"
   },
   {
     "id": 121,
@@ -2395,7 +2515,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Capcut cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1PpWL4--wPmh2kVavZgsbUl4XwpYAkwkA",
+    "drive_link": "https://drive.google.com/drive/folders/1PpWL4--wPmh2kVavZgsbUl4XwpYAkwkA?usp=sharing",
     "drive_folder_id": "1PpWL4--wPmh2kVavZgsbUl4XwpYAkwkA",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2403,7 +2523,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 347
+    "registered_count": 347,
+    "driveLink": "https://drive.google.com/drive/folders/1PpWL4--wPmh2kVavZgsbUl4XwpYAkwkA?usp=sharing"
   },
   {
     "id": 122,
@@ -2413,7 +2534,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Digital Painting cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1OxkNhMOisx6xO2SSnKzmHOAG7WFCdq4T",
+    "drive_link": "https://drive.google.com/drive/folders/1OxkNhMOisx6xO2SSnKzmHOAG7WFCdq4T?usp=sharing",
     "drive_folder_id": "1OxkNhMOisx6xO2SSnKzmHOAG7WFCdq4T",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2421,7 +2542,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 384
+    "registered_count": 384,
+    "driveLink": "https://drive.google.com/drive/folders/1OxkNhMOisx6xO2SSnKzmHOAG7WFCdq4T?usp=sharing"
   },
   {
     "id": 123,
@@ -2431,7 +2553,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Figma cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/12j2mCV6TwKwnE8PJ1GK7_P4Kw3mg6hxr",
+    "drive_link": "https://drive.google.com/drive/folders/12j2mCV6TwKwnE8PJ1GK7_P4Kw3mg6hxr?usp=sharing",
     "drive_folder_id": "12j2mCV6TwKwnE8PJ1GK7_P4Kw3mg6hxr",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2439,7 +2561,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 421
+    "registered_count": 421,
+    "driveLink": "https://drive.google.com/drive/folders/12j2mCV6TwKwnE8PJ1GK7_P4Kw3mg6hxr?usp=sharing"
   },
   {
     "id": 124,
@@ -2449,7 +2572,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Illustrator cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1zOx4r8R2V64pjybLzmoEdFGWOWDgt9J9",
+    "drive_link": "https://drive.google.com/drive/folders/1zOx4r8R2V64pjybLzmoEdFGWOWDgt9J9?usp=sharing",
     "drive_folder_id": "1zOx4r8R2V64pjybLzmoEdFGWOWDgt9J9",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2457,7 +2580,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 458
+    "registered_count": 458,
+    "driveLink": "https://drive.google.com/drive/folders/1zOx4r8R2V64pjybLzmoEdFGWOWDgt9J9?usp=sharing"
   },
   {
     "id": 125,
@@ -2467,7 +2591,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học InDesign cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1U24T0YZdTKYwjGubj-xsstKIC2HH403-",
+    "drive_link": "https://drive.google.com/drive/folders/1U24T0YZdTKYwjGubj-xsstKIC2HH403-?usp=sharing",
     "drive_folder_id": "1U24T0YZdTKYwjGubj-xsstKIC2HH403-",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2475,7 +2599,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 495
+    "registered_count": 495,
+    "driveLink": "https://drive.google.com/drive/folders/1U24T0YZdTKYwjGubj-xsstKIC2HH403-?usp=sharing"
   },
   {
     "id": 126,
@@ -2485,7 +2610,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cập Nhật cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1P8vybHBXleMx8R5yhTL9WkV_lUuISYXo",
+    "drive_link": "https://drive.google.com/drive/folders/1P8vybHBXleMx8R5yhTL9WkV_lUuISYXo?usp=sharing",
     "drive_folder_id": "1P8vybHBXleMx8R5yhTL9WkV_lUuISYXo",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2493,7 +2618,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 532
+    "registered_count": 532,
+    "driveLink": "https://drive.google.com/drive/folders/1P8vybHBXleMx8R5yhTL9WkV_lUuISYXo?usp=sharing"
   },
   {
     "id": 127,
@@ -2503,7 +2629,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Photoshop cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1gx8tJrH1U67vnS-38ULeSOReMqRosJ_6",
+    "drive_link": "https://drive.google.com/drive/folders/1gx8tJrH1U67vnS-38ULeSOReMqRosJ_6?usp=sharing",
     "drive_folder_id": "1gx8tJrH1U67vnS-38ULeSOReMqRosJ_6",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2511,7 +2637,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 569
+    "registered_count": 569,
+    "driveLink": "https://drive.google.com/drive/folders/1gx8tJrH1U67vnS-38ULeSOReMqRosJ_6?usp=sharing"
   },
   {
     "id": 128,
@@ -2521,7 +2648,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Revit cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1DOpBaso_XQPsIkJ4gW4FBLerDLnZvAvu",
+    "drive_link": "https://drive.google.com/drive/folders/1DOpBaso_XQPsIkJ4gW4FBLerDLnZvAvu?usp=sharing",
     "drive_folder_id": "1DOpBaso_XQPsIkJ4gW4FBLerDLnZvAvu",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2529,7 +2656,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 606
+    "registered_count": 606,
+    "driveLink": "https://drive.google.com/drive/folders/1DOpBaso_XQPsIkJ4gW4FBLerDLnZvAvu?usp=sharing"
   },
   {
     "id": 129,
@@ -2539,7 +2667,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Sketchup cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1vgGocuOR82VBsO7e_SCreZp7Zd0eRHWX",
+    "drive_link": "https://drive.google.com/drive/folders/1vgGocuOR82VBsO7e_SCreZp7Zd0eRHWX?usp=sharing",
     "drive_folder_id": "1vgGocuOR82VBsO7e_SCreZp7Zd0eRHWX",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2547,7 +2675,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 643
+    "registered_count": 643,
+    "driveLink": "https://drive.google.com/drive/folders/1vgGocuOR82VBsO7e_SCreZp7Zd0eRHWX?usp=sharing"
   },
   {
     "id": 130,
@@ -2557,7 +2686,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Thiết kế Logo cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1WZYc-DyvK0aVy-yq7RjL6EKQ0NSpsjw4",
+    "drive_link": "https://drive.google.com/drive/folders/1WZYc-DyvK0aVy-yq7RjL6EKQ0NSpsjw4?usp=sharing",
     "drive_folder_id": "1WZYc-DyvK0aVy-yq7RjL6EKQ0NSpsjw4",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2565,7 +2694,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 680
+    "registered_count": 680,
+    "driveLink": "https://drive.google.com/drive/folders/1WZYc-DyvK0aVy-yq7RjL6EKQ0NSpsjw4?usp=sharing"
   },
   {
     "id": 131,
@@ -2575,7 +2705,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Thiết kế và xây dựng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/16lia2dlHUnjJAj8OoSMxo0JlHgKItbam",
+    "drive_link": "https://drive.google.com/drive/folders/16lia2dlHUnjJAj8OoSMxo0JlHgKItbam?usp=sharing",
     "drive_folder_id": "16lia2dlHUnjJAj8OoSMxo0JlHgKItbam",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2583,7 +2713,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 717
+    "registered_count": 717,
+    "driveLink": "https://drive.google.com/drive/folders/16lia2dlHUnjJAj8OoSMxo0JlHgKItbam?usp=sharing"
   },
   {
     "id": 132,
@@ -2593,7 +2724,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Thiết kế đồ họa 2D cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1F8fn503mNrmPkiJH1MJNrEOK3BeDeup6",
+    "drive_link": "https://drive.google.com/drive/folders/1F8fn503mNrmPkiJH1MJNrEOK3BeDeup6?usp=sharing",
     "drive_folder_id": "1F8fn503mNrmPkiJH1MJNrEOK3BeDeup6",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2601,7 +2732,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 754
+    "registered_count": 754,
+    "driveLink": "https://drive.google.com/drive/folders/1F8fn503mNrmPkiJH1MJNrEOK3BeDeup6?usp=sharing"
   },
   {
     "id": 133,
@@ -2611,7 +2743,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Thiết kế đồ họa 3D cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1q0bStr27nUdXl0lx8CweSs9piYBg6EsP",
+    "drive_link": "https://drive.google.com/drive/folders/1q0bStr27nUdXl0lx8CweSs9piYBg6EsP?usp=sharing",
     "drive_folder_id": "1q0bStr27nUdXl0lx8CweSs9piYBg6EsP",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2619,7 +2751,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 791
+    "registered_count": 791,
+    "driveLink": "https://drive.google.com/drive/folders/1q0bStr27nUdXl0lx8CweSs9piYBg6EsP?usp=sharing"
   },
   {
     "id": 134,
@@ -2629,7 +2762,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học UI_UX cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1YMJMB0hZA86QSohtEtjnlgu1zY-Fts_x",
+    "drive_link": "https://drive.google.com/drive/folders/1YMJMB0hZA86QSohtEtjnlgu1zY-Fts_x?usp=sharing",
     "drive_folder_id": "1YMJMB0hZA86QSohtEtjnlgu1zY-Fts_x",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2637,17 +2770,18 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 828
+    "registered_count": 828,
+    "driveLink": "https://drive.google.com/drive/folders/1YMJMB0hZA86QSohtEtjnlgu1zY-Fts_x?usp=sharing"
   },
   {
     "id": 135,
-    "title": "Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png",
+    "title": "Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM",
     "slug": "khoa-hoc-nhom-zalo-quet-ma-qr-vao-nhompng",
     "price": 99000,
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1MnozW9iQUr8sYREvmdobxb_9sevVq2kA",
+    "drive_link": "https://drive.google.com/file/d/1MnozW9iQUr8sYREvmdobxb_9sevVq2kA/view?usp=sharing",
     "drive_folder_id": "1MnozW9iQUr8sYREvmdobxb_9sevVq2kA",
     "category_id": 11,
     "category_name": "Thiết kế đồ họa & UI/UX",
@@ -2655,7 +2789,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 865
+    "registered_count": 865,
+    "driveLink": "https://drive.google.com/file/d/1MnozW9iQUr8sYREvmdobxb_9sevVq2kA/view?usp=sharing"
   },
   {
     "id": 136,
@@ -2665,7 +2800,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Excel cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1VLKp6VOaeBij9Inl-E5Zl7awjvWQBoUD",
+    "drive_link": "https://drive.google.com/drive/folders/1VLKp6VOaeBij9Inl-E5Zl7awjvWQBoUD?usp=sharing",
     "drive_folder_id": "1VLKp6VOaeBij9Inl-E5Zl7awjvWQBoUD",
     "category_id": 12,
     "category_name": "Tin học văn phòng (Excel, Word, PPT)",
@@ -2673,7 +2808,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 902
+    "registered_count": 902,
+    "driveLink": "https://drive.google.com/drive/folders/1VLKp6VOaeBij9Inl-E5Zl7awjvWQBoUD?usp=sharing"
   },
   {
     "id": 137,
@@ -2683,7 +2819,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kế toán cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1aGbecEbchxxtCfpIg7Ml5c-8CHQ0zgvH",
+    "drive_link": "https://drive.google.com/drive/folders/1aGbecEbchxxtCfpIg7Ml5c-8CHQ0zgvH?usp=sharing",
     "drive_folder_id": "1aGbecEbchxxtCfpIg7Ml5c-8CHQ0zgvH",
     "category_id": 12,
     "category_name": "Tin học văn phòng (Excel, Word, PPT)",
@@ -2691,7 +2827,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 939
+    "registered_count": 939,
+    "driveLink": "https://drive.google.com/drive/folders/1aGbecEbchxxtCfpIg7Ml5c-8CHQ0zgvH?usp=sharing"
   },
   {
     "id": 138,
@@ -2701,7 +2838,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Power Bi THVP cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1HbG8IuppdkHHaXxJiWV-bMsiTE2YB9iF",
+    "drive_link": "https://drive.google.com/drive/folders/1HbG8IuppdkHHaXxJiWV-bMsiTE2YB9iF?usp=sharing",
     "drive_folder_id": "1HbG8IuppdkHHaXxJiWV-bMsiTE2YB9iF",
     "category_id": 12,
     "category_name": "Tin học văn phòng (Excel, Word, PPT)",
@@ -2709,7 +2846,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 126
+    "registered_count": 126,
+    "driveLink": "https://drive.google.com/drive/folders/1HbG8IuppdkHHaXxJiWV-bMsiTE2YB9iF?usp=sharing"
   },
   {
     "id": 139,
@@ -2719,7 +2857,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học PowerPoint cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1gWmgr4uYXlZ8JXEj9EeYf-fziaUpcwhX",
+    "drive_link": "https://drive.google.com/drive/folders/1gWmgr4uYXlZ8JXEj9EeYf-fziaUpcwhX?usp=sharing",
     "drive_folder_id": "1gWmgr4uYXlZ8JXEj9EeYf-fziaUpcwhX",
     "category_id": 12,
     "category_name": "Tin học văn phòng (Excel, Word, PPT)",
@@ -2727,7 +2865,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 163
+    "registered_count": 163,
+    "driveLink": "https://drive.google.com/drive/folders/1gWmgr4uYXlZ8JXEj9EeYf-fziaUpcwhX?usp=sharing"
   },
   {
     "id": 140,
@@ -2737,7 +2876,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Word cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17osNsmFXpR3mUFk5Ssb01K8HekFxEU4M",
+    "drive_link": "https://drive.google.com/drive/folders/17osNsmFXpR3mUFk5Ssb01K8HekFxEU4M?usp=sharing",
     "drive_folder_id": "17osNsmFXpR3mUFk5Ssb01K8HekFxEU4M",
     "category_id": 12,
     "category_name": "Tin học văn phòng (Excel, Word, PPT)",
@@ -2745,7 +2884,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 200
+    "registered_count": 200,
+    "driveLink": "https://drive.google.com/drive/folders/17osNsmFXpR3mUFk5Ssb01K8HekFxEU4M?usp=sharing"
   },
   {
     "id": 141,
@@ -2755,7 +2895,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 450000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Update cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1TWNDSYWSD65SHGN3SNxrQTa0jy6uy4Pz",
+    "drive_link": "https://drive.google.com/drive/folders/1TWNDSYWSD65SHGN3SNxrQTa0jy6uy4Pz?usp=sharing",
     "drive_folder_id": "1TWNDSYWSD65SHGN3SNxrQTa0jy6uy4Pz",
     "category_id": 12,
     "category_name": "Tin học văn phòng (Excel, Word, PPT)",
@@ -2763,17 +2903,18 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 237
+    "registered_count": 237,
+    "driveLink": "https://drive.google.com/drive/folders/1TWNDSYWSD65SHGN3SNxrQTa0jy6uy4Pz?usp=sharing"
   },
   {
     "id": 142,
-    "title": "Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png",
+    "title": "Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM",
     "slug": "khoa-hoc-nhom-zalo-quet-ma-qr-vao-nhompng-1",
     "price": 69000,
     "original_price": 450000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1KmIm4Yl80A_sUTu_wHs6z8vp1dqzCf3Y",
+    "drive_link": "https://drive.google.com/file/d/1KmIm4Yl80A_sUTu_wHs6z8vp1dqzCf3Y/view?usp=sharing",
     "drive_folder_id": "1KmIm4Yl80A_sUTu_wHs6z8vp1dqzCf3Y",
     "category_id": 12,
     "category_name": "Tin học văn phòng (Excel, Word, PPT)",
@@ -2781,7 +2922,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 274
+    "registered_count": 274,
+    "driveLink": "https://drive.google.com/file/d/1KmIm4Yl80A_sUTu_wHs6z8vp1dqzCf3Y/view?usp=sharing"
   },
   {
     "id": 143,
@@ -2791,7 +2933,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Google Data Studio Cho Người Mới Bắt Đầu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19tQAXgUiYgA01CeS_w667YJ_ovnhB9qr",
+    "drive_link": "https://drive.google.com/drive/folders/19tQAXgUiYgA01CeS_w667YJ_ovnhB9qr?usp=sharing",
     "drive_folder_id": "19tQAXgUiYgA01CeS_w667YJ_ovnhB9qr",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2799,7 +2941,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 311
+    "registered_count": 311,
+    "driveLink": "https://drive.google.com/drive/folders/19tQAXgUiYgA01CeS_w667YJ_ovnhB9qr?usp=sharing"
   },
   {
     "id": 144,
@@ -2809,7 +2952,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá 01. Right Man Người Đàn Ông Đích Thực cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ojfV4ma-rhsakh9T-2F5VbMlIoRfxIGT",
+    "drive_link": "https://drive.google.com/drive/folders/1ojfV4ma-rhsakh9T-2F5VbMlIoRfxIGT?usp=sharing",
     "drive_folder_id": "1ojfV4ma-rhsakh9T-2F5VbMlIoRfxIGT",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2817,7 +2960,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 348
+    "registered_count": 348,
+    "driveLink": "https://drive.google.com/drive/folders/1ojfV4ma-rhsakh9T-2F5VbMlIoRfxIGT?usp=sharing"
   },
   {
     "id": 145,
@@ -2827,7 +2971,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Chabot Messenger Facebook - Marketing Với Chi Phí 0 Đồng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1sQGdF1K1u7nkAgbiT4OBTViQ5K9VJ5Yv",
+    "drive_link": "https://drive.google.com/drive/folders/1sQGdF1K1u7nkAgbiT4OBTViQ5K9VJ5Yv?usp=sharing",
     "drive_folder_id": "1sQGdF1K1u7nkAgbiT4OBTViQ5K9VJ5Yv",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2835,7 +2979,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 385
+    "registered_count": 385,
+    "driveLink": "https://drive.google.com/drive/folders/1sQGdF1K1u7nkAgbiT4OBTViQ5K9VJ5Yv?usp=sharing"
   },
   {
     "id": 146,
@@ -2845,7 +2990,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Copywriting Viết Sao Để Thuyết Phục Người Khác Muốn Đọc Cùng Nguyễn Đình Minh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1h0rD3_6MYCtTFzzG2T8lsV-5EKAsImC7",
+    "drive_link": "https://drive.google.com/drive/folders/1h0rD3_6MYCtTFzzG2T8lsV-5EKAsImC7?usp=sharing",
     "drive_folder_id": "1h0rD3_6MYCtTFzzG2T8lsV-5EKAsImC7",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2853,7 +2998,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 422
+    "registered_count": 422,
+    "driveLink": "https://drive.google.com/drive/folders/1h0rD3_6MYCtTFzzG2T8lsV-5EKAsImC7?usp=sharing"
   },
   {
     "id": 147,
@@ -2863,7 +3009,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Đo Bóc Khối Lượng Và Áp Mã Đơn Giá Từ Cơ Bản Tới Nâng Cao cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1e0yVXY2cJ4qsV-JG-b38EtUjGzpqBQ8F",
+    "drive_link": "https://drive.google.com/drive/folders/1e0yVXY2cJ4qsV-JG-b38EtUjGzpqBQ8F?usp=sharing",
     "drive_folder_id": "1e0yVXY2cJ4qsV-JG-b38EtUjGzpqBQ8F",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2871,7 +3017,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 459
+    "registered_count": 459,
+    "driveLink": "https://drive.google.com/drive/folders/1e0yVXY2cJ4qsV-JG-b38EtUjGzpqBQ8F?usp=sharing"
   },
   {
     "id": 148,
@@ -2881,7 +3028,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Đo Bóc Khối Lượng, Lập Dự Toán Đường Bộ Từ A Đến Z cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1bmBlzM5KYdkTRCh7QvOfssuaQyFZWNFc",
+    "drive_link": "https://drive.google.com/drive/folders/1bmBlzM5KYdkTRCh7QvOfssuaQyFZWNFc?usp=sharing",
     "drive_folder_id": "1bmBlzM5KYdkTRCh7QvOfssuaQyFZWNFc",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2889,7 +3036,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 496
+    "registered_count": 496,
+    "driveLink": "https://drive.google.com/drive/folders/1bmBlzM5KYdkTRCh7QvOfssuaQyFZWNFc?usp=sharing"
   },
   {
     "id": 149,
@@ -2899,7 +3047,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Fingerstyle guitar cho người mới bắt đầu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1lwm9c9sU7pIuSyynq8E312fJd10yF_bz",
+    "drive_link": "https://drive.google.com/drive/folders/1lwm9c9sU7pIuSyynq8E312fJd10yF_bz?usp=sharing",
     "drive_folder_id": "1lwm9c9sU7pIuSyynq8E312fJd10yF_bz",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2907,7 +3055,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 533
+    "registered_count": 533,
+    "driveLink": "https://drive.google.com/drive/folders/1lwm9c9sU7pIuSyynq8E312fJd10yF_bz?usp=sharing"
   },
   {
     "id": 150,
@@ -2917,7 +3066,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kích Hoạt Tài Lộc 2026 Cùng Phạm Minh Hoàng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/15nkKeQKSWyhCvuS6wpAzkxx-BwNfF4TB",
+    "drive_link": "https://drive.google.com/drive/folders/15nkKeQKSWyhCvuS6wpAzkxx-BwNfF4TB?usp=sharing",
     "drive_folder_id": "15nkKeQKSWyhCvuS6wpAzkxx-BwNfF4TB",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2925,7 +3074,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 570
+    "registered_count": 570,
+    "driveLink": "https://drive.google.com/drive/folders/15nkKeQKSWyhCvuS6wpAzkxx-BwNfF4TB?usp=sharing"
   },
   {
     "id": 151,
@@ -2935,7 +3085,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kiếm Tiền YouTube Bằng Tạo Bài Hát Với Suno AI cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1OsXIZjIWmE7-3a3cr0GXZJi38iFEAgSB",
+    "drive_link": "https://drive.google.com/drive/folders/1OsXIZjIWmE7-3a3cr0GXZJi38iFEAgSB?usp=sharing",
     "drive_folder_id": "1OsXIZjIWmE7-3a3cr0GXZJi38iFEAgSB",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2943,7 +3093,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 607
+    "registered_count": 607,
+    "driveLink": "https://drive.google.com/drive/folders/1OsXIZjIWmE7-3a3cr0GXZJi38iFEAgSB?usp=sharing"
   },
   {
     "id": 152,
@@ -2953,7 +3104,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Nghệ Thuật Cắm Hoa Phong Thủy Và Hiện Đại cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Z8aoqCCA3lVltEd3nAohO4jYFVg-gqwY",
+    "drive_link": "https://drive.google.com/drive/folders/1Z8aoqCCA3lVltEd3nAohO4jYFVg-gqwY?usp=sharing",
     "drive_folder_id": "1Z8aoqCCA3lVltEd3nAohO4jYFVg-gqwY",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2961,7 +3112,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 644
+    "registered_count": 644,
+    "driveLink": "https://drive.google.com/drive/folders/1Z8aoqCCA3lVltEd3nAohO4jYFVg-gqwY?usp=sharing"
   },
   {
     "id": 153,
@@ -2971,7 +3123,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Nhân Sự Tổng Hợp – Trở Thành Chuyên Gia Nhân Sự Trong 16 Giờ Cùng Gitiho cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1_X5HGecFnE8ewCWQQUniY9a4JLG1TZKn",
+    "drive_link": "https://drive.google.com/drive/folders/1_X5HGecFnE8ewCWQQUniY9a4JLG1TZKn?usp=sharing",
     "drive_folder_id": "1_X5HGecFnE8ewCWQQUniY9a4JLG1TZKn",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2979,7 +3131,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 681
+    "registered_count": 681,
+    "driveLink": "https://drive.google.com/drive/folders/1_X5HGecFnE8ewCWQQUniY9a4JLG1TZKn?usp=sharing"
   },
   {
     "id": 154,
@@ -2989,7 +3142,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Nhập Hàng Trung Quốc Thực Chiến Hường Maruco cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1M1lI1yxDl60Caa11NgKQDN2SmPYpWY9q",
+    "drive_link": "https://drive.google.com/drive/folders/1M1lI1yxDl60Caa11NgKQDN2SmPYpWY9q?usp=sharing",
     "drive_folder_id": "1M1lI1yxDl60Caa11NgKQDN2SmPYpWY9q",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -2997,7 +3150,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 718
+    "registered_count": 718,
+    "driveLink": "https://drive.google.com/drive/folders/1M1lI1yxDl60Caa11NgKQDN2SmPYpWY9q?usp=sharing"
   },
   {
     "id": 155,
@@ -3007,7 +3161,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Phong Thủy Căn Bản cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1RordYCmTFFxfrv42oAqgCkx0mWrqYJy3",
+    "drive_link": "https://drive.google.com/drive/folders/1RordYCmTFFxfrv42oAqgCkx0mWrqYJy3?usp=sharing",
     "drive_folder_id": "1RordYCmTFFxfrv42oAqgCkx0mWrqYJy3",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3015,7 +3169,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 755
+    "registered_count": 755,
+    "driveLink": "https://drive.google.com/drive/folders/1RordYCmTFFxfrv42oAqgCkx0mWrqYJy3?usp=sharing"
   },
   {
     "id": 156,
@@ -3025,7 +3180,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Phong Thủy Cơ Bản cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1LLv0Dxwc_QU6ByWCmE7iYEYdH7F-WBdr",
+    "drive_link": "https://drive.google.com/drive/folders/1LLv0Dxwc_QU6ByWCmE7iYEYdH7F-WBdr?usp=sharing",
     "drive_folder_id": "1LLv0Dxwc_QU6ByWCmE7iYEYdH7F-WBdr",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3033,7 +3188,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 792
+    "registered_count": 792,
+    "driveLink": "https://drive.google.com/drive/folders/1LLv0Dxwc_QU6ByWCmE7iYEYdH7F-WBdr?usp=sharing"
   },
   {
     "id": 157,
@@ -3043,7 +3199,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Siêu Kiếm Tiền Youtube Mới Nhất Cùng Huân Kỷ Luật cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1HL_zhPeaNIH9QRm72J9-eFhHe7pWaTKs",
+    "drive_link": "https://drive.google.com/drive/folders/1HL_zhPeaNIH9QRm72J9-eFhHe7pWaTKs?usp=sharing",
     "drive_folder_id": "1HL_zhPeaNIH9QRm72J9-eFhHe7pWaTKs",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3051,7 +3207,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 829
+    "registered_count": 829,
+    "driveLink": "https://drive.google.com/drive/folders/1HL_zhPeaNIH9QRm72J9-eFhHe7pWaTKs?usp=sharing"
   },
   {
     "id": 158,
@@ -3061,7 +3218,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tuyển Dụng Thực Chiến Cho Người Mới Bắt Đầu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1mAjZmgHlYhpXuHPyOPkX2213VwyLxFRx",
+    "drive_link": "https://drive.google.com/drive/folders/1mAjZmgHlYhpXuHPyOPkX2213VwyLxFRx?usp=sharing",
     "drive_folder_id": "1mAjZmgHlYhpXuHPyOPkX2213VwyLxFRx",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3069,7 +3226,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 866
+    "registered_count": 866,
+    "driveLink": "https://drive.google.com/drive/folders/1mAjZmgHlYhpXuHPyOPkX2213VwyLxFRx?usp=sharing"
   },
   {
     "id": 159,
@@ -3079,7 +3237,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Làm chủ Chatgpt từ cơ bản đến nâng cao Unica cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/14SGna26S_22fJ6ylnmocu6udGXyol__B",
+    "drive_link": "https://drive.google.com/drive/folders/14SGna26S_22fJ6ylnmocu6udGXyol__B?usp=sharing",
     "drive_folder_id": "14SGna26S_22fJ6ylnmocu6udGXyol__B",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3087,7 +3245,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 903
+    "registered_count": 903,
+    "driveLink": "https://drive.google.com/drive/folders/14SGna26S_22fJ6ylnmocu6udGXyol__B?usp=sharing"
   },
   {
     "id": 160,
@@ -3097,7 +3256,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Magic Box crypto - 8xtrading cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1q8x6Wny54EAKif2ODMWRYCFHxQ7yw9Ip",
+    "drive_link": "https://drive.google.com/drive/folders/1q8x6Wny54EAKif2ODMWRYCFHxQ7yw9Ip?usp=sharing",
     "drive_folder_id": "1q8x6Wny54EAKif2ODMWRYCFHxQ7yw9Ip",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3105,7 +3264,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 49000,
     "is_combo": false,
-    "registered_count": 940
+    "registered_count": 940,
+    "driveLink": "https://drive.google.com/drive/folders/1q8x6Wny54EAKif2ODMWRYCFHxQ7yw9Ip?usp=sharing"
   },
   {
     "id": 161,
@@ -3115,7 +3275,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tuyệt đỉnh ứng dụng ChatGPT cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1zUGGf_7sXPvRguEPwXy-tVS6pDWAWNFk",
+    "drive_link": "https://drive.google.com/drive/folders/1zUGGf_7sXPvRguEPwXy-tVS6pDWAWNFk?usp=sharing",
     "drive_folder_id": "1zUGGf_7sXPvRguEPwXy-tVS6pDWAWNFk",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3123,17 +3283,18 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 127
+    "registered_count": 127,
+    "driveLink": "https://drive.google.com/drive/folders/1zUGGf_7sXPvRguEPwXy-tVS6pDWAWNFk?usp=sharing"
   },
   {
     "id": 162,
-    "title": "Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png",
+    "title": "Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM",
     "slug": "khoa-hoc-nhom-zalo-quet-ma-qr-vao-nhompng-2",
     "price": 79000,
     "original_price": 490000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học NHÓM ZALO - QUÉT MÃ QR VÀO NHÓM.png cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1VJ8JuyFAbpLIh8IvBa-wldG2qZPAnHTC",
+    "drive_link": "https://drive.google.com/file/d/1VJ8JuyFAbpLIh8IvBa-wldG2qZPAnHTC/view?usp=sharing",
     "drive_folder_id": "1VJ8JuyFAbpLIh8IvBa-wldG2qZPAnHTC",
     "category_id": 13,
     "category_name": "Khóa học mở rộng",
@@ -3141,7 +3302,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 164
+    "registered_count": 164,
+    "driveLink": "https://drive.google.com/file/d/1VJ8JuyFAbpLIh8IvBa-wldG2qZPAnHTC/view?usp=sharing"
   },
   {
     "id": 163,
@@ -3151,7 +3313,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lê Chí Linh - Xây dựng thương hiệu bạc tỉ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1jbYSu5ZInSpolvTXN9pF8G_xxCF6WmpS",
+    "drive_link": "https://drive.google.com/drive/folders/1jbYSu5ZInSpolvTXN9pF8G_xxCF6WmpS?usp=sharing",
     "drive_folder_id": "1jbYSu5ZInSpolvTXN9pF8G_xxCF6WmpS",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3159,7 +3321,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 201
+    "registered_count": 201,
+    "driveLink": "https://drive.google.com/drive/folders/1jbYSu5ZInSpolvTXN9pF8G_xxCF6WmpS?usp=sharing"
   },
   {
     "id": 164,
@@ -3169,7 +3332,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cấu Trúc Dữ Liệu Và Giải Thuật 28tech (2024) cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1bBLb2YSyFehO5OD3cBZ9WPvdQgtVhGcf",
+    "drive_link": "https://drive.google.com/drive/folders/1bBLb2YSyFehO5OD3cBZ9WPvdQgtVhGcf?usp=sharing",
     "drive_folder_id": "1bBLb2YSyFehO5OD3cBZ9WPvdQgtVhGcf",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3177,7 +3340,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 238
+    "registered_count": 238,
+    "driveLink": "https://drive.google.com/drive/folders/1bBLb2YSyFehO5OD3cBZ9WPvdQgtVhGcf?usp=sharing"
   },
   {
     "id": 165,
@@ -3187,7 +3351,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học CEHv12 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/11MgyZvu5slqre1LMg1w7HEBXoi0J4Xza",
+    "drive_link": "https://drive.google.com/drive/folders/11MgyZvu5slqre1LMg1w7HEBXoi0J4Xza?usp=sharing",
     "drive_folder_id": "11MgyZvu5slqre1LMg1w7HEBXoi0J4Xza",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3195,7 +3359,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 275
+    "registered_count": 275,
+    "driveLink": "https://drive.google.com/drive/folders/11MgyZvu5slqre1LMg1w7HEBXoi0J4Xza?usp=sharing"
   },
   {
     "id": 166,
@@ -3205,7 +3370,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chụp Ảnh Và Chỉnh Ảnh Điện Thoại Online Cùng Sam Nguyễn cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17lYI7KwsgEvlalOtDfyliayFreB5YMdg",
+    "drive_link": "https://drive.google.com/drive/folders/17lYI7KwsgEvlalOtDfyliayFreB5YMdg?usp=sharing",
     "drive_folder_id": "17lYI7KwsgEvlalOtDfyliayFreB5YMdg",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3213,7 +3378,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 312
+    "registered_count": 312,
+    "driveLink": "https://drive.google.com/drive/folders/17lYI7KwsgEvlalOtDfyliayFreB5YMdg?usp=sharing"
   },
   {
     "id": 167,
@@ -3223,7 +3389,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chương Trình DAS Coaching Cùng Digital Academy Secret cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1dNLhmIy-hLZy2j-B5qNaRz6s6bT9NSoZ",
+    "drive_link": "https://drive.google.com/drive/folders/1dNLhmIy-hLZy2j-B5qNaRz6s6bT9NSoZ?usp=sharing",
     "drive_folder_id": "1dNLhmIy-hLZy2j-B5qNaRz6s6bT9NSoZ",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3231,7 +3397,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 349
+    "registered_count": 349,
+    "driveLink": "https://drive.google.com/drive/folders/1dNLhmIy-hLZy2j-B5qNaRz6s6bT9NSoZ?usp=sharing"
   },
   {
     "id": 168,
@@ -3241,7 +3408,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Combo 2 khóa Ccna \\u0026 Ccnp Cùng Nguyễn Phú Thịnh - cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ugD5FLUAnPMzDdR_JTlK7M35qIOfz1M5",
+    "drive_link": "https://drive.google.com/drive/folders/1ugD5FLUAnPMzDdR_JTlK7M35qIOfz1M5?usp=sharing",
     "drive_folder_id": "1ugD5FLUAnPMzDdR_JTlK7M35qIOfz1M5",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3249,7 +3416,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": true,
-    "registered_count": 386
+    "registered_count": 386,
+    "driveLink": "https://drive.google.com/drive/folders/1ugD5FLUAnPMzDdR_JTlK7M35qIOfz1M5?usp=sharing"
   },
   {
     "id": 169,
@@ -3259,7 +3427,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Combo 2 Khóa Deep Learning For Computer Cơ Bản Và Nâng Cao Vision Cùng Việt Nguyễn Ai cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1CrcWZ5M1JaxxjHXY1DlB9vUg9D7el52Z",
+    "drive_link": "https://drive.google.com/drive/folders/1CrcWZ5M1JaxxjHXY1DlB9vUg9D7el52Z?usp=sharing",
     "drive_folder_id": "1CrcWZ5M1JaxxjHXY1DlB9vUg9D7el52Z",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3267,7 +3435,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 423
+    "registered_count": 423,
+    "driveLink": "https://drive.google.com/drive/folders/1CrcWZ5M1JaxxjHXY1DlB9vUg9D7el52Z?usp=sharing"
   },
   {
     "id": 170,
@@ -3277,7 +3446,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Combo 2 khóa đầu tư Chứng khoán Quang Dũng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1gH0ukWBjCT30zIaJXC_Oi1Ir3Y1RruHI",
+    "drive_link": "https://drive.google.com/drive/folders/1gH0ukWBjCT30zIaJXC_Oi1Ir3Y1RruHI?usp=sharing",
     "drive_folder_id": "1gH0ukWBjCT30zIaJXC_Oi1Ir3Y1RruHI",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3285,7 +3454,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 460
+    "registered_count": 460,
+    "driveLink": "https://drive.google.com/drive/folders/1gH0ukWBjCT30zIaJXC_Oi1Ir3Y1RruHI?usp=sharing"
   },
   {
     "id": 171,
@@ -3295,7 +3465,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Combo 2 Khóa Học Nguyễn Tuấn Hà - Vinalink cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/12F0GqhYvI04GPSVjHTqKAsBrOccxP8f6",
+    "drive_link": "https://drive.google.com/drive/folders/12F0GqhYvI04GPSVjHTqKAsBrOccxP8f6?usp=sharing",
     "drive_folder_id": "12F0GqhYvI04GPSVjHTqKAsBrOccxP8f6",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3303,7 +3473,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 497
+    "registered_count": 497,
+    "driveLink": "https://drive.google.com/drive/folders/12F0GqhYvI04GPSVjHTqKAsBrOccxP8f6?usp=sharing"
   },
   {
     "id": 172,
@@ -3313,7 +3484,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Combo 3 khóa Digifox cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1v_KBktj6QEXuRSFggzgztSN_7gRTmogX",
+    "drive_link": "https://drive.google.com/drive/folders/1v_KBktj6QEXuRSFggzgztSN_7gRTmogX?usp=sharing",
     "drive_folder_id": "1v_KBktj6QEXuRSFggzgztSN_7gRTmogX",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3321,7 +3492,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": true,
-    "registered_count": 534
+    "registered_count": 534,
+    "driveLink": "https://drive.google.com/drive/folders/1v_KBktj6QEXuRSFggzgztSN_7gRTmogX?usp=sharing"
   },
   {
     "id": 173,
@@ -3331,7 +3503,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Combo 3 KHÓA EXCEL BlueSoft cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1L-1JYqBPC4k3hgeReqtEDzdLphjWT3vK",
+    "drive_link": "https://drive.google.com/drive/folders/1L-1JYqBPC4k3hgeReqtEDzdLphjWT3vK?usp=sharing",
     "drive_folder_id": "1L-1JYqBPC4k3hgeReqtEDzdLphjWT3vK",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3339,7 +3511,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 571
+    "registered_count": 571,
+    "driveLink": "https://drive.google.com/drive/folders/1L-1JYqBPC4k3hgeReqtEDzdLphjWT3vK?usp=sharing"
   },
   {
     "id": 174,
@@ -3349,7 +3522,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Combo 3 Khóa Học Seankang Mvp Đầy Đủ Mới Nhất 2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1n31ZUXx3tDDgSI90vDv3v03gwd0TCu4b",
+    "drive_link": "https://drive.google.com/drive/folders/1n31ZUXx3tDDgSI90vDv3v03gwd0TCu4b?usp=sharing",
     "drive_folder_id": "1n31ZUXx3tDDgSI90vDv3v03gwd0TCu4b",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3357,7 +3530,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 608
+    "registered_count": 608,
+    "driveLink": "https://drive.google.com/drive/folders/1n31ZUXx3tDDgSI90vDv3v03gwd0TCu4b?usp=sharing"
   },
   {
     "id": 175,
@@ -3367,7 +3541,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Combo 3 Khóa Học Tiktok Master Kinh Doanh Thực Chiến Từ Số 0 Cùng Bạch Cảnh Kỳ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1IuUYIx-8lD_O8rd5Yqlf83X3C-fMke2z",
+    "drive_link": "https://drive.google.com/drive/folders/1IuUYIx-8lD_O8rd5Yqlf83X3C-fMke2z?usp=sharing",
     "drive_folder_id": "1IuUYIx-8lD_O8rd5Yqlf83X3C-fMke2z",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3375,7 +3549,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 645
+    "registered_count": 645,
+    "driveLink": "https://drive.google.com/drive/folders/1IuUYIx-8lD_O8rd5Yqlf83X3C-fMke2z?usp=sharing"
   },
   {
     "id": 176,
@@ -3385,7 +3560,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Combo 6 Khóa Topclass cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1GoktFAWMX6DVwuJqAfA9E-Ov40O6UQLZ",
+    "drive_link": "https://drive.google.com/drive/folders/1GoktFAWMX6DVwuJqAfA9E-Ov40O6UQLZ?usp=sharing",
     "drive_folder_id": "1GoktFAWMX6DVwuJqAfA9E-Ov40O6UQLZ",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3393,7 +3568,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": true,
-    "registered_count": 682
+    "registered_count": 682,
+    "driveLink": "https://drive.google.com/drive/folders/1GoktFAWMX6DVwuJqAfA9E-Ov40O6UQLZ?usp=sharing"
   },
   {
     "id": 177,
@@ -3403,7 +3579,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Combo 8 khóa ACCA cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1BC5Hj33SoPCBuhnI5NHweqqbweEVRCYh",
+    "drive_link": "https://drive.google.com/drive/folders/1BC5Hj33SoPCBuhnI5NHweqqbweEVRCYh?usp=sharing",
     "drive_folder_id": "1BC5Hj33SoPCBuhnI5NHweqqbweEVRCYh",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3411,7 +3587,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 719
+    "registered_count": 719,
+    "driveLink": "https://drive.google.com/drive/folders/1BC5Hj33SoPCBuhnI5NHweqqbweEVRCYh?usp=sharing"
   },
   {
     "id": 178,
@@ -3421,7 +3598,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Combo 24 Khóa Học Vẽ Mỹ Thuật Bụi cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19_taJvwvNGeZlw6PEen-oZoYKVBLLsCM",
+    "drive_link": "https://drive.google.com/drive/folders/19_taJvwvNGeZlw6PEen-oZoYKVBLLsCM?usp=sharing",
     "drive_folder_id": "19_taJvwvNGeZlw6PEen-oZoYKVBLLsCM",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3429,7 +3606,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 756
+    "registered_count": 756,
+    "driveLink": "https://drive.google.com/drive/folders/19_taJvwvNGeZlw6PEen-oZoYKVBLLsCM?usp=sharing"
   },
   {
     "id": 179,
@@ -3439,7 +3617,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học Azfin cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1kgkasvil0zp9XeyMgqYoh7JHrKgJcBDB",
+    "drive_link": "https://drive.google.com/drive/folders/1kgkasvil0zp9XeyMgqYoh7JHrKgJcBDB?usp=sharing",
     "drive_folder_id": "1kgkasvil0zp9XeyMgqYoh7JHrKgJcBDB",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3447,7 +3625,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 793
+    "registered_count": 793,
+    "driveLink": "https://drive.google.com/drive/folders/1kgkasvil0zp9XeyMgqYoh7JHrKgJcBDB?usp=sharing"
   },
   {
     "id": 180,
@@ -3457,7 +3636,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Đột phá doanh số Studio - ảnh viện chụp ảnh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1TT0YsO91XRA_zN-zYLpDX_EatTDx-wFH",
+    "drive_link": "https://drive.google.com/drive/folders/1TT0YsO91XRA_zN-zYLpDX_EatTDx-wFH?usp=sharing",
     "drive_folder_id": "1TT0YsO91XRA_zN-zYLpDX_EatTDx-wFH",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3465,7 +3644,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 830
+    "registered_count": 830,
+    "driveLink": "https://drive.google.com/drive/folders/1TT0YsO91XRA_zN-zYLpDX_EatTDx-wFH?usp=sharing"
   },
   {
     "id": 181,
@@ -3475,7 +3655,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học excel-for-analysts cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1B3UBZH3woywesw1QINzgSbH-wjsxyS8f",
+    "drive_link": "https://drive.google.com/drive/folders/1B3UBZH3woywesw1QINzgSbH-wjsxyS8f?usp=sharing",
     "drive_folder_id": "1B3UBZH3woywesw1QINzgSbH-wjsxyS8f",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3483,7 +3663,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 867
+    "registered_count": 867,
+    "driveLink": "https://drive.google.com/drive/folders/1B3UBZH3woywesw1QINzgSbH-wjsxyS8f?usp=sharing"
   },
   {
     "id": 182,
@@ -3493,7 +3674,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Figma Variable - Các kỹ năng nâng cao trong quản lý hệ thống cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1LRpJ2NDy6OhmCJEM8_COBikBS-N8izKr",
+    "drive_link": "https://drive.google.com/drive/folders/1LRpJ2NDy6OhmCJEM8_COBikBS-N8izKr?usp=sharing",
     "drive_folder_id": "1LRpJ2NDy6OhmCJEM8_COBikBS-N8izKr",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3501,7 +3682,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 904
+    "registered_count": 904,
+    "driveLink": "https://drive.google.com/drive/folders/1LRpJ2NDy6OhmCJEM8_COBikBS-N8izKr?usp=sharing"
   },
   {
     "id": 183,
@@ -3511,7 +3693,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Githo Tin Học Văn Phòng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19mTnTSIQqo9t6PoGdkHzqVJZ9O_U_9lw",
+    "drive_link": "https://drive.google.com/drive/folders/19mTnTSIQqo9t6PoGdkHzqVJZ9O_U_9lw?usp=sharing",
     "drive_folder_id": "19mTnTSIQqo9t6PoGdkHzqVJZ9O_U_9lw",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3519,7 +3701,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 941
+    "registered_count": 941,
+    "driveLink": "https://drive.google.com/drive/folders/19mTnTSIQqo9t6PoGdkHzqVJZ9O_U_9lw?usp=sharing"
   },
   {
     "id": 184,
@@ -3529,7 +3712,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa học - Bí Mật Dark Post trong Quảng Cáo - Lê Tiến Đạt cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ob_tWFBB_C7bqCKGvyeABTTPgMN-OhHf",
+    "drive_link": "https://drive.google.com/drive/folders/1ob_tWFBB_C7bqCKGvyeABTTPgMN-OhHf?usp=sharing",
     "drive_folder_id": "1ob_tWFBB_C7bqCKGvyeABTTPgMN-OhHf",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3537,7 +3720,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 128
+    "registered_count": 128,
+    "driveLink": "https://drive.google.com/drive/folders/1ob_tWFBB_C7bqCKGvyeABTTPgMN-OhHf?usp=sharing"
   },
   {
     "id": 185,
@@ -3547,7 +3731,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học 10x Ai Automation Mới Nhất Cùng Hoàng Mạnh Cường Topmax cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/16SBHulbzKxy2KUROeMvkjuNzb2TDN8bl",
+    "drive_link": "https://drive.google.com/drive/folders/16SBHulbzKxy2KUROeMvkjuNzb2TDN8bl?usp=sharing",
     "drive_folder_id": "16SBHulbzKxy2KUROeMvkjuNzb2TDN8bl",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3555,7 +3739,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 165
+    "registered_count": 165,
+    "driveLink": "https://drive.google.com/drive/folders/16SBHulbzKxy2KUROeMvkjuNzb2TDN8bl?usp=sharing"
   },
   {
     "id": 186,
@@ -3565,7 +3750,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá học AI làm video xây kênh Youtube, Tiktok, Facebook cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1IqVBuncKv8l8PEtkKP6B_3piYNqLWSoR",
+    "drive_link": "https://drive.google.com/drive/folders/1IqVBuncKv8l8PEtkKP6B_3piYNqLWSoR?usp=sharing",
     "drive_folder_id": "1IqVBuncKv8l8PEtkKP6B_3piYNqLWSoR",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3573,7 +3758,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 202
+    "registered_count": 202,
+    "driveLink": "https://drive.google.com/drive/folders/1IqVBuncKv8l8PEtkKP6B_3piYNqLWSoR?usp=sharing"
   },
   {
     "id": 187,
@@ -3583,7 +3769,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Basic 3d Game Vfx With Unity Cùng Vũ Đức cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1GnDGsffXWj2yIKm_YOlBiy3c7ccNeP0B",
+    "drive_link": "https://drive.google.com/drive/folders/1GnDGsffXWj2yIKm_YOlBiy3c7ccNeP0B?usp=sharing",
     "drive_folder_id": "1GnDGsffXWj2yIKm_YOlBiy3c7ccNeP0B",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3591,7 +3777,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 239
+    "registered_count": 239,
+    "driveLink": "https://drive.google.com/drive/folders/1GnDGsffXWj2yIKm_YOlBiy3c7ccNeP0B?usp=sharing"
   },
   {
     "id": 188,
@@ -3601,7 +3788,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Branding Strategy – 6 Bước Cất Cánh Thương Hiệu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1UIaq_UBbH0GKgc1zy1S5Ld0B8wXfNmcp",
+    "drive_link": "https://drive.google.com/drive/folders/1UIaq_UBbH0GKgc1zy1S5Ld0B8wXfNmcp?usp=sharing",
     "drive_folder_id": "1UIaq_UBbH0GKgc1zy1S5Ld0B8wXfNmcp",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3609,7 +3796,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 276
+    "registered_count": 276,
+    "driveLink": "https://drive.google.com/drive/folders/1UIaq_UBbH0GKgc1zy1S5Ld0B8wXfNmcp?usp=sharing"
   },
   {
     "id": 189,
@@ -3619,7 +3807,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Cơ Sở Dữ Liệu Và Sql Cùng 28tech cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1evj6Ov5y1zw66zDBngO1-3tzD45Cdtxw",
+    "drive_link": "https://drive.google.com/drive/folders/1evj6Ov5y1zw66zDBngO1-3tzD45Cdtxw?usp=sharing",
     "drive_folder_id": "1evj6Ov5y1zw66zDBngO1-3tzD45Cdtxw",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3627,7 +3815,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 313
+    "registered_count": 313,
+    "driveLink": "https://drive.google.com/drive/folders/1evj6Ov5y1zw66zDBngO1-3tzD45Cdtxw?usp=sharing"
   },
   {
     "id": 190,
@@ -3637,7 +3826,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Deep Learning For Computer Vision Cơ Bản Cùng Việt Nguyễn Ai cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1PqQjxsBy4lWawQ_xk965VKAeLf_72-Wu",
+    "drive_link": "https://drive.google.com/drive/folders/1PqQjxsBy4lWawQ_xk965VKAeLf_72-Wu?usp=sharing",
     "drive_folder_id": "1PqQjxsBy4lWawQ_xk965VKAeLf_72-Wu",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3645,7 +3834,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 350
+    "registered_count": 350,
+    "driveLink": "https://drive.google.com/drive/folders/1PqQjxsBy4lWawQ_xk965VKAeLf_72-Wu?usp=sharing"
   },
   {
     "id": 191,
@@ -3655,7 +3845,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Digital Foundation Mới Nhất Cùng Tomorrowmarketers cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1TlZObO9IqX4kvh8jcvAXpSdflkPhFxor",
+    "drive_link": "https://drive.google.com/drive/folders/1TlZObO9IqX4kvh8jcvAXpSdflkPhFxor?usp=sharing",
     "drive_folder_id": "1TlZObO9IqX4kvh8jcvAXpSdflkPhFxor",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3663,7 +3853,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 387
+    "registered_count": 387,
+    "driveLink": "https://drive.google.com/drive/folders/1TlZObO9IqX4kvh8jcvAXpSdflkPhFxor?usp=sharing"
   },
   {
     "id": 192,
@@ -3673,7 +3864,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Digital Marketing_ Từ Nền Tảng Đến Chiến Lược cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xWQhEFQ6facPZ8JZsYD3e5P1I-LVPtbU",
+    "drive_link": "https://drive.google.com/drive/folders/1xWQhEFQ6facPZ8JZsYD3e5P1I-LVPtbU?usp=sharing",
     "drive_folder_id": "1xWQhEFQ6facPZ8JZsYD3e5P1I-LVPtbU",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3681,7 +3872,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 424
+    "registered_count": 424,
+    "driveLink": "https://drive.google.com/drive/folders/1xWQhEFQ6facPZ8JZsYD3e5P1I-LVPtbU?usp=sharing"
   },
   {
     "id": 193,
@@ -3691,7 +3883,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Đào Tạo Sale B2b Chuyên Nghiệp Dành Cho Nhân Viên Kinh Doanh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1_RR3Odn48C16oh1w6gYaPk9jX4QKg0nw",
+    "drive_link": "https://drive.google.com/drive/folders/1_RR3Odn48C16oh1w6gYaPk9jX4QKg0nw?usp=sharing",
     "drive_folder_id": "1_RR3Odn48C16oh1w6gYaPk9jX4QKg0nw",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3699,7 +3891,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 461
+    "registered_count": 461,
+    "driveLink": "https://drive.google.com/drive/folders/1_RR3Odn48C16oh1w6gYaPk9jX4QKg0nw?usp=sharing"
   },
   {
     "id": 194,
@@ -3709,7 +3902,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Đầu Tư Theo Chu Kỳ Cùng Davinci Academy cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1pii5RcKnfYTk8vVb8nTsOJ8b7SauahKT",
+    "drive_link": "https://drive.google.com/drive/folders/1pii5RcKnfYTk8vVb8nTsOJ8b7SauahKT?usp=sharing",
     "drive_folder_id": "1pii5RcKnfYTk8vVb8nTsOJ8b7SauahKT",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3717,7 +3910,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 498
+    "registered_count": 498,
+    "driveLink": "https://drive.google.com/drive/folders/1pii5RcKnfYTk8vVb8nTsOJ8b7SauahKT?usp=sharing"
   },
   {
     "id": 195,
@@ -3727,7 +3921,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học EcomDesign Thiết Kế Gian Hàng Shopee 2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1P78IGpPr1yA3bqnonFDjvetj8ldBtcUg",
+    "drive_link": "https://drive.google.com/drive/folders/1P78IGpPr1yA3bqnonFDjvetj8ldBtcUg?usp=sharing",
     "drive_folder_id": "1P78IGpPr1yA3bqnonFDjvetj8ldBtcUg",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3735,7 +3929,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 535
+    "registered_count": 535,
+    "driveLink": "https://drive.google.com/drive/folders/1P78IGpPr1yA3bqnonFDjvetj8ldBtcUg?usp=sharing"
   },
   {
     "id": 196,
@@ -3745,7 +3940,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Figma Prototype Từ A-Z Dành Cho UI_UX Designer – Telos Academy cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19GHP4a2ASZITqBdWgku3eK13Yl9fkqgF",
+    "drive_link": "https://drive.google.com/drive/folders/19GHP4a2ASZITqBdWgku3eK13Yl9fkqgF?usp=sharing",
     "drive_folder_id": "19GHP4a2ASZITqBdWgku3eK13Yl9fkqgF",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3753,7 +3948,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 572
+    "registered_count": 572,
+    "driveLink": "https://drive.google.com/drive/folders/19GHP4a2ASZITqBdWgku3eK13Yl9fkqgF?usp=sharing"
   },
   {
     "id": 197,
@@ -3763,7 +3959,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kế Toán Thực Hành Lập Sổ Sách Hộ Kinh Doanh 2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/18TiHORGVChPBMMdTEwc3HxQ_b3UY3bka",
+    "drive_link": "https://drive.google.com/drive/folders/18TiHORGVChPBMMdTEwc3HxQ_b3UY3bka?usp=sharing",
     "drive_folder_id": "18TiHORGVChPBMMdTEwc3HxQ_b3UY3bka",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3771,7 +3967,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 609
+    "registered_count": 609,
+    "driveLink": "https://drive.google.com/drive/folders/18TiHORGVChPBMMdTEwc3HxQ_b3UY3bka?usp=sharing"
   },
   {
     "id": 198,
@@ -3781,7 +3978,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập Kế Hoạch \\u0026 Phân Tích Tài Chính (fp\\u0026a) – Finance Professional cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/18TEu5slJVrZSbHp5WgIPu47vfcsWd1sJ",
+    "drive_link": "https://drive.google.com/drive/folders/18TEu5slJVrZSbHp5WgIPu47vfcsWd1sJ?usp=sharing",
     "drive_folder_id": "18TEu5slJVrZSbHp5WgIPu47vfcsWd1sJ",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3789,7 +3986,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 646
+    "registered_count": 646,
+    "driveLink": "https://drive.google.com/drive/folders/18TEu5slJVrZSbHp5WgIPu47vfcsWd1sJ?usp=sharing"
   },
   {
     "id": 199,
@@ -3799,7 +3997,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập Trình Flutter Từ A – Z 2024 Cùng Trung Tâm Codefresher cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1i-JFX1hNvEaV7AdD1zpZ1J91PLdQmUPP",
+    "drive_link": "https://drive.google.com/drive/folders/1i-JFX1hNvEaV7AdD1zpZ1J91PLdQmUPP?usp=sharing",
     "drive_folder_id": "1i-JFX1hNvEaV7AdD1zpZ1J91PLdQmUPP",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3807,7 +4005,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 683
+    "registered_count": 683,
+    "driveLink": "https://drive.google.com/drive/folders/1i-JFX1hNvEaV7AdD1zpZ1J91PLdQmUPP?usp=sharing"
   },
   {
     "id": 200,
@@ -3817,7 +4016,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lập Trình Iot Chip Esp32-idf Cùng Deviot cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/14grIn_6WRMcudR-Fuw2oLnPir4VYVXTb",
+    "drive_link": "https://drive.google.com/drive/folders/14grIn_6WRMcudR-Fuw2oLnPir4VYVXTb?usp=sharing",
     "drive_folder_id": "14grIn_6WRMcudR-Fuw2oLnPir4VYVXTb",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3825,7 +4024,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 720
+    "registered_count": 720,
+    "driveLink": "https://drive.google.com/drive/folders/14grIn_6WRMcudR-Fuw2oLnPir4VYVXTb?usp=sharing"
   },
   {
     "id": 201,
@@ -3835,7 +4035,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khóa Hoc Luyện Thi Chứng Chỉ Tiếng Anh Vstep Tiếng Anh A2 B1 B2 C1 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1iPUYarFvf3bzenkI5KxFH56e6DP8NO5v",
+    "drive_link": "https://drive.google.com/drive/folders/1iPUYarFvf3bzenkI5KxFH56e6DP8NO5v?usp=sharing",
     "drive_folder_id": "1iPUYarFvf3bzenkI5KxFH56e6DP8NO5v",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3843,7 +4043,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 757
+    "registered_count": 757,
+    "driveLink": "https://drive.google.com/drive/folders/1iPUYarFvf3bzenkI5KxFH56e6DP8NO5v?usp=sharing"
   },
   {
     "id": 202,
@@ -3853,7 +4054,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa học Machine learning (Học máy) từ cơ bản đến nâng cao cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1qBEZ46Dm1bnfwSEYUr5FPt2fvH4eEgQ-",
+    "drive_link": "https://drive.google.com/drive/folders/1qBEZ46Dm1bnfwSEYUr5FPt2fvH4eEgQ-?usp=sharing",
     "drive_folder_id": "1qBEZ46Dm1bnfwSEYUr5FPt2fvH4eEgQ-",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3861,7 +4062,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 794
+    "registered_count": 794,
+    "driveLink": "https://drive.google.com/drive/folders/1qBEZ46Dm1bnfwSEYUr5FPt2fvH4eEgQ-?usp=sharing"
   },
   {
     "id": 203,
@@ -3871,7 +4073,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Macroeconomics I (cơ Bản) – Bước Đầu Chinh Phục Kinh Tế Vĩ Mô Cùng Hedge Academy cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1OP8GvxZ3Go6GoJsOTdbvxiDbJ2t3gcvQ",
+    "drive_link": "https://drive.google.com/drive/folders/1OP8GvxZ3Go6GoJsOTdbvxiDbJ2t3gcvQ?usp=sharing",
     "drive_folder_id": "1OP8GvxZ3Go6GoJsOTdbvxiDbJ2t3gcvQ",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3879,7 +4081,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 831
+    "registered_count": 831,
+    "driveLink": "https://drive.google.com/drive/folders/1OP8GvxZ3Go6GoJsOTdbvxiDbJ2t3gcvQ?usp=sharing"
   },
   {
     "id": 204,
@@ -3889,7 +4092,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Nền Tảng Tiếng Anh Cho Người Mới Bắt Đầu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1r4BgVqeeYLPDNSD5aRrbYg8q-FOSnG9E",
+    "drive_link": "https://drive.google.com/drive/folders/1r4BgVqeeYLPDNSD5aRrbYg8q-FOSnG9E?usp=sharing",
     "drive_folder_id": "1r4BgVqeeYLPDNSD5aRrbYg8q-FOSnG9E",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3897,7 +4100,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 868
+    "registered_count": 868,
+    "driveLink": "https://drive.google.com/drive/folders/1r4BgVqeeYLPDNSD5aRrbYg8q-FOSnG9E?usp=sharing"
   },
   {
     "id": 205,
@@ -3907,7 +4111,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Nghiệp Vụ Sales Logistics Forwarder cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1zcWYIuvKu0BrBIqJQeHRq2V3iYvMn56i",
+    "drive_link": "https://drive.google.com/drive/folders/1zcWYIuvKu0BrBIqJQeHRq2V3iYvMn56i?usp=sharing",
     "drive_folder_id": "1zcWYIuvKu0BrBIqJQeHRq2V3iYvMn56i",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3915,7 +4119,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 905
+    "registered_count": 905,
+    "driveLink": "https://drive.google.com/drive/folders/1zcWYIuvKu0BrBIqJQeHRq2V3iYvMn56i?usp=sharing"
   },
   {
     "id": 206,
@@ -3925,7 +4130,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Phân Tích \\u0026 Trực Quan Hóa Dữ Liệu Với Power BI Cơ Bản Và Nâng Cao Trên cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1qkp7Zk-4h04cVMS95NtVP81wbsoh3Eti",
+    "drive_link": "https://drive.google.com/drive/folders/1qkp7Zk-4h04cVMS95NtVP81wbsoh3Eti?usp=sharing",
     "drive_folder_id": "1qkp7Zk-4h04cVMS95NtVP81wbsoh3Eti",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3933,7 +4138,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 942
+    "registered_count": 942,
+    "driveLink": "https://drive.google.com/drive/folders/1qkp7Zk-4h04cVMS95NtVP81wbsoh3Eti?usp=sharing"
   },
   {
     "id": 207,
@@ -3943,7 +4149,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Phân Tích Bctc Và Financial Modeling Cùng Intrinsic Garden cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1nnqua7VCb0ifhIhLEQonj8yQsShSn6VK",
+    "drive_link": "https://drive.google.com/drive/folders/1nnqua7VCb0ifhIhLEQonj8yQsShSn6VK?usp=sharing",
     "drive_folder_id": "1nnqua7VCb0ifhIhLEQonj8yQsShSn6VK",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3951,7 +4157,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 129
+    "registered_count": 129,
+    "driveLink": "https://drive.google.com/drive/folders/1nnqua7VCb0ifhIhLEQonj8yQsShSn6VK?usp=sharing"
   },
   {
     "id": 208,
@@ -3961,7 +4168,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khóa Học Phân Tích Vĩ Mô \\u0026 Trading Cùng Fxdreamtrading cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1n-5mRkMn-cY38u5s-MoXTQGCXJI0ir5O",
+    "drive_link": "https://drive.google.com/drive/folders/1n-5mRkMn-cY38u5s-MoXTQGCXJI0ir5O?usp=sharing",
     "drive_folder_id": "1n-5mRkMn-cY38u5s-MoXTQGCXJI0ir5O",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3969,7 +4176,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 166
+    "registered_count": 166,
+    "driveLink": "https://drive.google.com/drive/folders/1n-5mRkMn-cY38u5s-MoXTQGCXJI0ir5O?usp=sharing"
   },
   {
     "id": 209,
@@ -3979,7 +4187,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Python \\u0026 Ai Cơ Bản Cùng Việt Nguyễn Ai 2024 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ZnwFZQBk96RjoPVldVSMlxCdBb6G7_xP",
+    "drive_link": "https://drive.google.com/drive/folders/1ZnwFZQBk96RjoPVldVSMlxCdBb6G7_xP?usp=sharing",
     "drive_folder_id": "1ZnwFZQBk96RjoPVldVSMlxCdBb6G7_xP",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -3987,7 +4195,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 203
+    "registered_count": 203,
+    "driveLink": "https://drive.google.com/drive/folders/1ZnwFZQBk96RjoPVldVSMlxCdBb6G7_xP?usp=sharing"
   },
   {
     "id": 210,
@@ -3997,7 +4206,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Thực Chiến Microservice Với Spring Boot Và Event Sourcing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1UdcxGjFk6y5cCHL7ESIR8kcCsIX0cNMc",
+    "drive_link": "https://drive.google.com/drive/folders/1UdcxGjFk6y5cCHL7ESIR8kcCsIX0cNMc?usp=sharing",
     "drive_folder_id": "1UdcxGjFk6y5cCHL7ESIR8kcCsIX0cNMc",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -4005,7 +4214,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 240
+    "registered_count": 240,
+    "driveLink": "https://drive.google.com/drive/folders/1UdcxGjFk6y5cCHL7ESIR8kcCsIX0cNMc?usp=sharing"
   },
   {
     "id": 211,
@@ -4015,7 +4225,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Treasury Analysis Cùng Hedge Academy cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1WoEpaFrOMGnrizH8qs-sRzI1NGxE2Jie",
+    "drive_link": "https://drive.google.com/drive/folders/1WoEpaFrOMGnrizH8qs-sRzI1NGxE2Jie?usp=sharing",
     "drive_folder_id": "1WoEpaFrOMGnrizH8qs-sRzI1NGxE2Jie",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -4023,7 +4233,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 277
+    "registered_count": 277,
+    "driveLink": "https://drive.google.com/drive/folders/1WoEpaFrOMGnrizH8qs-sRzI1NGxE2Jie?usp=sharing"
   },
   {
     "id": 212,
@@ -4033,7 +4244,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 990000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Vận Hành Hệ Thống Digital Marketing Với Ai 2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1F1cLoe3HcWzqlnaj-3nyLBp7_giQifN9",
+    "drive_link": "https://drive.google.com/drive/folders/1F1cLoe3HcWzqlnaj-3nyLBp7_giQifN9?usp=sharing",
     "drive_folder_id": "1F1cLoe3HcWzqlnaj-3nyLBp7_giQifN9",
     "category_id": 14,
     "category_name": "Khóa học Update 2025 - 2026",
@@ -4041,7 +4252,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 119000,
     "is_combo": false,
-    "registered_count": 314
+    "registered_count": 314,
+    "driveLink": "https://drive.google.com/drive/folders/1F1cLoe3HcWzqlnaj-3nyLBp7_giQifN9?usp=sharing"
   },
   {
     "id": 213,
@@ -4051,7 +4263,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 250000,
     "thumbnail": "/backgrounds/04_trang_sach_nghe_thuat.jpg",
     "description": "Khóa học chuyên sâu Khóa Học 7000 cuốn sách MOBI đa chủ đề cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1BB8KZNwmDy1v4TamK7NiiinbnfaVk6Is",
+    "drive_link": "https://drive.google.com/drive/folders/1BB8KZNwmDy1v4TamK7NiiinbnfaVk6Is?usp=sharing",
     "drive_folder_id": "1BB8KZNwmDy1v4TamK7NiiinbnfaVk6Is",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4059,7 +4271,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 351
+    "registered_count": 351,
+    "driveLink": "https://drive.google.com/drive/folders/1BB8KZNwmDy1v4TamK7NiiinbnfaVk6Is?usp=sharing"
   },
   {
     "id": 214,
@@ -4069,7 +4282,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 250000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Audiobook - sách hay cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1cRoN9EvXM0SXzlupCT1OTRHIsk_u6acH",
+    "drive_link": "https://drive.google.com/drive/folders/1cRoN9EvXM0SXzlupCT1OTRHIsk_u6acH?usp=sharing",
     "drive_folder_id": "1cRoN9EvXM0SXzlupCT1OTRHIsk_u6acH",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4077,7 +4290,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 388
+    "registered_count": 388,
+    "driveLink": "https://drive.google.com/drive/folders/1cRoN9EvXM0SXzlupCT1OTRHIsk_u6acH?usp=sharing"
   },
   {
     "id": 215,
@@ -4087,7 +4301,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 250000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Ebook cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17mtE2HptwyGwDQz1gCmAjt9Pf-NNGeMI",
+    "drive_link": "https://drive.google.com/drive/folders/17mtE2HptwyGwDQz1gCmAjt9Pf-NNGeMI?usp=sharing",
     "drive_folder_id": "17mtE2HptwyGwDQz1gCmAjt9Pf-NNGeMI",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4095,7 +4309,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 425
+    "registered_count": 425,
+    "driveLink": "https://drive.google.com/drive/folders/17mtE2HptwyGwDQz1gCmAjt9Pf-NNGeMI?usp=sharing"
   },
   {
     "id": 216,
@@ -4105,7 +4320,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 250000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Ebook - sách hay cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ioYmDTR4k9TAeX2txxfExuzb3zu5dehr",
+    "drive_link": "https://drive.google.com/drive/folders/1ioYmDTR4k9TAeX2txxfExuzb3zu5dehr?usp=sharing",
     "drive_folder_id": "1ioYmDTR4k9TAeX2txxfExuzb3zu5dehr",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4113,7 +4328,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 462
+    "registered_count": 462,
+    "driveLink": "https://drive.google.com/drive/folders/1ioYmDTR4k9TAeX2txxfExuzb3zu5dehr?usp=sharing"
   },
   {
     "id": 217,
@@ -4123,7 +4339,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 250000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Tổng hợp Ebook giá trị cao cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Hsr6RUXn-BHzdA8yLyztYzO5l7nk0UdB",
+    "drive_link": "https://drive.google.com/drive/folders/1Hsr6RUXn-BHzdA8yLyztYzO5l7nk0UdB?usp=sharing",
     "drive_folder_id": "1Hsr6RUXn-BHzdA8yLyztYzO5l7nk0UdB",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4131,17 +4347,18 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 499
+    "registered_count": 499,
+    "driveLink": "https://drive.google.com/drive/folders/1Hsr6RUXn-BHzdA8yLyztYzO5l7nk0UdB?usp=sharing"
   },
   {
     "id": 218,
-    "title": "Khóa Học Kho +3000 Ebook, Audiobook đọc online.docx",
+    "title": "Khóa Học Kho +3000 Ebook, Audiobook đọc online",
     "slug": "khoa-hoc-kho-3000-ebook-audiobook-doc-onlinedocx",
     "price": 0,
     "original_price": 250000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kho +3000 Ebook, Audiobook đọc online.docx cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1RYwV0JPR7LvIHA3pQ7o8_q4oXVkGIFzz",
+    "drive_link": "https://drive.google.com/file/d/1RYwV0JPR7LvIHA3pQ7o8_q4oXVkGIFzz/view?usp=sharing",
     "drive_folder_id": "1RYwV0JPR7LvIHA3pQ7o8_q4oXVkGIFzz",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4149,17 +4366,18 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 536
+    "registered_count": 536,
+    "driveLink": "https://drive.google.com/file/d/1RYwV0JPR7LvIHA3pQ7o8_q4oXVkGIFzz/view?usp=sharing"
   },
   {
     "id": 219,
-    "title": "Khóa Học Kho +3000 Ebook, Audiobook đọc online.docx",
+    "title": "Khóa Học Kho +3000 Ebook, Audiobook đọc online",
     "slug": "khoa-hoc-kho-3000-ebook-audiobook-doc-onlinedocx-1",
     "price": 0,
     "original_price": 250000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kho +3000 Ebook, Audiobook đọc online.docx cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1_M6CcdUaKBxTQ52ZQX7egMAc0yNIGV9O",
+    "drive_link": "https://drive.google.com/file/d/1_M6CcdUaKBxTQ52ZQX7egMAc0yNIGV9O/view?usp=sharing",
     "drive_folder_id": "1_M6CcdUaKBxTQ52ZQX7egMAc0yNIGV9O",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4167,17 +4385,18 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 573
+    "registered_count": 573,
+    "driveLink": "https://drive.google.com/file/d/1_M6CcdUaKBxTQ52ZQX7egMAc0yNIGV9O/view?usp=sharing"
   },
   {
     "id": 220,
-    "title": "Khóa Học Kho +3000 Ebook, Audiobook đọc online.docx",
+    "title": "Khóa Học Kho +3000 Ebook, Audiobook đọc online",
     "slug": "khoa-hoc-kho-3000-ebook-audiobook-doc-onlinedocx-2",
     "price": 0,
     "original_price": 250000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Kho +3000 Ebook, Audiobook đọc online.docx cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1YJ3NqF1w5rwdu9oj4RpmfJ0GVlqA9GyG",
+    "drive_link": "https://drive.google.com/file/d/1YJ3NqF1w5rwdu9oj4RpmfJ0GVlqA9GyG/view?usp=sharing",
     "drive_folder_id": "1YJ3NqF1w5rwdu9oj4RpmfJ0GVlqA9GyG",
     "category_id": 15,
     "category_name": "Quà tặng Ebook & Sách nói",
@@ -4185,7 +4404,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 610
+    "registered_count": 610,
+    "driveLink": "https://drive.google.com/file/d/1YJ3NqF1w5rwdu9oj4RpmfJ0GVlqA9GyG/view?usp=sharing"
   },
   {
     "id": 221,
@@ -4195,7 +4415,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học All Video Memes Compilation cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1U8avayA7CgvvfoU4ohepdOE9vKOrwIqs",
+    "drive_link": "https://drive.google.com/drive/folders/1U8avayA7CgvvfoU4ohepdOE9vKOrwIqs?usp=sharing",
     "drive_folder_id": "1U8avayA7CgvvfoU4ohepdOE9vKOrwIqs",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4203,7 +4423,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 647
+    "registered_count": 647,
+    "driveLink": "https://drive.google.com/drive/folders/1U8avayA7CgvvfoU4ohepdOE9vKOrwIqs?usp=sharing"
   },
   {
     "id": 222,
@@ -4213,7 +4434,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Bản Cài Đặt Full Adobe Crack 2021 đến 2024 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1E3tXK2gRDS2XfyB3-4WbGyBrqWviLgCF",
+    "drive_link": "https://drive.google.com/drive/folders/1E3tXK2gRDS2XfyB3-4WbGyBrqWviLgCF?usp=sharing",
     "drive_folder_id": "1E3tXK2gRDS2XfyB3-4WbGyBrqWviLgCF",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4221,7 +4442,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 684
+    "registered_count": 684,
+    "driveLink": "https://drive.google.com/drive/folders/1E3tXK2gRDS2XfyB3-4WbGyBrqWviLgCF?usp=sharing"
   },
   {
     "id": 223,
@@ -4231,7 +4453,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học FONT COLLECTION cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1WBAkCHKnl4i6YTdtNp7ygEFpWpYq92mJ",
+    "drive_link": "https://drive.google.com/drive/folders/1WBAkCHKnl4i6YTdtNp7ygEFpWpYq92mJ?usp=sharing",
     "drive_folder_id": "1WBAkCHKnl4i6YTdtNp7ygEFpWpYq92mJ",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4239,7 +4461,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 721
+    "registered_count": 721,
+    "driveLink": "https://drive.google.com/drive/folders/1WBAkCHKnl4i6YTdtNp7ygEFpWpYq92mJ?usp=sharing"
   },
   {
     "id": 224,
@@ -4249,7 +4472,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Full Meme cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1nCXlXAMpIR9X1-w27g4LkY1d5zEicPNX",
+    "drive_link": "https://drive.google.com/drive/folders/1nCXlXAMpIR9X1-w27g4LkY1d5zEicPNX?usp=sharing",
     "drive_folder_id": "1nCXlXAMpIR9X1-w27g4LkY1d5zEicPNX",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4257,7 +4480,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 758
+    "registered_count": 758,
+    "driveLink": "https://drive.google.com/drive/folders/1nCXlXAMpIR9X1-w27g4LkY1d5zEicPNX?usp=sharing"
   },
   {
     "id": 225,
@@ -4267,7 +4491,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Keyword tìm kiếm background cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Tl6ci8BA7kO9ZPuvsYJVCWF0wW3JwLwY",
+    "drive_link": "https://drive.google.com/drive/folders/1Tl6ci8BA7kO9ZPuvsYJVCWF0wW3JwLwY?usp=sharing",
     "drive_folder_id": "1Tl6ci8BA7kO9ZPuvsYJVCWF0wW3JwLwY",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4275,7 +4499,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 795
+    "registered_count": 795,
+    "driveLink": "https://drive.google.com/drive/folders/1Tl6ci8BA7kO9ZPuvsYJVCWF0wW3JwLwY?usp=sharing"
   },
   {
     "id": 226,
@@ -4285,7 +4510,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Meme - Sound Effect phổ biến cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1x8Hrc4mT3A0uLGuRFV4LO2HnfMBWQoah",
+    "drive_link": "https://drive.google.com/drive/folders/1x8Hrc4mT3A0uLGuRFV4LO2HnfMBWQoah?usp=sharing",
     "drive_folder_id": "1x8Hrc4mT3A0uLGuRFV4LO2HnfMBWQoah",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4293,7 +4518,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 832
+    "registered_count": 832,
+    "driveLink": "https://drive.google.com/drive/folders/1x8Hrc4mT3A0uLGuRFV4LO2HnfMBWQoah?usp=sharing"
   },
   {
     "id": 227,
@@ -4303,7 +4529,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Nâng cao hiệu suất làm việc với chat GPT cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Xt3RdLaDnAMw9eDBTA4bolkJVDOnCHXH",
+    "drive_link": "https://drive.google.com/drive/folders/1Xt3RdLaDnAMw9eDBTA4bolkJVDOnCHXH?usp=sharing",
     "drive_folder_id": "1Xt3RdLaDnAMw9eDBTA4bolkJVDOnCHXH",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4311,7 +4537,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 869
+    "registered_count": 869,
+    "driveLink": "https://drive.google.com/drive/folders/1Xt3RdLaDnAMw9eDBTA4bolkJVDOnCHXH?usp=sharing"
   },
   {
     "id": 228,
@@ -4321,7 +4548,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 300000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Sound Schannel cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1hgxMB2VE0VOM2uleZ-Se78ewqrXZPxM6",
+    "drive_link": "https://drive.google.com/drive/folders/1hgxMB2VE0VOM2uleZ-Se78ewqrXZPxM6?usp=sharing",
     "drive_folder_id": "1hgxMB2VE0VOM2uleZ-Se78ewqrXZPxM6",
     "category_id": 16,
     "category_name": "Quà tặng Tài nguyên & Template",
@@ -4329,7 +4556,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 906
+    "registered_count": 906,
+    "driveLink": "https://drive.google.com/drive/folders/1hgxMB2VE0VOM2uleZ-Se78ewqrXZPxM6?usp=sharing"
   },
   {
     "id": 229,
@@ -4339,7 +4567,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa học mới cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1zlG_EKy8mwrV8hHDgAMQnjlZ3PGwyGvr",
+    "drive_link": "https://drive.google.com/drive/folders/1zlG_EKy8mwrV8hHDgAMQnjlZ3PGwyGvr?usp=sharing",
     "drive_folder_id": "1zlG_EKy8mwrV8hHDgAMQnjlZ3PGwyGvr",
     "category_id": 17,
     "category_name": "Khóa học mới phát hành",
@@ -4347,7 +4575,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 943
+    "registered_count": 943,
+    "driveLink": "https://drive.google.com/drive/folders/1zlG_EKy8mwrV8hHDgAMQnjlZ3PGwyGvr?usp=sharing"
   },
   {
     "id": 230,
@@ -4357,7 +4586,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa học mới cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19BjShSy_cB7YdqCh9dt14Igt4Dnx5EMc",
+    "drive_link": "https://drive.google.com/drive/folders/19BjShSy_cB7YdqCh9dt14Igt4Dnx5EMc?usp=sharing",
     "drive_folder_id": "19BjShSy_cB7YdqCh9dt14Igt4Dnx5EMc",
     "category_id": 17,
     "category_name": "Khóa học mới phát hành",
@@ -4365,7 +4594,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 130
+    "registered_count": 130,
+    "driveLink": "https://drive.google.com/drive/folders/19BjShSy_cB7YdqCh9dt14Igt4Dnx5EMc?usp=sharing"
   },
   {
     "id": 231,
@@ -4375,7 +4605,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa học mới cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1J8RBvEXXHqmEoL_e51Zg-Kj2wqMtpA-h",
+    "drive_link": "https://drive.google.com/drive/folders/1J8RBvEXXHqmEoL_e51Zg-Kj2wqMtpA-h?usp=sharing",
     "drive_folder_id": "1J8RBvEXXHqmEoL_e51Zg-Kj2wqMtpA-h",
     "category_id": 17,
     "category_name": "Khóa học mới phát hành",
@@ -4383,7 +4613,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 167
+    "registered_count": 167,
+    "driveLink": "https://drive.google.com/drive/folders/1J8RBvEXXHqmEoL_e51Zg-Kj2wqMtpA-h?usp=sharing"
   },
   {
     "id": 232,
@@ -4393,7 +4624,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa học mới cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1PZPxac5D0N0e6jeLktZmUgvmFUh_6PHg",
+    "drive_link": "https://drive.google.com/drive/folders/1PZPxac5D0N0e6jeLktZmUgvmFUh_6PHg?usp=sharing",
     "drive_folder_id": "1PZPxac5D0N0e6jeLktZmUgvmFUh_6PHg",
     "category_id": 17,
     "category_name": "Khóa học mới phát hành",
@@ -4401,7 +4632,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 89000,
     "is_combo": false,
-    "registered_count": 204
+    "registered_count": 204,
+    "driveLink": "https://drive.google.com/drive/folders/1PZPxac5D0N0e6jeLktZmUgvmFUh_6PHg?usp=sharing"
   },
   {
     "id": 233,
@@ -4411,7 +4643,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 790000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa học mới cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Ahq1LXgjexITaax4Ri6rQ_96cuiGq3IB",
+    "drive_link": "https://drive.google.com/drive/folders/1Ahq1LXgjexITaax4Ri6rQ_96cuiGq3IB?usp=sharing",
     "drive_folder_id": "1Ahq1LXgjexITaax4Ri6rQ_96cuiGq3IB",
     "category_id": 17,
     "category_name": "Khóa học mới phát hành",
@@ -4419,7 +4651,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 241
+    "registered_count": 241,
+    "driveLink": "https://drive.google.com/drive/folders/1Ahq1LXgjexITaax4Ri6rQ_96cuiGq3IB?usp=sharing"
   },
   {
     "id": 234,
@@ -4429,7 +4662,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Buổi Workshop Công Thức Ma Trận Facebook Ads Version 3 Cùng Uyên Luka cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1QdJcgDIZ89Ba3qbhevWsdjM9efv62zFd",
+    "drive_link": "https://drive.google.com/drive/folders/1QdJcgDIZ89Ba3qbhevWsdjM9efv62zFd?usp=sharing",
     "drive_folder_id": "1QdJcgDIZ89Ba3qbhevWsdjM9efv62zFd",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4437,7 +4670,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 278
+    "registered_count": 278,
+    "driveLink": "https://drive.google.com/drive/folders/1QdJcgDIZ89Ba3qbhevWsdjM9efv62zFd?usp=sharing"
   },
   {
     "id": 235,
@@ -4447,7 +4681,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Combo 2 Khóa Học Facebook Ads Cơ Bản Đến Chuyên Sâu Cùng Brandsketer Việt Nam cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1MmLMoEy7J-DNeVahBdsj4khlrA4CcgDA",
+    "drive_link": "https://drive.google.com/drive/folders/1MmLMoEy7J-DNeVahBdsj4khlrA4CcgDA?usp=sharing",
     "drive_folder_id": "1MmLMoEy7J-DNeVahBdsj4khlrA4CcgDA",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4455,7 +4689,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 315
+    "registered_count": 315,
+    "driveLink": "https://drive.google.com/drive/folders/1MmLMoEy7J-DNeVahBdsj4khlrA4CcgDA?usp=sharing"
   },
   {
     "id": 236,
@@ -4465,7 +4700,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Full Bộ Khóa Học Trên cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1_d-cov85_Ekk2McLStTJOLmR04VEnnIr",
+    "drive_link": "https://drive.google.com/drive/folders/1_d-cov85_Ekk2McLStTJOLmR04VEnnIr?usp=sharing",
     "drive_folder_id": "1_d-cov85_Ekk2McLStTJOLmR04VEnnIr",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4473,7 +4708,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 352
+    "registered_count": 352,
+    "driveLink": "https://drive.google.com/drive/folders/1_d-cov85_Ekk2McLStTJOLmR04VEnnIr?usp=sharing"
   },
   {
     "id": 237,
@@ -4483,7 +4719,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học 15 Days Master Spa Vũ Mạnh Cầm cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ONi3rHqYjV9tZFvaG9yImVYIcmIutz4R",
+    "drive_link": "https://drive.google.com/drive/folders/1ONi3rHqYjV9tZFvaG9yImVYIcmIutz4R?usp=sharing",
     "drive_folder_id": "1ONi3rHqYjV9tZFvaG9yImVYIcmIutz4R",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4491,7 +4727,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 389
+    "registered_count": 389,
+    "driveLink": "https://drive.google.com/drive/folders/1ONi3rHqYjV9tZFvaG9yImVYIcmIutz4R?usp=sharing"
   },
   {
     "id": 238,
@@ -4501,7 +4738,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học 90 Phút Thực Hành Quảng Cáo Facebook cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1ITLWOO1gF9jI-lHooJqPRHeiEoh3Wjhf",
+    "drive_link": "https://drive.google.com/drive/folders/1ITLWOO1gF9jI-lHooJqPRHeiEoh3Wjhf?usp=sharing",
     "drive_folder_id": "1ITLWOO1gF9jI-lHooJqPRHeiEoh3Wjhf",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4509,7 +4746,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 426
+    "registered_count": 426,
+    "driveLink": "https://drive.google.com/drive/folders/1ITLWOO1gF9jI-lHooJqPRHeiEoh3Wjhf?usp=sharing"
   },
   {
     "id": 239,
@@ -4519,7 +4757,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Bí Quyết Bán 100 Đơn Một Ngày Với Facebook Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/19e8THExYARdKqvmk927aboJ8pz4vvQjH",
+    "drive_link": "https://drive.google.com/drive/folders/19e8THExYARdKqvmk927aboJ8pz4vvQjH?usp=sharing",
     "drive_folder_id": "19e8THExYARdKqvmk927aboJ8pz4vvQjH",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4527,7 +4765,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 463
+    "registered_count": 463,
+    "driveLink": "https://drive.google.com/drive/folders/19e8THExYARdKqvmk927aboJ8pz4vvQjH?usp=sharing"
   },
   {
     "id": 240,
@@ -4537,7 +4776,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Bí Quyết Kiếm Tiền Tỷ Từ Facebook Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/17tAyIFPRtYyuSw-a3saxzlnzNNB2z04P",
+    "drive_link": "https://drive.google.com/drive/folders/17tAyIFPRtYyuSw-a3saxzlnzNNB2z04P?usp=sharing",
     "drive_folder_id": "17tAyIFPRtYyuSw-a3saxzlnzNNB2z04P",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4545,7 +4784,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 500
+    "registered_count": 500,
+    "driveLink": "https://drive.google.com/drive/folders/17tAyIFPRtYyuSw-a3saxzlnzNNB2z04P?usp=sharing"
   },
   {
     "id": 241,
@@ -4555,7 +4795,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Black Facebook Cùng Nguyễn Duy Đông Win Media cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1M3YiExax7ICPzAgmdPzPaCPMAnsdQ7KX",
+    "drive_link": "https://drive.google.com/drive/folders/1M3YiExax7ICPzAgmdPzPaCPMAnsdQ7KX?usp=sharing",
     "drive_folder_id": "1M3YiExax7ICPzAgmdPzPaCPMAnsdQ7KX",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4563,7 +4803,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 537
+    "registered_count": 537,
+    "driveLink": "https://drive.google.com/drive/folders/1M3YiExax7ICPzAgmdPzPaCPMAnsdQ7KX?usp=sharing"
   },
   {
     "id": 242,
@@ -4573,7 +4814,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Bùng Facebook Cùng Btani cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1r6P5Yx9lcemZMIA4nDkKBIZNvkiUtb6M",
+    "drive_link": "https://drive.google.com/drive/folders/1r6P5Yx9lcemZMIA4nDkKBIZNvkiUtb6M?usp=sharing",
     "drive_folder_id": "1r6P5Yx9lcemZMIA4nDkKBIZNvkiUtb6M",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4581,7 +4822,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 574
+    "registered_count": 574,
+    "driveLink": "https://drive.google.com/drive/folders/1r6P5Yx9lcemZMIA4nDkKBIZNvkiUtb6M?usp=sharing"
   },
   {
     "id": 243,
@@ -4591,7 +4833,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chạy Quảng Cáo Facebook Từ A -_ Z – Bạch Thiếu Gia cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1_78geb19SBlPPqIkx-OljyhYVExottzV",
+    "drive_link": "https://drive.google.com/drive/folders/1_78geb19SBlPPqIkx-OljyhYVExottzV?usp=sharing",
     "drive_folder_id": "1_78geb19SBlPPqIkx-OljyhYVExottzV",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4599,7 +4841,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 611
+    "registered_count": 611,
+    "driveLink": "https://drive.google.com/drive/folders/1_78geb19SBlPPqIkx-OljyhYVExottzV?usp=sharing"
   },
   {
     "id": 244,
@@ -4609,7 +4852,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chân Kinh Facebook Ad Break – Kiếm Tiền Từ Lượt Xem Trên Facebook Cùng Cuongug cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1hrRS1d1zTXrszB1ZwqtLyDe8cn5hgXjb",
+    "drive_link": "https://drive.google.com/drive/folders/1hrRS1d1zTXrszB1ZwqtLyDe8cn5hgXjb?usp=sharing",
     "drive_folder_id": "1hrRS1d1zTXrszB1ZwqtLyDe8cn5hgXjb",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4617,7 +4860,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 648
+    "registered_count": 648,
+    "driveLink": "https://drive.google.com/drive/folders/1hrRS1d1zTXrszB1ZwqtLyDe8cn5hgXjb?usp=sharing"
   },
   {
     "id": 245,
@@ -4627,7 +4871,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Chinh Phục Reels Facebook Mới Nhất Doãn Kỷ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1GpApbttv1rM9csAEgtBUb87L_cmR73g6",
+    "drive_link": "https://drive.google.com/drive/folders/1GpApbttv1rM9csAEgtBUb87L_cmR73g6?usp=sharing",
     "drive_folder_id": "1GpApbttv1rM9csAEgtBUb87L_cmR73g6",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4635,7 +4879,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 685
+    "registered_count": 685,
+    "driveLink": "https://drive.google.com/drive/folders/1GpApbttv1rM9csAEgtBUb87L_cmR73g6?usp=sharing"
   },
   {
     "id": 246,
@@ -4645,7 +4890,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Facebook Ads Căn Bản Từ A-Z cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1_eGrQ8wAAmVt6m1TXKXS9dIvxjUqPn1h",
+    "drive_link": "https://drive.google.com/drive/folders/1_eGrQ8wAAmVt6m1TXKXS9dIvxjUqPn1h?usp=sharing",
     "drive_folder_id": "1_eGrQ8wAAmVt6m1TXKXS9dIvxjUqPn1h",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4653,7 +4898,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 722
+    "registered_count": 722,
+    "driveLink": "https://drive.google.com/drive/folders/1_eGrQ8wAAmVt6m1TXKXS9dIvxjUqPn1h?usp=sharing"
   },
   {
     "id": 247,
@@ -4663,7 +4909,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Facebook Ads Cầm Tay Chỉ Việc Chuyên Sâu Cùng Lê Bá Tùng cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1XJQErVQQrKdO9FbOdgd89y6WwNz1gGro",
+    "drive_link": "https://drive.google.com/drive/folders/1XJQErVQQrKdO9FbOdgd89y6WwNz1gGro?usp=sharing",
     "drive_folder_id": "1XJQErVQQrKdO9FbOdgd89y6WwNz1gGro",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4671,7 +4917,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 759
+    "registered_count": 759,
+    "driveLink": "https://drive.google.com/drive/folders/1XJQErVQQrKdO9FbOdgd89y6WwNz1gGro?usp=sharing"
   },
   {
     "id": 248,
@@ -4681,7 +4928,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Facebook Ads Đỉnh Cao 2025 Cùng Vương Quốc Huy (mới Nhất) cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1iq0ejogfcBRipOBduQ6R_U9K8D682l1H",
+    "drive_link": "https://drive.google.com/drive/folders/1iq0ejogfcBRipOBduQ6R_U9K8D682l1H?usp=sharing",
     "drive_folder_id": "1iq0ejogfcBRipOBduQ6R_U9K8D682l1H",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4689,7 +4936,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 796
+    "registered_count": 796,
+    "driveLink": "https://drive.google.com/drive/folders/1iq0ejogfcBRipOBduQ6R_U9K8D682l1H?usp=sharing"
   },
   {
     "id": 249,
@@ -4699,7 +4947,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Facebook Ads Pro 2025 – Làm Chủ Quảng Cáo Facebook, Tăng Gấp 3 Doanh Số Trong 30 Ngày cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1R44YZRaI2OTKc0IxOI4Rgqy2fn4Oa2Jo",
+    "drive_link": "https://drive.google.com/drive/folders/1R44YZRaI2OTKc0IxOI4Rgqy2fn4Oa2Jo?usp=sharing",
     "drive_folder_id": "1R44YZRaI2OTKc0IxOI4Rgqy2fn4Oa2Jo",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4707,7 +4955,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 833
+    "registered_count": 833,
+    "driveLink": "https://drive.google.com/drive/folders/1R44YZRaI2OTKc0IxOI4Rgqy2fn4Oa2Jo?usp=sharing"
   },
   {
     "id": 250,
@@ -4717,7 +4966,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Fpa Facebook Ads Pro Doãn Kỷ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1EYu8GI4FsGxsvLy31XrM6LJS4PCbGG7W",
+    "drive_link": "https://drive.google.com/drive/folders/1EYu8GI4FsGxsvLy31XrM6LJS4PCbGG7W?usp=sharing",
     "drive_folder_id": "1EYu8GI4FsGxsvLy31XrM6LJS4PCbGG7W",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4725,7 +4974,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 870
+    "registered_count": 870,
+    "driveLink": "https://drive.google.com/drive/folders/1EYu8GI4FsGxsvLy31XrM6LJS4PCbGG7W?usp=sharing"
   },
   {
     "id": 251,
@@ -4735,7 +4985,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Free Traffic Cho Người Bán Hàng Mới Nhất 2023 Cùng Nghĩa Lê cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/12vf0EBPJLkj-IIYV6KPLQA4a-Xsov3y0",
+    "drive_link": "https://drive.google.com/drive/folders/12vf0EBPJLkj-IIYV6KPLQA4a-Xsov3y0?usp=sharing",
     "drive_folder_id": "12vf0EBPJLkj-IIYV6KPLQA4a-Xsov3y0",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4743,7 +4993,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 907
+    "registered_count": 907,
+    "driveLink": "https://drive.google.com/drive/folders/12vf0EBPJLkj-IIYV6KPLQA4a-Xsov3y0?usp=sharing"
   },
   {
     "id": 252,
@@ -4753,7 +5004,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Làm Dịch Vụ Facebook Cùng Văn Bình Channel cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1RIXr5SMQFKF-mmMsRfz14uHrywbNRshb",
+    "drive_link": "https://drive.google.com/drive/folders/1RIXr5SMQFKF-mmMsRfz14uHrywbNRshb?usp=sharing",
     "drive_folder_id": "1RIXr5SMQFKF-mmMsRfz14uHrywbNRshb",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4761,7 +5012,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 944
+    "registered_count": 944,
+    "driveLink": "https://drive.google.com/drive/folders/1RIXr5SMQFKF-mmMsRfz14uHrywbNRshb?usp=sharing"
   },
   {
     "id": 253,
@@ -4771,7 +5023,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Livestream Bán Hàng Online Trên Facebook Sàn Tmđt – Mira Kiều My cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1p9iyPqQ1LmBaHGsUq0vyCZR6X6IFxxaQ",
+    "drive_link": "https://drive.google.com/drive/folders/1p9iyPqQ1LmBaHGsUq0vyCZR6X6IFxxaQ?usp=sharing",
     "drive_folder_id": "1p9iyPqQ1LmBaHGsUq0vyCZR6X6IFxxaQ",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4779,7 +5031,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 131
+    "registered_count": 131,
+    "driveLink": "https://drive.google.com/drive/folders/1p9iyPqQ1LmBaHGsUq0vyCZR6X6IFxxaQ?usp=sharing"
   },
   {
     "id": 254,
@@ -4789,7 +5042,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Practical Facebook Ads 101 Cùng Doãn Kỹ – Donnie Chu cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1rOGnk8k_dxp-oHxuh7lq-wQw128Nu8Kb",
+    "drive_link": "https://drive.google.com/drive/folders/1rOGnk8k_dxp-oHxuh7lq-wQw128Nu8Kb?usp=sharing",
     "drive_folder_id": "1rOGnk8k_dxp-oHxuh7lq-wQw128Nu8Kb",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4797,7 +5050,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 168
+    "registered_count": 168,
+    "driveLink": "https://drive.google.com/drive/folders/1rOGnk8k_dxp-oHxuh7lq-wQw128Nu8Kb?usp=sharing"
   },
   {
     "id": 255,
@@ -4807,7 +5061,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Quảng Cáo Chuyển Đổi Facebook Ads (chuyên Sâu) Cùng Chu Minh Hạnh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1hNHmFKFA_9WaggTY3ZwyESmEUzzDyuhg",
+    "drive_link": "https://drive.google.com/drive/folders/1hNHmFKFA_9WaggTY3ZwyESmEUzzDyuhg?usp=sharing",
     "drive_folder_id": "1hNHmFKFA_9WaggTY3ZwyESmEUzzDyuhg",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4815,7 +5069,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 205
+    "registered_count": 205,
+    "driveLink": "https://drive.google.com/drive/folders/1hNHmFKFA_9WaggTY3ZwyESmEUzzDyuhg?usp=sharing"
   },
   {
     "id": 256,
@@ -4825,7 +5080,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Quảng Cáo Chuyển Đổi Facebook Từ A-Z Cùng Btani cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1xcEm4rHTwwfbJXaY_oMz-KZrr_YNi6HQ",
+    "drive_link": "https://drive.google.com/drive/folders/1xcEm4rHTwwfbJXaY_oMz-KZrr_YNi6HQ?usp=sharing",
     "drive_folder_id": "1xcEm4rHTwwfbJXaY_oMz-KZrr_YNi6HQ",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4833,7 +5088,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 242
+    "registered_count": 242,
+    "driveLink": "https://drive.google.com/drive/folders/1xcEm4rHTwwfbJXaY_oMz-KZrr_YNi6HQ?usp=sharing"
   },
   {
     "id": 257,
@@ -4843,7 +5099,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Quảng Cáo Facebook Reels Từ Cơ Bản Đến Nâng Cao cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/12x2Xu3gl6X625hPxEyDwNiP3teekRbNa",
+    "drive_link": "https://drive.google.com/drive/folders/12x2Xu3gl6X625hPxEyDwNiP3teekRbNa?usp=sharing",
     "drive_folder_id": "12x2Xu3gl6X625hPxEyDwNiP3teekRbNa",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4851,7 +5107,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 279
+    "registered_count": 279,
+    "driveLink": "https://drive.google.com/drive/folders/12x2Xu3gl6X625hPxEyDwNiP3teekRbNa?usp=sharing"
   },
   {
     "id": 258,
@@ -4861,7 +5118,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Quảng Cáo Facebook Thực Chiến 2025 Cùng Chu Minh Hạnh cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1tQ6TsylugmUOKSbRY2-fuGsnpCme6R3G",
+    "drive_link": "https://drive.google.com/drive/folders/1tQ6TsylugmUOKSbRY2-fuGsnpCme6R3G?usp=sharing",
     "drive_folder_id": "1tQ6TsylugmUOKSbRY2-fuGsnpCme6R3G",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4869,7 +5126,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 316
+    "registered_count": 316,
+    "driveLink": "https://drive.google.com/drive/folders/1tQ6TsylugmUOKSbRY2-fuGsnpCme6R3G?usp=sharing"
   },
   {
     "id": 259,
@@ -4879,7 +5137,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Vít Ads, Scale Đơn, Tối Ưu Quảng Cáo Facebook Và Vận Hành Shop Trương Văn Chiến cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1LfjC-_whI-KEPy5rMfaY90CckQsKKsQo",
+    "drive_link": "https://drive.google.com/drive/folders/1LfjC-_whI-KEPy5rMfaY90CckQsKKsQo?usp=sharing",
     "drive_folder_id": "1LfjC-_whI-KEPy5rMfaY90CckQsKKsQo",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4887,7 +5145,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 353
+    "registered_count": 353,
+    "driveLink": "https://drive.google.com/drive/folders/1LfjC-_whI-KEPy5rMfaY90CckQsKKsQo?usp=sharing"
   },
   {
     "id": 260,
@@ -4897,7 +5156,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Xây Dựng Group Facebook 2023 Từ Con Số 0 Cùng Nghĩa Lê cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1iwDD4PserV7mhFfWWu07wdZ5S6yohqx-",
+    "drive_link": "https://drive.google.com/drive/folders/1iwDD4PserV7mhFfWWu07wdZ5S6yohqx-?usp=sharing",
     "drive_folder_id": "1iwDD4PserV7mhFfWWu07wdZ5S6yohqx-",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4905,7 +5164,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 390
+    "registered_count": 390,
+    "driveLink": "https://drive.google.com/drive/folders/1iwDD4PserV7mhFfWWu07wdZ5S6yohqx-?usp=sharing"
   },
   {
     "id": 261,
@@ -4915,7 +5175,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Xây Dựng Và Quản Trị Group Facebook Triệu Thành Viên cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1vJMiX7Mc9-XpYljpHB517kxkTaDUFVXv",
+    "drive_link": "https://drive.google.com/drive/folders/1vJMiX7Mc9-XpYljpHB517kxkTaDUFVXv?usp=sharing",
     "drive_folder_id": "1vJMiX7Mc9-XpYljpHB517kxkTaDUFVXv",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4923,7 +5183,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 427
+    "registered_count": 427,
+    "driveLink": "https://drive.google.com/drive/folders/1vJMiX7Mc9-XpYljpHB517kxkTaDUFVXv?usp=sharing"
   },
   {
     "id": 262,
@@ -4933,7 +5194,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Xây Group Facebook 2025 – Làm Chủ Cộng Đồng \\u0026 Tăng Trưởng Bền Vững cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1_5U01WiYlEPVMxrkj7eTk1LF4R-nXYT8",
+    "drive_link": "https://drive.google.com/drive/folders/1_5U01WiYlEPVMxrkj7eTk1LF4R-nXYT8?usp=sharing",
     "drive_folder_id": "1_5U01WiYlEPVMxrkj7eTk1LF4R-nXYT8",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4941,7 +5202,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 464
+    "registered_count": 464,
+    "driveLink": "https://drive.google.com/drive/folders/1_5U01WiYlEPVMxrkj7eTk1LF4R-nXYT8?usp=sharing"
   },
   {
     "id": 263,
@@ -4951,7 +5213,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học No Ads Profit Hùng Vũ cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1R25CUb-Pznr54Xi7BcANeTRB3zUwPk1Q",
+    "drive_link": "https://drive.google.com/drive/folders/1R25CUb-Pznr54Xi7BcANeTRB3zUwPk1Q?usp=sharing",
     "drive_folder_id": "1R25CUb-Pznr54Xi7BcANeTRB3zUwPk1Q",
     "category_id": 18,
     "category_name": "Khóa học Facebook Ads & BM",
@@ -4959,7 +5221,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 501
+    "registered_count": 501,
+    "driveLink": "https://drive.google.com/drive/folders/1R25CUb-Pznr54Xi7BcANeTRB3zUwPk1Q?usp=sharing"
   },
   {
     "id": 264,
@@ -4969,7 +5232,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khóa Đào Tạo Film AI Online Mới Nhất – Hải Nghiêm – Quy Trình Từ A–Z Với Master Prompt Trên Gemini \\u0026 Veo 3.1 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1fm8-_hKdzfXf0XbAetDE_hEsHBxtviD7",
+    "drive_link": "https://drive.google.com/drive/folders/1fm8-_hKdzfXf0XbAetDE_hEsHBxtviD7?usp=sharing",
     "drive_folder_id": "1fm8-_hKdzfXf0XbAetDE_hEsHBxtviD7",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -4977,7 +5240,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 538
+    "registered_count": 538,
+    "driveLink": "https://drive.google.com/drive/folders/1fm8-_hKdzfXf0XbAetDE_hEsHBxtviD7?usp=sharing"
   },
   {
     "id": 265,
@@ -4987,7 +5251,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Hải Nghiêm Zoom K08 – Master Youtube Ai Video 2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1yRd-C5mEt-7HL2E33gRlk-TeL6ayJZs5",
+    "drive_link": "https://drive.google.com/drive/folders/1yRd-C5mEt-7HL2E33gRlk-TeL6ayJZs5?usp=sharing",
     "drive_folder_id": "1yRd-C5mEt-7HL2E33gRlk-TeL6ayJZs5",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -4995,7 +5259,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 575
+    "registered_count": 575,
+    "driveLink": "https://drive.google.com/drive/folders/1yRd-C5mEt-7HL2E33gRlk-TeL6ayJZs5?usp=sharing"
   },
   {
     "id": 266,
@@ -5005,7 +5270,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Khóa Học SoloYouTube Chiến Lược Hút Ngoại Tệ Từ Youtube Mỹ – Gói Ultra cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1dlbXnobWqIFa7cnGbVpwvNv_52w8x6Nv",
+    "drive_link": "https://drive.google.com/drive/folders/1dlbXnobWqIFa7cnGbVpwvNv_52w8x6Nv?usp=sharing",
     "drive_folder_id": "1dlbXnobWqIFa7cnGbVpwvNv_52w8x6Nv",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5013,7 +5278,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 612
+    "registered_count": 612,
+    "driveLink": "https://drive.google.com/drive/folders/1dlbXnobWqIFa7cnGbVpwvNv_52w8x6Nv?usp=sharing"
   },
   {
     "id": 267,
@@ -5023,7 +5289,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Khoá Học Tiếp Thị Liên Kết Youtube Với Sản Phẩm Số AI Cùng Văn Thế MMO cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1joEODgzWz7naN-QnZOodRco5mFjEpGti",
+    "drive_link": "https://drive.google.com/drive/folders/1joEODgzWz7naN-QnZOodRco5mFjEpGti?usp=sharing",
     "drive_folder_id": "1joEODgzWz7naN-QnZOodRco5mFjEpGti",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5031,7 +5297,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 649
+    "registered_count": 649,
+    "driveLink": "https://drive.google.com/drive/folders/1joEODgzWz7naN-QnZOodRco5mFjEpGti?usp=sharing"
   },
   {
     "id": 268,
@@ -5041,7 +5308,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Xây Kênh Ngách FUNNY Bán CONTENT – NDGroup cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1RJFO3t7i1CstR0grA39ktsEI1euELdwW",
+    "drive_link": "https://drive.google.com/drive/folders/1RJFO3t7i1CstR0grA39ktsEI1euELdwW?usp=sharing",
     "drive_folder_id": "1RJFO3t7i1CstR0grA39ktsEI1euELdwW",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5049,7 +5316,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 686
+    "registered_count": 686,
+    "driveLink": "https://drive.google.com/drive/folders/1RJFO3t7i1CstR0grA39ktsEI1euELdwW?usp=sharing"
   },
   {
     "id": 269,
@@ -5059,7 +5327,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Xây Kênh YouTube Chủ Đề Bóng Đá NDGroup – Lan Tỏa Đam Mê Thể Thao cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1-43zvcJ3zRnvLl15CAgcvdxmrJ5Je1LJ",
+    "drive_link": "https://drive.google.com/drive/folders/1-43zvcJ3zRnvLl15CAgcvdxmrJ5Je1LJ?usp=sharing",
     "drive_folder_id": "1-43zvcJ3zRnvLl15CAgcvdxmrJ5Je1LJ",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5067,7 +5335,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 723
+    "registered_count": 723,
+    "driveLink": "https://drive.google.com/drive/folders/1-43zvcJ3zRnvLl15CAgcvdxmrJ5Je1LJ?usp=sharing"
   },
   {
     "id": 270,
@@ -5077,7 +5346,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube AI Cùng Văn Thế MMO – Zoom Chuyên Sâu AI 05.2025 cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1mlyvarpK40ccjSi4Mv_4VsbDmWd6CRfK",
+    "drive_link": "https://drive.google.com/drive/folders/1mlyvarpK40ccjSi4Mv_4VsbDmWd6CRfK?usp=sharing",
     "drive_folder_id": "1mlyvarpK40ccjSi4Mv_4VsbDmWd6CRfK",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5085,7 +5354,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 760
+    "registered_count": 760,
+    "driveLink": "https://drive.google.com/drive/folders/1mlyvarpK40ccjSi4Mv_4VsbDmWd6CRfK?usp=sharing"
   },
   {
     "id": 271,
@@ -5095,7 +5365,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube Kênh Ngoại Bằng Ai Mới Nhất Cùng Sơn Zim cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/16EmYaJPIQ5762byiIsVA7jV3O1hBl4E8",
+    "drive_link": "https://drive.google.com/drive/folders/16EmYaJPIQ5762byiIsVA7jV3O1hBl4E8?usp=sharing",
     "drive_folder_id": "16EmYaJPIQ5762byiIsVA7jV3O1hBl4E8",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5103,7 +5373,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 797
+    "registered_count": 797,
+    "driveLink": "https://drive.google.com/drive/folders/16EmYaJPIQ5762byiIsVA7jV3O1hBl4E8?usp=sharing"
   },
   {
     "id": 272,
@@ -5113,7 +5384,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube Thực Chiến 1 Ngày Mới Nhất Cùng Thắng Bagi cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Gav7LUPhtghDNBRQpdhA0UPh3x4F9XFQ",
+    "drive_link": "https://drive.google.com/drive/folders/1Gav7LUPhtghDNBRQpdhA0UPh3x4F9XFQ?usp=sharing",
     "drive_folder_id": "1Gav7LUPhtghDNBRQpdhA0UPh3x4F9XFQ",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5121,7 +5392,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 69000,
     "is_combo": false,
-    "registered_count": 834
+    "registered_count": 834,
+    "driveLink": "https://drive.google.com/drive/folders/1Gav7LUPhtghDNBRQpdhA0UPh3x4F9XFQ?usp=sharing"
   },
   {
     "id": 273,
@@ -5131,7 +5403,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Khóa Học YouTube View Ngoại Cho Người Mới Bắt Đầu Cùng H2Dev cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1UH-NLGDrcgTL7x6Fsa7jrpvWTRPTkaA1",
+    "drive_link": "https://drive.google.com/drive/folders/1UH-NLGDrcgTL7x6Fsa7jrpvWTRPTkaA1?usp=sharing",
     "drive_folder_id": "1UH-NLGDrcgTL7x6Fsa7jrpvWTRPTkaA1",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5139,7 +5411,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 871
+    "registered_count": 871,
+    "driveLink": "https://drive.google.com/drive/folders/1UH-NLGDrcgTL7x6Fsa7jrpvWTRPTkaA1?usp=sharing"
   },
   {
     "id": 274,
@@ -5149,7 +5422,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Youtube Vũ Văn Thắng K4 – Nắm Trọn Tư Duy \\u0026 Quy Trình Bán Content AI cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1IB9xDn5ivBQOzeK1u7_mqtsGbKJcNNUN",
+    "drive_link": "https://drive.google.com/drive/folders/1IB9xDn5ivBQOzeK1u7_mqtsGbKJcNNUN?usp=sharing",
     "drive_folder_id": "1IB9xDn5ivBQOzeK1u7_mqtsGbKJcNNUN",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5157,7 +5430,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 908
+    "registered_count": 908,
+    "driveLink": "https://drive.google.com/drive/folders/1IB9xDn5ivBQOzeK1u7_mqtsGbKJcNNUN?usp=sharing"
   },
   {
     "id": 275,
@@ -5167,7 +5441,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 690000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Khóa Học Lộ Trình Giúp Bạn Kiếm $1000-$5000 Online Với Làm Video Ai Kiếm Tiền Youtube \\u0026 Affileate Marketing cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1PPN5Ck4XKW1FVUy8BgTwRZT9kjzaj0S8",
+    "drive_link": "https://drive.google.com/drive/folders/1PPN5Ck4XKW1FVUy8BgTwRZT9kjzaj0S8?usp=sharing",
     "drive_folder_id": "1PPN5Ck4XKW1FVUy8BgTwRZT9kjzaj0S8",
     "category_id": 19,
     "category_name": "Khóa học YouTube & Kiếm tiền Adsense",
@@ -5175,7 +5449,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": false,
-    "registered_count": 945
+    "registered_count": 945,
+    "driveLink": "https://drive.google.com/drive/folders/1PPN5Ck4XKW1FVUy8BgTwRZT9kjzaj0S8?usp=sharing"
   },
   {
     "id": 276,
@@ -5185,7 +5460,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1MJcmKd5Cj3ZkAlYRq6fbk8x3v3M3c5Gh",
+    "drive_link": "https://drive.google.com/drive/folders/1MJcmKd5Cj3ZkAlYRq6fbk8x3v3M3c5Gh?usp=sharing",
     "drive_folder_id": "1MJcmKd5Cj3ZkAlYRq6fbk8x3v3M3c5Gh",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5193,7 +5468,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 169000,
     "is_combo": true,
-    "registered_count": 132
+    "registered_count": 132,
+    "driveLink": "https://drive.google.com/drive/folders/1MJcmKd5Cj3ZkAlYRq6fbk8x3v3M3c5Gh?usp=sharing"
   },
   {
     "id": 277,
@@ -5203,7 +5479,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/hex_03_cyber_matrix_grid.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1UjcBcPZnmg8ZZwOB_lIlvfz3VXPzvJnM",
+    "drive_link": "https://drive.google.com/drive/folders/1UjcBcPZnmg8ZZwOB_lIlvfz3VXPzvJnM?usp=sharing",
     "drive_folder_id": "1UjcBcPZnmg8ZZwOB_lIlvfz3VXPzvJnM",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5211,7 +5487,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 169
+    "registered_count": 169,
+    "driveLink": "https://drive.google.com/drive/folders/1UjcBcPZnmg8ZZwOB_lIlvfz3VXPzvJnM?usp=sharing"
   },
   {
     "id": 278,
@@ -5221,7 +5498,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/10_ban_lam_viec_so.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1YXMFvVU6WqAxIoJwzO5Vx3-6x0g4Zaxr",
+    "drive_link": "https://drive.google.com/drive/folders/1YXMFvVU6WqAxIoJwzO5Vx3-6x0g4Zaxr?usp=sharing",
     "drive_folder_id": "1YXMFvVU6WqAxIoJwzO5Vx3-6x0g4Zaxr",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5229,7 +5506,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 206
+    "registered_count": 206,
+    "driveLink": "https://drive.google.com/drive/folders/1YXMFvVU6WqAxIoJwzO5Vx3-6x0g4Zaxr?usp=sharing"
   },
   {
     "id": 279,
@@ -5239,7 +5517,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_01_workspace_code_design.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1SCxJP8KnWdHPwx0j50wjgGyaffvjKN9m",
+    "drive_link": "https://drive.google.com/drive/folders/1SCxJP8KnWdHPwx0j50wjgGyaffvjKN9m?usp=sharing",
     "drive_folder_id": "1SCxJP8KnWdHPwx0j50wjgGyaffvjKN9m",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5247,7 +5525,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 243
+    "registered_count": 243,
+    "driveLink": "https://drive.google.com/drive/folders/1SCxJP8KnWdHPwx0j50wjgGyaffvjKN9m?usp=sharing"
   },
   {
     "id": 280,
@@ -5257,7 +5536,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_02_uiux_creative_studio.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/18kZWCPSphZwA0CRL2pOvRXv1Iha0amE_",
+    "drive_link": "https://drive.google.com/drive/folders/18kZWCPSphZwA0CRL2pOvRXv1Iha0amE_?usp=sharing",
     "drive_folder_id": "18kZWCPSphZwA0CRL2pOvRXv1Iha0amE_",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5265,7 +5544,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 169000,
     "is_combo": true,
-    "registered_count": 280
+    "registered_count": 280,
+    "driveLink": "https://drive.google.com/drive/folders/18kZWCPSphZwA0CRL2pOvRXv1Iha0amE_?usp=sharing"
   },
   {
     "id": 281,
@@ -5275,7 +5555,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_03_abstract_3d_dark_wave.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1OpxFu4nSXxeHMtZHO7aAqbYCgzYybPq-",
+    "drive_link": "https://drive.google.com/drive/folders/1OpxFu4nSXxeHMtZHO7aAqbYCgzYybPq-?usp=sharing",
     "drive_folder_id": "1OpxFu4nSXxeHMtZHO7aAqbYCgzYybPq-",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5283,7 +5563,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 317
+    "registered_count": 317,
+    "driveLink": "https://drive.google.com/drive/folders/1OpxFu4nSXxeHMtZHO7aAqbYCgzYybPq-?usp=sharing"
   },
   {
     "id": 282,
@@ -5293,7 +5574,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/13g5X8byEYbMPucCkCHcN39L0Mx43lrrr",
+    "drive_link": "https://drive.google.com/drive/folders/13g5X8byEYbMPucCkCHcN39L0Mx43lrrr?usp=sharing",
     "drive_folder_id": "13g5X8byEYbMPucCkCHcN39L0Mx43lrrr",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5301,7 +5582,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 354
+    "registered_count": 354,
+    "driveLink": "https://drive.google.com/drive/folders/13g5X8byEYbMPucCkCHcN39L0Mx43lrrr?usp=sharing"
   },
   {
     "id": 283,
@@ -5311,7 +5593,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1kJXVgdSdEhFQmfzbUg9XTSYiXw9VXTU_",
+    "drive_link": "https://drive.google.com/drive/folders/1kJXVgdSdEhFQmfzbUg9XTSYiXw9VXTU_?usp=sharing",
     "drive_folder_id": "1kJXVgdSdEhFQmfzbUg9XTSYiXw9VXTU_",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5319,7 +5601,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 391
+    "registered_count": 391,
+    "driveLink": "https://drive.google.com/drive/folders/1kJXVgdSdEhFQmfzbUg9XTSYiXw9VXTU_?usp=sharing"
   },
   {
     "id": 284,
@@ -5329,7 +5612,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_06_global_network_mesh.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1h6FMd2fhfNYZZ-G2nBpJiylBCGw1ZiXl",
+    "drive_link": "https://drive.google.com/drive/folders/1h6FMd2fhfNYZZ-G2nBpJiylBCGw1ZiXl?usp=sharing",
     "drive_folder_id": "1h6FMd2fhfNYZZ-G2nBpJiylBCGw1ZiXl",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5337,7 +5620,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 169000,
     "is_combo": true,
-    "registered_count": 428
+    "registered_count": 428,
+    "driveLink": "https://drive.google.com/drive/folders/1h6FMd2fhfNYZZ-G2nBpJiylBCGw1ZiXl?usp=sharing"
   },
   {
     "id": 285,
@@ -5347,7 +5631,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1Y8fCRtfC4IDNmUO6XygboObDgyai8y8R",
+    "drive_link": "https://drive.google.com/drive/folders/1Y8fCRtfC4IDNmUO6XygboObDgyai8y8R?usp=sharing",
     "drive_folder_id": "1Y8fCRtfC4IDNmUO6XygboObDgyai8y8R",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5355,7 +5639,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 465
+    "registered_count": 465,
+    "driveLink": "https://drive.google.com/drive/folders/1Y8fCRtfC4IDNmUO6XygboObDgyai8y8R?usp=sharing"
   },
   {
     "id": 286,
@@ -5365,7 +5650,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_08_geometric_dark_shapes.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1DDoGOK5de27PPzmDhLaN0wTBx5iSXEF3",
+    "drive_link": "https://drive.google.com/drive/folders/1DDoGOK5de27PPzmDhLaN0wTBx5iSXEF3?usp=sharing",
     "drive_folder_id": "1DDoGOK5de27PPzmDhLaN0wTBx5iSXEF3",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5373,7 +5658,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 502
+    "registered_count": 502,
+    "driveLink": "https://drive.google.com/drive/folders/1DDoGOK5de27PPzmDhLaN0wTBx5iSXEF3?usp=sharing"
   },
   {
     "id": 287,
@@ -5383,7 +5669,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_09_business_data_strategy.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1k_szJzYCrczlVfujqPQDy2HE5o9QT74c",
+    "drive_link": "https://drive.google.com/drive/folders/1k_szJzYCrczlVfujqPQDy2HE5o9QT74c?usp=sharing",
     "drive_folder_id": "1k_szJzYCrczlVfujqPQDy2HE5o9QT74c",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5391,7 +5677,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 539
+    "registered_count": 539,
+    "driveLink": "https://drive.google.com/drive/folders/1k_szJzYCrczlVfujqPQDy2HE5o9QT74c?usp=sharing"
   },
   {
     "id": 288,
@@ -5401,7 +5688,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/tech_10_clean_dark_gradient.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/10l6xL-UQqgdZPiTOBhOQSp-RLYfMcPeV",
+    "drive_link": "https://drive.google.com/drive/folders/10l6xL-UQqgdZPiTOBhOQSp-RLYfMcPeV?usp=sharing",
     "drive_folder_id": "10l6xL-UQqgdZPiTOBhOQSp-RLYfMcPeV",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5409,7 +5696,8 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": true,
     "flash_sale_price": 169000,
     "is_combo": true,
-    "registered_count": 576
+    "registered_count": 576,
+    "driveLink": "https://drive.google.com/drive/folders/10l6xL-UQqgdZPiTOBhOQSp-RLYfMcPeV?usp=sharing"
   },
   {
     "id": 289,
@@ -5419,7 +5707,7 @@ export const REAL_COURSES: CatalogCourse[] = [
     "original_price": 1990000,
     "thumbnail": "/backgrounds/hex_01_deep_circuit_board.jpg",
     "description": "Khóa học chuyên sâu Combo Khóa Học cung cấp đầy đủ video bài giảng chất lượng cao, slide hướng dẫn, tài liệu thực hành và project mẫu được lưu trữ trực tiếp trên Google Drive, truy cập trọn đời.",
-    "drive_link": "https://drive.google.com/drive/folders/1VrVAuG1luNuoqwOun2vnwvspqgEfeRm6",
+    "drive_link": "https://drive.google.com/drive/folders/1VrVAuG1luNuoqwOun2vnwvspqgEfeRm6?usp=sharing",
     "drive_folder_id": "1VrVAuG1luNuoqwOun2vnwvspqgEfeRm6",
     "category_id": 20,
     "category_name": "Combo Khóa Học Toàn Diện",
@@ -5427,7 +5715,62 @@ export const REAL_COURSES: CatalogCourse[] = [
     "is_flash_sale": false,
     "flash_sale_price": null,
     "is_combo": true,
-    "registered_count": 613
+    "registered_count": 613,
+    "driveLink": "https://drive.google.com/drive/folders/1VrVAuG1luNuoqwOun2vnwvspqgEfeRm6?usp=sharing"
+  },
+  {
+    "id": 1001,
+    "title": "Bộ Khóa Học 24 Ngày Lấy Lại Căn Bản Tiếng Anh Cùng Alexd",
+    "slug": "bo-khoa-hoc-24-ngay-lay-lai-can-ban-tieng-anh-cung-alexd",
+    "price": 149000,
+    "original_price": 799000,
+    "thumbnail": "/backgrounds/tech_07_video_creator_studio.jpg",
+    "description": "Lộ trình 24 ngày toàn diện giúp bạn lấy lại toàn bộ nền tảng phát âm, từ vựng và ngữ pháp tiếng Anh giao tiếp chuẩn quốc tế cùng Alexd. Video bài giảng HD chất lượng cao bàn giao qua Google Drive.",
+    "drive_link": "https://drive.google.com/drive/folders/1ReeWq23oohG8qyMVlvSr9mJGNuvpLCok?usp=sharing",
+    "drive_folder_id": "1ReeWq23oohG8qyMVlvSr9mJGNuvpLCok",
+    "category_id": 10,
+    "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
+    "category_slug": "ngoai-ngu",
+    "is_flash_sale": true,
+    "flash_sale_price": 149000,
+    "is_combo": false,
+    "registered_count": 520
+  },
+  {
+    "id": 1002,
+    "title": "Khóa Học Chinh Phục Tiếng Hàn Sơ Cấp 1 - Chuẩn Phát Âm, Chắc Ngữ Pháp",
+    "slug": "khoa-hoc-chinh-phuc-tieng-han-so-cap-1-chuan-phat-am-chac-ngu-phap",
+    "price": 129000,
+    "original_price": 650000,
+    "thumbnail": "/backgrounds/tech_04_digital_creator_desk.jpg",
+    "description": "Nắm vững bảng chữ cái Hangeul, các quy tắc phát âm chuẩn Seoul và toàn bộ hệ thống ngữ pháp tiếng Hàn sơ cấp 1 giúp bạn tự tin giao tiếp cơ bản và thi đậu TOPIK 1.",
+    "drive_link": "https://drive.google.com/drive/folders/1JvpJgWeumLttELfeXGJvvG8BKpl4WHEL?usp=sharing",
+    "drive_folder_id": "1JvpJgWeumLttELfeXGJvvG8BKpl4WHEL",
+    "category_id": 10,
+    "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
+    "category_slug": "ngoai-ngu",
+    "is_flash_sale": false,
+    "flash_sale_price": null,
+    "is_combo": false,
+    "registered_count": 340
+  },
+  {
+    "id": 1003,
+    "title": "Khóa Học Tiếng Hàn Sơ Cấp 2 - Hội Thoại Hàng Ngày, Ngữ Pháp Chi Tiết",
+    "slug": "khoa-hoc-tieng-han-so-cap-2-hoi-thoai-hang-ngay-ngu-phap-chi-tiet",
+    "price": 139000,
+    "original_price": 690000,
+    "thumbnail": "/backgrounds/tech_05_modern_developer_desk.jpg",
+    "description": "Tiếp nối cấp độ sơ cấp 1, khóa học sơ cấp 2 cung cấp vốn từ vựng phong phú, mẫu câu hội thoại đời sống thực tế và luyện thi chứng chỉ TOPIK 2 bài bản.",
+    "drive_link": "https://drive.google.com/drive/folders/1O-bem8fJN4rZ5ZspR_u43z67VcjgWzj5?usp=sharing",
+    "drive_folder_id": "1O-bem8fJN4rZ5ZspR_u43z67VcjgWzj5",
+    "category_id": 10,
+    "category_name": "Ngoại ngữ (Anh, Hàn, Trung, Nhật)",
+    "category_slug": "ngoai-ngu",
+    "is_flash_sale": true,
+    "flash_sale_price": 139000,
+    "is_combo": false,
+    "registered_count": 285
   }
 ];
 
@@ -5452,26 +5795,50 @@ export interface CourseItem {
   badge?: string;
 }
 
-export const ALL_COURSES: CourseItem[] = (REAL_COURSES as any[]).map((c: any) => ({
-  id: c.id,
-  title: c.title,
-  slug: c.slug,
-  price: c.price,
-  originalPrice: c.original_price ?? c.originalPrice ?? c.price * 5,
-  effectivePrice: (c.is_flash_sale && c.flash_sale_price) ? c.flash_sale_price : c.price,
-  thumbnail: c.thumbnail,
-  description: c.description,
-  driveLink: c.drive_link ?? c.driveLink,
-  driveFolderId: c.drive_folder_id ?? c.driveFolderId,
-  categoryId: c.category_id ?? c.categoryId,
-  categoryName: c.category_name ?? c.categoryName,
-  categorySlug: c.category_slug ?? c.categorySlug,
-  isFlashSale: !!c.is_flash_sale,
-  flashSalePrice: c.flash_sale_price,
-  isCombo: !!c.is_combo,
-  registeredCount: c.registered_count ?? c.registeredCount ?? 200,
-  badge: c.is_flash_sale ? 'FLASH SALE' : c.is_combo ? 'COMBO' : undefined,
-}));
+const VIP_COURSE: CourseItem = {
+  id: 999,
+  title: 'Trọn Bộ Hơn 2.000+ Khóa Học Google Drive VIP Trọn Đời - Toàn Website',
+  slug: 'tron-bo-khoa-hoc-tren-website-voi-quyen-truy-cap-vinh-vien',
+  price: 599000,
+  originalPrice: 2500000,
+  effectivePrice: 599000,
+  thumbnail: '/backgrounds/tech_03_abstract_3d_dark_wave.jpg',
+  description: 'Quyền truy cập toàn bộ 289+ khóa học trên hệ thống và toàn bộ học liệu cập nhật mới liên tục trong các năm 2025 - 2026. Bàn giao link Google Drive gốc sở hữu vĩnh viễn.',
+  driveLink: 'https://drive.google.com/drive/folders/14aGCvx2k8y6fPL93A5CbWiGwoVTEI3s-?usp=sharing',
+  driveFolderId: '14aGCvx2k8y6fPL93A5CbWiGwoVTEI3s-',
+  categoryId: 20,
+  categoryName: 'Combo Khóa Học Toàn Diện',
+  categorySlug: 'combo-khoa-hoc',
+  isFlashSale: true,
+  flashSalePrice: 599000,
+  isCombo: true,
+  registeredCount: 2045,
+  badge: 'VIP PRO',
+};
+
+export const ALL_COURSES: CourseItem[] = [
+  VIP_COURSE,
+  ...(REAL_COURSES as any[]).map((c: any) => ({
+    id: c.id,
+    title: c.title,
+    slug: c.slug,
+    price: c.price,
+    originalPrice: c.original_price ?? c.originalPrice ?? c.price * 5,
+    effectivePrice: (c.is_flash_sale && c.flash_sale_price) ? c.flash_sale_price : c.price,
+    thumbnail: c.thumbnail,
+    description: c.description,
+    driveLink: c.drive_link ?? c.driveLink,
+    driveFolderId: c.drive_folder_id ?? c.driveFolderId,
+    categoryId: c.category_id ?? c.categoryId,
+    categoryName: c.category_name ?? c.categoryName,
+    categorySlug: c.category_slug ?? c.categorySlug,
+    isFlashSale: !!c.is_flash_sale,
+    flashSalePrice: c.flash_sale_price,
+    isCombo: !!c.is_combo,
+    registeredCount: c.registered_count ?? c.registeredCount ?? 200,
+    badge: c.is_flash_sale ? 'FLASH SALE' : c.is_combo ? 'COMBO' : undefined,
+  }))
+];
 
 export const CATEGORY_COURSES_MAP: Record<string, CourseItem[]> = REAL_CATEGORIES.reduce((acc, cat) => {
   const items = ALL_COURSES.filter(c => c.categorySlug === cat.slug);

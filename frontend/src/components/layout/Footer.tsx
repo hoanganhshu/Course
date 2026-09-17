@@ -44,7 +44,7 @@ export default function Footer() {
                 ['Marketing & Ads',    '/danh-muc/marketing'],
                 ['Ngoại ngữ',           '/danh-muc/ngoai-ngu'],
                 ['Tin học văn phòng',   '/danh-muc/tin-hoc-van-phong'],
-                ['Kiếm tiền và MMO',    '/danh-muc/kiem-tien-va-mmo'],
+                ['Kiếm tiền và MMO',    '/danh-muc/kiem-tien-mmo'],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-yellow-400 transition-colors">{label}</Link>
@@ -60,9 +60,9 @@ export default function Footer() {
               {[
                 ['Trang chủ',           '/'],
                 ['Tất cả khóa học',     '/mua'],
-                ['Gói hội viên',         '/hoi-vien'],
-                ['Hướng dẫn mua hàng',  '/huong-dan-mua-hang'],
-                ['Chính sách bảo hành', '/chinh-sach-bao-hanh'],
+                ['Gói Combo VIP',       '/combo'],
+                ['Khóa học của tôi',   '/khoa-hoc-cua-toi'],
+                ['Khóa học bán chạy',   '/ban-chay'],
                 ['Phản hồi khách hàng', '/feedback'],
               ].map(([label, href]) => (
                 <li key={href}>
