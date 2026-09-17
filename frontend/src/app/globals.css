@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 25% 4%;
+    --foreground: 210 40% 98%;
+    --card: 240 20% 7%;
+    --card-foreground: 210 40% 98%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 240 25% 4%;
+    --radius: 1rem;
+  }
+  body {
+    background-color: #111523;
+    background-image: radial-gradient(ellipse 1300px 850px at 50% 35%, #273150 0%, #1A2035 45%, #111523 85%);
+    background-attachment: fixed;
+    color: #F8FAFC;
+    antialiased: true;
+  }
+}
+
+@layer utilities {
+  /* Ánh hào quang Ambient Indigo / Violet siêu mịn */
+  .ambient-hero {
+    background: radial-gradient(ellipse 900px 500px at 50% -50px, rgba(99, 102, 241, 0.18), rgba(139, 92, 246, 0.08), transparent 70%);
+  }
+
+  /* Hiệu ứng làm mờ dần hai đầu thanh cuộn ngang */
+  .mask-scroll-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+    mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+  }
+
+  /* Ẩn hoàn toàn scrollbar trên mọi trình duyệt (Webkit, Firefox, IE/Edge) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}
+
+@layer components {
+  /* ===== VIBRANT TOP PROMO BANNER (NỔI BẬT) ===== */
+  .header-promo {
+    @apply flex items-center justify-center gap-3 bg-[#11131A] text-slate-300 text-sm py-2 px-4 text-center;
+  }
+  .header-promo-cta {
+    @apply bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold px-3 py-1 rounded-full transition-all whitespace-nowrap shadow-sm;
+  }
+  
+  /* ===== COURSE CARD ===== */
+  .course-card {
+    @apply bg-[#12141D] rounded-2xl overflow-hidden hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
+  }
+  .course-card-price {
+    @apply text-amber-400 font-black text-lg;
+  }
+  .course-card-original-price {
+    @apply text-slate-500 line-through text-sm;
+  }
+  .course-card-badge-sale {
+    @apply bg-rose-600 text-white text-xs font-bold px-2 py-0.5 rounded-lg;
+  }
+  .course-card-badge-flash {
+    @apply bg-amber-400 text-slate-950 text-xs font-bold px-2 py-0.5 rounded-lg;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+    @apply bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-2.5 px-6 rounded-xl transition-all duration-200 inline-flex items-center gap-2 shadow-sm;
+  }
+  .btn-secondary {
+    @apply bg-[#151722] hover:bg-[#1C1F2E] text-slate-200 font-semibold py-2.5 px-6 rounded-xl transition-all duration-200 inline-flex items-center gap-2;
+  }
+
+  /* ===== SECTION TITLE ===== */
+  .section-title {
+    @apply text-2xl md:text-3xl font-black text-white;
+  }
+  .section-subtitle {
+    @apply text-slate-400 text-sm;
+  }
+
+  /* ===== FLASH SALE TIMER ===== */
+  .flash-timer-box {
+    @apply bg-red-600 text-white font-mono font-bold text-xl md:text-2xl w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded;
+  }
+
+  /* ===== MEGA MENU ===== */
+  .mega-menu {
+    @apply absolute top-full left-0 z-50 bg-[#141828] shadow-2xl rounded-b-xl;
+    min-width: 220px;
+  }
+  .mega-menu-item {
+    @apply flex items-center justify-between px-4 py-2.5 hover:bg-[#1C2238] hover:text-amber-400 cursor-pointer text-sm text-slate-300 transition-colors;
+  }
+  .mega-menu-sub {
+    @apply absolute left-full top-0 bg-[#141828] shadow-2xl rounded-xl z-50;
+    min-width: 200px;
+  }
+
+  /* ===== MEMBERSHIP CARD ===== */
+  .membership-card {
+    @apply bg-[#11141E] rounded-2xl p-6 hover:shadow-[0_0_25px_rgba(99,102,241,0.15)] transition-all;
+  }
+  .membership-card.featured {
+    @apply shadow-[0_0_30px_rgba(99,102,241,0.25)] relative bg-[#141824];
+  }
+
+  /* ===== STICKY CART BOX ===== */
+  .sticky-cart-box {
+    @apply sticky top-20 bg-[#11141E] rounded-2xl shadow-xl p-6;
+  }
+}
+
+@layer utilities {
+  .price-format {
+    @apply font-bold tabular-nums;
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
