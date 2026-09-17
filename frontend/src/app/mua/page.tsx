@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Search, ShoppingCart } from 'lucide-react';
 import { courseApi, categoryApi } from '@/lib/api';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import { ALL_COURSES, REAL_CATEGORIES, CourseItem } from '@/data/coursesCatalog';
 import toast from 'react-hot-toast';
 import { useSearchParams } from 'next/navigation';
@@ -19,7 +19,7 @@ function MuaContent() {
   const [category, setCategory] = useState(searchParams.get('category') || '');
   const [sortBy, setSortBy] = useState(searchParams.get('sortBy') || 'registeredCount');
   const [page, setPage] = useState(0);
-  const { addItem, isInCart } = useCartStore();
+  const { addItem, isInCart } = useCart();
 
   const { data: coursesData, isLoading } = useQuery({
     queryKey: ['courses', keyword, category, sortBy, page],

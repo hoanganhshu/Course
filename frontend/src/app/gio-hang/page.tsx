@@ -2,12 +2,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Trash2, ShoppingCart, ArrowRight } from 'lucide-react';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 
 export default function GioHangPage() {
-  const { items, removeItem, total } = useCartStore();
+  const { items, removeItem, total, isMounted } = useCart();
+
+  if (!isMounted) {
+    return (
+      <div className="max-w-lg mx-auto px-4 py-24 text-center">
+        <div className="w-10 h-10 rounded-full border-2 border-amber-400 border-t-transparent animate-spin mx-auto mb-4" />
+        <p className="text-slate-400 text-sm">Đang tải giỏ hàng...</p>
+      </div>
+    );
+  }
 
   if (items.length === 0) return (
     <div className="max-w-lg mx-auto px-4 py-24 text-center">

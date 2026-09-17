@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ShoppingCart, Check } from 'lucide-react';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import toast from 'react-hot-toast';
 
 export interface Course {
@@ -104,7 +104,7 @@ const SAMPLE_COURSES: Course[] = [
 ];
 
 function CourseCard({ course }: { course: Course }) {
-  const { addItem, isInCart } = useCartStore();
+  const { addItem, isInCart } = useCart();
   const inCart = isInCart(course.id);
   const pct = Math.round((1 - course.effectivePrice / course.originalPrice) * 100);
 

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart, Users, Clock, Check, ChevronRight, Zap } from 'lucide-react';
 import { courseApi } from '@/lib/api';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import { ALL_COURSES } from '@/data/coursesCatalog';
 import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
@@ -33,7 +33,7 @@ function FlashCountdown({ endAt }: { endAt: string }) {
 
 export default function CourseDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const { addItem, isInCart } = useCartStore();
+  const { addItem, isInCart } = useCart();
 
   const { data, isLoading } = useQuery({
     queryKey: ['course', slug],

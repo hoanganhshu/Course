@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { categoryApi, courseApi } from '@/lib/api';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import { useDebounce } from '@/hooks/useDebounce';
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeNav, setActiveNav] = useState<string>('/');
   const pathname = usePathname();
-  const cartCount = useCartStore((s) => s.items.length);
+  const { cartCount } = useCart();
   const searchRef = useRef<HTMLDivElement>(null);
 
   const debouncedSearch = useDebounce(searchQuery, 300);

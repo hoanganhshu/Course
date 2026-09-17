@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { orderApi, authApi } from '@/lib/api';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import toast from 'react-hot-toast';
 import { Check, Copy, RefreshCw, AlertCircle, ShoppingCart, Wallet, QrCode, Mail } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 
 export default function ThanhToanPage() {
   const router = useRouter();
-  const { items, clearCart, total } = useCartStore();
+  const { items, clearCart, total, isMounted } = useCart();
 
   const [step, setStep] = useState<'form' | 'qr' | 'success'>('form');
   const [loading, setLoading] = useState(false);
@@ -140,6 +140,15 @@ export default function ThanhToanPage() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  if (!isMounted) {
+    return (
+      <div className="max-w-lg mx-auto px-4 py-24 text-center">
+        <div className="w-10 h-10 rounded-full border-2 border-amber-400 border-t-transparent animate-spin mx-auto mb-4" />
+        <p className="text-slate-400 text-sm">Đang tải thông tin thanh toán...</p>
+      </div>
+    );
+  }
 
   if (items.length === 0 && step === 'form') {
     return (

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Check, ShoppingCart, Gem, ShieldCheck, ArrowRight, Zap } from 'lucide-react';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import toast from 'react-hot-toast';
 
 interface ComboPack {
@@ -126,7 +126,7 @@ const COMBO_PACKS: ComboPack[] = [
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 
 export default function ComboPage() {
-  const { addItem, isInCart } = useCartStore();
+  const { addItem, isInCart } = useCart();
 
   const handleAddCart = (pack: ComboPack) => {
     if (isInCart(pack.id)) return;

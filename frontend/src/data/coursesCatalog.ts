@@ -6,7 +6,11 @@ export interface CatalogCategory {
   name: string;
   slug: string;
   icon: string;
-  displayOrder: number;
+  display_order?: number;
+  displayOrder?: number;
+  is_active?: boolean;
+  drive_id?: string;
+  [key: string]: any;
 }
 
 export interface CatalogCourse {
@@ -14,18 +18,29 @@ export interface CatalogCourse {
   title: string;
   slug: string;
   price: number;
-  originalPrice: number;
+  original_price?: number;
+  originalPrice?: number;
   thumbnail: string;
   description: string;
-  driveLink: string;
-  driveFolderId: string;
-  categoryId: number;
-  categoryName: string;
-  categorySlug: string;
-  isFlashSale: boolean;
-  flashSalePrice?: number;
-  isCombo: boolean;
-  registeredCount: number;
+  drive_link?: string;
+  driveLink?: string;
+  drive_folder_id?: string;
+  driveFolderId?: string;
+  category_id?: number;
+  categoryId?: number;
+  category_name?: string;
+  categoryName?: string;
+  category_slug?: string;
+  categorySlug?: string;
+  is_flash_sale?: boolean;
+  isFlashSale?: boolean;
+  flash_sale_price?: number | null;
+  flashSalePrice?: number | null;
+  is_combo?: boolean;
+  isCombo?: boolean;
+  registered_count?: number;
+  registeredCount?: number;
+  [key: string]: any;
 }
 
 export const REAL_CATEGORIES: CatalogCategory[] = [

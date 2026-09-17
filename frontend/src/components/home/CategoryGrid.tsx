@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowRight, ShoppingCart, Check } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { categoryApi } from '@/lib/api';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import { REAL_CATEGORIES, CATEGORY_COURSES_MAP, CourseItem } from '@/data/coursesCatalog';
 import toast from 'react-hot-toast';
 
@@ -38,7 +38,7 @@ export default function CategoryGrid() {
   const [activeCategory, setActiveCategory] = useState<string>('cong-nghe-thong-tin');
   const scrollRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef<boolean>(false);
-  const { addItem, isInCart } = useCartStore();
+  const { addItem, isInCart } = useCart();
 
   const { data } = useQuery({
     queryKey: ['categories-tree'],

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart, Check, Star, Users, Flame, Search, ArrowRight } from 'lucide-react';
-import { useCartStore } from '@/store/cartStore';
+import { useCart } from '@/store/cartStore';
 import toast from 'react-hot-toast';
 
 import { ALL_COURSES } from '@/data/coursesCatalog';
@@ -45,7 +45,7 @@ const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 export default function BestSellersPage() {
   const [activeCat, setActiveCat] = useState('Tất cả');
   const [search, setSearch] = useState('');
-  const { addItem, isInCart } = useCartStore();
+  const { addItem, isInCart } = useCart();
 
   const filteredCourses = BEST_SELLING_COURSES.filter((c) => {
     const matchCat = activeCat === 'Tất cả' || c.category === activeCat;

@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { useState, useEffect } from 'react';
 
-interface CartItem {
+export interface CartItem {
   id: number;
   title: string;
   slug: string;
@@ -42,3 +43,32 @@ export const useCartStore = create<CartStore>()(
     { name: 'khgh-cart' }
   )
 );
+
+/**
+ * Hook an toàn tuyệt đối với Hydration của Next.js (SSR).
+ * Đảm bảo SSR và lần render đầu tiên trên Client giống hệt nhau,
+ * sau khi mount mới cập nhật trạng thái giỏ hàng từ localStorage.
+ */
+export function useCart() {
+  const [mounted, setMounted] = useState(false);
+  const items = useCartStore((s) => s.items);
+  const addItem = useCartStore((s) => s.addItem);
+  const removeItem = useCartStore((s) => s.removeItem);
+  const clearCart = useCartStore((s) => s.clearCart);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return {
+    isMounted: mounted,
+    items: mounted ? items : [],
+    cartCount: mounted ? items.length : 0,
+    isInCart: (id: number) => (mounted ? items.some((i) => i.id === id) : false),
+    addItem,
+    removeItem,
+    clearCart,
+    total: () => (mounted ? items.reduce((sum, i) => sum + i.price, 0) : 0),
+  };
+}
+
