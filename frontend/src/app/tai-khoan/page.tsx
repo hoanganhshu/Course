@@ -55,6 +55,16 @@ export default function TaiKhoanPage() {
     }
   }, [profile?.driveEmail]);
 
+  // Tự động mở modal nạp tiền nếu URL có ?deposit=true
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('deposit') === 'true' || params.get('tab') === 'deposit') {
+        setShowDepositModal(true);
+      }
+    }
+  }, []);
+
   // Đồng bộ số dư nếu Admin đã duyệt cộng tiền trên hệ thống
   useEffect(() => {
     if (profile?.email) {

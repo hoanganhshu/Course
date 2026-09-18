@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, Bell, Search, User, Menu, X, ChevronDown, ChevronRight, Home, ShieldCheck } from 'lucide-react';
+import { ShoppingCart, Bell, Search, User, Menu, X, ChevronDown, ChevronRight, Home, ShieldCheck, Wallet } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
@@ -315,6 +315,20 @@ export default function Header() {
             >
               <span>📁 Khóa học của tôi</span>
             </Link>
+
+            {/* 6. 💳 Nạp tiền vào ví */}
+            <Link
+              href="/tai-khoan?deposit=true"
+              onClick={() => setActiveNav('/nap-tien')}
+              className={`px-3.5 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
+                activeNav === '/nap-tien'
+                  ? 'text-amber-300 font-bold bg-amber-400/20 border border-amber-400/50 shadow-sm'
+                  : 'text-amber-400 hover:text-amber-300 hover:bg-amber-400/10 font-bold border border-amber-400/30'
+              }`}
+            >
+              <Wallet size={14} className="text-amber-400" />
+              <span>Nạp tiền vào ví</span>
+            </Link>
           </div>
         </div>
       </nav>
@@ -367,6 +381,14 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               📁 Khóa học của tôi
+            </Link>
+            <Link
+              href="/tai-khoan?deposit=true"
+              className={`block px-4 py-2.5 rounded-xl text-sm font-bold transition-colors text-amber-400 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 flex items-center gap-2`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Wallet size={15} />
+              <span>Nạp tiền vào ví</span>
             </Link>
           </div>
         </div>
