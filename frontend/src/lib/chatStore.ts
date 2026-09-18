@@ -7,6 +7,7 @@ export interface ChatMessage {
   text: string;
   time: string;
   timestamp: number;
+  imageUrl?: string;
   actionLink?: {
     label: string;
     url: string;
@@ -158,7 +159,22 @@ export const chatStore = {
   saveSessions(sessions: ChatSession[]) {
     if (typeof window === 'undefined') return;
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
+      } catch (storageErr) {
+        // Quota exceeded: retain only the latest 10 messages with images in each session
+        const sanitized = sessions.map((sess) => ({
+          ...sess,
+          messages: sess.messages.map((m, idx) => {
+            if (idx < sess.messages.length - 10 && m.imageUrl && m.imageUrl.length > 500) {
+              return { ...m, imageUrl: undefined };
+            }
+            return m;
+          }),
+        }));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sanitized));
+      }
+
       // Notify other tabs via custom DOM event & BroadcastChannel
       window.dispatchEvent(new Event('khgh_chat_updated'));
       const ch = getBroadcastChannel();
@@ -245,6 +261,7 @@ export const chatStore = {
   sendUserMessage(
     sessionId: string,
     text: string,
+    imageUrl?: string,
     actionLink?: { label: string; url: string }
   ): ChatMessage {
     const sessions = this.getSessions();
@@ -253,11 +270,14 @@ export const chatStore = {
     const now = new Date();
     const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
 
+    const displayText = text.trim() ? text : (imageUrl ? '📷 [Hình ảnh]' : '');
+
     const newMsg: ChatMessage = {
       id: `msg_u_${Date.now()}`,
       sender: 'user',
       senderName: session?.userName || 'Khách hàng',
-      text,
+      text: displayText,
+      imageUrl,
       time,
       timestamp: Date.now(),
       actionLink,
@@ -265,7 +285,7 @@ export const chatStore = {
 
     if (session) {
       session.messages.push(newMsg);
-      session.lastMessage = text;
+      session.lastMessage = displayText;
       session.lastMessageTime = 'Vừa xong';
       session.updatedAt = Date.now();
       session.unreadAdminCount += 1;
@@ -282,7 +302,8 @@ export const chatStore = {
   sendAdminReply(
     sessionId: string,
     text: string,
-    adminName = 'CSKH Khoahocgiahoi'
+    adminName = 'CSKH Khoahocgiahoi',
+    imageUrl?: string
   ): ChatMessage | null {
     const sessions = this.getSessions();
     const session = sessions.find((s) => s.sessionId === sessionId);
@@ -291,17 +312,20 @@ export const chatStore = {
     const now = new Date();
     const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
 
+    const displayText = text.trim() ? text : (imageUrl ? '📷 [Hình ảnh]' : '');
+
     const newMsg: ChatMessage = {
       id: `msg_a_${Date.now()}`,
       sender: 'shop',
       senderName: adminName,
-      text,
+      text: displayText,
+      imageUrl,
       time,
       timestamp: Date.now(),
     };
 
     session.messages.push(newMsg);
-    session.lastMessage = text;
+    session.lastMessage = displayText;
     session.lastMessageTime = 'Vừa xong';
     session.updatedAt = Date.now();
     session.unreadUserCount += 1;

@@ -47,6 +47,9 @@ import {
   Info,
   Gift,
   ArrowDown,
+  ImageIcon,
+  Paperclip,
+  ChevronLeft,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { ALL_COURSES, REAL_CATEGORIES, CourseItem } from '@/data/coursesCatalog';
@@ -206,10 +209,15 @@ export default function AdminDashboardPage() {
   const [chatSessions, setChatSessions] = useState<ChatSession[]>([]);
   const [selectedSessionId, setSelectedSessionId] = useState<string>('');
   const [adminReplyInput, setAdminReplyInput] = useState('');
+  const [adminSelectedImage, setAdminSelectedImage] = useState<string | null>(null);
+  const [adminLightboxImage, setAdminLightboxImage] = useState<string | null>(null);
+  const [mobileChatView, setMobileChatView] = useState<'list' | 'chat'>('chat');
   const [chatSearch, setChatSearch] = useState('');
   const [isExpandedChatMode, setIsExpandedChatMode] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const miniChatEndRef = useRef<HTMLDivElement>(null);
+  const adminFileInputRef = useRef<HTMLInputElement>(null);
+  const miniFileInputRef = useRef<HTMLInputElement>(null);
 
   // 3-dots Menu & Popups state
   const [openSessionMenuId, setOpenSessionMenuId] = useState<string | null>(null);
@@ -218,6 +226,7 @@ export default function AdminDashboardPage() {
   const [miniChatSessionId, setMiniChatSessionId] = useState<string | null>(null);
   const [miniChatMinimized, setMiniChatMinimized] = useState(false);
   const [miniChatReplyInput, setMiniChatReplyInput] = useState('');
+  const [miniChatSelectedImage, setMiniChatSelectedImage] = useState<string | null>(null);
 
   // Info Modal state
   const [infoModalSession, setInfoModalSession] = useState<ChatSession | null>(null);
@@ -518,30 +527,81 @@ export default function AdminDashboardPage() {
   const unreadChatCount = chatSessions.reduce((sum, s) => sum + (s.unreadAdminCount || 0), 0);
   const currentSelectedSession = chatSessions.find((s) => s.sessionId === selectedSessionId);
 
+  // Auto scroll chat thread when session or message count changes
+  useEffect(() => {
+    if (selectedSessionId && chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [selectedSessionId, currentSelectedSession?.messages.length]);
+
   // Chat handlers
   const handleSelectSession = (sessionId: string) => {
     setSelectedSessionId(sessionId);
     chatStore.markAsReadByAdmin(sessionId);
     const updated = chatStore.getSessions();
     setChatSessions(updated);
+    setMobileChatView('chat');
+    setTimeout(() => {
+      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
+  const handleAdminPaste = (e: React.ClipboardEvent) => {
+    const items = e.clipboardData?.items;
+    if (!items) return;
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.type.indexOf('image') !== -1) {
+        const file = item.getAsFile();
+        if (file) {
+          e.preventDefault();
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            const data = ev.target?.result as string;
+            setAdminSelectedImage(data);
+            toast.success('Đã dán ảnh từ clipboard!');
+          };
+          reader.readAsDataURL(file);
+          break;
+        }
+      }
+    }
+  };
+
+  const handleAdminFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (!file.type.startsWith('image/')) {
+      toast.error('Vui lòng chọn file hình ảnh hợp lệ (PNG, JPG, WEBP)');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const data = ev.target?.result as string;
+      setAdminSelectedImage(data);
+    };
+    reader.readAsDataURL(file);
+    e.target.value = '';
   };
 
   const handleSendAdminReply = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (!adminReplyInput.trim() || !selectedSessionId) return;
+    if ((!adminReplyInput.trim() && !adminSelectedImage) || !selectedSessionId) return;
 
     chatStore.sendAdminReply(
       selectedSessionId,
       adminReplyInput.trim(),
-      adminUser?.name ? `Admin (${adminUser.name})` : 'CSKH Khoahocgiahoi'
+      adminUser?.name ? `Admin (${adminUser.name})` : 'CSKH Khoahocgiahoi',
+      adminSelectedImage || undefined
     );
     setAdminReplyInput('');
+    setAdminSelectedImage(null);
     const updated = chatStore.getSessions();
     setChatSessions(updated);
     toast.success('Đã gửi phản hồi đến học viên!');
     setTimeout(() => {
       chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    }, 50);
   };
 
   const handleDeleteChatSession = (sessionId: string, e: React.MouseEvent) => {
@@ -630,22 +690,46 @@ export default function AdminDashboardPage() {
     );
   };
 
+  const handleMiniChatPaste = (e: React.ClipboardEvent) => {
+    const items = e.clipboardData?.items;
+    if (!items) return;
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.type.indexOf('image') !== -1) {
+        const file = item.getAsFile();
+        if (file) {
+          e.preventDefault();
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            const data = ev.target?.result as string;
+            setMiniChatSelectedImage(data);
+            toast.success('Đã dán ảnh!');
+          };
+          reader.readAsDataURL(file);
+          break;
+        }
+      }
+    }
+  };
+
   // Mini chat reply handler
   const handleSendMiniChatReply = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (!miniChatReplyInput.trim() || !miniChatSessionId) return;
+    if ((!miniChatReplyInput.trim() && !miniChatSelectedImage) || !miniChatSessionId) return;
 
     chatStore.sendAdminReply(
       miniChatSessionId,
       miniChatReplyInput.trim(),
-      adminUser?.name ? `Admin (${adminUser.name})` : 'CSKH Khoahocgiahoi'
+      adminUser?.name ? `Admin (${adminUser.name})` : 'CSKH Khoahocgiahoi',
+      miniChatSelectedImage || undefined
     );
     setMiniChatReplyInput('');
+    setMiniChatSelectedImage(null);
     setChatSessions(chatStore.getSessions());
     toast.success('Đã gửi phản hồi từ khung chat nhỏ!');
     setTimeout(() => {
       miniChatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    }, 50);
   };
 
   // Delete confirmed
@@ -1425,15 +1509,16 @@ export default function AdminDashboardPage() {
 
         {/* ================= TAB 3.8: CSKH LIVE CHAT INBOX ================= */}
         {activeTab === 'messages' && (
-          <div className="space-y-4 max-w-7xl">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex flex-col h-[calc(100vh-5.5rem)] min-h-[580px] max-h-[92vh] space-y-3">
+            {/* Header bar */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 flex-shrink-0">
               <div>
-                <h1 className="text-2xl font-black text-white tracking-tight flex items-center gap-2.5">
-                  <MessageSquare className="text-amber-400" size={26} />
+                <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2.5">
+                  <MessageSquare className="text-amber-400" size={24} />
                   <span>Tin Nhắn Hỗ Trợ Khách Hàng (Live Chat)</span>
                 </h1>
-                <p className="text-xs text-slate-400 mt-1">
-                  Đồng bộ tin nhắn 2 chiều trực tiếp với khách hàng đang chat qua website.
+                <p className="text-xs text-slate-400">
+                  Hỗ trợ dán ảnh trực tiếp (Ctrl+V), kéo thả ảnh, nạp ví và tư vấn thời gian thực.
                 </p>
               </div>
 
@@ -1442,7 +1527,7 @@ export default function AdminDashboardPage() {
                   type="button"
                   onClick={() => setIsExpandedChatMode(!isExpandedChatMode)}
                   className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-all border border-slate-700 flex items-center gap-1.5 shadow-sm"
-                  title="Chuyển chế độ xem toàn màn hình hoặc cuộn trang"
+                  title="Chuyển chế độ xem toàn màn hình hoặc cuộn tự do"
                 >
                   {isExpandedChatMode ? <Minimize2 size={13} /> : <Maximize2 size={13} />}
                   <span>{isExpandedChatMode ? 'Thu gọn khung' : 'Toàn màn hình / Cuộn tự do'}</span>
@@ -1463,15 +1548,17 @@ export default function AdminDashboardPage() {
             {/* Inbox Container */}
             <div
               className={`bg-[#101422] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row transition-all ${
-                isExpandedChatMode
-                  ? 'min-h-[85vh] h-auto'
-                  : 'min-h-[620px] md:h-[calc(100vh-175px)]'
+                isExpandedChatMode ? 'min-h-[85vh] h-auto' : 'flex-1 min-h-0'
               }`}
             >
               {/* Left Column: Conversations List */}
-              <div className="w-full md:w-80 lg:w-96 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col bg-[#0C0F1A]">
+              <div
+                className={`w-full md:w-80 lg:w-96 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col bg-[#0C0F1A] h-full min-h-0 flex-shrink-0 ${
+                  mobileChatView === 'chat' ? 'hidden md:flex' : 'flex'
+                }`}
+              >
                 {/* Search Header */}
-                <div className="p-3.5 border-b border-slate-800">
+                <div className="p-3 border-b border-slate-800 flex-shrink-0">
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" size={14} />
                     <input
@@ -1484,8 +1571,8 @@ export default function AdminDashboardPage() {
                   </div>
                 </div>
 
-                {/* Conversations items with scroll support */}
-                <div className="flex-1 overflow-y-auto overscroll-contain divide-y divide-slate-800/60 max-h-[500px] md:max-h-none scroll-smooth">
+                {/* Conversations items list */}
+                <div className="flex-1 min-h-0 overflow-y-auto divide-y divide-slate-800/60 scroll-smooth">
                   {filteredChatSessions.length === 0 ? (
                     <div className="p-8 text-center text-slate-500 text-xs">
                       Không có cuộc trò chuyện nào phù hợp.
@@ -1633,13 +1720,40 @@ export default function AdminDashboardPage() {
               </div>
 
               {/* Right Column: Chat Thread */}
-              <div className="flex-1 flex flex-col bg-[#101422] min-w-0">
+              <div
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  const file = e.dataTransfer?.files?.[0];
+                  if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                      setAdminSelectedImage(ev.target?.result as string);
+                      toast.success('Đã nhận ảnh kéo thả!');
+                    };
+                    reader.readAsDataURL(file);
+                  }
+                }}
+                className={`flex-1 flex flex-col bg-[#101422] min-w-0 h-full min-h-0 ${
+                  mobileChatView === 'list' ? 'hidden md:flex' : 'flex'
+                }`}
+              >
                 {currentSelectedSession ? (
                   <>
                     {/* Chat Thread Header */}
-                    <div className="p-3.5 px-5 border-b border-slate-800 flex items-center justify-between bg-[#121626] gap-2">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-10 h-10 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="p-3 px-4 sm:px-5 border-b border-slate-800 flex items-center justify-between bg-[#121626] gap-2 flex-shrink-0">
+                      <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                        {/* Mobile back button */}
+                        <button
+                          type="button"
+                          onClick={() => setMobileChatView('list')}
+                          className="md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white"
+                          title="Quay lại danh sách"
+                        >
+                          <ChevronLeft size={18} />
+                        </button>
+
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-black text-sm flex-shrink-0">
                           {currentSelectedSession.userName.charAt(0).toUpperCase()}
                         </div>
                         <div className="min-w-0">
@@ -1648,7 +1762,7 @@ export default function AdminDashboardPage() {
                               {currentSelectedSession.userName}
                             </h3>
                             <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 flex items-center gap-1 flex-shrink-0">
-                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                               Trực tuyến
                             </span>
                           </div>
@@ -1760,7 +1874,7 @@ export default function AdminDashboardPage() {
                     </div>
 
                     {/* Messages Stream - Scroll cả cuộc trò chuyện mượt mà */}
-                    <div className="flex-1 overflow-y-auto overscroll-contain p-4 space-y-3.5 relative scroll-smooth max-h-[600px] md:max-h-none">
+                    <div className="flex-1 min-h-0 overflow-y-auto p-4 space-y-3.5 relative scroll-smooth">
                       {currentSelectedSession.messages.map((msg) => {
                         const isAdmin = msg.sender === 'shop';
                         return (
@@ -1775,7 +1889,7 @@ export default function AdminDashboardPage() {
                             )}
 
                             <div
-                              className={`max-w-[78%] rounded-2xl p-3 shadow-md whitespace-pre-line text-xs leading-relaxed ${
+                              className={`max-w-[80%] sm:max-w-[75%] rounded-2xl p-3 shadow-md whitespace-pre-line text-xs leading-relaxed ${
                                 isAdmin
                                   ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-medium rounded-tr-sm'
                                   : 'bg-[#181F33] text-slate-100 border border-slate-800 rounded-tl-sm'
@@ -1785,7 +1899,19 @@ export default function AdminDashboardPage() {
                                 {isAdmin ? (msg.senderName || 'Admin CSKH') : currentSelectedSession.userName}
                               </div>
 
-                              <p>{msg.text}</p>
+                              {/* Render Image if available */}
+                              {msg.imageUrl && (
+                                <div className="my-1.5">
+                                  <img
+                                    src={msg.imageUrl}
+                                    alt="Hình ảnh đính kèm"
+                                    onClick={() => setAdminLightboxImage(msg.imageUrl || null)}
+                                    className="max-h-56 max-w-full rounded-xl object-contain cursor-pointer hover:opacity-95 shadow-md border border-black/10 transition-all bg-black/20"
+                                  />
+                                </div>
+                              )}
+
+                              {msg.text && msg.text !== '📷 [Hình ảnh]' && <p>{msg.text}</p>}
 
                               {msg.actionLink && (
                                 <div className="mt-2 pt-1.5 border-t border-black/10 text-[11px] font-bold text-indigo-900">
@@ -1799,7 +1925,7 @@ export default function AdminDashboardPage() {
                             </div>
 
                             {isAdmin && (
-                              <div className="w-7 h-7 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">
+                              <div className="w-7 h-7 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5 shadow-sm">
                                 KH
                               </div>
                             )}
@@ -1822,7 +1948,7 @@ export default function AdminDashboardPage() {
                     </div>
 
                     {/* Quick Response Templates */}
-                    <div className="px-4 py-2 bg-[#0C0F1A] border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+                    <div className="px-4 py-2 bg-[#0C0F1A] border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-shrink-0">
                       <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex-shrink-0 mr-1">
                         Trả lời nhanh:
                       </span>
@@ -1843,18 +1969,66 @@ export default function AdminDashboardPage() {
                       ))}
                     </div>
 
+                    {/* Image Preview Bar */}
+                    {adminSelectedImage && (
+                      <div className="px-4 py-2 bg-[#0C0F1A] border-t border-slate-800 flex items-center gap-3 flex-shrink-0">
+                        <div className="relative group">
+                          <img
+                            src={adminSelectedImage}
+                            alt="Preview"
+                            className="w-14 h-14 object-cover rounded-xl border border-amber-400/60 shadow-lg"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setAdminSelectedImage(null)}
+                            className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-rose-600 hover:bg-rose-500 text-white rounded-full flex items-center justify-center shadow transition-colors"
+                            title="Xóa ảnh"
+                          >
+                            <X size={12} />
+                          </button>
+                        </div>
+                        <div className="text-xs">
+                          <span className="text-amber-400 font-bold block flex items-center gap-1">
+                            <CheckCircle2 size={13} />
+                            <span>Ảnh đã sẵn sàng gửi</span>
+                          </span>
+                          <span className="text-slate-400 text-[11px]">
+                            Bấm &quot;Gửi phản hồi&quot; hoặc phím Enter để gửi ảnh này kèm nội dung
+                          </span>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Admin Message Input Bar */}
-                    <form onSubmit={handleSendAdminReply} className="p-3 bg-[#121626] border-t border-slate-800 flex items-center gap-2">
+                    <form onSubmit={handleSendAdminReply} className="p-3 bg-[#121626] border-t border-slate-800 flex items-center gap-2 flex-shrink-0">
+                      {/* Hidden file input */}
+                      <input
+                        ref={adminFileInputRef}
+                        type="file"
+                        accept="image/*"
+                        onChange={handleAdminFileSelect}
+                        className="hidden"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => adminFileInputRef.current?.click()}
+                        className="p-2.5 rounded-xl text-slate-400 hover:text-amber-400 hover:bg-[#1A2033] transition-colors flex-shrink-0"
+                        title="Đính kèm hình ảnh (hoặc dán Ctrl+V)"
+                      >
+                        <ImageIcon size={19} />
+                      </button>
+
                       <input
                         type="text"
-                        placeholder={`Nhập phản hồi gửi cho ${currentSelectedSession.userName}...`}
+                        placeholder={`Nhập phản hồi gửi cho ${currentSelectedSession.userName} hoặc dán ảnh (Ctrl+V)...`}
                         value={adminReplyInput}
                         onChange={(e) => setAdminReplyInput(e.target.value)}
+                        onPaste={handleAdminPaste}
                         className="flex-1 bg-[#0A0D17] border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
                       />
                       <button
                         type="submit"
-                        disabled={!adminReplyInput.trim()}
+                        disabled={!adminReplyInput.trim() && !adminSelectedImage}
                         className="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 disabled:opacity-40 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-md flex-shrink-0"
                       >
                         <Send size={14} />
@@ -2819,7 +2993,7 @@ export default function AdminDashboardPage() {
             </div>
 
             {/* Mini Chat Messages */}
-            <div className="flex-1 overflow-y-auto overscroll-contain p-3 space-y-2.5 bg-[#0C0F1A] text-xs">
+            <div className="flex-1 overflow-y-auto p-3 space-y-2.5 bg-[#0C0F1A] text-xs scroll-smooth">
               {miniSess.messages.map((msg) => {
                 const isAdmin = msg.sender === 'shop';
                 return (
@@ -2839,7 +3013,20 @@ export default function AdminDashboardPage() {
                           : 'bg-[#181F33] text-slate-100 border border-slate-800 rounded-tl-none'
                       }`}
                     >
-                      <p>{msg.text}</p>
+                      {/* Render Image in Mini Chat */}
+                      {msg.imageUrl && (
+                        <div className="my-1">
+                          <img
+                            src={msg.imageUrl}
+                            alt="Ảnh đính kèm"
+                            onClick={() => setAdminLightboxImage(msg.imageUrl || null)}
+                            className="max-h-36 max-w-full rounded-lg object-contain cursor-pointer hover:opacity-95 bg-black/20"
+                          />
+                        </div>
+                      )}
+
+                      {msg.text && msg.text !== '📷 [Hình ảnh]' && <p>{msg.text}</p>}
+
                       <div
                         className={`text-[8px] mt-1 text-right ${
                           isAdmin ? 'text-slate-800' : 'text-slate-500'
@@ -2855,7 +3042,7 @@ export default function AdminDashboardPage() {
             </div>
 
             {/* Mini Chat Quick Reply Pills */}
-            <div className="px-2.5 py-1.5 bg-[#121626] border-t border-slate-800 flex items-center gap-1 overflow-x-auto no-scrollbar">
+            <div className="px-2.5 py-1.5 bg-[#121626] border-t border-slate-800 flex items-center gap-1 overflow-x-auto no-scrollbar flex-shrink-0">
               {[
                 'Dạ shop sẵn sàng hỗ trợ ạ!',
                 'Khóa học xem trọn đời trên Drive nhé!',
@@ -2872,21 +3059,69 @@ export default function AdminDashboardPage() {
               ))}
             </div>
 
+            {/* Mini Chat Image Preview */}
+            {miniChatSelectedImage && (
+              <div className="px-2.5 py-1.5 bg-[#0C0F1A] border-t border-slate-800 flex items-center gap-2 flex-shrink-0">
+                <div className="relative">
+                  <img
+                    src={miniChatSelectedImage}
+                    alt="Preview"
+                    className="w-10 h-10 object-cover rounded-lg border border-amber-400/60 shadow"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setMiniChatSelectedImage(null)}
+                    className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-rose-600 text-white rounded-full flex items-center justify-center text-[9px]"
+                  >
+                    <X size={9} />
+                  </button>
+                </div>
+                <span className="text-[10px] text-amber-400 font-semibold">Ảnh đã chọn (sẵn sàng gửi)</span>
+              </div>
+            )}
+
             {/* Mini Chat Input */}
             <form
               onSubmit={handleSendMiniChatReply}
-              className="p-2.5 bg-[#121626] border-t border-slate-800 flex items-center gap-2"
+              className="p-2.5 bg-[#121626] border-t border-slate-800 flex items-center gap-1.5 flex-shrink-0"
             >
+              <input
+                ref={miniFileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (!file) return;
+                  if (!file.type.startsWith('image/')) return;
+                  const reader = new FileReader();
+                  reader.onload = (ev) => {
+                    setMiniChatSelectedImage(ev.target?.result as string);
+                  };
+                  reader.readAsDataURL(file);
+                  e.target.value = '';
+                }}
+                className="hidden"
+              />
+              <button
+                type="button"
+                onClick={() => miniFileInputRef.current?.click()}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800 transition-colors flex-shrink-0"
+                title="Đính kèm ảnh"
+              >
+                <ImageIcon size={16} />
+              </button>
+
               <input
                 type="text"
                 value={miniChatReplyInput}
                 onChange={(e) => setMiniChatReplyInput(e.target.value)}
-                placeholder="Nhập phản hồi nhanh..."
+                onPaste={handleMiniChatPaste}
+                placeholder="Nhập phản hồi hoặc dán ảnh..."
                 className="flex-1 bg-[#0C0F1A] border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
               />
               <button
                 type="submit"
-                disabled={!miniChatReplyInput.trim()}
+                disabled={!miniChatReplyInput.trim() && !miniChatSelectedImage}
                 className="p-2 rounded-xl bg-amber-400 hover:bg-amber-300 disabled:opacity-40 text-slate-950 transition-colors flex-shrink-0"
               >
                 <Send size={14} />
@@ -2895,6 +3130,27 @@ export default function AdminDashboardPage() {
           </div>
         );
       })()}
+
+      {/* Lightbox Modal for viewing full-size images */}
+      {adminLightboxImage && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-150"
+          onClick={() => setAdminLightboxImage(null)}
+        >
+          <button
+            onClick={() => setAdminLightboxImage(null)}
+            className="absolute top-4 right-4 p-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white transition-colors"
+          >
+            <X size={22} />
+          </button>
+          <img
+            src={adminLightboxImage}
+            alt="Xem ảnh kích thước đầy đủ"
+            className="max-w-[92vw] max-h-[88vh] object-contain rounded-2xl shadow-2xl border border-slate-700"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
