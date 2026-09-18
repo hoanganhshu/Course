@@ -32,4 +32,12 @@ public class WalletController {
                 ApiResponse.success("Tạo yêu cầu nạp tiền thành công",
                         walletService.createDepositRequest(authentication.getName(), request)));
     }
+
+    @PostMapping("/admin/approve/{depositCode}")
+    public ResponseEntity<ApiResponse<Void>> approveDeposit(
+            @PathVariable String depositCode
+    ) {
+        walletService.approveDepositPayment(depositCode);
+        return ResponseEntity.ok(ApiResponse.success("Xác nhận nạp tiền và cộng số dư thành công", null));
+    }
 }

@@ -14,7 +14,7 @@ export default function HeroSection() {
         {/* Headline gọn gàng, tinh tế, vừa vặn mắt nhìn */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-white leading-tight md:leading-tight mb-4 tracking-tight">
           Marketing, Thiết Kế, IT & Ngoại Ngữ.<br />
-          <span className="text-amber-400 font-extrabold">
+          <span className="text-white font-extrabold">
             Giá Tốt — Bàn Giao Tự Động Qua Drive.
           </span>
         </h1>

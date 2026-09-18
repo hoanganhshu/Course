@@ -55,7 +55,7 @@ public class WalletService {
         User user = userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new ResourceNotFoundException("User", "email", userEmail));
 
-        String depositCode = generateUniqueDepositCode();
+        String depositCode = generateUniqueDepositCode(user);
 
         WalletTransaction tx = WalletTransaction.builder()
                 .transactionCode(depositCode)
@@ -149,11 +149,17 @@ public class WalletService {
         log.info("Deducted {} from user {} for order {}. New balance: {}", amount, user.getEmail(), orderCode, newBalance);
     }
 
-    private String generateUniqueDepositCode() {
+    @Transactional
+    public void approveDepositPayment(String depositCode) {
+        processDepositPayment(depositCode, "ADMIN_MANUAL_APPROVE_" + System.currentTimeMillis());
+    }
+
+    private String generateUniqueDepositCode(User user) {
         String code;
+        Long uid = (user != null && user.getId() != null) ? user.getId() : 1L;
         do {
-            int randomNum = 10000 + new Random().nextInt(90000);
-            code = depositCodePrefix + randomNum;
+            int randomNum = 100000 + new Random().nextInt(900000);
+            code = depositCodePrefix + uid + "X" + randomNum;
         } while (walletTransactionRepository.existsByTransactionCode(code));
         return code;
     }

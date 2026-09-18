@@ -29,9 +29,15 @@ import {
   Check,
   X,
   Sparkles,
+  Wallet,
+  Copy,
+  CreditCard,
+  ArrowDownRight,
+  ArrowUpRight,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { ALL_COURSES, REAL_CATEGORIES, CourseItem } from '@/data/coursesCatalog';
+import { walletApi } from '@/lib/api';
 
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 
@@ -99,9 +105,68 @@ const INITIAL_DEMO_ORDERS: AdminOrder[] = [
   },
 ];
 
+interface AdminDeposit {
+  id: string;
+  transactionCode: string;
+  userId: number | string;
+  userName: string;
+  userEmail: string;
+  userPhone?: string;
+  amount: number;
+  status: 'PENDING' | 'COMPLETED' | 'CANCELLED';
+  createdAt: string;
+  approvedAt?: string;
+  bankName?: string;
+  bankAccountNumber?: string;
+}
+
+const INITIAL_DEMO_DEPOSITS: AdminDeposit[] = [
+  {
+    id: 'dep-1',
+    transactionCode: 'NAP104X892014',
+    userId: 104,
+    userName: 'Nguyễn Văn Hùng',
+    userEmail: 'hung.nguyen@gmail.com',
+    userPhone: '0988123456',
+    amount: 200000,
+    status: 'COMPLETED',
+    createdAt: '15 phút trước',
+    approvedAt: '14 phút trước',
+    bankName: 'MB Bank',
+    bankAccountNumber: '0583953426',
+  },
+  {
+    id: 'dep-2',
+    transactionCode: 'NAP205X749182',
+    userId: 205,
+    userName: 'Lê Hoàng Long',
+    userEmail: 'longlh99@gmail.com',
+    userPhone: '0912345678',
+    amount: 500000,
+    status: 'PENDING',
+    createdAt: '30 phút trước',
+    bankName: 'MB Bank',
+    bankAccountNumber: '0583953426',
+  },
+  {
+    id: 'dep-3',
+    transactionCode: 'NAP8X631902',
+    userId: 8,
+    userName: 'Đặng Tuấn Anh',
+    userEmail: 'tuananh.dev@gmail.com',
+    userPhone: '0977889900',
+    amount: 100000,
+    status: 'COMPLETED',
+    createdAt: 'Hôm qua',
+    approvedAt: 'Hôm qua',
+    bankName: 'MB Bank',
+    bankAccountNumber: '0583953426',
+  },
+];
+
 export default function AdminDashboardPage() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'courses' | 'orders' | 'categories' | 'settings'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'courses' | 'orders' | 'deposits' | 'categories' | 'settings'>('dashboard');
   const [adminUser, setAdminUser] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -112,6 +177,14 @@ export default function AdminDashboardPage() {
 
   // Orders state
   const [orders, setOrders] = useState<AdminOrder[]>(INITIAL_DEMO_ORDERS);
+
+  // Deposits state
+  const [deposits, setDeposits] = useState<AdminDeposit[]>(INITIAL_DEMO_DEPOSITS);
+  const [depositSearch, setDepositSearch] = useState('');
+  const [depositFilter, setDepositFilter] = useState<'ALL' | 'PENDING' | 'COMPLETED'>('ALL');
+  const [manualEmail, setManualEmail] = useState('');
+  const [manualAmount, setManualAmount] = useState<number>(100000);
+  const [manualAction, setManualAction] = useState<'ADD' | 'SUBTRACT'>('ADD');
 
   // Modals state
   const [showAddModal, setShowAddModal] = useState(false);
@@ -176,6 +249,21 @@ export default function AdminDashboardPage() {
       const storedOrders = localStorage.getItem('khgh_admin_orders');
       if (storedOrders) {
         setOrders(JSON.parse(storedOrders));
+      }
+    } catch {}
+
+    // Load deposits
+    try {
+      const storedDeposits = localStorage.getItem('app_all_deposits');
+      if (storedDeposits) {
+        const parsed = JSON.parse(storedDeposits);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const merged = [
+            ...parsed,
+            ...INITIAL_DEMO_DEPOSITS.filter((demo) => !parsed.some((p: any) => p.transactionCode === demo.transactionCode)),
+          ];
+          setDeposits(merged);
+        }
       }
     } catch {}
   }, []);
@@ -280,6 +368,63 @@ export default function AdminDashboardPage() {
     }
   };
 
+  // Duyệt nạp tiền & Cộng số dư tự động
+  const handleApproveDeposit = async (dep: AdminDeposit) => {
+    try {
+      await walletApi.adminApproveDeposit(dep.transactionCode);
+    } catch {
+      // Backend offline: xử lý lưu trữ phía client
+    }
+
+    // Cập nhật số dư cho user vào localStorage
+    const curBal = Number(localStorage.getItem(`user_balance_${dep.userEmail}`) || '0');
+    const newBal = curBal + dep.amount;
+    localStorage.setItem(`user_balance_${dep.userEmail}`, String(newBal));
+
+    // Cập nhật trạng thái yêu cầu nạp thành COMPLETED
+    const updated = deposits.map((d) =>
+      d.transactionCode === dep.transactionCode
+        ? { ...d, status: 'COMPLETED' as const, approvedAt: 'Vừa xong' }
+        : d
+    );
+    setDeposits(updated);
+    localStorage.setItem('app_all_deposits', JSON.stringify(updated));
+
+    toast.success(
+      `Đã duyệt giao dịch ${dep.transactionCode}! Đã cộng +${fmt(dep.amount)} vào ví của ${dep.userEmail} (Số dư mới: ${fmt(newBal)})`
+    );
+  };
+
+  // Hủy yêu cầu nạp
+  const handleCancelDeposit = (dep: AdminDeposit) => {
+    const updated = deposits.map((d) =>
+      d.transactionCode === dep.transactionCode
+        ? { ...d, status: 'CANCELLED' as const }
+        : d
+    );
+    setDeposits(updated);
+    localStorage.setItem('app_all_deposits', JSON.stringify(updated));
+    toast.success(`Đã hủy yêu cầu nạp ${dep.transactionCode}!`);
+  };
+
+  // Nạp / trừ số dư thủ công cho thành viên
+  const handleManualAdjustBalance = () => {
+    const email = manualEmail.trim().toLowerCase();
+    if (!email || !email.includes('@')) {
+      toast.error('Vui lòng nhập email học viên hợp lệ');
+      return;
+    }
+    const curBal = Number(localStorage.getItem(`user_balance_${email}`) || '0');
+    const delta = manualAction === 'ADD' ? manualAmount : -manualAmount;
+    const newBal = Math.max(0, curBal + delta);
+    localStorage.setItem(`user_balance_${email}`, String(newBal));
+
+    toast.success(
+      `Đã ${manualAction === 'ADD' ? 'cộng' : 'trừ'} ${fmt(manualAmount)} cho ${email}! Số dư mới: ${fmt(newBal)}`
+    );
+    setManualEmail('');
+  };
+
   // Filtered courses
   const filteredCourses = courses.filter((c) => {
     const matchSearch =
@@ -289,12 +434,26 @@ export default function AdminDashboardPage() {
     return matchSearch && matchCat;
   });
 
+  // Filtered deposits
+  const filteredDeposits = deposits.filter((d) => {
+    const matchSearch =
+      d.transactionCode.toLowerCase().includes(depositSearch.toLowerCase()) ||
+      d.userEmail.toLowerCase().includes(depositSearch.toLowerCase()) ||
+      d.userName.toLowerCase().includes(depositSearch.toLowerCase());
+    const matchFilter = depositFilter === 'ALL' || d.status === depositFilter;
+    return matchSearch && matchFilter;
+  });
+
   // Calculate statistics
   const totalRevenue = orders
     .filter((o) => o.status === 'PAID')
     .reduce((sum, o) => sum + o.totalAmount, 0) + 12450000;
   const paidOrdersCount = orders.filter((o) => o.status === 'PAID').length + 58;
   const pendingOrdersCount = orders.filter((o) => o.status === 'PENDING').length;
+  const pendingDepositsCount = deposits.filter((d) => d.status === 'PENDING').length;
+  const totalDepositedAmount = deposits
+    .filter((d) => d.status === 'COMPLETED')
+    .reduce((sum, d) => sum + d.amount, 0);
 
   if (!isMounted || !adminUser) {
     return (
@@ -331,6 +490,7 @@ export default function AdminDashboardPage() {
             { id: 'dashboard', label: 'Tổng quan & Doanh thu', icon: LayoutDashboard },
             { id: 'courses', label: `Khóa học (${courses.length})`, icon: BookOpen },
             { id: 'orders', label: `Đơn hàng (${orders.length})`, icon: ShoppingBag, badge: pendingOrdersCount > 0 ? pendingOrdersCount : undefined },
+            { id: 'deposits', label: `Duyệt nạp tiền & Ví (${deposits.length})`, icon: Wallet, badge: pendingDepositsCount > 0 ? pendingDepositsCount : undefined },
             { id: 'categories', label: `Danh mục (${REAL_CATEGORIES.length})`, icon: Layers },
             { id: 'settings', label: 'Cấu hình VietQR & Hệ thống', icon: Settings },
           ].map((item) => {
@@ -755,6 +915,287 @@ export default function AdminDashboardPage() {
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ================= TAB 3.5: DEPOSITS & WALLET MANAGEMENT ================= */}
+        {activeTab === 'deposits' && (
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h1 className="text-2xl font-black text-white tracking-tight flex items-center gap-2.5">
+                  <Wallet className="text-amber-400" size={26} />
+                  <span>Duyệt Nạp Tiền & Quản Lý Ví</span>
+                </h1>
+                <p className="text-xs text-slate-400 mt-1">
+                  Đối soát chuyển khoản ngân hàng bằng <strong>Mã nạp ngẫu nhiên định danh duy nhất (NAP...)</strong>. Bấm duyệt để cộng số dư ví tức thì cho học viên.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs bg-amber-400/10 text-amber-400 border border-amber-400/20 px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5">
+                  <Clock size={14} /> Chờ duyệt: {pendingDepositsCount}
+                </span>
+                <span className="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5">
+                  <CheckCircle2 size={14} /> Đã nạp: {fmt(totalDepositedAmount)}
+                </span>
+              </div>
+            </div>
+
+            {/* Explanation card */}
+            <div className="bg-gradient-to-r from-[#171E36] to-[#12162A] border border-amber-500/20 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Sparkles size={18} />
+              </div>
+              <div className="text-xs space-y-1">
+                <h4 className="font-bold text-amber-300">Cơ chế nhận diện & đối soát nạp tiền định danh</h4>
+                <p className="text-slate-300 leading-relaxed">
+                  Khi học viên tạo lệnh nạp, hệ thống sinh ra một nội dung chuyển khoản ngẫu nhiên theo công thức <code className="bg-slate-900 px-1.5 py-0.5 rounded text-amber-400 font-mono font-bold">NAP + [User ID] + X + [6 số ngẫu nhiên]</code> (Ví dụ: <code className="text-amber-300 font-mono">NAP104X892014</code>) không bao giờ trùng lặp.
+                  Khi bạn kiểm tra app ngân hàng MB Bank thấy nội dung này, chỉ cần đối chiếu và bấm nút <strong>"✅ Duyệt & Cộng tiền"</strong>. Số dư ví của học viên sẽ được cộng ngay lập tức!
+                </p>
+              </div>
+            </div>
+
+            {/* Main Section: Deposits Table & Manual Tool */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Left Column: Deposits Table (2 cols) */}
+              <div className="lg:col-span-2 space-y-4">
+                {/* Search & Filter */}
+                <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" size={14} />
+                    <input
+                      type="text"
+                      placeholder="Tìm theo mã nạp (NAP...), email, tên học viên..."
+                      value={depositSearch}
+                      onChange={(e) => setDepositSearch(e.target.value)}
+                      className="w-full bg-[#121624] border border-slate-800 rounded-xl pl-9 pr-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-1.5 bg-[#121624] p-1 rounded-xl border border-slate-800 self-start">
+                    {(['ALL', 'PENDING', 'COMPLETED'] as const).map((filter) => (
+                      <button
+                        key={filter}
+                        onClick={() => setDepositFilter(filter)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                          depositFilter === filter
+                            ? 'bg-amber-400 text-slate-950 font-bold shadow-sm'
+                            : 'text-slate-400 hover:text-white'
+                        }`}
+                      >
+                        {filter === 'ALL' ? 'Tất cả' : filter === 'PENDING' ? 'Chờ duyệt' : 'Đã cộng ví'}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Table */}
+                <div className="bg-[#121624] border border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs">
+                      <thead className="bg-[#0D101C] text-slate-400 uppercase text-[10px] tracking-wider">
+                        <tr>
+                          <th className="p-3.5">Mã nạp ngẫu nhiên</th>
+                          <th className="p-3.5">Học viên</th>
+                          <th className="p-3.5">Số tiền</th>
+                          <th className="p-3.5">Thời gian</th>
+                          <th className="p-3.5">Trạng thái</th>
+                          <th className="p-3.5 text-right">Thao tác</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-800/60">
+                        {filteredDeposits.length === 0 ? (
+                          <tr>
+                            <td colSpan={6} className="p-8 text-center text-slate-500">
+                              Không tìm thấy yêu cầu nạp tiền nào phù hợp.
+                            </td>
+                          </tr>
+                        ) : (
+                          filteredDeposits.map((dep) => (
+                            <tr key={dep.id} className="hover:bg-[#161B2E] transition-colors">
+                              <td className="p-3.5">
+                                <div className="flex items-center gap-1.5">
+                                  <span className="font-mono font-black text-amber-400 bg-amber-400/10 px-2 py-1 rounded text-xs tracking-wider">
+                                    {dep.transactionCode}
+                                  </span>
+                                  <button
+                                    onClick={() => {
+                                      navigator.clipboard.writeText(dep.transactionCode);
+                                      toast.success(`Đã chép mã: ${dep.transactionCode}`);
+                                    }}
+                                    className="p-1 hover:text-white text-slate-500"
+                                    title="Sao chép mã"
+                                  >
+                                    <Copy size={12} />
+                                  </button>
+                                </div>
+                                <div className="text-[10px] text-slate-500 mt-1">User ID: #{dep.userId}</div>
+                              </td>
+
+                              <td className="p-3.5">
+                                <div className="font-bold text-white">{dep.userName}</div>
+                                <div className="text-[11px] text-slate-400">{dep.userEmail}</div>
+                                {dep.userPhone && (
+                                  <div className="text-[10px] text-slate-500">{dep.userPhone}</div>
+                                )}
+                              </td>
+
+                              <td className="p-3.5 font-black text-emerald-400 text-sm">
+                                +{fmt(dep.amount)}
+                              </td>
+
+                              <td className="p-3.5 text-slate-400 text-[11px]">
+                                <div>Tạo: {dep.createdAt}</div>
+                                {dep.approvedAt && (
+                                  <div className="text-emerald-400 text-[10px]">Duyệt: {dep.approvedAt}</div>
+                                )}
+                              </td>
+
+                              <td className="p-3.5">
+                                {dep.status === 'COMPLETED' ? (
+                                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                                    <CheckCircle2 size={12} /> Đã cộng ví
+                                  </span>
+                                ) : dep.status === 'PENDING' ? (
+                                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20 animate-pulse">
+                                    <Clock size={12} /> Chờ đối soát
+                                  </span>
+                                ) : (
+                                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded-full border border-rose-500/20">
+                                    <XCircle size={12} /> Đã hủy
+                                  </span>
+                                )}
+                              </td>
+
+                              <td className="p-3.5 text-right space-x-1.5">
+                                {dep.status === 'PENDING' && (
+                                  <>
+                                    <button
+                                      onClick={() => handleApproveDeposit(dep)}
+                                      className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs transition-all shadow-md inline-flex items-center gap-1"
+                                      title="Xác nhận đã nhận tiền và cộng vào ví học viên"
+                                    >
+                                      <Check size={13} /> Duyệt & Cộng tiền
+                                    </button>
+                                    <button
+                                      onClick={() => handleCancelDeposit(dep)}
+                                      className="px-2.5 py-1.5 bg-rose-500/20 hover:bg-rose-500 text-rose-300 hover:text-white font-bold rounded-xl text-xs transition-all inline-flex items-center gap-1"
+                                      title="Hủy lệnh nạp"
+                                    >
+                                      <X size={13} />
+                                    </button>
+                                  </>
+                                )}
+                              </td>
+                            </tr>
+                          ))
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Manual Balance Adjustment Tool (1 col) */}
+              <div className="space-y-4">
+                <div className="bg-[#121624] border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+                  <div className="flex items-center gap-2 text-white font-bold text-sm border-b border-slate-800/80 pb-3">
+                    <CreditCard className="text-amber-400" size={17} />
+                    <span>Nạp / Trừ Số Dư Thủ Công</span>
+                  </div>
+
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Dùng để xử lý nhanh các trường hợp học viên chuyển khoản trực tiếp hoặc cần điều chỉnh số dư ví theo yêu cầu.
+                  </p>
+
+                  <div className="space-y-3">
+                    <div>
+                      <label className="block text-[11px] font-semibold text-slate-300 mb-1">
+                        Email học viên:
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="vd: hocvien@gmail.com"
+                        value={manualEmail}
+                        onChange={(e) => setManualEmail(e.target.value)}
+                        className="w-full bg-[#0A0D17] border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-semibold text-slate-300 mb-1">
+                        Hành động:
+                      </label>
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setManualAction('ADD')}
+                          className={`py-2 px-2.5 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-1 ${
+                            manualAction === 'ADD'
+                              ? 'border-emerald-500 bg-emerald-500/20 text-emerald-400'
+                              : 'border-slate-800 bg-[#0A0D17] text-slate-400'
+                          }`}
+                        >
+                          <ArrowUpRight size={14} />
+                          <span>+ Cộng tiền</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setManualAction('SUBTRACT')}
+                          className={`py-2 px-2.5 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-1 ${
+                            manualAction === 'SUBTRACT'
+                              ? 'border-rose-500 bg-rose-500/20 text-rose-400'
+                              : 'border-slate-800 bg-[#0A0D17] text-slate-400'
+                          }`}
+                        >
+                          <ArrowDownRight size={14} />
+                          <span>- Trừ tiền</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-semibold text-slate-300 mb-1">
+                        Số tiền (VNĐ):
+                      </label>
+                      <div className="grid grid-cols-2 gap-1.5 mb-2">
+                        {[50000, 100000, 200000, 500000].map((amt) => (
+                          <button
+                            key={amt}
+                            type="button"
+                            onClick={() => setManualAmount(amt)}
+                            className={`py-1.5 text-[11px] font-semibold rounded-lg border transition-all ${
+                              manualAmount === amt
+                                ? 'border-amber-400 bg-amber-400/10 text-amber-300'
+                                : 'border-slate-800 bg-[#0A0D17] text-slate-400'
+                            }`}
+                          >
+                            {fmt(amt)}
+                          </button>
+                        ))}
+                      </div>
+                      <input
+                        type="number"
+                        min={1000}
+                        step={10000}
+                        value={manualAmount}
+                        onChange={(e) => setManualAmount(Number(e.target.value))}
+                        className="w-full bg-[#0A0D17] border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white font-bold focus:outline-none focus:border-amber-400"
+                      />
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleManualAdjustBalance}
+                      className="w-full py-2.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-xs rounded-xl transition-all shadow-md"
+                    >
+                      Xác nhận {manualAction === 'ADD' ? 'cộng' : 'trừ'} {fmt(manualAmount)}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

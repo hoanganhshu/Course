@@ -54,6 +54,7 @@ export const authApi = {
 export const walletApi = {
   getBalance: () => apiClient.get('/wallet/balance'),
   deposit: (amount: number) => apiClient.post('/wallet/deposit', { amount }),
+  adminApproveDeposit: (depositCode: string) => apiClient.post(`/wallet/admin/approve/${depositCode}`),
 };
 
 // ==================== COURSES ====================
