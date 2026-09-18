@@ -52,22 +52,25 @@ public class OrderService {
     private String depositCodePrefix;
 
     /**
-     * Tạo đơn hàng mới từ giỏ hàng của khách (Hỗ trợ Ví hoặc VietQR)
+     * TẠO ĐƠN HÀNG (CHECKOUT)
+     * Nhận yêu cầu mua khóa học từ giỏ hàng (Hỗ trợ 2 hình thức: Ví số dư hoặc Quét VietQR ngân hàng)
      */
-    @Transactional
+    @Transactional // Đảm bảo toàn bộ thao tác ghi CSDL trong hàm này nằm trong 1 Transaction duy nhất (Rollback nếu lỗi)
     public CheckoutResponse checkout(CheckoutRequest request, String userEmail) {
-        // 1. Tìm các khóa học
+        // Bước 1: Tìm danh sách các khóa học theo danh sách ID khách gửi lên
         List<Course> courses = courseRepository.findAllById(request.getCourseIds());
+        // Kiểm tra nếu số lượng tìm thấy không khớp với số lượng ID yêu cầu (phòng trường hợp khóa học bị xóa)
         if (courses.size() != request.getCourseIds().size()) {
-            throw new BadRequestException("Một hoặc nhiều khóa học không tồn tại");
+            throw new BadRequestException("Một hoặc nhiều khóa học không tồn tại trong hệ thống");
         }
 
-        // 2. Tìm User nếu đã đăng nhập & Kiểm tra khóa học đã sở hữu
+        // Bước 2: Tìm thông tin User nếu đã đăng nhập & Kiểm tra xem đã sở hữu khóa học nào trong giỏ chưa
         User currentUser = null;
         if (userEmail != null) {
             currentUser = userRepository.findByEmail(userEmail).orElse(null);
             if (currentUser != null) {
                 for (Course course : courses) {
+                    // Nếu user đã mua khóa học này rồi -> chặn mua trùng lặp để bảo vệ khách không mất tiền oan
                     if (purchasedCourseRepository.existsByUserIdAndCourseId(currentUser.getId(), course.getId())) {
                         throw new BadRequestException("Bạn đã sở hữu khóa học: " + course.getTitle());
                     }
@@ -75,8 +78,8 @@ public class OrderService {
             }
         }
 
-        // 3. XÁC THỰC GMAIL NHẬN QUYỀN GOOGLE DRIVE
-        // Bắt buộc phải có tài khoản Gmail để hệ thống tự động share Drive
+        // Bước 3: XÁC THỰC VÀ BẢO LƯU GMAIL NHẬN QUYỀN GOOGLE DRIVE
+        // Bắt buộc phải có tài khoản Gmail để hệ thống tự động share Drive phân quyền học tập
         String driveEmail = request.getDriveEmail();
         if (driveEmail == null || driveEmail.isBlank()) {
             if (currentUser != null && currentUser.getDriveEmail() != null && !currentUser.getDriveEmail().isBlank()) {
@@ -86,19 +89,20 @@ public class OrderService {
             }
         }
 
+        // Kiểm tra bắt buộc đuôi email phải là @gmail.com
         if (driveEmail == null || !driveEmail.toLowerCase().endsWith("@gmail.com")) {
             throw new BadRequestException("Vui lòng cung cấp tài khoản Gmail (kết thúc bằng @gmail.com) để được cấp quyền xem khóa học trên Google Drive.");
         }
 
         driveEmail = driveEmail.toLowerCase().trim();
 
-        // Cập nhật Gmail vào tài khoản nếu chưa có
+        // Tự động lưu Gmail này vào hồ sơ User nếu trước đó chưa lưu
         if (currentUser != null && (currentUser.getDriveEmail() == null || currentUser.getDriveEmail().isBlank())) {
             currentUser.setDriveEmail(driveEmail);
             userRepository.save(currentUser);
         }
 
-        // 4. Tính tổng tiền & giảm giá
+        // Bước 4: Tính tổng tiền tạm tính (Subtotal) của tất cả khóa học
         BigDecimal subtotal = courses.stream()
                 .map(Course::getEffectivePrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
@@ -106,29 +110,34 @@ public class OrderService {
         BigDecimal discountAmount = BigDecimal.ZERO;
         String couponCodeUsed = null;
 
+        // Xử lý mã giảm giá Coupon nếu khách có nhập
         if (request.getCouponCode() != null && !request.getCouponCode().isBlank()) {
             Coupon coupon = couponRepository.findByCodeAndIsActiveTrue(request.getCouponCode().toUpperCase())
                     .orElseThrow(() -> new BadRequestException("Mã giảm giá không hợp lệ hoặc đã hết hạn"));
 
             if (!coupon.isValid()) {
-                throw new BadRequestException("Mã giảm giá đã hết hạn hoặc đã đạt giới hạn sử dụng");
+                throw new BadRequestException("Mã giảm giá đã hết hạn hoặc đã đạt giới hạn lượt sử dụng");
             }
 
+            // Tính số tiền được giảm theo % hoặc theo số tiền cố định
             discountAmount = coupon.calculateDiscount(subtotal);
             couponCodeUsed = coupon.getCode();
+            // Tăng số lượt đã dùng của coupon và lưu lại
             coupon.setUsedCount(coupon.getUsedCount() + 1);
             couponRepository.save(coupon);
         }
 
+        // Số tiền thực tế khách cần thanh toán = Tạm tính - Giảm giá
         BigDecimal totalAmount = subtotal.subtract(discountAmount);
         if (totalAmount.compareTo(BigDecimal.ZERO) < 0) totalAmount = BigDecimal.ZERO;
 
-        // 5. Sinh mã đơn hàng
+        // Bước 5: Sinh mã đơn hàng ngẫu nhiên duy nhất (ví dụ: KHGH91823)
         String orderCode = generateUniqueOrderCode();
 
-        // 6. Kiểm tra phương thức thanh toán: Ví số dư (WALLET) hay Ngân hàng (BANK_TRANSFER)
+        // Bước 6: Nhận diện phương thức thanh toán: Bằng Ví (WALLET) hay Ngân hàng (BANK_TRANSFER)
         boolean isWalletPayment = "WALLET".equalsIgnoreCase(request.getPaymentMethod());
 
+        // Khởi tạo đối tượng đơn hàng Order
         Order order = Order.builder()
                 .orderCode(orderCode)
                 .customerName(request.getCustomerName())
@@ -137,13 +146,14 @@ public class OrderService {
                 .totalAmount(totalAmount)
                 .discountAmount(discountAmount)
                 .couponCode(couponCodeUsed)
+                // Nếu thanh toán bằng ví thì trạng thái là PAID ngay lập tức, ngược lại là PENDING chờ chuyển khoản
                 .status(isWalletPayment ? Order.OrderStatus.PAID : Order.OrderStatus.PENDING)
                 .paidAt(isWalletPayment ? LocalDateTime.now() : null)
                 .referenceCode(isWalletPayment ? "WALLET-" + orderCode : null)
                 .user(currentUser)
                 .build();
 
-        // Tạo OrderItems
+        // Tạo chi tiết từng mục trong đơn hàng (OrderItems)
         for (Course course : courses) {
             OrderItem item = OrderItem.builder()
                     .course(course)
@@ -154,25 +164,26 @@ public class OrderService {
             order.addItem(item);
         }
 
-        // 7. Xử lý thanh toán Ví
+        // Bước 7: XỬ LÝ NẾU THANH TOÁN BẰNG SỐ DƯ VÍ
         if (isWalletPayment) {
             if (currentUser == null) {
                 throw new BadRequestException("Vui lòng đăng nhập để thanh toán bằng Số dư Ví.");
             }
 
-            // Trừ tiền trong ví
+            // Trừ tiền trong ví của người dùng (nếu không đủ tiền sẽ throw Exception)
             walletService.deductForPurchase(currentUser, totalAmount, orderCode);
             orderRepository.save(order);
 
-            // Cấp quyền và chia sẻ Google Drive tự động ngay lập tức
+            // Tự động cấp quyền sở hữu và chia sẻ Google Drive ngay lập tức
             for (OrderItem item : order.getItems()) {
                 grantCourseAccessAndShareDrive(order, item.getCourse(), UserPurchasedCourse.ClaimType.PURCHASE, driveEmail);
                 courseRepository.incrementRegisteredCount(item.getCourse().getId());
             }
 
-            // Bắn event gửi email xác nhận
+            // Bắn Message sang RabbitMQ để Worker gửi email xác nhận cho khách bất đồng bộ
             orderEventProducer.publishSendEmailEvent(order.getOrderCode());
 
+            // Trả về kết quả hoàn tất đơn hàng
             return CheckoutResponse.builder()
                     .orderId(order.getId())
                     .orderCode(orderCode)
@@ -184,10 +195,13 @@ public class OrderService {
                     .build();
         }
 
-        // 8. Nếu thanh toán VietQR: lưu đơn PENDING và trả link QR
+        // Bước 8: XỬ LÝ NẾU THANH TOÁN QUA VIETQR NGÂN HÀNG
+        // Lưu đơn hàng trạng thái PENDING chờ khách quét mã thanh toán
         orderRepository.save(order);
+        // Sinh đường dẫn ảnh mã QR ngân hàng chuẩn NAPAS 24/7 chứa sẵn số tiền và mã đơn
         String vietQrUrl = buildVietQrUrl(orderCode, totalAmount);
 
+        // Trả về thông tin chuyển khoản và ảnh QR cho frontend hiển thị
         return CheckoutResponse.builder()
                 .orderId(order.getId())
                 .orderCode(orderCode)
@@ -199,7 +213,7 @@ public class OrderService {
                 .transferContent(orderCode)
                 .vietQrUrl(vietQrUrl)
                 .status(order.getStatus().name())
-                .expiredAt(LocalDateTime.now().plusMinutes(30))
+                .expiredAt(LocalDateTime.now().plusMinutes(30)) // Mã thanh toán hết hạn sau 30 phút
                 .build();
     }
 
@@ -225,43 +239,51 @@ public class OrderService {
     }
 
     /**
-     * Xử lý Webhook từ SePay/PayOS khi ngân hàng xác nhận nhận tiền
-     * Tự động phân luồng: Nạp ví (NAPxxxxx) hoặc Mua khóa học (KHGHxxxxx)
+     * XỬ LÝ WEBHOOK THANH TOÁN TỰ ĐỘNG TỪ NGÂN HÀNG
+     * Khi ngân hàng nhận tiền chuyển khoản, SePay/PayOS sẽ gọi hàm này để kích hoạt tức thì trong 3 giây.
+     * Tự động phân luồng: Nạp ví (mã bắt đầu bằng NAP/DEP) hoặc Mua khóa học (mã KHGH).
      */
-    @Transactional
+    @Transactional // Đảm bảo tính toàn vẹn dữ liệu: toàn bộ cập nhật đơn hàng và cấp quyền thành công hoặc rollback nếu lỗi
     public void processPaymentWebhook(String orderCode, String referenceCode, String rawWebhookData) {
-        log.info("Processing payment webhook for code: {}, ref: {}", orderCode, referenceCode);
+        log.info("Bắt đầu xử lý Webhook thanh toán cho mã: {}, Mã tham chiếu ngân hàng: {}", orderCode, referenceCode);
 
+        // Kiểm tra an toàn: nếu không có mã thì dừng lại
         if (orderCode == null || orderCode.isBlank()) {
-            log.warn("Empty orderCode received in webhook.");
+            log.warn("Webhook gửi lên không có orderCode hợp lệ.");
             return;
         }
 
-        // Phân luồng: Nếu là đơn nạp tiền vào ví
-        if (orderCode.startsWith(depositCodePrefix)) {
+        // BƯỚC 1: PHÂN LUỒNG NẠP VÍ
+        // Nếu mã giao dịch bắt đầu bằng tiền tố nạp ví (ví dụ: NAP hoặc DEP)
+        if (orderCode.startsWith(depositCodePrefix) || orderCode.startsWith("DEP")) {
+            // Chuyển sang WalletService để cộng số dư ví cho học viên
             walletService.processDepositPayment(orderCode, referenceCode);
             return;
         }
 
-        // Phân luồng: Đơn mua khóa học
+        // BƯỚC 2: PHÂN LUỒNG MUA KHÓA HỌC TRỰC TIẾP
+        // Tìm đơn hàng trong CSDL theo mã đơn orderCode
         Order order = orderRepository.findByOrderCode(orderCode).orElse(null);
         if (order == null) {
-            log.warn("Order not found for orderCode: {}", orderCode);
+            log.warn("Không tìm thấy đơn hàng tương ứng với mã: {}", orderCode);
             return;
         }
 
+        // BƯỚC 3: CƠ CHẾ IDEMPOTENCY (CHỐNG TRÙNG LẶP)
+        // Nếu đơn hàng này đã ở trạng thái PAID từ trước đó -> bỏ qua ngay, không cộng hay cấp quyền lần 2
         if (order.getStatus() == Order.OrderStatus.PAID) {
-            log.info("Order {} already PAID. Skipping duplicate webhook.", orderCode);
+            log.info("Đơn hàng {} đã được thanh toán trước đó. Bỏ qua webhook trùng lặp.", orderCode);
             return;
         }
 
+        // BƯỚC 4: CẬP NHẬT TRẠNG THÁI ĐƠN HÀNG THÀNH PAID
         order.setStatus(Order.OrderStatus.PAID);
-        order.setPaidAt(LocalDateTime.now());
-        order.setReferenceCode(referenceCode);
-        order.setWebhookRawData(rawWebhookData);
+        order.setPaidAt(LocalDateTime.now());                       // Ghi nhận thời gian nhận tiền
+        order.setReferenceCode(referenceCode);                      // Lưu mã giao dịch ngân hàng làm bằng chứng đối soát
+        order.setWebhookRawData(rawWebhookData);                    // Lưu toàn bộ payload webhook gốc phục vụ kiểm toán
         orderRepository.save(order);
 
-        // Xác định Gmail nhận quyền Google Drive
+        // BƯỚC 5: XÁC ĐỊNH GMAIL CẦN CẤP QUYỀN GOOGLE DRIVE
         String targetGmail = null;
         if (order.getUser() != null && order.getUser().getDriveEmail() != null && !order.getUser().getDriveEmail().isBlank()) {
             targetGmail = order.getUser().getDriveEmail();
@@ -269,15 +291,19 @@ public class OrderService {
             targetGmail = order.getCustomerEmail();
         }
 
-        // Cấp quyền sở hữu và tự động chia sẻ Google Drive
+        // BƯỚC 6: CẤP QUYỀN SỞ HỮU KHÓA HỌC CHO HỌC VIÊN
+        // Duyệt qua từng khóa học trong đơn hàng
         for (OrderItem item : order.getItems()) {
+            // Cấp quyền sở hữu vào bảng user_purchased_courses
             grantCourseAccessAndShareDrive(order, item.getCourse(), UserPurchasedCourse.ClaimType.PURCHASE, targetGmail);
+            // Tăng số lượng học viên đã sở hữu (registeredCount + 1)
             courseRepository.incrementRegisteredCount(item.getCourse().getId());
         }
 
-        // Bắn sự kiện sang RabbitMQ để gửi email bất đồng bộ
+        // BƯỚC 7: BẮN SỰ KIỆN SANG RABBITMQ ĐỂ GỬI EMAIL BẤT ĐỒNG BỘ
+        // Webhook phản hồi HTTP 200 cho ngân hàng ngay trong < 200ms, còn việc gửi email sẽ do RabbitMQ Worker làm ngầm
         orderEventProducer.publishSendEmailEvent(order.getOrderCode());
-        log.info("Order {} activated successfully via Webhook with Idempotency Key {}.", orderCode, referenceCode);
+        log.info("Kích hoạt đơn hàng {} thành công qua Webhook với Idempotency Key {}.", orderCode, referenceCode);
     }
 
     public void processPaymentWebhook(String orderCode, String rawWebhookData) {
