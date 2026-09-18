@@ -45,122 +45,98 @@ public class PaymentWebhookController {
      *   "bank_sub_acc_id": "..."
      * }
      */
-    /**
-     * ENDPOINT: POST /api/v1/payment/webhook/sepay
-     * Khi khách hàng chuyển tiền ngân hàng thành công, SePay sẽ bắn thông báo HTTP POST vào đây.
-     */
     @PostMapping("/webhook/sepay")
     public ResponseEntity<Map<String, Object>> handleSePayWebhook(
-            @RequestBody String rawBody,                                                  // Chuỗi JSON nguyên bản từ SePay
-            @RequestHeader(value = "X-Sepay-Signature", required = false) String signature // Chữ ký xác thực bảo mật từ SePay
+            @RequestBody String rawBody,
+            @RequestHeader(value = "X-Sepay-Signature", required = false) String signature
     ) {
-        // Ghi log ghi nhận đã nhận được webhook
-        log.info("Nhận Webhook từ SePay. Độ dài body: {}", rawBody.length());
+        log.info("Received SePay webhook. Body length: {}", rawBody.length());
 
         try {
-            // Bước 1: Parse chuỗi JSON thành cây đối tượng JsonNode của Jackson
+            // TODO: Xác thực signature (HMAC-SHA256 với sePayWebhookSecret)
+            // Nếu signature không hợp lệ -> trả 401
+            // boolean isValid = validateSePaySignature(rawBody, signature, sePayWebhookSecret);
+            // if (!isValid) return ResponseEntity.status(401).body(Map.of("success", false));
+
             JsonNode payload = objectMapper.readTree(rawBody);
 
-            // Bước 2: Kiểm tra loại giao dịch - CHỈ xử lý "in" (tiền cộng vào tài khoản ngân hàng của shop)
+            // Chỉ xử lý giao dịch "in" (tiền vào)
             String transferType = payload.path("transferType").asText();
             if (!"in".equals(transferType)) {
-                // Bỏ qua nếu là giao dịch tiền ra (rút tiền, trả phí...)
-                return ResponseEntity.ok(Map.of("success", true, "message", "Bỏ qua vì không phải giao dịch tiền vào"));
+                return ResponseEntity.ok(Map.of("success", true, "message", "Skipped non-incoming transfer"));
             }
 
-            // Bước 3: Lấy nội dung chuyển khoản của người gửi (ví dụ: "KHGH812903" hoặc "NAP123456")
+            // Lấy orderCode từ nội dung chuyển khoản
             String content = payload.path("content").asText("").trim().toUpperCase();
-
-            // Bước 4: Dùng Regex trích xuất mã đơn hàng / mã nạp tiền từ nội dung chuyển khoản
             String orderCode = extractOrderCode(content);
 
-            // Nếu không trích xuất được mã hợp lệ trong nội dung
             if (orderCode == null) {
-                log.warn("Không tìm thấy mã đơn hàng hoặc mã nạp trong nội dung: {}", content);
-                return ResponseEntity.ok(Map.of("success", true, "message", "Không tìm thấy mã hợp lệ trong nội dung"));
+                log.warn("Cannot extract orderCode from content: {}", content);
+                return ResponseEntity.ok(Map.of("success", true, "message", "Order code not found in content"));
             }
 
-            // Bước 5: Lấy Mã giao dịch ngân hàng làm IDEMPOTENCY KEY (Chống ghi nhận tiền trùng lặp)
+            // Lấy Idempotency Key từ SePay: referenceCode hoặc id giao dịch
             String referenceCode = payload.path("referenceCode").asText(null);
             if (referenceCode == null || referenceCode.isBlank()) {
                 referenceCode = payload.path("id").asText(null);
             }
 
-            // Bước 6: Gọi OrderService để xử lý kích hoạt đơn hàng hoặc nạp ví tự động trong 3 giây
+            // Xử lý kích hoạt đơn hàng (áp dụng Idempotency Key và RabbitMQ)
             orderService.processPaymentWebhook(orderCode, referenceCode, rawBody);
 
-            // Bước 7: Trả về HTTP 200 OK thông báo cho SePay biết server đã nhận và xử lý thành công
             return ResponseEntity.ok(Map.of("success", true));
 
         } catch (Exception e) {
-            // Ghi log lỗi nếu có bất thường
-            log.error("Lỗi khi xử lý SePay webhook: {}", e.getMessage(), e);
+            log.error("Error processing SePay webhook: {}", e.getMessage(), e);
             return ResponseEntity.ok(Map.of("success", false, "error", e.getMessage()));
         }
     }
 
     /**
-     * ENDPOINT DỰ PHÒNG: POST /api/v1/payment/webhook/payos
-     * Tương tự SePay, dùng khi doanh nghiệp chuyển sang cổng PayOS
+     * PayOS Webhook (nếu dùng PayOS thay SePay)
      */
     @PostMapping("/webhook/payos")
     public ResponseEntity<Map<String, Object>> handlePayOsWebhook(
             @RequestBody String rawBody,
             @RequestHeader(value = "X-Payos-Signature", required = false) String signature
     ) {
-        log.info("Nhận Webhook từ PayOS");
+        log.info("Received PayOS webhook");
 
         try {
             JsonNode payload = objectMapper.readTree(rawBody);
             JsonNode data = payload.path("data");
 
-            // Chỉ xử lý khi trạng thái là PAID (đã thanh toán thành công)
             String status = data.path("status").asText();
             if (!"PAID".equals(status)) {
-                return ResponseEntity.ok(Map.of("success", true, "message", "Bỏ qua vì chưa hoàn tất"));
+                return ResponseEntity.ok(Map.of("success", true));
             }
 
-            // Trích xuất mã đơn hàng từ trường description
-            String description = data.path("description").asText("").trim().toUpperCase();
-            String orderCode = extractOrderCode(description);
+            // PayOS gửi orderCode trong field "orderCode"
+            String orderCode = data.path("orderCode").asText();
+            if (orderCode.isBlank()) {
+                return ResponseEntity.ok(Map.of("success", true, "message", "No orderCode"));
+            }
+
             String referenceCode = data.path("reference").asText(null);
-
-            if (orderCode != null) {
-                // Kích hoạt đơn hàng qua webhook
-                orderService.processPaymentWebhook(orderCode, referenceCode, rawBody);
-            }
-
+            orderService.processPaymentWebhook(orderCode, referenceCode, rawBody);
             return ResponseEntity.ok(Map.of("success", true));
+
         } catch (Exception e) {
-            log.error("Lỗi khi xử lý PayOS webhook: {}", e.getMessage(), e);
-            return ResponseEntity.ok(Map.of("success", false, "error", e.getMessage()));
+            log.error("Error processing PayOS webhook: {}", e.getMessage(), e);
+            return ResponseEntity.ok(Map.of("success", false));
         }
     }
 
     /**
-     * Hàm Regex: Tìm mã đơn hàng hợp lệ trong nội dung chuyển khoản của khách
-     * Ví dụ:
-     * - "NAP812903 nạp tiền" -> "NAP812903"
-     * - "DEP-812903 nạp tiền" -> "DEP-812903"
-     * - "KHGH812903 mua khoa hoc" -> "KHGH812903"
+     * Trích xuất orderCode (KHGH + digits) từ nội dung chuyển khoản
+     * Ví dụ: "Thanh toan KHGH10283 mua khoa hoc" -> "KHGH10283"
      */
-    private String extractOrderCode(String text) {
-        if (text == null || text.isBlank()) return null;
-
-        // 1. Tìm mã nạp ví: DEP-xxxxxx hoặc NAPxxxxxx
-        java.util.regex.Pattern depPattern = java.util.regex.Pattern.compile("(DEP-[A-Z0-9]{4,10}|NAP[0-9]{4,12})", java.util.regex.Pattern.CASE_INSENSITIVE);
-        java.util.regex.Matcher depMatcher = depPattern.matcher(text);
-        if (depMatcher.find()) {
-            return depMatcher.group(1).toUpperCase();
-        }
-
-        // 2. Tìm mã đơn mua hàng: KHGHxxxxxx
-        java.util.regex.Pattern orderPattern = java.util.regex.Pattern.compile("(KHGH[0-9]{4,12})", java.util.regex.Pattern.CASE_INSENSITIVE);
-        java.util.regex.Matcher orderMatcher = orderPattern.matcher(text);
-        if (orderMatcher.find()) {
-            return orderMatcher.group(1).toUpperCase();
-        }
-
-        return null;
+    private String extractOrderCode(String content) {
+        if (content == null) return null;
+        // Regex tìm KHGH + 5 chữ số
+        java.util.regex.Matcher m = java.util.regex.Pattern
+                .compile("(KHGH\\d{5,})")
+                .matcher(content.toUpperCase());
+        return m.find() ? m.group(1) : null;
     }
 }
