@@ -273,7 +273,7 @@ export default function CategoryGrid() {
                     ) : (
                       <>
                         <ShoppingCart size={14} className="text-slate-950" />
-                        <span className="text-slate-950">Thêm vào giỏ</span>
+                        <span className="text-slate-950 font-bold">Mua ngay</span>
                       </>
                     )}
                   </button>

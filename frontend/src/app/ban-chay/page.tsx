@@ -202,7 +202,7 @@ export default function BestSellersPage() {
                     className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
                       inCart
                         ? 'bg-emerald-950/80 text-emerald-400 cursor-default'
-                        : 'bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold'
+                        : 'bg-white hover:bg-slate-100 text-slate-950 font-bold shadow-sm'
                     }`}
                   >
                     {inCart ? (
@@ -211,7 +211,7 @@ export default function BestSellersPage() {
                       </>
                     ) : (
                       <>
-                        <ShoppingCart size={14} /> Thêm giỏ
+                        <ShoppingCart size={14} /> Mua ngay
                       </>
                     )}
                   </button>

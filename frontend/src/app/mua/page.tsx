@@ -229,11 +229,11 @@ function MuaContent() {
                       className={`w-full flex items-center justify-center gap-2 py-2 rounded-xl text-xs font-bold transition-all ${
                         inCart
                           ? 'bg-emerald-500/20 text-emerald-300 cursor-default'
-                          : 'bg-amber-400/15 text-amber-300 hover:bg-amber-400 hover:text-slate-950'
+                          : 'bg-white hover:bg-slate-100 text-slate-950 shadow-sm'
                       }`}
                     >
-                      <ShoppingCart size={14} />
-                      {inCart ? '✓ Đã thêm' : 'Thêm giỏ hàng'}
+                      <ShoppingCart size={14} className={inCart ? '' : 'text-slate-950'} />
+                      {inCart ? '✓ Đã thêm' : 'Mua ngay'}
                     </button>
                   </div>
                 </div>

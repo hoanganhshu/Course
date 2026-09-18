@@ -187,7 +187,7 @@ function CourseCard({ course }: { course: Course }) {
             </>
           ) : (
             <>
-              <ShoppingCart size={14} /> Thêm giỏ
+              <ShoppingCart size={14} /> Mua ngay
             </>
           )}
         </button>

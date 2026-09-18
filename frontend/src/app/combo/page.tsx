@@ -242,7 +242,7 @@ export default function ComboPage() {
                       className={`w-full py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                         inCart
                           ? 'bg-emerald-950/80 text-emerald-400 cursor-default'
-                          : 'bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-sm'
+                          : 'bg-white hover:bg-slate-100 text-slate-950 font-bold shadow-sm'
                       }`}
                     >
                       {inCart ? (
@@ -251,7 +251,7 @@ export default function ComboPage() {
                         </>
                       ) : (
                         <>
-                          <ShoppingCart size={14} /> Thêm vào giỏ ({fmt(pack.price)})
+                          <ShoppingCart size={14} /> Mua ngay ({fmt(pack.price)})
                         </>
                       )}
                     </button>

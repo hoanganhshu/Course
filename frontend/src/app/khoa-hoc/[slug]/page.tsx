@@ -186,7 +186,7 @@ export default function CourseDetailPage() {
                   inCart ? 'bg-emerald-950/80 text-emerald-400 cursor-default' : 'bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-md'
                 }`}>
                 <ShoppingCart size={16} />
-                {inCart ? '✓ Đã thêm vào giỏ hàng' : 'Thêm vào giỏ hàng'}
+                {inCart ? '✓ Đã thêm vào giỏ hàng' : 'Mua ngay'}
               </button>
 
               {inCart && (
