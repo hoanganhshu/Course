@@ -140,17 +140,26 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     setIsMounted(true);
     const session = localStorage.getItem('admin_user');
-    if (!session) {
-      // Cho phép truy cập demo nếu đã có token hoặc đăng nhập tự động
-      const defaultAdmin = { name: 'Quản trị viên KHGH', email: 'admin@khoahocgiahoi.com', role: 'ROLE_ADMIN' };
-      localStorage.setItem('admin_user', JSON.stringify(defaultAdmin));
-      setAdminUser(defaultAdmin);
-    } else {
-      try {
-        setAdminUser(JSON.parse(session));
-      } catch {
-        setAdminUser({ name: 'Quản trị viên', email: 'admin@khoahocgiahoi.com', role: 'ROLE_ADMIN' });
+    const isAuth = localStorage.getItem('admin_authenticated');
+
+    if (!session || isAuth !== 'true') {
+      router.replace('/admin/login');
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(session);
+      if (parsed.role !== 'ROLE_ADMIN') {
+        toast.error('Tài khoản của bạn không có quyền Quản trị viên!');
+        router.replace('/admin/login');
+        return;
       }
+      setAdminUser(parsed);
+    } catch {
+      localStorage.removeItem('admin_user');
+      localStorage.removeItem('admin_authenticated');
+      router.replace('/admin/login');
+      return;
     }
 
     // Load custom courses if any
@@ -173,9 +182,10 @@ export default function AdminDashboardPage() {
 
   const handleLogout = () => {
     localStorage.removeItem('admin_user');
+    localStorage.removeItem('admin_authenticated');
     localStorage.removeItem('accessToken');
     toast.success('Đã đăng xuất khỏi tài khoản Quản trị');
-    router.push('/admin/login');
+    router.replace('/admin/login');
   };
 
   // Add course handler
@@ -286,10 +296,11 @@ export default function AdminDashboardPage() {
   const paidOrdersCount = orders.filter((o) => o.status === 'PAID').length + 58;
   const pendingOrdersCount = orders.filter((o) => o.status === 'PENDING').length;
 
-  if (!isMounted) {
+  if (!isMounted || !adminUser) {
     return (
-      <div className="min-h-screen bg-[#0A0D14] flex items-center justify-center">
+      <div className="min-h-screen bg-[#0A0D14] flex flex-col items-center justify-center gap-3 text-slate-400 text-xs">
         <RefreshCw className="animate-spin text-amber-400" size={32} />
+        <span>Đang xác thực quyền Quản trị viên...</span>
       </div>
     );
   }

@@ -38,8 +38,9 @@ export default function AdminLoginPage() {
             email: email,
             role: 'ROLE_ADMIN'
           }));
+          localStorage.setItem('admin_authenticated', 'true');
           toast.success('Đăng nhập quản trị thành công!');
-          router.push('/admin');
+          router.replace('/admin');
           return;
         } else {
           toast.error('Tài khoản không có quyền Quản trị viên (ROLE_ADMIN)!');
@@ -55,8 +56,9 @@ export default function AdminLoginPage() {
             email: 'admin@khoahocgiahoi.com',
             role: 'ROLE_ADMIN'
           }));
+          localStorage.setItem('admin_authenticated', 'true');
           toast.success('Đăng nhập quyền Quản trị viên thành công!');
-          router.push('/admin');
+          router.replace('/admin');
           return;
         } else {
           toast.error('Email hoặc mật khẩu không chính xác!');

@@ -16,6 +16,7 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [activeNav, setActiveNav] = useState<string>('/');
   const pathname = usePathname();
   const { cartCount } = useCart();
@@ -24,7 +25,12 @@ export default function Header() {
   const debouncedSearch = useDebounce(searchQuery, 300);
 
   useEffect(() => {
-    setIsLoggedIn(typeof window !== 'undefined' && !!localStorage.getItem('accessToken'));
+    if (typeof window !== 'undefined') {
+      setIsLoggedIn(!!localStorage.getItem('accessToken'));
+      const isAuth = localStorage.getItem('admin_authenticated') === 'true';
+      const adminUser = localStorage.getItem('admin_user');
+      setIsAdmin(isAuth && !!adminUser);
+    }
     setActiveNav(pathname || '/');
   }, [pathname]);
 
@@ -205,15 +211,17 @@ export default function Header() {
               )}
             </Link>
 
-            {/* Admin Portal Button */}
-            <Link
-              href="/admin"
-              className="px-2.5 py-1.5 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 text-xs font-bold border border-amber-400/20 transition-all flex items-center gap-1.5 shadow-sm"
-              title="Cổng Quản Trị Hệ Thống"
-            >
-              <ShieldCheck size={14} />
-              <span className="hidden sm:inline">Quản trị</span>
-            </Link>
+            {/* Admin Portal Button (chỉ hiển thị khi đã đăng nhập quyền Admin) */}
+            {isAdmin && (
+              <Link
+                href="/admin"
+                className="px-2.5 py-1.5 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 text-xs font-bold border border-amber-400/20 transition-all flex items-center gap-1.5 shadow-sm"
+                title="Cổng Quản Trị Hệ Thống"
+              >
+                <ShieldCheck size={14} />
+                <span className="hidden sm:inline">Quản trị</span>
+              </Link>
+            )}
 
             {/* Account / Login button */}
             {!isLoggedIn ? (
