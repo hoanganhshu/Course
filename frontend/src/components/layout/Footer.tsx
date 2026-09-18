@@ -64,6 +64,7 @@ export default function Footer() {
                 ['Khóa học của tôi',   '/khoa-hoc-cua-toi'],
                 ['Khóa học bán chạy',   '/ban-chay'],
                 ['Phản hồi khách hàng', '/feedback'],
+                ['Trang Quản trị',     '/admin'],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-yellow-400 transition-colors">{label}</Link>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, Bell, Search, User, Menu, X, ChevronDown, ChevronRight, Home } from 'lucide-react';
+import { ShoppingCart, Bell, Search, User, Menu, X, ChevronDown, ChevronRight, Home, ShieldCheck } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
@@ -203,6 +203,16 @@ export default function Header() {
                   {cartCount > 9 ? '9+' : cartCount}
                 </span>
               )}
+            </Link>
+
+            {/* Admin Portal Button */}
+            <Link
+              href="/admin"
+              className="px-2.5 py-1.5 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 text-xs font-bold border border-amber-400/20 transition-all flex items-center gap-1.5 shadow-sm"
+              title="Cổng Quản Trị Hệ Thống"
+            >
+              <ShieldCheck size={14} />
+              <span className="hidden sm:inline">Quản trị</span>
             </Link>
 
             {/* Account / Login button */}
