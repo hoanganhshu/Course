@@ -151,7 +151,7 @@ function CourseCard({ course }: { course: Course }) {
         )}
 
         <div className="p-4 flex-1 flex flex-col justify-between">
-          <h3 className="text-sm font-bold text-white line-clamp-2 mb-2 group-hover:text-amber-400 transition-colors min-h-[40px]">
+          <h3 className="text-sm sm:text-base font-extrabold text-white line-clamp-2 mb-2 group-hover:text-amber-400 transition-colors min-h-[44px]">
             {course.title}
           </h3>
 
@@ -178,7 +178,7 @@ function CourseCard({ course }: { course: Course }) {
           className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
             inCart
               ? 'bg-emerald-950/80 text-emerald-400 cursor-default'
-              : 'bg-amber-400/15 hover:bg-amber-400 hover:text-slate-950 text-amber-400'
+              : 'bg-white hover:bg-slate-100 text-slate-950 shadow-sm'
           }`}
         >
           {inCart ? (
@@ -230,9 +230,9 @@ export default function CourseGrid({
           {viewAllHref && (
             <Link
               href={viewAllHref}
-              className="flex items-center gap-1 text-slate-400 hover:text-amber-400 text-xs font-bold transition-colors whitespace-nowrap"
+              className="flex items-center gap-1 text-white hover:text-slate-200 text-xs font-bold transition-colors whitespace-nowrap"
             >
-              Xem tất cả <ArrowRight size={14} />
+              Xem tất cả <ArrowRight size={14} className="text-white" />
             </Link>
           )}
         </div>

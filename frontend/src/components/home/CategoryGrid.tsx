@@ -188,10 +188,10 @@ export default function CategoryGrid() {
           </div>
           <Link
             href={`/mua?category=${activeCategory}`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors self-start sm:self-auto"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:text-slate-200 transition-colors self-start sm:self-auto"
           >
-            <span>Xem tất cả {CATEGORY_COURSES_MAP[activeCategory]?.length || ''} khóa</span>
-            <ArrowRight size={14} />
+            <span className="text-white">Xem tất cả {CATEGORY_COURSES_MAP[activeCategory]?.length || ''} khóa</span>
+            <ArrowRight size={14} className="text-white" />
           </Link>
         </div>
 
@@ -231,7 +231,7 @@ export default function CategoryGrid() {
 
                   {/* Body Content */}
                   <div className="p-4">
-                    <h3 className="font-bold text-white text-xs sm:text-sm line-clamp-2 leading-snug group-hover:text-amber-400 transition-colors mb-2 min-h-[36px]">
+                    <h3 className="font-extrabold text-white text-sm sm:text-base line-clamp-2 leading-snug group-hover:text-amber-400 transition-colors mb-2 min-h-[44px]">
                       <Link href={`/khoa-hoc/${course.slug}`}>
                         {course.title}
                       </Link>
@@ -239,8 +239,6 @@ export default function CategoryGrid() {
 
                     <div className="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
                       <span>{course.registeredCount} học viên</span>
-                      <span>·</span>
-                      <span className="text-emerald-400">📁 Google Drive</span>
                     </div>
 
                     <div className="flex items-baseline gap-2">
@@ -261,10 +259,10 @@ export default function CategoryGrid() {
                   <button
                     type="button"
                     onClick={(e) => handleAddCart(e, course)}
-                    className={`w-full py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm ${
+                    className={`w-full py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm ${
                       added
                         ? 'bg-emerald-500 text-white'
-                        : 'bg-amber-400 hover:bg-amber-300 text-slate-950 hover:shadow-md'
+                        : 'bg-white hover:bg-slate-100 text-slate-950 hover:shadow-md'
                     }`}
                   >
                     {added ? (
@@ -274,8 +272,8 @@ export default function CategoryGrid() {
                       </>
                     ) : (
                       <>
-                        <ShoppingCart size={14} />
-                        <span>Thêm vào giỏ</span>
+                        <ShoppingCart size={14} className="text-slate-950" />
+                        <span className="text-slate-950">Thêm vào giỏ</span>
                       </>
                     )}
                   </button>
