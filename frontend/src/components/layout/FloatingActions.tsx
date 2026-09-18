@@ -1,11 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MessageSquareText } from 'lucide-react';
 import WebLiveChat from '@/components/chat/WebLiveChat';
+import { chatStore } from '@/lib/chatStore';
 
 export default function FloatingActions() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  useEffect(() => {
+    const updateUnread = () => {
+      const sessId = localStorage.getItem('khgh_current_user_session_id');
+      if (sessId) {
+        const s = chatStore.getSession(sessId);
+        setUnreadCount(s?.unreadUserCount || 0);
+      }
+    };
+    updateUnread();
+    const unsub = chatStore.subscribe(updateUnread);
+    return () => unsub();
+  }, []);
 
   return (
     <>
@@ -13,7 +28,10 @@ export default function FloatingActions() {
         {/* 1. Nút Chat Trực Tiếp Với Shop Qua Website */}
         <button
           type="button"
-          onClick={() => setIsChatOpen((prev) => !prev)}
+          onClick={() => {
+            setIsChatOpen((prev) => !prev);
+            setUnreadCount(0);
+          }}
           title="Chat trực tiếp với Shop qua Website"
           className="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 shadow-2xl flex items-center justify-center transition-all hover:scale-110 aspect-square group relative"
         >
@@ -22,6 +40,13 @@ export default function FloatingActions() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-[#0B0E17]"></span>
           </span>
+
+          {/* Unread badge if shop replied */}
+          {unreadCount > 0 && !isChatOpen && (
+            <span className="absolute -top-1 -left-1 w-5 h-5 rounded-full bg-rose-500 text-white font-black text-[11px] flex items-center justify-center shadow-lg animate-bounce border-2 border-[#0B0E17]">
+              {unreadCount}
+            </span>
+          )}
 
           <div className="flex flex-col items-center justify-center">
             <MessageSquareText size={24} className="group-hover:scale-110 transition-transform text-slate-950" />

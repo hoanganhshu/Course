@@ -9,33 +9,9 @@ import {
   User as UserIcon,
   RotateCcw,
   Headphones,
+  ShieldCheck,
 } from 'lucide-react';
-
-interface ChatMessage {
-  id: string;
-  sender: 'shop' | 'user';
-  text: string;
-  time: string;
-  actionLink?: {
-    label: string;
-    url: string;
-  };
-}
-
-const INITIAL_MESSAGES: ChatMessage[] = [
-  {
-    id: 'msg-1',
-    sender: 'shop',
-    text: 'Xin chào! 👋 Chào mừng bạn đến với Khoahocgiahoi.com.',
-    time: 'Vừa xong',
-  },
-  {
-    id: 'msg-2',
-    sender: 'shop',
-    text: 'Mình là hỗ trợ viên trực tuyến của shop. Bạn đang quan tâm đến khóa học nào, hướng dẫn nạp tiền hay kích hoạt Google Drive trọn đời ạ?',
-    time: 'Vừa xong',
-  },
-];
+import { chatStore, ChatMessage, ChatSession } from '@/lib/chatStore';
 
 const QUICK_ACTIONS = [
   { label: '💳 Cách nạp tiền vào ví', query: 'Cách nạp tiền vào ví như thế nào?' },
@@ -50,51 +26,58 @@ interface WebLiveChatProps {
 }
 
 export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
-  const [messages, setMessages] = useState<ChatMessage[]>(INITIAL_MESSAGES);
+  const [session, setSession] = useState<ChatSession | null>(null);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Load chat history from localStorage
+  // Initialize or get current chat session
   useEffect(() => {
+    // Try to get user profile if logged in
+    let userInfo: { name?: string; email?: string; id?: any } = {};
     try {
-      const saved = localStorage.getItem('web_live_chat_history');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setMessages(parsed);
-        }
+      const savedUser = localStorage.getItem('auth_user') || localStorage.getItem('profile_data');
+      if (savedUser) {
+        userInfo = JSON.parse(savedUser);
       }
-    } catch {
-      // ignore
-    }
+    } catch {}
+
+    const sess = chatStore.getOrCreateUserSession(userInfo);
+    setSession(sess);
+    setMessages(sess.messages);
+
+    // Subscribe to realtime updates from Admin or other tabs
+    const unsubscribe = chatStore.subscribe(() => {
+      const refreshed = chatStore.getSession(sess.sessionId);
+      if (refreshed) {
+        setSession(refreshed);
+        setMessages([...refreshed.messages]);
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
 
-  // Save chat history to localStorage
+  // When chat window is opened, mark unread messages as read
   useEffect(() => {
-    try {
-      localStorage.setItem('web_live_chat_history', JSON.stringify(messages));
-    } catch {
-      // ignore
+    if (isOpen && session) {
+      chatStore.markAsReadByUser(session.sessionId);
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, isTyping]);
+  }, [isOpen, session, messages.length]);
 
   const getTimeString = () => {
     const now = new Date();
     return `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
   };
 
-  const generateBotReply = (userText: string): ChatMessage => {
+  const generateBotReply = (userText: string): { text: string; actionLink?: { label: string; url: string } } | null => {
     const lower = userText.toLowerCase();
-    const time = getTimeString();
 
     if (lower.includes('nạp') || lower.includes('ví') || lower.includes('tiền') || lower.includes('stk') || lower.includes('ngân hàng')) {
       return {
-        id: `shop-${Date.now()}`,
-        sender: 'shop',
-        text: 'Dạ để nạp tiền vào ví:\n1. Bạn vào trang "Ví & Tài Khoản" (hoặc bấm nút bên dưới).\n2. Chọn số tiền và bấm "Tạo Mã QR Nạp Tiền".\n3. Quét mã VietQR bằng App Ngân Hàng. Hệ thống sẽ tự tạo NỘI DUNG CHUYỂN KHOẢN NGẪU NHIÊN ĐỊNH DANH (VD: NAP104X829371) duy nhất cho bạn.\n4. Sau khi chuyển đúng nội dung đó, hệ thống sẽ nhận diện và tự động cộng số dư vào ví của bạn ngay!',
-        time,
+        text: 'Dạ để nạp tiền vào ví:\n1. Bạn vào mục "Ví & Tài Khoản" (hoặc bấm nút bên dưới).\n2. Chọn số tiền và bấm "Tạo Mã QR Nạp Tiền".\n3. Quét mã VietQR bằng App Ngân Hàng. Hệ thống sẽ tự tạo NỘI DUNG CHUYỂN KHOẢN NGẪU NHIÊN ĐỊNH DANH (VD: NAP104X892014) duy nhất cho bạn.\n4. Sau khi chuyển đúng nội dung đó, hệ thống sẽ nhận diện và tự động cộng số dư vào ví của bạn ngay!',
         actionLink: {
           label: '👉 Đến trang Nạp Tiền Vào Ví',
           url: '/tai-khoan',
@@ -104,10 +87,7 @@ export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
 
     if (lower.includes('combo') || lower.includes('2000') || lower.includes('trọn bộ') || lower.includes('vip')) {
       return {
-        id: `shop-${Date.now()}`,
-        sender: 'shop',
         text: '🔥 Trọn bộ COMBO 2.000+ Khóa Học Google Drive VIP đang được ưu đãi chỉ 599.000đ (tiết kiệm hơn 95%). Gồm đầy đủ tài liệu, video bài giảng, source code các ngành: Lập trình, AI, Marketing, Thiết kế, Ngoại ngữ, Kinh doanh... Sở hữu trọn đời và cập nhật liên tục!',
-        time,
         actionLink: {
           label: '👉 Xem chi tiết Combo 2.000 Khóa',
           url: '/combo',
@@ -117,19 +97,13 @@ export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
 
     if (lower.includes('drive') || lower.includes('link') || lower.includes('bảo hành') || lower.includes('truy cập')) {
       return {
-        id: `shop-${Date.now()}`,
-        sender: 'shop',
         text: '✨ Sau khi thanh toán thành công, hệ thống sẽ tự động cấp quyền truy cập folder Google Drive trực tiếp vào Gmail bạn đã đăng ký. Bạn có thể xem online hoặc tải về máy trọn đời. Shop cam kết bảo hành link vĩnh viễn, hỏng link đổi link mới!',
-        time,
       };
     }
 
     if (lower.includes('zalo') || lower.includes('nhân viên') || lower.includes('hotline') || lower.includes('sđt') || lower.includes('gọi')) {
       return {
-        id: `shop-${Date.now()}`,
-        sender: 'shop',
-        text: 'Dạ bạn có thể chat trực tiếp với chuyên viên qua Zalo 0583 953 426 (hỗ trợ 24/7, phản hồi trong 1-2 phút) để được tư vấn cụ thể và gửi link test thử ạ!',
-        time,
+        text: 'Dạ bạn có thể chat trực tiếp với chuyên viên qua Zalo 0583 953 426 (hỗ trợ 24/7, phản hồi trong 1-2 phút) để được tư vấn cụ thể và gửi link test thử nhé!',
         actionLink: {
           label: '💬 Mở Zalo 0583 953 426 ngay',
           url: 'https://zalo.me/0583953426',
@@ -139,10 +113,7 @@ export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
 
     if (lower.includes('giá') || lower.includes('bao nhiêu') || lower.includes('khuyến mãi') || lower.includes('sale')) {
       return {
-        id: `shop-${Date.now()}`,
-        sender: 'shop',
         text: 'Khóa học lẻ tại shop đang Flash Sale đồng giá chỉ từ 49k - 149k/khóa. Bạn có thể gõ tên khóa học vào ô tìm kiếm hoặc vào mục "Khám phá khóa học" để xem danh sách hơn 290+ khóa học thực tế nhé!',
-        time,
         actionLink: {
           label: '🔍 Xem kho khóa học',
           url: '/mua',
@@ -150,14 +121,11 @@ export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
       };
     }
 
-    // Default response
+    // Default polite acknowledgment
     return {
-      id: `shop-${Date.now()}`,
-      sender: 'shop',
-      text: 'Cảm ơn bạn đã nhắn tin! Shop đã nhận được câu hỏi của bạn.\n\nChuyên viên tư vấn đang xử lý. Nếu cần gấp, bạn có thể bấm vào nút Zalo bên dưới để được nhân viên hỗ trợ trực tiếp 24/7 nhé!',
-      time,
+      text: 'Cảm ơn bạn đã nhắn tin! Tin nhắn của bạn đã được chuyển trực tiếp đến Quản trị viên của shop.\n\nShop đang online và sẽ phản hồi cho bạn trong giây lát!',
       actionLink: {
-        label: '💬 Chat trực tiếp Zalo với Admin',
+        label: '💬 Chat nhanh Zalo nếu cần gấp',
         url: 'https://zalo.me/0583953426',
       },
     };
@@ -165,34 +133,40 @@ export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
 
   const handleSendMessage = (textToSend?: string) => {
     const text = (textToSend ?? inputValue).trim();
-    if (!text) return;
+    if (!text || !session) return;
 
-    const userMsg: ChatMessage = {
-      id: `user-${Date.now()}`,
-      sender: 'user',
-      text,
-      time: getTimeString(),
-    };
-
-    setMessages((prev) => [...prev, userMsg]);
+    // Send user message through shared store
+    chatStore.sendUserMessage(session.sessionId, text);
     if (!textToSend) setInputValue('');
 
-    // Simulate shop typing
-    setIsTyping(true);
-    setTimeout(() => {
-      const reply = generateBotReply(text);
-      setMessages((prev) => [...prev, reply]);
-      setIsTyping(false);
-    }, 600);
+    // Reload messages
+    const updated = chatStore.getSession(session.sessionId);
+    if (updated) {
+      setMessages([...updated.messages]);
+    }
+
+    // Trigger intelligent automated bot reply & record it so Admin sees it too
+    const botReply = generateBotReply(text);
+    if (botReply) {
+      setIsTyping(true);
+      setTimeout(() => {
+        chatStore.sendAdminReply(session.sessionId, botReply.text, 'Trợ lý Hỗ trợ Shop');
+        const refreshed = chatStore.getSession(session.sessionId);
+        if (refreshed) {
+          setMessages([...refreshed.messages]);
+        }
+        setIsTyping(false);
+      }, 700);
+    }
   };
 
-  const handleClearHistory = () => {
-    setMessages(INITIAL_MESSAGES);
-    try {
-      localStorage.removeItem('web_live_chat_history');
-    } catch {
-      // ignore
+  const handleResetSession = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('khgh_current_user_session_id');
     }
+    const newSess = chatStore.getOrCreateUserSession();
+    setSession(newSess);
+    setMessages(newSess.messages);
   };
 
   if (!isOpen) return null;
@@ -212,20 +186,21 @@ export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
           <div>
             <div className="flex items-center gap-1.5">
               <h3 className="text-sm font-bold text-white leading-tight">Chat Với Shop</h3>
-              <span className="px-1.5 py-0.2 bg-emerald-500/20 text-emerald-400 text-[10px] font-semibold rounded">
-                Online
+              <span className="px-1.5 py-0.2 bg-emerald-500/20 text-emerald-400 text-[10px] font-semibold rounded flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+                Admin Online
               </span>
             </div>
             <p className="text-[11px] text-slate-400 leading-tight">
-              Tư vấn khóa học & nạp tiền 24/7
+              {session?.userName ? `Đang kết nối: ${session.userName}` : 'Tư vấn khóa học & nạp tiền 24/7'}
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-1 text-slate-400">
           <button
-            onClick={handleClearHistory}
-            title="Làm mới cuộc trò chuyện"
+            onClick={handleResetSession}
+            title="Bắt đầu phiên chat mới"
             className="p-1.5 hover:text-white hover:bg-slate-800/60 rounded-lg transition-colors"
           >
             <RotateCcw size={15} />
@@ -262,6 +237,14 @@ export default function WebLiveChat({ isOpen, onClose }: WebLiveChatProps) {
                     : 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-medium rounded-tr-sm'
                 }`}
               >
+                {/* Sender badge if shop */}
+                {isShop && msg.senderName && (
+                  <div className="text-[10px] font-bold text-amber-400 mb-1 flex items-center gap-1">
+                    <ShieldCheck size={11} />
+                    <span>{msg.senderName}</span>
+                  </div>
+                )}
+
                 <p>{msg.text}</p>
 
                 {msg.actionLink && (

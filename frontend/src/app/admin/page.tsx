@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -34,10 +34,14 @@ import {
   CreditCard,
   ArrowDownRight,
   ArrowUpRight,
+  MessageSquare,
+  Send,
+  Bot,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { ALL_COURSES, REAL_CATEGORIES, CourseItem } from '@/data/coursesCatalog';
 import { walletApi } from '@/lib/api';
+import { chatStore, ChatSession, ChatMessage } from '@/lib/chatStore';
 
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
 
@@ -166,7 +170,7 @@ const INITIAL_DEMO_DEPOSITS: AdminDeposit[] = [
 
 export default function AdminDashboardPage() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'courses' | 'orders' | 'deposits' | 'categories' | 'settings'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'courses' | 'orders' | 'deposits' | 'messages' | 'categories' | 'settings'>('dashboard');
   const [adminUser, setAdminUser] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -185,6 +189,13 @@ export default function AdminDashboardPage() {
   const [manualEmail, setManualEmail] = useState('');
   const [manualAmount, setManualAmount] = useState<number>(100000);
   const [manualAction, setManualAction] = useState<'ADD' | 'SUBTRACT'>('ADD');
+
+  // Live Chat state
+  const [chatSessions, setChatSessions] = useState<ChatSession[]>([]);
+  const [selectedSessionId, setSelectedSessionId] = useState<string>('');
+  const [adminReplyInput, setAdminReplyInput] = useState('');
+  const [chatSearch, setChatSearch] = useState('');
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Modals state
   const [showAddModal, setShowAddModal] = useState(false);
@@ -266,6 +277,19 @@ export default function AdminDashboardPage() {
         }
       }
     } catch {}
+
+    // Load Live Chat sessions & subscribe realtime updates
+    const loadChat = () => {
+      const sess = chatStore.getSessions();
+      setChatSessions(sess);
+      setSelectedSessionId((prev) => (prev ? prev : sess.length > 0 ? sess[0].sessionId : ''));
+    };
+    loadChat();
+    const unsubChat = chatStore.subscribe(loadChat);
+
+    return () => {
+      unsubChat();
+    };
   }, []);
 
   const handleLogout = () => {
@@ -444,6 +468,57 @@ export default function AdminDashboardPage() {
     return matchSearch && matchFilter;
   });
 
+  // Filtered chat sessions
+  const filteredChatSessions = chatSessions.filter((s) => {
+    const q = chatSearch.toLowerCase();
+    return (
+      s.userName.toLowerCase().includes(q) ||
+      (s.userEmail && s.userEmail.toLowerCase().includes(q)) ||
+      s.lastMessage.toLowerCase().includes(q)
+    );
+  });
+
+  const unreadChatCount = chatSessions.reduce((sum, s) => sum + (s.unreadAdminCount || 0), 0);
+  const currentSelectedSession = chatSessions.find((s) => s.sessionId === selectedSessionId);
+
+  // Chat handlers
+  const handleSelectSession = (sessionId: string) => {
+    setSelectedSessionId(sessionId);
+    chatStore.markAsReadByAdmin(sessionId);
+    const updated = chatStore.getSessions();
+    setChatSessions(updated);
+  };
+
+  const handleSendAdminReply = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!adminReplyInput.trim() || !selectedSessionId) return;
+
+    chatStore.sendAdminReply(
+      selectedSessionId,
+      adminReplyInput.trim(),
+      adminUser?.name ? `Admin (${adminUser.name})` : 'CSKH Khoahocgiahoi'
+    );
+    setAdminReplyInput('');
+    const updated = chatStore.getSessions();
+    setChatSessions(updated);
+    toast.success('Đã gửi phản hồi đến học viên!');
+    setTimeout(() => {
+      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleDeleteChatSession = (sessionId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!confirm('Bạn có chắc chắn muốn xóa cuộc trò chuyện này?')) return;
+    chatStore.deleteSession(sessionId);
+    const updated = chatStore.getSessions();
+    setChatSessions(updated);
+    if (selectedSessionId === sessionId) {
+      setSelectedSessionId(updated.length > 0 ? updated[0].sessionId : '');
+    }
+    toast.success('Đã xóa cuộc trò chuyện!');
+  };
+
   // Calculate statistics
   const totalRevenue = orders
     .filter((o) => o.status === 'PAID')
@@ -491,6 +566,7 @@ export default function AdminDashboardPage() {
             { id: 'courses', label: `Khóa học (${courses.length})`, icon: BookOpen },
             { id: 'orders', label: `Đơn hàng (${orders.length})`, icon: ShoppingBag, badge: pendingOrdersCount > 0 ? pendingOrdersCount : undefined },
             { id: 'deposits', label: `Duyệt nạp tiền & Ví (${deposits.length})`, icon: Wallet, badge: pendingDepositsCount > 0 ? pendingDepositsCount : undefined },
+            { id: 'messages', label: `Tin nhắn CSKH (${chatSessions.length})`, icon: MessageSquare, badge: unreadChatCount > 0 ? unreadChatCount : undefined },
             { id: 'categories', label: `Danh mục (${REAL_CATEGORIES.length})`, icon: Layers },
             { id: 'settings', label: 'Cấu hình VietQR & Hệ thống', icon: Settings },
           ].map((item) => {
@@ -1196,6 +1272,270 @@ export default function AdminDashboardPage() {
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ================= TAB 3.8: CSKH LIVE CHAT INBOX ================= */}
+        {activeTab === 'messages' && (
+          <div className="space-y-4 max-w-7xl">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h1 className="text-2xl font-black text-white tracking-tight flex items-center gap-2.5">
+                  <MessageSquare className="text-amber-400" size={26} />
+                  <span>Tin Nhắn Hỗ Trợ Khách Hàng (Live Chat)</span>
+                </h1>
+                <p className="text-xs text-slate-400 mt-1">
+                  Đồng bộ tin nhắn 2 chiều trực tiếp với khách hàng đang chat qua biểu tượng chat trên website.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs bg-amber-400/10 text-amber-400 border border-amber-400/20 px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  Đang hoạt động trực tuyến
+                </span>
+                {unreadChatCount > 0 && (
+                  <span className="text-xs bg-rose-500/20 text-rose-300 border border-rose-500/30 px-3 py-1.5 rounded-xl font-black flex items-center gap-1.5 animate-pulse">
+                    {unreadChatCount} tin chưa đọc
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Inbox Container */}
+            <div className="bg-[#101422] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[680px]">
+              {/* Left Column: Conversations List */}
+              <div className="w-full md:w-80 lg:w-96 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col bg-[#0C0F1A]">
+                {/* Search Header */}
+                <div className="p-3.5 border-b border-slate-800">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" size={14} />
+                    <input
+                      type="text"
+                      placeholder="Tìm khách hàng, email, nội dung..."
+                      value={chatSearch}
+                      onChange={(e) => setChatSearch(e.target.value)}
+                      className="w-full bg-[#141828] border border-slate-800 rounded-xl pl-8 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+                    />
+                  </div>
+                </div>
+
+                {/* Conversations items */}
+                <div className="flex-1 overflow-y-auto divide-y divide-slate-800/60">
+                  {filteredChatSessions.length === 0 ? (
+                    <div className="p-8 text-center text-slate-500 text-xs">
+                      Không có cuộc trò chuyện nào phù hợp.
+                    </div>
+                  ) : (
+                    filteredChatSessions.map((sess) => {
+                      const isSelected = sess.sessionId === selectedSessionId;
+                      const hasUnread = sess.unreadAdminCount > 0;
+                      return (
+                        <div
+                          key={sess.sessionId}
+                          onClick={() => handleSelectSession(sess.sessionId)}
+                          className={`p-3.5 cursor-pointer transition-all flex items-start gap-3 hover:bg-[#161C30] relative group ${
+                            isSelected ? 'bg-[#182038] border-l-4 border-amber-400' : ''
+                          }`}
+                        >
+                          {/* Avatar */}
+                          <div className="relative flex-shrink-0">
+                            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400/20 to-indigo-500/20 text-amber-400 flex items-center justify-center font-bold text-sm border border-slate-700">
+                              {sess.userName.charAt(0).toUpperCase()}
+                            </div>
+                            {sess.isOnline && (
+                              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-[#0C0F1A] rounded-full"></span>
+                            )}
+                          </div>
+
+                          {/* Info */}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-1 mb-1">
+                              <h4 className={`text-xs truncate ${hasUnread ? 'font-black text-white' : 'font-bold text-slate-200'}`}>
+                                {sess.userName}
+                              </h4>
+                              <span className="text-[10px] text-slate-500 flex-shrink-0">
+                                {sess.lastMessageTime}
+                              </span>
+                            </div>
+
+                            <p className={`text-[11px] truncate ${hasUnread ? 'text-amber-300 font-semibold' : 'text-slate-400'}`}>
+                              {sess.lastMessage}
+                            </p>
+
+                            {sess.userEmail && (
+                              <p className="text-[10px] text-slate-500 truncate mt-0.5">
+                                {sess.userEmail}
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Unread badge & Delete action */}
+                          <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
+                            {hasUnread && (
+                              <span className="px-1.5 py-0.2 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] shadow-sm">
+                                {sess.unreadAdminCount}
+                              </span>
+                            )}
+                            <button
+                              onClick={(e) => handleDeleteChatSession(sess.sessionId, e)}
+                              className="opacity-0 group-hover:opacity-100 hover:opacity-100 text-slate-500 hover:text-rose-400 p-1 transition-opacity"
+                              title="Xóa cuộc trò chuyện"
+                            >
+                              <Trash2 size={12} />
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+              </div>
+
+              {/* Right Column: Chat Thread */}
+              <div className="flex-1 flex flex-col bg-[#101422]">
+                {currentSelectedSession ? (
+                  <>
+                    {/* Chat Thread Header */}
+                    <div className="p-3.5 px-5 border-b border-slate-800 flex items-center justify-between bg-[#121626]">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-black text-sm">
+                          {currentSelectedSession.userName.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h3 className="font-bold text-white text-sm">
+                              {currentSelectedSession.userName}
+                            </h3>
+                            <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                              Trực tuyến
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-slate-400">
+                            {currentSelectedSession.userEmail ? `Email: ${currentSelectedSession.userEmail}` : `Mã phiên: ${currentSelectedSession.sessionId}`}
+                            {currentSelectedSession.userPhone ? ` · SĐT: ${currentSelectedSession.userPhone}` : ''}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => {
+                            chatStore.markAsReadByAdmin(currentSelectedSession.sessionId);
+                            const updated = chatStore.getSessions();
+                            setChatSessions(updated);
+                            toast.success('Đã đánh dấu đã đọc');
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
+                        >
+                          Đánh dấu đã đọc
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Messages Stream */}
+                    <div className="flex-1 overflow-y-auto p-4 space-y-3.5">
+                      {currentSelectedSession.messages.map((msg) => {
+                        const isAdmin = msg.sender === 'shop';
+                        return (
+                          <div
+                            key={msg.id}
+                            className={`flex items-start gap-2.5 ${isAdmin ? 'justify-end' : 'justify-start'}`}
+                          >
+                            {!isAdmin && (
+                              <div className="w-7 h-7 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">
+                                {currentSelectedSession.userName.charAt(0).toUpperCase()}
+                              </div>
+                            )}
+
+                            <div
+                              className={`max-w-[75%] rounded-2xl p-3 shadow-md whitespace-pre-line text-xs leading-relaxed ${
+                                isAdmin
+                                  ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-medium rounded-tr-sm'
+                                  : 'bg-[#181F33] text-slate-100 border border-slate-800 rounded-tl-sm'
+                              }`}
+                            >
+                              <div className={`text-[10px] mb-1 font-bold ${isAdmin ? 'text-slate-900' : 'text-amber-400'}`}>
+                                {isAdmin ? (msg.senderName || 'Admin CSKH') : currentSelectedSession.userName}
+                              </div>
+
+                              <p>{msg.text}</p>
+
+                              {msg.actionLink && (
+                                <div className="mt-2 pt-1.5 border-t border-black/10 text-[11px] font-bold text-indigo-900">
+                                  🔗 {msg.actionLink.label} ({msg.actionLink.url})
+                                </div>
+                              )}
+
+                              <div className={`text-[9px] mt-1 text-right ${isAdmin ? 'text-slate-800 font-semibold' : 'text-slate-500'}`}>
+                                {msg.time}
+                              </div>
+                            </div>
+
+                            {isAdmin && (
+                              <div className="w-7 h-7 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">
+                                KH
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                      <div ref={chatEndRef} />
+                    </div>
+
+                    {/* Quick Response Templates */}
+                    <div className="px-4 py-2 bg-[#0C0F1A] border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex-shrink-0 mr-1">
+                        Trả lời nhanh:
+                      </span>
+                      {[
+                        'Chào bạn! Khóa học luôn sẵn sàng trên Google Drive truy cập trọn đời nhé.',
+                        'Shop đã nhận được thanh toán và cộng số dư ví cho bạn rồi nhé!',
+                        'Dạ bạn gửi giúp mình Gmail để shop cấp quyền Google Drive trực tiếp ạ.',
+                        'Combo 2.000 khóa học hiện đang ưu đãi 599.000đ sở hữu vĩnh viễn bạn nhé.',
+                      ].map((tpl, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setAdminReplyInput(tpl)}
+                          className="whitespace-nowrap px-2.5 py-1 rounded-full bg-[#141828] hover:bg-amber-400 hover:text-slate-950 text-slate-300 text-[11px] transition-colors border border-slate-800 flex-shrink-0"
+                        >
+                          {tpl.length > 35 ? tpl.substring(0, 35) + '...' : tpl}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Admin Message Input Bar */}
+                    <form onSubmit={handleSendAdminReply} className="p-3 bg-[#121626] border-t border-slate-800 flex items-center gap-2">
+                      <input
+                        type="text"
+                        placeholder={`Nhập phản hồi gửi cho ${currentSelectedSession.userName}...`}
+                        value={adminReplyInput}
+                        onChange={(e) => setAdminReplyInput(e.target.value)}
+                        className="flex-1 bg-[#0A0D17] border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+                      />
+                      <button
+                        type="submit"
+                        disabled={!adminReplyInput.trim()}
+                        className="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 disabled:opacity-40 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-md flex-shrink-0"
+                      >
+                        <Send size={14} />
+                        <span>Gửi phản hồi</span>
+                      </button>
+                    </form>
+                  </>
+                ) : (
+                  <div className="flex-1 flex flex-col items-center justify-center p-8 text-center text-slate-500">
+                    <MessageSquare size={48} className="mb-3 text-slate-700" />
+                    <h3 className="text-sm font-bold text-slate-300 mb-1">Chưa chọn cuộc trò chuyện nào</h3>
+                    <p className="text-xs text-slate-500 max-w-sm">
+                      Chọn một khách hàng từ danh sách bên trái để xem nội dung tin nhắn và bắt đầu tư vấn trực tiếp.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
