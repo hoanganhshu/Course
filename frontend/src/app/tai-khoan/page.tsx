@@ -78,6 +78,9 @@ export default function TaiKhoanPage() {
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
+    localStorage.removeItem('user_profile');
+    localStorage.removeItem('admin_authenticated');
+    localStorage.removeItem('admin_user');
     toast.success('Đã đăng xuất');
     router.push('/');
   };

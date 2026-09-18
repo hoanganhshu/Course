@@ -19,9 +19,23 @@ export default function DangNhapPage() {
     setLoading(true);
     try {
       const res: any = await authApi.login(loginForm);
-      const { accessToken, refreshToken, name } = res.data;
+      const { accessToken, refreshToken, name, role, email } = res.data;
       localStorage.setItem('accessToken', accessToken);
       localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('user_profile', JSON.stringify(res.data));
+
+      if (role === 'ROLE_ADMIN' || email === 'admin@khoahocgiahoi.com') {
+        localStorage.setItem('admin_authenticated', 'true');
+        localStorage.setItem(
+          'admin_user',
+          JSON.stringify({ name, email, role: 'ROLE_ADMIN' })
+        );
+      } else {
+        // User là người thường -> Xóa sạch các cờ quản trị nếu có
+        localStorage.removeItem('admin_authenticated');
+        localStorage.removeItem('admin_user');
+      }
+
       toast.success(`Chào mừng trở lại, ${name}! 👋`);
       router.push('/tai-khoan');
     } catch (err: any) {
@@ -39,6 +53,11 @@ export default function DangNhapPage() {
       const { accessToken, refreshToken, name } = res.data;
       localStorage.setItem('accessToken', accessToken);
       localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('user_profile', JSON.stringify(res.data));
+      // Người mới đăng ký luôn là người thường -> Xóa cờ quản trị
+      localStorage.removeItem('admin_authenticated');
+      localStorage.removeItem('admin_user');
+
       toast.success(`Đăng ký thành công! Chào ${name} 🎉`);
       router.push('/tai-khoan');
     } catch (err: any) {

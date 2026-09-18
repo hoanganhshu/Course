@@ -6,7 +6,7 @@ import { ShoppingCart, Bell, Search, User, Menu, X, ChevronDown, ChevronRight, H
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
-import { categoryApi, courseApi } from '@/lib/api';
+import { categoryApi, courseApi, authApi } from '@/lib/api';
 import { useCart } from '@/store/cartStore';
 import { useDebounce } from '@/hooks/useDebounce';
 
@@ -24,15 +24,78 @@ export default function Header() {
 
   const debouncedSearch = useDebounce(searchQuery, 300);
 
+  // Truy vấn hồ sơ người dùng để xác định vai trò chính xác (Admin vs Người thường)
+  const { data: userProfileData } = useQuery({
+    queryKey: ['header-user-profile'],
+    queryFn: async () => {
+      const token = typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null;
+      if (!token) return null;
+      try {
+        const res: any = await authApi.getProfile();
+        return res?.data || null;
+      } catch {
+        const local = localStorage.getItem('user_profile');
+        return local ? JSON.parse(local) : null;
+      }
+    },
+    enabled: typeof window !== 'undefined' && !!localStorage.getItem('accessToken'),
+    staleTime: 30_000,
+  });
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setIsLoggedIn(!!localStorage.getItem('accessToken'));
-      const isAuth = localStorage.getItem('admin_authenticated') === 'true';
-      const adminUser = localStorage.getItem('admin_user');
-      setIsAdmin(isAuth && !!adminUser);
+      const token = localStorage.getItem('accessToken');
+      setIsLoggedIn(!!token);
+
+      if (!token) {
+        // Chưa đăng nhập -> Tuyệt đối không hiển thị Quản trị
+        setIsAdmin(false);
+      } else {
+        // Đã đăng nhập: Kiểm tra vai trò chính xác
+        let isUserAdmin = false;
+
+        if (userProfileData) {
+          if (userProfileData.role === 'ROLE_ADMIN' || userProfileData.email === 'admin@khoahocgiahoi.com') {
+            isUserAdmin = true;
+          } else {
+            // Người dùng thông thường -> Xóa sạch mọi cờ quản trị nếu còn sót lại
+            isUserAdmin = false;
+            localStorage.removeItem('admin_authenticated');
+            localStorage.removeItem('admin_user');
+          }
+        } else {
+          // Fallback từ localStorage trước khi query có dữ liệu
+          const userProfileStr = localStorage.getItem('user_profile');
+          if (userProfileStr) {
+            try {
+              const p = JSON.parse(userProfileStr);
+              if (p.role === 'ROLE_ADMIN' || p.email === 'admin@khoahocgiahoi.com') {
+                isUserAdmin = true;
+              } else {
+                isUserAdmin = false;
+                localStorage.removeItem('admin_authenticated');
+                localStorage.removeItem('admin_user');
+              }
+            } catch {}
+          } else {
+            const adminAuth = localStorage.getItem('admin_authenticated') === 'true';
+            const adminUserStr = localStorage.getItem('admin_user');
+            if (adminAuth && adminUserStr) {
+              try {
+                const a = JSON.parse(adminUserStr);
+                if (a.role === 'ROLE_ADMIN' || a.email === 'admin@khoahocgiahoi.com') {
+                  isUserAdmin = true;
+                }
+              } catch {}
+            }
+          }
+        }
+
+        setIsAdmin(isUserAdmin);
+      }
     }
     setActiveNav(pathname || '/');
-  }, [pathname]);
+  }, [pathname, userProfileData]);
 
   const { data: categoriesData } = useQuery({
     queryKey: ['categories-tree'],
@@ -186,7 +249,7 @@ export default function Header() {
           </div>
 
           {/* Action Icons */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             {/* Notification */}
             <button
               type="button"
@@ -211,11 +274,22 @@ export default function Header() {
               )}
             </Link>
 
-            {/* Admin Portal Button (chỉ hiển thị khi đã đăng nhập quyền Admin) */}
+            {/* 💳 Nạp tiền vào ví (nằm ngay cạnh icon đăng nhập / tài khoản) */}
+            <Link
+              href="/tai-khoan?deposit=true"
+              className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 text-xs font-bold border border-amber-400/30 transition-all flex items-center gap-1.5 shadow-sm"
+              title="Nạp tiền vào ví tài khoản"
+            >
+              <Wallet size={14} className="text-amber-400 flex-shrink-0" />
+              <span className="hidden xs:inline sm:inline">Nạp tiền vào ví</span>
+              <span className="inline xs:hidden sm:hidden">Nạp ví</span>
+            </Link>
+
+            {/* Admin Portal Button (CHỈ hiển thị khi người dùng là Admin) */}
             {isAdmin && (
               <Link
                 href="/admin"
-                className="px-2.5 py-1.5 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 text-xs font-bold border border-amber-400/20 transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-2.5 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-xs font-bold border border-purple-500/30 transition-all flex items-center gap-1.5 shadow-sm"
                 title="Cổng Quản Trị Hệ Thống"
               >
                 <ShieldCheck size={14} />
@@ -227,7 +301,7 @@ export default function Header() {
             {!isLoggedIn ? (
               <Link
                 href="/dang-nhap-dang-ky"
-                className="ml-1 px-3.5 py-1.5 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-xl transition-all shadow-md shadow-indigo-600/20 flex items-center gap-1.5"
+                className="ml-0.5 px-3 sm:px-3.5 py-1.5 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-xl transition-all shadow-md shadow-indigo-600/20 flex items-center gap-1.5"
                 title="Đăng nhập"
               >
                 Đăng nhập
@@ -235,7 +309,7 @@ export default function Header() {
             ) : (
               <Link
                 href="/tai-khoan"
-                className="p-2.5 text-slate-300 hover:text-yellow-400 hover:bg-[#161A29] rounded-xl transition-colors"
+                className="p-2 text-slate-300 hover:text-yellow-400 hover:bg-[#161A29] rounded-xl transition-colors flex items-center"
                 title="Tài khoản cá nhân"
               >
                 <User size={19} />
@@ -315,20 +389,6 @@ export default function Header() {
             >
               <span>📁 Khóa học của tôi</span>
             </Link>
-
-            {/* 6. 💳 Nạp tiền vào ví */}
-            <Link
-              href="/tai-khoan?deposit=true"
-              onClick={() => setActiveNav('/nap-tien')}
-              className={`px-3.5 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
-                activeNav === '/nap-tien'
-                  ? 'text-amber-300 font-bold bg-amber-400/20 border border-amber-400/50 shadow-sm'
-                  : 'text-amber-400 hover:text-amber-300 hover:bg-amber-400/10 font-bold border border-amber-400/30'
-              }`}
-            >
-              <Wallet size={14} className="text-amber-400" />
-              <span>Nạp tiền vào ví</span>
-            </Link>
           </div>
         </div>
       </nav>
@@ -390,6 +450,17 @@ export default function Header() {
               <Wallet size={15} />
               <span>Nạp tiền vào ví</span>
             </Link>
+            {/* Quản trị trong mobile drawer - CHỈ hiển thị khi là Admin */}
+            {isAdmin && (
+              <Link
+                href="/admin"
+                className="block px-4 py-2.5 rounded-xl text-sm font-bold transition-colors text-purple-400 bg-purple-400/10 hover:bg-purple-400/20 border border-purple-400/30 flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <ShieldCheck size={15} />
+                <span>Quản trị</span>
+              </Link>
+            )}
           </div>
         </div>
       )}
