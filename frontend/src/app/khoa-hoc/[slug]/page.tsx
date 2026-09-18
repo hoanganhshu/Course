@@ -7,6 +7,7 @@ import { ShoppingCart, Users, Clock, Check, ChevronRight, Zap } from 'lucide-rea
 import { courseApi } from '@/lib/api';
 import { useCart } from '@/store/cartStore';
 import { ALL_COURSES } from '@/data/coursesCatalog';
+import CourseCurriculum from '@/components/course/CourseCurriculum';
 import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 
@@ -124,10 +125,13 @@ export default function CourseDetailPage() {
               )}
             </div>
 
+            {/* Cấu trúc & Danh sách bài học chi tiết */}
+            <CourseCurriculum course={course} />
+
             {/* Content / Curriculum */}
             {course.content && (
               <div className="bg-[#141828] rounded-2xl p-6 shadow-sm">
-                <h2 className="font-bold text-white text-base mb-4">Nội dung khóa học</h2>
+                <h2 className="font-bold text-white text-base mb-4">Giới thiệu bổ sung</h2>
                 <div className="prose prose-invert prose-sm max-w-none text-slate-300"
                   dangerouslySetInnerHTML={{ __html: course.content }} />
               </div>

@@ -2,11 +2,12 @@
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ShoppingCart, Check } from 'lucide-react';
+import { ArrowRight, ShoppingCart, Check, BookOpen } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { categoryApi } from '@/lib/api';
 import { useCart } from '@/store/cartStore';
 import { REAL_CATEGORIES, CATEGORY_COURSES_MAP, CourseItem } from '@/data/coursesCatalog';
+import CurriculumModal from '@/components/course/CurriculumModal';
 import toast from 'react-hot-toast';
 
 const fmt = (n: number) => new Intl.NumberFormat('vi-VN').format(n) + ' ₫';
@@ -36,6 +37,7 @@ const CATEGORY_ICONS: Record<string, string> = {
 
 export default function CategoryGrid() {
   const [activeCategory, setActiveCategory] = useState<string>('cong-nghe-thong-tin');
+  const [curriculumCourse, setCurriculumCourse] = useState<any>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef<boolean>(false);
   const { addItem, isInCart } = useCart();
@@ -255,11 +257,11 @@ export default function CategoryGrid() {
                 </div>
 
                 {/* Footer Action */}
-                <div className="p-4 pt-0">
+                <div className="p-4 pt-0 flex items-center gap-2">
                   <button
                     type="button"
                     onClick={(e) => handleAddCart(e, course)}
-                    className={`w-full py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm ${
+                    className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm ${
                       added
                         ? 'bg-emerald-500 text-white'
                         : 'bg-white hover:bg-slate-100 text-slate-950 hover:shadow-md'
@@ -277,11 +279,30 @@ export default function CategoryGrid() {
                       </>
                     )}
                   </button>
+
+                  <button
+                    type="button"
+                    title="Xem nhanh bài học & mục lục"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setCurriculumCourse(course);
+                    }}
+                    className="p-2.5 rounded-xl bg-[#1C2032] hover:bg-[#252B44] text-slate-300 hover:text-white text-xs font-semibold transition-colors flex items-center justify-center border border-slate-700/50"
+                  >
+                    <BookOpen size={15} />
+                  </button>
                 </div>
               </div>
             );
           })}
         </div>
+
+        {/* Modal xem nhanh bài học */}
+        <CurriculumModal
+          course={curriculumCourse}
+          onClose={() => setCurriculumCourse(null)}
+        />
       </div>
     </section>
   );

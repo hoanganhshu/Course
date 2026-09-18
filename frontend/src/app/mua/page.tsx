@@ -3,9 +3,10 @@
 import { useState, useMemo, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, ShoppingCart } from 'lucide-react';
+import { Search, ShoppingCart, BookOpen } from 'lucide-react';
 import { useCart } from '@/store/cartStore';
 import { ALL_COURSES, REAL_CATEGORIES, CourseItem } from '@/data/coursesCatalog';
+import CurriculumModal from '@/components/course/CurriculumModal';
 import toast from 'react-hot-toast';
 import { useSearchParams } from 'next/navigation';
 
@@ -20,6 +21,7 @@ function MuaContent() {
   const [page, setPage] = useState(0);
   const { addItem, isInCart } = useCart();
   const [customCourses, setCustomCourses] = useState<CourseItem[]>([]);
+  const [curriculumCourse, setCurriculumCourse] = useState<any>(null);
 
   useEffect(() => {
     try {
@@ -222,11 +224,11 @@ function MuaContent() {
                     </div>
                   </Link>
 
-                  <div className="px-4 pb-4">
+                  <div className="px-4 pb-4 flex items-center gap-2">
                     <button
                       onClick={(e) => handleAddCart(e, course)}
                       disabled={inCart}
-                      className={`w-full flex items-center justify-center gap-2 py-2 rounded-xl text-xs font-bold transition-all ${
+                      className={`flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-bold transition-all ${
                         inCart
                           ? 'bg-emerald-500/20 text-emerald-300 cursor-default'
                           : 'bg-white hover:bg-slate-100 text-slate-950 shadow-sm'
@@ -234,6 +236,19 @@ function MuaContent() {
                     >
                       <ShoppingCart size={14} className={inCart ? '' : 'text-slate-950'} />
                       {inCart ? '✓ Đã thêm' : 'Mua ngay'}
+                    </button>
+
+                    <button
+                      type="button"
+                      title="Xem nhanh bài học & mục lục"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setCurriculumCourse(course);
+                      }}
+                      className="p-2 rounded-xl bg-[#1C2032] hover:bg-[#252B44] text-slate-300 hover:text-white text-xs font-semibold transition-colors flex items-center justify-center border border-slate-700/50"
+                    >
+                      <BookOpen size={14} />
                     </button>
                   </div>
                 </div>
@@ -281,6 +296,12 @@ function MuaContent() {
           )}
         </>
       )}
+
+      {/* Modal xem nhanh bài học */}
+      <CurriculumModal
+        course={curriculumCourse}
+        onClose={() => setCurriculumCourse(null)}
+      />
     </div>
   );
 }
