@@ -37,6 +37,16 @@ import {
   MessageSquare,
   Send,
   Bot,
+  MoreVertical,
+  MoreHorizontal,
+  Minimize2,
+  Maximize2,
+  User,
+  Mail,
+  Phone,
+  Info,
+  Gift,
+  ArrowDown,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { ALL_COURSES, REAL_CATEGORIES, CourseItem } from '@/data/coursesCatalog';
@@ -122,6 +132,8 @@ interface AdminDeposit {
   approvedAt?: string;
   bankName?: string;
   bankAccountNumber?: string;
+  bankAccountName?: string;
+  note?: string;
 }
 
 const INITIAL_DEMO_DEPOSITS: AdminDeposit[] = [
@@ -190,12 +202,37 @@ export default function AdminDashboardPage() {
   const [manualAmount, setManualAmount] = useState<number>(100000);
   const [manualAction, setManualAction] = useState<'ADD' | 'SUBTRACT'>('ADD');
 
-  // Live Chat state
+  // Live Chat state & Advanced features
   const [chatSessions, setChatSessions] = useState<ChatSession[]>([]);
   const [selectedSessionId, setSelectedSessionId] = useState<string>('');
   const [adminReplyInput, setAdminReplyInput] = useState('');
   const [chatSearch, setChatSearch] = useState('');
+  const [isExpandedChatMode, setIsExpandedChatMode] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const miniChatEndRef = useRef<HTMLDivElement>(null);
+
+  // 3-dots Menu & Popups state
+  const [openSessionMenuId, setOpenSessionMenuId] = useState<string | null>(null);
+
+  // Mini Floating Chat Box state
+  const [miniChatSessionId, setMiniChatSessionId] = useState<string | null>(null);
+  const [miniChatMinimized, setMiniChatMinimized] = useState(false);
+  const [miniChatReplyInput, setMiniChatReplyInput] = useState('');
+
+  // Info Modal state
+  const [infoModalSession, setInfoModalSession] = useState<ChatSession | null>(null);
+
+  // User Profile & Balance Modal state
+  const [profileModalSession, setProfileModalSession] = useState<ChatSession | null>(null);
+  const [profileUserBalance, setProfileUserBalance] = useState<number>(0);
+  const [profileDepositAmount, setProfileDepositAmount] = useState<number>(100000);
+  const [profileDepositAction, setProfileDepositAction] = useState<'ADD' | 'SUBTRACT'>('ADD');
+  const [profileDepositReason, setProfileDepositReason] = useState<string>('Nạp tiền chuyển khoản MB Bank');
+  const [profileAutoSendMsg, setProfileAutoSendMsg] = useState<boolean>(true);
+  const [profileDriveEmail, setProfileDriveEmail] = useState<string>('');
+
+  // Delete Confirmation Modal state
+  const [deleteConfirmSession, setDeleteConfirmSession] = useState<ChatSession | null>(null);
 
   // Modals state
   const [showAddModal, setShowAddModal] = useState(false);
@@ -516,6 +553,115 @@ export default function AdminDashboardPage() {
     if (selectedSessionId === sessionId) {
       setSelectedSessionId(updated.length > 0 ? updated[0].sessionId : '');
     }
+    if (miniChatSessionId === sessionId) {
+      setMiniChatSessionId(null);
+    }
+    toast.success('Đã xóa cuộc trò chuyện!');
+  };
+
+  // Open User Profile & Balance modal
+  const handleOpenUserProfile = (sess: ChatSession) => {
+    const email = sess.userEmail?.trim().toLowerCase() || `guest_${sess.sessionId.slice(-6)}@user.com`;
+    const storedBal = localStorage.getItem(`user_balance_${email}`);
+    setProfileUserBalance(storedBal !== null ? Number(storedBal) : 0);
+    setProfileDriveEmail(sess.userEmail || '');
+    setProfileDepositAmount(100000);
+    setProfileDepositAction('ADD');
+    setProfileDepositReason('Nạp tiền chuyển khoản MB Bank');
+    setProfileAutoSendMsg(true);
+    setProfileModalSession(sess);
+    setOpenSessionMenuId(null);
+  };
+
+  // Adjust balance inside user profile modal
+  const handleProfileAdjustBalance = () => {
+    if (!profileModalSession) return;
+    const email = profileModalSession.userEmail?.trim().toLowerCase() || `guest_${profileModalSession.sessionId.slice(-6)}@user.com`;
+    if (profileDepositAmount <= 0) {
+      toast.error('Vui lòng nhập số tiền hợp lệ (> 0 đ)');
+      return;
+    }
+
+    const curBal = Number(localStorage.getItem(`user_balance_${email}`) || '0');
+    const delta = profileDepositAction === 'ADD' ? profileDepositAmount : -profileDepositAmount;
+    const newBal = Math.max(0, curBal + delta);
+    localStorage.setItem(`user_balance_${email}`, String(newBal));
+    setProfileUserBalance(newBal);
+
+    // Lưu vào danh sách nạp tiền app_all_deposits
+    try {
+      const all = JSON.parse(localStorage.getItem('app_all_deposits') || '[]');
+      const newDep = {
+        id: 'adj-' + Date.now(),
+        transactionCode: `ADJ${Date.now().toString().slice(-6)}`,
+        userId: profileModalSession.userId || 8,
+        userName: profileModalSession.userName,
+        userEmail: email,
+        userPhone: profileModalSession.userPhone || '',
+        amount: profileDepositAmount,
+        status: 'COMPLETED' as const,
+        createdAt: new Date().toLocaleString('vi-VN'),
+        bankName: profileDepositAction === 'ADD' ? 'Admin cộng số dư ví trực tiếp' : 'Admin trừ số dư ví',
+        bankAccountNumber: '-',
+        bankAccountName: adminUser?.name || 'Quản trị viên',
+        note: profileDepositReason,
+      };
+      const updatedAll = [newDep, ...all];
+      localStorage.setItem('app_all_deposits', JSON.stringify(updatedAll));
+      setDeposits(updatedAll);
+    } catch {}
+
+    // Gửi tin nhắn thông báo vào khung chat
+    if (profileAutoSendMsg) {
+      const notifText = profileDepositAction === 'ADD'
+        ? `🎉 [Hệ Thống Ví]: Shop đã cộng thành công +${fmt(profileDepositAmount)} vào số dư ví của bạn!\nSố dư ví hiện tại: ${fmt(newBal)}.\nGhi chú: ${profileDepositReason}.\nBạn có thể kiểm tra trong mục Giỏ hàng hoặc Tài khoản để mua khóa học ngay nhé!`
+        : `⚠️ [Hệ Thống Ví]: Shop đã điều chỉnh trừ -${fmt(profileDepositAmount)} từ số dư ví của bạn.\nSố dư ví hiện tại: ${fmt(newBal)}.\nGhi chú: ${profileDepositReason}.`;
+
+      chatStore.sendAdminReply(
+        profileModalSession.sessionId,
+        notifText,
+        adminUser?.name ? `Admin (${adminUser.name})` : 'Hệ Thống CSKH'
+      );
+      setChatSessions(chatStore.getSessions());
+    }
+
+    toast.success(
+      `Đã ${profileDepositAction === 'ADD' ? 'cộng +' : 'trừ -'}${fmt(profileDepositAmount)} cho ${profileModalSession.userName}! Số dư mới: ${fmt(newBal)}`
+    );
+  };
+
+  // Mini chat reply handler
+  const handleSendMiniChatReply = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!miniChatReplyInput.trim() || !miniChatSessionId) return;
+
+    chatStore.sendAdminReply(
+      miniChatSessionId,
+      miniChatReplyInput.trim(),
+      adminUser?.name ? `Admin (${adminUser.name})` : 'CSKH Khoahocgiahoi'
+    );
+    setMiniChatReplyInput('');
+    setChatSessions(chatStore.getSessions());
+    toast.success('Đã gửi phản hồi từ khung chat nhỏ!');
+    setTimeout(() => {
+      miniChatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  // Delete confirmed
+  const handleDeleteConfirmed = () => {
+    if (!deleteConfirmSession) return;
+    const sid = deleteConfirmSession.sessionId;
+    chatStore.deleteSession(sid);
+    const updated = chatStore.getSessions();
+    setChatSessions(updated);
+    if (selectedSessionId === sid) {
+      setSelectedSessionId(updated.length > 0 ? updated[0].sessionId : '');
+    }
+    if (miniChatSessionId === sid) {
+      setMiniChatSessionId(null);
+    }
+    setDeleteConfirmSession(null);
     toast.success('Đã xóa cuộc trò chuyện!');
   };
 
@@ -1287,14 +1433,24 @@ export default function AdminDashboardPage() {
                   <span>Tin Nhắn Hỗ Trợ Khách Hàng (Live Chat)</span>
                 </h1>
                 <p className="text-xs text-slate-400 mt-1">
-                  Đồng bộ tin nhắn 2 chiều trực tiếp với khách hàng đang chat qua biểu tượng chat trên website.
+                  Đồng bộ tin nhắn 2 chiều trực tiếp với khách hàng đang chat qua website.
                 </p>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => setIsExpandedChatMode(!isExpandedChatMode)}
+                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-all border border-slate-700 flex items-center gap-1.5 shadow-sm"
+                  title="Chuyển chế độ xem toàn màn hình hoặc cuộn trang"
+                >
+                  {isExpandedChatMode ? <Minimize2 size={13} /> : <Maximize2 size={13} />}
+                  <span>{isExpandedChatMode ? 'Thu gọn khung' : 'Toàn màn hình / Cuộn tự do'}</span>
+                </button>
+
                 <span className="text-xs bg-amber-400/10 text-amber-400 border border-amber-400/20 px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                  Đang hoạt động trực tuyến
+                  Đang trực tuyến
                 </span>
                 {unreadChatCount > 0 && (
                   <span className="text-xs bg-rose-500/20 text-rose-300 border border-rose-500/30 px-3 py-1.5 rounded-xl font-black flex items-center gap-1.5 animate-pulse">
@@ -1305,7 +1461,13 @@ export default function AdminDashboardPage() {
             </div>
 
             {/* Inbox Container */}
-            <div className="bg-[#101422] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[680px]">
+            <div
+              className={`bg-[#101422] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row transition-all ${
+                isExpandedChatMode
+                  ? 'min-h-[85vh] h-auto'
+                  : 'min-h-[620px] md:h-[calc(100vh-175px)]'
+              }`}
+            >
               {/* Left Column: Conversations List */}
               <div className="w-full md:w-80 lg:w-96 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col bg-[#0C0F1A]">
                 {/* Search Header */}
@@ -1322,8 +1484,8 @@ export default function AdminDashboardPage() {
                   </div>
                 </div>
 
-                {/* Conversations items */}
-                <div className="flex-1 overflow-y-auto divide-y divide-slate-800/60">
+                {/* Conversations items with scroll support */}
+                <div className="flex-1 overflow-y-auto overscroll-contain divide-y divide-slate-800/60 max-h-[500px] md:max-h-none scroll-smooth">
                   {filteredChatSessions.length === 0 ? (
                     <div className="p-8 text-center text-slate-500 text-xs">
                       Không có cuộc trò chuyện nào phù hợp.
@@ -1372,20 +1534,96 @@ export default function AdminDashboardPage() {
                             )}
                           </div>
 
-                          {/* Unread badge & Delete action */}
-                          <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
+                          {/* Actions & 3-dots Menu */}
+                          <div className="flex items-center gap-1 flex-shrink-0 relative">
                             {hasUnread && (
-                              <span className="px-1.5 py-0.2 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] shadow-sm">
+                              <span className="px-1.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] shadow-sm mr-0.5">
                                 {sess.unreadAdminCount}
                               </span>
                             )}
-                            <button
-                              onClick={(e) => handleDeleteChatSession(sess.sessionId, e)}
-                              className="opacity-0 group-hover:opacity-100 hover:opacity-100 text-slate-500 hover:text-rose-400 p-1 transition-opacity"
-                              title="Xóa cuộc trò chuyện"
-                            >
-                              <Trash2 size={12} />
-                            </button>
+
+                            <div className="relative">
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setOpenSessionMenuId(openSessionMenuId === sess.sessionId ? null : sess.sessionId);
+                                }}
+                                className="p-1.5 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800 transition-colors"
+                                title="Tùy chọn cuộc trò chuyện"
+                              >
+                                <MoreVertical size={16} />
+                              </button>
+
+                              {/* 3-dots Dropdown Menu */}
+                              {openSessionMenuId === sess.sessionId && (
+                                <>
+                                  <div
+                                    className="fixed inset-0 z-40"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setOpenSessionMenuId(null);
+                                    }}
+                                  />
+                                  <div className="absolute right-0 top-full mt-1 w-64 bg-[#161B2E] border border-slate-700 rounded-2xl shadow-2xl py-2 z-50 text-xs animate-in fade-in zoom-in-95 duration-100">
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setMiniChatSessionId(sess.sessionId);
+                                        setMiniChatMinimized(false);
+                                        setOpenSessionMenuId(null);
+                                        toast.success(`Đã mở khung chat nhỏ với ${sess.userName}`);
+                                      }}
+                                      className="w-full px-3.5 py-2.5 text-left text-slate-200 hover:text-amber-300 hover:bg-[#1E2540] flex items-center gap-2.5 font-medium transition-colors"
+                                    >
+                                      <Minimize2 size={14} className="text-amber-400 flex-shrink-0" />
+                                      <span>Hiển thị khung chat nhỏ</span>
+                                    </button>
+
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleOpenUserProfile(sess);
+                                      }}
+                                      className="w-full px-3.5 py-2.5 text-left text-slate-200 hover:text-emerald-300 hover:bg-[#1E2540] flex items-center gap-2.5 font-medium transition-colors"
+                                    >
+                                      <User size={14} className="text-emerald-400 flex-shrink-0" />
+                                      <span>Xem profile & Nạp số dư ví</span>
+                                    </button>
+
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setInfoModalSession(sess);
+                                        setOpenSessionMenuId(null);
+                                      }}
+                                      className="w-full px-3.5 py-2.5 text-left text-slate-200 hover:text-blue-300 hover:bg-[#1E2540] flex items-center gap-2.5 font-medium transition-colors"
+                                    >
+                                      <Info size={14} className="text-blue-400 flex-shrink-0" />
+                                      <span>Thông tin khách đang chat</span>
+                                    </button>
+
+                                    <div className="my-1.5 border-t border-slate-800" />
+
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setDeleteConfirmSession(sess);
+                                        setOpenSessionMenuId(null);
+                                      }}
+                                      className="w-full px-3.5 py-2.5 text-left text-rose-400 hover:text-rose-300 hover:bg-rose-500/10 flex items-center gap-2.5 font-medium transition-colors"
+                                    >
+                                      <Trash2 size={14} className="flex-shrink-0" />
+                                      <span>Xóa cuộc trò chuyện</span>
+                                    </button>
+                                  </div>
+                                </>
+                              )}
+                            </div>
                           </div>
                         </div>
                       );
@@ -1395,49 +1633,134 @@ export default function AdminDashboardPage() {
               </div>
 
               {/* Right Column: Chat Thread */}
-              <div className="flex-1 flex flex-col bg-[#101422]">
+              <div className="flex-1 flex flex-col bg-[#101422] min-w-0">
                 {currentSelectedSession ? (
                   <>
                     {/* Chat Thread Header */}
-                    <div className="p-3.5 px-5 border-b border-slate-800 flex items-center justify-between bg-[#121626]">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-black text-sm">
+                    <div className="p-3.5 px-5 border-b border-slate-800 flex items-center justify-between bg-[#121626] gap-2">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-10 h-10 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-black text-sm flex-shrink-0">
                           {currentSelectedSession.userName.charAt(0).toUpperCase()}
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <div className="flex items-center gap-2">
-                            <h3 className="font-bold text-white text-sm">
+                            <h3 className="font-bold text-white text-sm truncate">
                               {currentSelectedSession.userName}
                             </h3>
-                            <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 flex items-center gap-1">
+                            <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 flex items-center gap-1 flex-shrink-0">
                               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                               Trực tuyến
                             </span>
                           </div>
-                          <p className="text-[11px] text-slate-400">
+                          <p className="text-[11px] text-slate-400 truncate">
                             {currentSelectedSession.userEmail ? `Email: ${currentSelectedSession.userEmail}` : `Mã phiên: ${currentSelectedSession.sessionId}`}
                             {currentSelectedSession.userPhone ? ` · SĐT: ${currentSelectedSession.userPhone}` : ''}
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1.5 flex-shrink-0">
                         <button
+                          type="button"
                           onClick={() => {
                             chatStore.markAsReadByAdmin(currentSelectedSession.sessionId);
                             const updated = chatStore.getSessions();
                             setChatSessions(updated);
                             toast.success('Đã đánh dấu đã đọc');
                           }}
-                          className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
+                          className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors hidden sm:inline-block"
                         >
                           Đánh dấu đã đọc
                         </button>
+
+                        {/* Profile & Wallet shortcut */}
+                        <button
+                          type="button"
+                          onClick={() => handleOpenUserProfile(currentSelectedSession)}
+                          className="px-2.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 text-xs font-bold transition-colors flex items-center gap-1.5 border border-emerald-500/30"
+                          title="Xem hồ sơ & nạp số dư ví cho học viên này"
+                        >
+                          <Wallet size={13} />
+                          <span className="hidden sm:inline">Hồ sơ & Ví</span>
+                        </button>
+
+                        {/* 3-dots Header Menu */}
+                        <div className="relative">
+                          <button
+                            type="button"
+                            onClick={() => setOpenSessionMenuId(openSessionMenuId === `head_${currentSelectedSession.sessionId}` ? null : `head_${currentSelectedSession.sessionId}`)}
+                            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                            title="Tùy chọn khác"
+                          >
+                            <MoreVertical size={16} />
+                          </button>
+
+                          {openSessionMenuId === `head_${currentSelectedSession.sessionId}` && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setOpenSessionMenuId(null)}
+                              />
+                              <div className="absolute right-0 top-full mt-1 w-64 bg-[#161B2E] border border-slate-700 rounded-2xl shadow-2xl py-2 z-50 text-xs animate-in fade-in zoom-in-95 duration-100">
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setMiniChatSessionId(currentSelectedSession.sessionId);
+                                    setMiniChatMinimized(false);
+                                    setOpenSessionMenuId(null);
+                                    toast.success(`Đã mở khung chat nhỏ với ${currentSelectedSession.userName}`);
+                                  }}
+                                  className="w-full px-3.5 py-2.5 text-left text-slate-200 hover:text-amber-300 hover:bg-[#1E2540] flex items-center gap-2.5 font-medium transition-colors"
+                                >
+                                  <Minimize2 size={14} className="text-amber-400 flex-shrink-0" />
+                                  <span>Hiển thị khung chat nhỏ</span>
+                                </button>
+
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    handleOpenUserProfile(currentSelectedSession);
+                                  }}
+                                  className="w-full px-3.5 py-2.5 text-left text-slate-200 hover:text-emerald-300 hover:bg-[#1E2540] flex items-center gap-2.5 font-medium transition-colors"
+                                >
+                                  <User size={14} className="text-emerald-400 flex-shrink-0" />
+                                  <span>Xem profile & Nạp số dư ví</span>
+                                </button>
+
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setInfoModalSession(currentSelectedSession);
+                                    setOpenSessionMenuId(null);
+                                  }}
+                                  className="w-full px-3.5 py-2.5 text-left text-slate-200 hover:text-blue-300 hover:bg-[#1E2540] flex items-center gap-2.5 font-medium transition-colors"
+                                >
+                                  <Info size={14} className="text-blue-400 flex-shrink-0" />
+                                  <span>Thông tin khách đang chat</span>
+                                </button>
+
+                                <div className="my-1.5 border-t border-slate-800" />
+
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setDeleteConfirmSession(currentSelectedSession);
+                                    setOpenSessionMenuId(null);
+                                  }}
+                                  className="w-full px-3.5 py-2.5 text-left text-rose-400 hover:text-rose-300 hover:bg-rose-500/10 flex items-center gap-2.5 font-medium transition-colors"
+                                >
+                                  <Trash2 size={14} className="flex-shrink-0" />
+                                  <span>Xóa cuộc trò chuyện</span>
+                                </button>
+                              </div>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Messages Stream */}
-                    <div className="flex-1 overflow-y-auto p-4 space-y-3.5">
+                    {/* Messages Stream - Scroll cả cuộc trò chuyện mượt mà */}
+                    <div className="flex-1 overflow-y-auto overscroll-contain p-4 space-y-3.5 relative scroll-smooth max-h-[600px] md:max-h-none">
                       {currentSelectedSession.messages.map((msg) => {
                         const isAdmin = msg.sender === 'shop';
                         return (
@@ -1452,7 +1775,7 @@ export default function AdminDashboardPage() {
                             )}
 
                             <div
-                              className={`max-w-[75%] rounded-2xl p-3 shadow-md whitespace-pre-line text-xs leading-relaxed ${
+                              className={`max-w-[78%] rounded-2xl p-3 shadow-md whitespace-pre-line text-xs leading-relaxed ${
                                 isAdmin
                                   ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-medium rounded-tr-sm'
                                   : 'bg-[#181F33] text-slate-100 border border-slate-800 rounded-tl-sm'
@@ -1484,6 +1807,18 @@ export default function AdminDashboardPage() {
                         );
                       })}
                       <div ref={chatEndRef} />
+
+                      {/* Floating scroll to bottom shortcut */}
+                      {currentSelectedSession.messages.length > 6 && (
+                        <button
+                          type="button"
+                          onClick={() => chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                          className="sticky bottom-2 ml-auto bg-slate-800/90 hover:bg-slate-700 text-amber-300 text-[11px] font-bold px-3 py-1.5 rounded-full shadow-lg border border-slate-700 flex items-center gap-1 backdrop-blur-sm transition-all"
+                        >
+                          <ArrowDown size={12} />
+                          <span>Xuống tin mới</span>
+                        </button>
+                      )}
                     </div>
 
                     {/* Quick Response Templates */}
@@ -1891,6 +2226,675 @@ export default function AdminDashboardPage() {
           </div>
         </div>
       )}
+
+      {/* ================= MODAL: HỒ SƠ & NẠP SỐ DƯ VÍ CHO USER ================= */}
+      {profileModalSession && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+          <div className="bg-[#121626] border border-slate-700/90 rounded-3xl p-5 sm:p-7 max-w-xl w-full text-white shadow-2xl relative my-auto animate-in zoom-in-95 duration-150">
+            {/* Header */}
+            <div className="flex items-start justify-between pb-4 border-b border-slate-800 gap-3">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-indigo-500 text-slate-950 flex items-center justify-center font-black text-lg flex-shrink-0 shadow-lg shadow-amber-500/20">
+                  {profileModalSession.userName.charAt(0).toUpperCase()}
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-base font-bold text-white truncate">
+                      {profileModalSession.userName}
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-400/15 text-amber-400 border border-amber-400/30 flex-shrink-0">
+                      Học viên
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-400 truncate">
+                    {profileModalSession.userEmail || `ID Phiên: ${profileModalSession.sessionId}`}
+                    {profileModalSession.userPhone ? ` · ${profileModalSession.userPhone}` : ''}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setProfileModalSession(null)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors flex-shrink-0"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="space-y-4 py-4 max-h-[72vh] overflow-y-auto pr-1">
+              {/* Card 1: Số Dư Ví Hiện Tại */}
+              <div className="bg-gradient-to-r from-emerald-950/70 via-[#131F33] to-[#121626] border border-emerald-500/30 rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-lg">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30 flex-shrink-0">
+                    <Wallet size={24} />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
+                      Số dư ví khả dụng
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-300">
+                      {fmt(profileUserBalance)}
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-0.5">
+                      Học viên có thể dùng số dư này mua trực tiếp các khóa học Google Drive
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-right hidden sm:block flex-shrink-0">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    Ví chính
+                  </span>
+                </div>
+              </div>
+
+              {/* Card 2: Cấp quyền Google Drive */}
+              <div className="bg-[#0C0F1A] border border-slate-800 rounded-2xl p-3.5 space-y-2">
+                <div className="flex items-center justify-between">
+                  <label className="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                    <FolderOpen size={14} className="text-amber-400" />
+                    <span>Gmail cấp quyền Google Drive của học viên</span>
+                  </label>
+                  <span className="text-[10px] text-slate-500">Được dùng khi học viên mua khóa học</span>
+                </div>
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={profileDriveEmail}
+                    onChange={(e) => setProfileDriveEmail(e.target.value)}
+                    placeholder="Nhập Gmail nhận Drive (VD: nguyenvanan@gmail.com)..."
+                    className="flex-1 bg-[#141828] border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (!profileModalSession) return;
+                      const email = profileModalSession.userEmail || `guest_${profileModalSession.sessionId.slice(-6)}`;
+                      localStorage.setItem(`user_drive_email_${email}`, profileDriveEmail);
+                      toast.success('Đã lưu Gmail nhận Google Drive cho học viên!');
+                    }}
+                    className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl transition-colors flex items-center gap-1 flex-shrink-0"
+                  >
+                    <Check size={13} />
+                    <span>Lưu Gmail</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Card 3: Nạp Thêm / Trừ Bớt Số Dư */}
+              <div className="bg-[#0C0F1A] border border-slate-800 rounded-2xl p-4 space-y-3.5">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                    <CreditCard size={14} className="text-amber-400" />
+                    <span>Nạp / Điều chỉnh số dư ví</span>
+                  </h4>
+                  <span className="text-[10px] text-slate-400">Thao tác có hiệu lực ngay lập tức</span>
+                </div>
+
+                {/* Toggle Action */}
+                <div className="grid grid-cols-2 gap-2 p-1 bg-[#141828] rounded-xl border border-slate-800">
+                  <button
+                    type="button"
+                    onClick={() => setProfileDepositAction('ADD')}
+                    className={`py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      profileDepositAction === 'ADD'
+                        ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-900/30'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    <ArrowUpRight size={14} />
+                    <span>+ Nạp thêm số dư (Cộng)</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setProfileDepositAction('SUBTRACT')}
+                    className={`py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      profileDepositAction === 'SUBTRACT'
+                        ? 'bg-rose-500 text-white shadow-md shadow-rose-900/30'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    <ArrowDownRight size={14} />
+                    <span>- Điều chỉnh giảm (Trừ)</span>
+                  </button>
+                </div>
+
+                {/* Quick Presets */}
+                <div>
+                  <label className="block text-[11px] text-slate-400 font-medium mb-1.5">
+                    Chọn nhanh mức nạp:
+                  </label>
+                  <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+                    {[50000, 100000, 200000, 500000, 1000000, 2000000].map((amt) => (
+                      <button
+                        key={amt}
+                        type="button"
+                        onClick={() => setProfileDepositAmount(amt)}
+                        className={`py-1.5 rounded-lg text-[11px] font-bold transition-all border ${
+                          profileDepositAmount === amt
+                            ? 'bg-amber-400 text-slate-950 border-amber-400'
+                            : 'bg-[#141828] text-slate-300 border-slate-800 hover:border-slate-600'
+                        }`}
+                      >
+                        +{amt >= 1000000 ? `${amt / 1000000}tr` : `${amt / 1000}k`}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Amount input */}
+                <div>
+                  <label className="block text-[11px] text-slate-400 font-medium mb-1">
+                    Số tiền muốn {profileDepositAction === 'ADD' ? 'cộng' : 'trừ'} (VNĐ):
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="number"
+                      step={10000}
+                      min={10000}
+                      value={profileDepositAmount}
+                      onChange={(e) => setProfileDepositAmount(Math.max(0, Number(e.target.value)))}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#141828] border border-slate-700 text-amber-400 font-black text-base focus:outline-none focus:border-amber-400 pr-16"
+                    />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
+                      VNĐ
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-slate-400 mt-1 flex justify-between">
+                    <span>Quy đổi: {fmt(profileDepositAmount)}</span>
+                    <span>
+                      Số dư sau khi thực hiện:{' '}
+                      <span className="font-bold text-white">
+                        {fmt(
+                          Math.max(
+                            0,
+                            profileUserBalance +
+                              (profileDepositAction === 'ADD'
+                                ? profileDepositAmount
+                                : -profileDepositAmount)
+                          )
+                        )}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Reason input */}
+                <div>
+                  <label className="block text-[11px] text-slate-400 font-medium mb-1">
+                    Lý do / Ghi chú giao dịch:
+                  </label>
+                  <input
+                    type="text"
+                    value={profileDepositReason}
+                    onChange={(e) => setProfileDepositReason(e.target.value)}
+                    placeholder="VD: Nạp tiền chuyển khoản MB Bank, thưởng nạp..."
+                    className="w-full px-3.5 py-2 rounded-xl bg-[#141828] border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+                  />
+                  <div className="flex flex-wrap gap-1.5 mt-1.5">
+                    {[
+                      'Học viên chuyển khoản VietQR',
+                      'Thưởng nạp thành viên mới',
+                      'Hoàn tiền hỗ trợ',
+                      'Nạp qua CSKH Admin',
+                    ].map((tag, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setProfileDepositReason(tag)}
+                        className="text-[10px] px-2 py-0.5 rounded-md bg-[#161B2E] hover:bg-slate-700 text-slate-400 hover:text-white transition-colors border border-slate-800"
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Auto send notification message */}
+                <label className="flex items-center gap-2 cursor-pointer pt-1">
+                  <input
+                    type="checkbox"
+                    checked={profileAutoSendMsg}
+                    onChange={(e) => setProfileAutoSendMsg(e.target.checked)}
+                    className="w-4 h-4 rounded text-emerald-400 bg-slate-900 border-slate-700 focus:ring-0"
+                  />
+                  <span className="text-xs text-slate-300 font-medium">
+                    Tự động gửi tin nhắn báo vào khung chat cho học viên ngay sau khi nạp
+                  </span>
+                </label>
+              </div>
+
+              {/* Card 4: Lịch sử nạp tiền của học viên này */}
+              {(() => {
+                const userDeposits = deposits.filter((d) => {
+                  if (!profileModalSession.userEmail) return false;
+                  return (
+                    d.userEmail.toLowerCase() === profileModalSession.userEmail.toLowerCase()
+                  );
+                });
+                return (
+                  <div className="bg-[#0C0F1A] border border-slate-800 rounded-2xl p-3.5 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                        <Clock size={13} className="text-amber-400" />
+                        <span>Lịch sử nạp tiền của học viên này ({userDeposits.length})</span>
+                      </span>
+                    </div>
+
+                    {userDeposits.length === 0 ? (
+                      <div className="text-[11px] text-slate-500 py-1 italic">
+                        Chưa có lịch sử nạp tiền được ghi nhận trên hệ thống.
+                      </div>
+                    ) : (
+                      <div className="space-y-1.5 max-h-32 overflow-y-auto pr-1">
+                        {userDeposits.map((d) => (
+                          <div
+                            key={d.id}
+                            className="flex items-center justify-between p-2 rounded-xl bg-[#141828] border border-slate-800/80 text-[11px]"
+                          >
+                            <div>
+                              <span className="font-mono text-amber-300 font-bold mr-2">
+                                {d.transactionCode}
+                              </span>
+                              <span className="text-slate-400">{d.createdAt}</span>
+                              {d.note && (
+                                <span className="text-slate-500 block text-[10px]">{d.note}</span>
+                              )}
+                            </div>
+                            <div className="text-right">
+                              <span className="font-bold text-emerald-400 block">
+                                +{fmt(d.amount)}
+                              </span>
+                              <span
+                                className={`text-[9px] font-bold ${
+                                  d.status === 'COMPLETED'
+                                    ? 'text-emerald-400'
+                                    : d.status === 'PENDING'
+                                    ? 'text-amber-400'
+                                    : 'text-rose-400'
+                                }`}
+                              >
+                                {d.status === 'COMPLETED' ? 'Thành công' : d.status === 'PENDING' ? 'Chờ duyệt' : 'Đã hủy'}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
+            </div>
+
+            {/* Footer buttons */}
+            <div className="flex gap-3 pt-3 border-t border-slate-800">
+              <button
+                type="button"
+                onClick={() => setProfileModalSession(null)}
+                className="flex-1 py-2.5 rounded-xl bg-[#1A2033] hover:bg-[#222A42] text-slate-300 font-bold text-xs transition-colors"
+              >
+                Hủy bỏ
+              </button>
+              <button
+                type="button"
+                onClick={handleProfileAdjustBalance}
+                className={`flex-1 py-2.5 rounded-xl font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5 ${
+                  profileDepositAction === 'ADD'
+                    ? 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-emerald-900/30'
+                    : 'bg-rose-600 hover:bg-rose-500 text-white shadow-rose-900/30'
+                }`}
+              >
+                <Check size={14} />
+                <span>
+                  Xác nhận {profileDepositAction === 'ADD' ? 'cộng +' : 'trừ -'}{fmt(profileDepositAmount)}
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ================= MODAL: THÔNG TIN KHÁCH ĐANG CHAT ================= */}
+      {infoModalSession && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#121626] border border-slate-700/90 rounded-3xl p-5 sm:p-6 max-w-md w-full text-white shadow-2xl relative animate-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+              <div className="flex items-center gap-2.5">
+                <div className="w-10 h-10 rounded-2xl bg-blue-500/15 text-blue-400 flex items-center justify-center border border-blue-500/30">
+                  <Info size={20} />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white">Thông tin khách hàng</h3>
+                  <p className="text-[11px] text-slate-400">Chi tiết phiên & thông tin liên hệ</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setInfoModalSession(null)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="space-y-3 text-xs mb-5">
+              <div className="p-3.5 rounded-2xl bg-[#0C0F1A] border border-slate-800 space-y-2.5">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Tên hiển thị:</span>
+                  <span className="font-bold text-white">{infoModalSession.userName}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Trạng thái:</span>
+                  <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Đang trực tuyến
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Email:</span>
+                  <span className="font-medium text-slate-200">
+                    {infoModalSession.userEmail || 'Khách vãng lai (Chưa đăng ký)'}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Số điện thoại:</span>
+                  <span className="font-medium text-slate-200">
+                    {infoModalSession.userPhone || 'Chưa cung cấp'}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Mã Session:</span>
+                  <span className="font-mono text-[11px] text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20">
+                    {infoModalSession.sessionId}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Lần chat gần nhất:</span>
+                  <span className="text-slate-300 text-[11px] font-medium">
+                    {infoModalSession.lastMessageTime}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Tổng tin nhắn:</span>
+                  <span className="font-bold text-amber-400">{infoModalSession.messages.length} tin</span>
+                </div>
+              </div>
+
+              <div className="p-3 rounded-2xl bg-[#0C0F1A] border border-slate-800">
+                <div className="text-[10px] text-slate-500 font-bold uppercase mb-1">Tin nhắn gần đây:</div>
+                <p className="text-slate-200 italic line-clamp-2">
+                  &ldquo;{infoModalSession.lastMessage}&rdquo;
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-2.5">
+              <button
+                type="button"
+                onClick={() => {
+                  const s = infoModalSession;
+                  setInfoModalSession(null);
+                  handleOpenUserProfile(s);
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/20"
+              >
+                <User size={14} />
+                <span>Xem Profile & Nạp ví</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  const sid = infoModalSession.sessionId;
+                  setInfoModalSession(null);
+                  setMiniChatSessionId(sid);
+                  setMiniChatMinimized(false);
+                  toast.success('Đã mở khung chat nhỏ');
+                }}
+                className="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs transition-colors flex items-center justify-center gap-1.5"
+                title="Thu vào khung chat nhỏ nổi góc phải"
+              >
+                <Minimize2 size={14} />
+                <span>Chat nhỏ</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ================= MODAL: XÁC NHẬN XÓA CUỘC TRÒ CHUYỆN ================= */}
+      {deleteConfirmSession && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#121626] border border-rose-500/30 rounded-3xl p-6 max-w-sm w-full text-center shadow-2xl animate-in zoom-in-95 duration-150">
+            <div className="w-12 h-12 rounded-2xl bg-rose-500/15 text-rose-400 flex items-center justify-center mx-auto mb-3 border border-rose-500/30">
+              <Trash2 size={24} />
+            </div>
+            <h3 className="text-base font-bold text-white mb-2">Xóa cuộc trò chuyện?</h3>
+            <p className="text-xs text-slate-400 mb-5 leading-relaxed">
+              Bạn có chắc chắn muốn xóa vĩnh viễn cuộc trò chuyện của khách hàng{' '}
+              <span className="font-bold text-white">{deleteConfirmSession.userName}</span>? Toàn bộ lịch sử tin nhắn trong phiên này sẽ bị xóa khỏi hệ thống.
+            </p>
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={() => setDeleteConfirmSession(null)}
+                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition-colors"
+              >
+                Hủy bỏ
+              </button>
+              <button
+                type="button"
+                onClick={handleDeleteConfirmed}
+                className="flex-1 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition-colors shadow-lg shadow-rose-900/30"
+              >
+                Xóa vĩnh viễn
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ================= FLOATING MINI CHAT WIDGET ================= */}
+      {miniChatSessionId && (() => {
+        const miniSess = chatSessions.find((s) => s.sessionId === miniChatSessionId);
+        if (!miniSess) return null;
+
+        if (miniChatMinimized) {
+          return (
+            <div className="fixed bottom-5 right-6 z-50 animate-in slide-in-from-bottom-3 duration-150">
+              <div
+                onClick={() => setMiniChatMinimized(false)}
+                className="bg-[#121626] hover:bg-[#1A2033] border border-amber-400/40 rounded-full px-4 py-2.5 shadow-2xl flex items-center gap-3 cursor-pointer text-white transition-all hover:scale-105"
+              >
+                <div className="relative">
+                  <div className="w-7 h-7 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xs">
+                    {miniSess.userName.charAt(0).toUpperCase()}
+                  </div>
+                  <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#121626]"></span>
+                </div>
+                <div className="text-xs">
+                  <div className="font-bold flex items-center gap-1.5">
+                    <span>{miniSess.userName}</span>
+                    {miniSess.unreadAdminCount > 0 && (
+                      <span className="px-1.5 py-0.2 rounded-full bg-amber-400 text-slate-950 text-[10px] font-black">
+                        {miniSess.unreadAdminCount}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 ml-1 text-slate-400">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMiniChatMinimized(false);
+                    }}
+                    className="p-1 hover:text-white transition-colors"
+                    title="Mở rộng"
+                  >
+                    <Maximize2 size={13} />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMiniChatSessionId(null);
+                    }}
+                    className="p-1 hover:text-rose-400 transition-colors"
+                    title="Đóng"
+                  >
+                    <X size={14} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <div className="fixed bottom-4 right-4 sm:right-6 z-50 w-[92vw] sm:w-[400px] h-[520px] max-h-[85vh] bg-[#101424] border border-slate-700/90 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-150">
+            {/* Mini Chat Header */}
+            <div className="p-3 bg-[#14182B] border-b border-slate-800 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="relative flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-bold text-xs border border-amber-400/30">
+                    {miniSess.userName.charAt(0).toUpperCase()}
+                  </div>
+                  <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 border border-[#14182B]"></span>
+                </div>
+                <div className="min-w-0">
+                  <h4 className="text-xs font-bold text-white truncate">{miniSess.userName}</h4>
+                  <p className="text-[10px] text-slate-400 truncate">
+                    {miniSess.userEmail || miniSess.sessionId}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1 flex-shrink-0">
+                {/* Open Wallet Shortcut */}
+                <button
+                  type="button"
+                  onClick={() => handleOpenUserProfile(miniSess)}
+                  className="p-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 text-xs font-bold transition-colors"
+                  title="Xem profile & nạp số dư ví"
+                >
+                  <Wallet size={13} />
+                </button>
+
+                {/* Switch to main CSKH tab */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveTab('messages');
+                    setSelectedSessionId(miniSess.sessionId);
+                    setMiniChatSessionId(null);
+                  }}
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                  title="Mở toàn màn hình CSKH"
+                >
+                  <Maximize2 size={14} />
+                </button>
+
+                {/* Minimize */}
+                <button
+                  type="button"
+                  onClick={() => setMiniChatMinimized(true)}
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                  title="Thu nhỏ"
+                >
+                  <Minimize2 size={14} />
+                </button>
+
+                {/* Close */}
+                <button
+                  type="button"
+                  onClick={() => setMiniChatSessionId(null)}
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-slate-800 transition-colors"
+                  title="Đóng chat nhỏ"
+                >
+                  <X size={15} />
+                </button>
+              </div>
+            </div>
+
+            {/* Mini Chat Messages */}
+            <div className="flex-1 overflow-y-auto overscroll-contain p-3 space-y-2.5 bg-[#0C0F1A] text-xs">
+              {miniSess.messages.map((msg) => {
+                const isAdmin = msg.sender === 'shop';
+                return (
+                  <div
+                    key={msg.id}
+                    className={`flex items-start gap-1.5 ${isAdmin ? 'justify-end' : 'justify-start'}`}
+                  >
+                    {!isAdmin && (
+                      <div className="w-5 h-5 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center font-bold text-[9px] flex-shrink-0 mt-1">
+                        {miniSess.userName.charAt(0).toUpperCase()}
+                      </div>
+                    )}
+                    <div
+                      className={`max-w-[82%] rounded-xl p-2.5 text-xs whitespace-pre-line leading-relaxed ${
+                        isAdmin
+                          ? 'bg-amber-400 text-slate-950 font-medium rounded-tr-none shadow-sm'
+                          : 'bg-[#181F33] text-slate-100 border border-slate-800 rounded-tl-none'
+                      }`}
+                    >
+                      <p>{msg.text}</p>
+                      <div
+                        className={`text-[8px] mt-1 text-right ${
+                          isAdmin ? 'text-slate-800' : 'text-slate-500'
+                        }`}
+                      >
+                        {msg.time}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+              <div ref={miniChatEndRef} />
+            </div>
+
+            {/* Mini Chat Quick Reply Pills */}
+            <div className="px-2.5 py-1.5 bg-[#121626] border-t border-slate-800 flex items-center gap-1 overflow-x-auto no-scrollbar">
+              {[
+                'Dạ shop sẵn sàng hỗ trợ ạ!',
+                'Khóa học xem trọn đời trên Drive nhé!',
+                'Shop đã duyệt nạp tiền cho bạn rồi ạ.',
+              ].map((t, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setMiniChatReplyInput(t)}
+                  className="whitespace-nowrap px-2 py-0.5 rounded-full bg-[#1A2033] hover:bg-amber-400 hover:text-slate-950 text-slate-300 text-[10px] transition-colors border border-slate-700/60 flex-shrink-0"
+                >
+                  {t}
+                </button>
+              ))}
+            </div>
+
+            {/* Mini Chat Input */}
+            <form
+              onSubmit={handleSendMiniChatReply}
+              className="p-2.5 bg-[#121626] border-t border-slate-800 flex items-center gap-2"
+            >
+              <input
+                type="text"
+                value={miniChatReplyInput}
+                onChange={(e) => setMiniChatReplyInput(e.target.value)}
+                placeholder="Nhập phản hồi nhanh..."
+                className="flex-1 bg-[#0C0F1A] border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
+              />
+              <button
+                type="submit"
+                disabled={!miniChatReplyInput.trim()}
+                className="p-2 rounded-xl bg-amber-400 hover:bg-amber-300 disabled:opacity-40 text-slate-950 transition-colors flex-shrink-0"
+              >
+                <Send size={14} />
+              </button>
+            </form>
+          </div>
+        );
+      })()}
     </div>
   );
 }
